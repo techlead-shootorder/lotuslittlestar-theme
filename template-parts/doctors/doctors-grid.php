@@ -1,0 +1,299 @@
+<?php
+/**
+ * Template part for displaying the doctors grid and filters
+ *
+ * @package Lotus
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+// Query all doctors
+$args = array(
+	'post_type'      => 'doctor',
+	'posts_per_page' => -1,
+	'post_status'    => 'publish',
+	'orderby'        => 'title',
+	'order'          => 'ASC',
+);
+$doctors_query = new WP_Query( $args );
+
+// Extract specialties for filter options
+$specialties_list = array();
+if ( $doctors_query->have_posts() ) {
+	while ( $doctors_query->have_posts() ) {
+		$doctors_query->the_post();
+		$spec = get_post_meta( get_the_ID(), '_doctor_specialty', true );
+		if ( ! empty( $spec ) && ! in_array( $spec, $specialties_list ) ) {
+			$specialties_list[] = $spec;
+		}
+	}
+	wp_reset_postdata();
+}
+?>
+
+<section class="py-20 bg-brand-bg min-h-screen">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- Section Header -->
+		<div class="text-center max-w-3xl mx-auto mb-16">
+			<span class="text-xs font-bold text-brand-red uppercase tracking-wider">Our Medical Team</span>
+			<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-dark mt-2 mb-4">
+				Meet Our Experts
+			</h1>
+			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+				Lotus Hospitals is home to highly accomplished clinical leaders and dedicated specialists who offer high-quality care across disciplines.
+			</p>
+		</div>
+
+		<!-- Search and Filter Bar -->
+		<div class="bg-white p-6 rounded-3xl border border-brand-cream shadow-sm mb-12 flex flex-col md:flex-row gap-4 items-center justify-between">
+			<!-- Search Field -->
+			<div class="relative w-full md:max-w-md">
+				<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-brand-muted">
+					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+					</svg>
+				</div>
+				<input type="text" id="doctor-search" class="block w-full pl-11 pr-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm placeholder-brand-muted focus:outline-none focus:ring-2 focus:ring-brand-coral focus:border-transparent transition-all" placeholder="Search doctor by name...">
+			</div>
+
+			<!-- Filters Group -->
+			<div class="flex gap-4 w-full md:w-auto">
+				<select id="specialty-filter" class="block w-full md:w-48 px-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all">
+					<option value="">All Specialties</option>
+					<?php if ( ! empty( $specialties_list ) ) : ?>
+						<?php foreach ( $specialties_list as $spec ) : ?>
+							<option value="<?php echo esc_attr( $spec ); ?>"><?php echo esc_html( $spec ); ?></option>
+						<?php endforeach; ?>
+					<?php else : ?>
+						<!-- Fallback filter options matching standard list -->
+						<option value="Neonatology">Neonatology</option>
+						<option value="Pediatric Intensive Care">Pediatric Intensive Care</option>
+						<option value="Pediatric Orthopedics">Pediatric Orthopedics</option>
+						<option value="Gynecology & Obstetrics">Gynecology & Obstetrics</option>
+					<?php endif; ?>
+				</select>
+			</div>
+		</div>
+
+		<!-- Doctors Grid Container -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="doctors-list-grid">
+			<?php
+			if ( $doctors_query->have_posts() ) :
+				while ( $doctors_query->have_posts() ) : $doctors_query->the_post();
+					$specialty    = get_post_meta( get_the_ID(), '_doctor_specialty', true );
+					$experience   = get_post_meta( get_the_ID(), '_doctor_experience', true );
+					$patients     = get_post_meta( get_the_ID(), '_doctor_patients', true );
+					$success_rate = get_post_meta( get_the_ID(), '_doctor_success_rate', true );
+					if ( empty( $specialty ) ) {
+						$specialty = 'Specialist Doctor';
+					}
+					?>
+					<!-- CPT Doctor Grid Card -->
+					<div class="doctor-card-item bg-white rounded-[1rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+						 data-name="<?php echo esc_attr( strtolower( get_the_title() ) ); ?>"
+						 data-specialty="<?php echo esc_attr( $specialty ); ?>">
+						
+						<!-- Image Container -->
+						<div class="aspect-[4/3] bg-brand-cream relative overflow-hidden flex items-center justify-center">
+							<?php if ( has_post_thumbnail() ) : ?>
+								<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500' ) ); ?>
+							<?php else : ?>
+								<svg class="h-24 w-24 text-brand-coral/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+								</svg>
+							<?php endif; ?>
+						</div>
+						
+						<!-- Card Body -->
+						<div class="p-8 flex flex-col flex-grow text-left">
+							<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-2"><?php echo esc_html( $specialty ); ?></span>
+							<h3 class="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-red transition-colors"><?php the_title(); ?></h3>
+							
+							<div class="grid grid-cols-3 gap-2 py-3 border-y border-brand-cream/60 my-4 text-center">
+								<div>
+									<p class="text-xs text-brand-muted">Exp</p>
+									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $experience ? $experience : 'N/A' ); ?></p>
+								</div>
+								<div>
+									<p class="text-xs text-brand-muted">Patients</p>
+									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $patients ? $patients : 'N/A' ); ?></p>
+								</div>
+								<div>
+									<p class="text-xs text-brand-muted">Success</p>
+									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $success_rate ? $success_rate : 'N/A' ); ?></p>
+								</div>
+							</div>
+
+							<div class="mt-auto pt-4 flex items-center justify-between">
+								<a href="<?php the_permalink(); ?>" class="inline-flex items-center justify-center px-6 h-11 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-full shadow-sm hover:shadow transition-all">
+									Book Now
+								</a>
+								<a href="<?php the_permalink(); ?>" class="text-xs font-bold text-brand-muted hover:text-brand-dark transition-colors">
+									View Details
+								</a>
+							</div>
+						</div>
+					</div>
+					<?php
+				endwhile;
+				wp_reset_postdata();
+			else :
+				// Fallback mockup list matching the design layout with 6 complete cards.
+				$fallback_docs = array(
+					array(
+						'name'      => 'Dr. V.S.V. Prasad',
+						'specialty' => 'Senior Consultant Neonatologist',
+						'experience' => '18+ Yrs',
+						'patients' => '15k+',
+						'success' => '99.2%',
+						'color' => 'text-brand-red',
+					),
+					array(
+						'name'      => 'Dr. Satish Ghanta',
+						'specialty' => 'Director - Pediatric Intensive Care',
+						'experience' => '15+ Yrs',
+						'patients' => '12k+',
+						'success' => '98.8%',
+						'color' => 'text-brand-coral',
+					),
+					array(
+						'name'      => 'Dr. Mehul A. Shah',
+						'specialty' => 'Senior Pediatric Orthopedic Surgeon',
+						'experience' => '20+ Yrs',
+						'patients' => '18k+',
+						'success' => '99.5%',
+						'color' => 'text-brand-red',
+					),
+					array(
+						'name'      => 'Dr. V. Rajesh',
+						'specialty' => 'Senior Consultant Pediatric Surgery',
+						'experience' => '14+ Yrs',
+						'patients' => '9k+',
+						'success' => '98.5%',
+						'color' => 'text-brand-coral',
+					),
+					array(
+						'name'      => 'Dr. S. K. Sharma',
+						'specialty' => 'Senior Gynecologist & Fetal Medicine Specialist',
+						'experience' => '16+ Yrs',
+						'patients' => '14k+',
+						'success' => '99.0%',
+						'color' => 'text-brand-red',
+					),
+					array(
+						'name'      => 'Dr. K. Srinivas',
+						'specialty' => 'Senior Consultant Pediatrician & Nephrologist',
+						'experience' => '12+ Yrs',
+						'patients' => '8k+',
+						'success' => '97.9%',
+						'color' => 'text-brand-coral',
+					),
+				);
+
+				foreach ( $fallback_docs as $index => $doc ) :
+					?>
+					<!-- Fallback Doctor Card -->
+					<div class="doctor-card-item bg-white rounded-[1rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+						 data-name="<?php echo esc_attr( strtolower( $doc['name'] ) ); ?>"
+						 data-specialty="<?php echo esc_attr( $doc['specialty'] ); ?>">
+						
+						<!-- Image Container -->
+						<div class="aspect-[4/3] bg-brand-cream relative overflow-hidden flex items-center justify-center p-8 select-none">
+							<svg class="h-28 w-28 <?php echo $doc['color']; ?> opacity-75 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+								<circle cx="50" cy="35" r="18" fill="currentColor" fill-opacity="0.1"/>
+								<path d="M20 85c0-15 15-22 30-22s30 7 30 22" fill="currentColor" fill-opacity="0.05" stroke-linecap="round"/>
+							</svg>
+						</div>
+						
+						<!-- Card Body -->
+						<div class="p-8 flex flex-col flex-grow text-left">
+							<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-2"><?php echo esc_html( $doc['specialty'] ); ?></span>
+							<h3 class="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-red transition-colors"><?php echo esc_html( $doc['name'] ); ?></h3>
+							
+							<div class="grid grid-cols-3 gap-2 py-3 border-y border-brand-cream/60 my-4 text-center">
+								<div>
+									<p class="text-xs text-brand-muted">Exp</p>
+									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $doc['experience'] ); ?></p>
+								</div>
+								<div>
+									<p class="text-xs text-brand-muted">Patients</p>
+									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $doc['patients'] ); ?></p>
+								</div>
+								<div>
+									<p class="text-xs text-brand-muted">Success</p>
+									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $doc['success'] ); ?></p>
+								</div>
+							</div>
+
+							<div class="mt-auto pt-4 flex items-center justify-between">
+								<a href="#" class="inline-flex items-center justify-center px-6 w-full h-11  text-brand-red border border-brand-red   text-xs font-bold rounded ">
+									Book Now
+								</a>
+								
+							</div>
+						</div>
+					</div>
+					<?php
+				endforeach;
+			endif;
+			?>
+		</div>
+		
+		<!-- Empty state for search results -->
+		<div id="no-doctors-found" class="hidden text-center py-12 bg-white rounded-3xl border border-brand-cream max-w-md mx-auto mt-8">
+			<svg class="h-16 w-16 text-brand-coral/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+			</svg>
+			<h3 class="text-lg font-bold text-brand-dark mb-2">No Doctors Found</h3>
+			<p class="text-xs text-brand-muted px-6">
+				We couldn't find any specialist matching your search query. Try typing another name or selecting a different specialty.
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- Client side Search & Filters JS script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	const searchInput = document.getElementById('doctor-search');
+	const filterSelect = document.getElementById('specialty-filter');
+	const cards = document.querySelectorAll('.doctor-card-item');
+	const noResults = document.getElementById('no-doctors-found');
+
+	function filterDoctors() {
+		const searchVal = searchInput.value.toLowerCase().trim();
+		const filterVal = filterSelect.value.toLowerCase().trim();
+		let visibleCount = 0;
+
+		cards.forEach(card => {
+			const name = card.getAttribute('data-name');
+			const specialty = card.getAttribute('data-specialty').toLowerCase();
+
+			const matchesSearch = name.includes(searchVal);
+			const matchesSpecialty = filterVal === "" || specialty.includes(filterVal);
+
+			if (matchesSearch && matchesSpecialty) {
+				card.style.display = '';
+				visibleCount++;
+			} else {
+				card.style.display = 'none';
+			}
+		});
+
+		if (visibleCount === 0) {
+			noResults.classList.remove('hidden');
+		} else {
+			noResults.classList.add('hidden');
+		}
+	}
+
+	if (searchInput) {
+		searchInput.addEventListener('input', filterDoctors);
+	}
+	if (filterSelect) {
+		filterSelect.addEventListener('change', filterDoctors);
+	}
+});
+</script>

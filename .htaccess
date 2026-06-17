@@ -1,0 +1,9 @@
+# Enable Apache URL Rewriting for Lotus mock environment
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /lotus/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /lotus/index.php [L]
+</IfModule>
