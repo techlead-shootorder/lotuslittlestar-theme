@@ -33,18 +33,23 @@ if ( $doctors_query->have_posts() ) {
 }
 ?>
 
-<section class="py-20 bg-brand-bg min-h-screen">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative bg-cover bg-center py-20 sm:py-24 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/doctor-hero.png');">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<!-- Section Header -->
-		<div class="text-center max-w-3xl mx-auto mb-16">
-			<span class="text-xs font-bold text-brand-red uppercase tracking-wider">Our Medical Team</span>
-			<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-dark mt-2 mb-4">
+		<div class="max-w-3xl mb-0">
+			<span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold border border-brand-red text-brand-red tracking-wide mb-4">Our Medical Team</span>
+			<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-green mt-2 mb-4">
 				Meet Our Experts
 			</h1>
-			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
-				Lotus Hospitals is home to highly accomplished clinical leaders and dedicated specialists who offer high-quality care across disciplines.
+			<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl">
+				Our experienced team of specialists is dedicated to providing exceptional care for women, newborns, and children. Combining advanced medical expertise with compassion, we deliver personalized healthcare and trusted support at every stage of life.
 			</p>
 		</div>
+	</div>
+</section>
+
+<section class="py-20 bg-brand-bg min-h-screen">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
 		<!-- Search and Filter Bar -->
 		<div class="bg-white p-6 rounded-3xl border border-brand-cream shadow-sm mb-12 flex flex-col md:flex-row gap-4 items-center justify-between">

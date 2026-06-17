@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="relative bg-cover bg-center py-28 sm:py-36 border-b border-brand-cream/60 overflow-hidden" 
-	style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop');">
+	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/specialist-hero-bg.png');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
 	<div class="absolute inset-0 bg-gradient-to-r from-[#F5F3EF] via-[#F5F3EF]/95 to-[#F5F3EF]/30 lg:to-transparent"></div>
