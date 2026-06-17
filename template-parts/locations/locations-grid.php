@@ -10,31 +10,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="py-20 bg-brand-bg min-h-screen">
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative bg-cover bg-center py-20 sm:py-24 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/location-hero-bg.png');">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<!-- Section Header -->
-		<div class="text-center max-w-3xl mx-auto mb-16">
-			<span class="text-xs font-bold text-brand-red uppercase tracking-wider">Hospital Locations</span>
-			<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-dark mt-2 mb-4">
+		<div class="max-w-3xl mb-0">
+			<span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold border border-brand-red text-brand-red tracking-wide mb-4">Hospital Locations</span>
+			<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-green mt-2 mb-4">
 				Our Hospital Network
 			</h1>
-			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+			<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl">
 				Lotus Little Stars operates advanced multi-specialty centers in key areas, delivering exceptional medical support to your doorstep.
 			</p>
 		</div>
+	</div>
+</section>
+
+<section class="py-20 bg-brand-bg min-h-screen">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
 		<!-- Locations Grid -->
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 			<!-- Location 1: Banjara Hills -->
 			<div class="bg-white rounded-[2rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group text-left">
-				<!-- Image Header (SVG Map Graphic) -->
-				<div class="aspect-[16/9] bg-brand-cream/80 relative overflow-hidden flex items-center justify-center p-6 select-none">
-					<!-- Styled map pin background -->
-					<svg class="h-20 w-20 text-brand-red opacity-85 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M50 15c-15 0-27 12-27 27 0 19 27 43 27 43s27-24 27-43c0-15-12-27-27-27z" fill="currentColor" fill-opacity="0.1"/>
-						<circle cx="50" cy="42" r="8" fill="currentColor"/>
-						<path d="M20 75h60" stroke-linecap="round"/>
-					</svg>
+				<!-- Image Header -->
+				<div class="aspect-[16/9] bg-brand-cream relative overflow-hidden flex items-center justify-center">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/banjarahills.png" alt="Banjara Hills, Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 				</div>
 				
 				<!-- Body Content -->
@@ -72,12 +72,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- Location 2: Kondapur -->
 			<div class="bg-white rounded-[2rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group text-left">
 				<!-- Image Header -->
-				<div class="aspect-[16/9] bg-brand-cream/80 relative overflow-hidden flex items-center justify-center p-6 select-none">
-					<svg class="h-20 w-20 text-brand-coral opacity-85 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M50 15c-15 0-27 12-27 27 0 19 27 43 27 43s27-24 27-43c0-15-12-27-27-27z" fill="currentColor" fill-opacity="0.1"/>
-						<circle cx="50" cy="42" r="8" fill="currentColor"/>
-						<path d="M20 75h60" stroke-linecap="round"/>
-					</svg>
+				<div class="aspect-[16/9] bg-brand-cream relative overflow-hidden flex items-center justify-center">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/kondapur.png" alt="Kondapur, Hyderabad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 				</div>
 				
 				<!-- Body Content -->
@@ -115,12 +111,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- Location 3: Rajahmundry -->
 			<div class="bg-white rounded-[2rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group text-left">
 				<!-- Image Header -->
-				<div class="aspect-[16/9] bg-brand-cream/80 relative overflow-hidden flex items-center justify-center p-6 select-none">
-					<svg class="h-20 w-20 text-brand-red opacity-85 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M50 15c-15 0-27 12-27 27 0 19 27 43 27 43s27-24 27-43c0-15-12-27-27-27z" fill="currentColor" fill-opacity="0.1"/>
-						<circle cx="50" cy="42" r="8" fill="currentColor"/>
-						<path d="M20 75h60" stroke-linecap="round"/>
-					</svg>
+				<div class="aspect-[16/9] bg-brand-cream relative overflow-hidden flex items-center justify-center">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/rajmundry.png" alt="Rajahmundry, Andhra Pradesh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 				</div>
 				
 				<!-- Body Content -->
