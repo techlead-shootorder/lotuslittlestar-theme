@@ -61,14 +61,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="faq-item bg-white rounded-2xl border border-brand-cream overflow-hidden transition-all duration-300">
 				<!-- Header Button -->
 				<button type="button" class="faq-toggle w-full flex items-center justify-between px-8 py-6 text-left focus:outline-none select-none">
-					<span class="font-semibold text-brand-dark text-base sm:text-lg">Do you handle high-risk pregnancies?</span>
-					<svg class="faq-chevron h-5 w-5 text-brand-dark transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+					<span class="font-semibold text-brand-green text-base sm:text-lg">Do you handle high-risk pregnancies?</span>
+					<svg class="faq-chevron h-5 w-5 text-brand-green transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
 					</svg>
 				</button>
 				<!-- Answer Panel -->
 				<div class="faq-panel max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-					<div class="px-8 pb-6 text-brand-muted text-xs sm:text-sm leading-relaxed border-t border-brand-cream/60 pt-4">
+					<div class="px-8 pb-6 text-brand-green text-xs sm:text-sm leading-relaxed border-t border-brand-cream/60 pt-4">
 						Yes, we specialize in high-risk pregnancy supervision. Our team of fetal medicine consultants, maternal obstetricians, and neonatologists work together to provide continuous diagnostic scanning, painless labor support, and state-of-the-art labor suites to ensure maximum clinical safety for both mother and child.
 					</div>
 				</div>

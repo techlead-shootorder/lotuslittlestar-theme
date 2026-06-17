@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Section Header (Left Aligned) -->
 		<div class="mb-12 text-left">
-			<h2 class="text-3xl sm:text-4xl font-bold text-brand-dark font-outfit tracking-tight">
+			<h2 class="text-3xl sm:text-3xl font-semibold text-brand-green font-outfit tracking-tight">
 				Our Presence
 			</h2>
 		</div>
@@ -25,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- Card 1: Banjara Hills -->
 			<div class="bg-white p-8 rounded-[5px] shadow-sm hover:shadow-md border border-brand-cream/60 flex flex-col justify-between text-left group transition-all duration-300">
 				<div>
-					<h3 class="text-xl font-bold text-brand-dark mb-2 font-outfit">Banjara Hills</h3>
-					<p class="text-brand-muted text-xs leading-relaxed mb-6">
+					<h3 class="text-xl font-bold text-brand-green mb-2 font-outfit">Banjara Hills</h3>
+					<p class="text-brand-green text-xs leading-relaxed mb-6">
 						Road No. 12, Banjara Hills, Hyderabad - 500034
 					</p>
 					<!-- Isometric Map SVG Placeholder with medical cross pin -->
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</div>
 				<!-- External link -->
-				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-dark hover:text-brand-red font-bold text-sm transition-colors">
+				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">
 					Directions
 					<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -57,10 +57,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Card 2: Kondapur -->
-			<div class="bg-white p-8 rounded-[1.5rem] shadow-sm hover:shadow-md border border-brand-cream/60 flex flex-col justify-between text-left group transition-all duration-300">
+			<div class="bg-white p-8 rounded-[5px] shadow-sm hover:shadow-md border border-brand-cream/60 flex flex-col justify-between text-left group transition-all duration-300">
 				<div>
-					<h3 class="text-xl font-bold text-brand-dark mb-2 font-outfit">Kondapur</h3>
-					<p class="text-brand-muted text-xs leading-relaxed mb-6">
+					<h3 class="text-xl font-bold text-brand-green mb-2 font-outfit">Kondapur</h3>
+					<p class="text-brand-green text-xs leading-relaxed mb-6">
 						Survey No. 4, Kondapur Main Rd, Hyderabad - 500084
 					</p>
 					<!-- Flat Map SVG with baby pin -->
@@ -79,7 +79,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</svg>
 					</div>
 				</div>
-				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-dark hover:text-brand-red font-bold text-sm transition-colors">
+				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">
 					Directions
 					<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -88,10 +88,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Card 3: Rajahmundry -->
-			<div class="bg-white p-8 rounded-[1.5rem] shadow-sm hover:shadow-md border border-brand-cream/60 flex flex-col justify-between text-left group transition-all duration-300">
+			<div class="bg-white p-8 rounded-[5px] shadow-sm hover:shadow-md border border-brand-cream/60 flex flex-col justify-between text-left group transition-all duration-300">
 				<div>
-					<h3 class="text-xl font-bold text-brand-dark mb-2 font-outfit">Rajahmundry</h3>
-					<p class="text-brand-muted text-xs leading-relaxed mb-6">
+					<h3 class="text-xl font-bold text-brand-green mb-2 font-outfit">Rajahmundry</h3>
+					<p class="text-brand-green text-xs leading-relaxed mb-6">
 						Danavaipeta, Rajahmundry, Andhra Pradesh - 533103
 					</p>
 					<!-- Flat Map SVG with heart pin -->
@@ -109,7 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</svg>
 					</div>
 				</div>
-				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-dark hover:text-brand-red font-bold text-sm transition-colors">
+				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">
 					Directions
 					<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
