@@ -58,14 +58,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- Image/Graphic Column with Overlay (Right) -->
 			<div class="lg:col-span-6 relative">
-				<div class="relative w-full rounded-[2.5rem] overflow-hidden border border-brand-cream/60 shadow-lg">
+				<div class="relative w-full  overflow-hidden border border-brand-cream/60 shadow-lg">
 					<!-- Developmental Playroom Montessori Image -->
 					<img class="w-full h-auto min-h-[350px] lg:min-h-[420px] object-cover" 
-						src="https://images.unsplash.com/photo-1597176116047-97824341f107?q=80&w=1200&auto=format&fit=crop" 
+						src="http://lotuslittlestars.in/wp-content/uploads/2026/06/special-right-img.png" 
 						alt="Child Development Center Playroom">
 					
 					<!-- Overlay Card in Bottom Left -->
-					<div class="absolute bottom-6 left-6 bg-[#374E63]/90 backdrop-blur-md p-6 rounded-2xl text-left max-w-sm shadow-md border border-white/10 select-none">
+					<div class="absolute bottom-6 left-6  p-6  text-left max-w-sm  select-none">
 						<h4 class="text-white font-outfit text-base font-bold mb-1">Milestone Support</h4>
 						<p class="text-white/80 text-xs sm:text-sm">Expert care for developmental pathways</p>
 					</div>
