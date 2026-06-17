@@ -25,7 +25,7 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 ?>
 
 <section class="py-12 bg-gradient-to-br from-brand-bg to-brand-cream/30 border-b border-brand-cream relative">
-	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+	<div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Navigation Breadcrumb -->
 		<nav class="text-xs text-brand-muted mb-8 select-none">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:text-brand-red transition-all">Home</a>
@@ -36,7 +36,7 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 		</nav>
 
 		<!-- Doctor Banner Card -->
-		<div class="bg-white rounded-[2.5rem] border border-brand-cream shadow-md overflow-hidden p-6 sm:p-10 flex flex-col md:flex-row gap-10 items-center">
+		<div class="p-6 sm:p-3 flex flex-col md:flex-row gap-10 items-center">
 			
 			<!-- Photo Column (Left) -->
 			<div class="w-full md:w-1/3 aspect-square max-w-[280px] bg-brand-cream rounded-3xl overflow-hidden flex items-center justify-center shrink-0 shadow-inner">
@@ -86,10 +86,10 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 
 				<!-- Call to actions -->
 				<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-					<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-full shadow-md transition-all">
+					<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-[12px] shadow-md transition-all">
 						Book Appointment
 					</a>
-					<a href="tel:<?php echo esc_attr( $phone ); ?>" class="inline-flex items-center justify-center px-8 h-12 border border-brand-red text-brand-red hover:bg-brand-cream text-xs font-bold rounded-full transition-all">
+					<a href="tel:<?php echo esc_attr( $phone ); ?>" class="inline-flex items-center justify-center px-8 h-12 border border-brand-red text-brand-red hover:bg-brand-cream text-xs font-bold rounded-[12px] transition-all">
 						Call Now
 					</a>
 				</div>

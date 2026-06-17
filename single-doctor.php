@@ -14,5 +14,7 @@ get_header();
 // Single doctor layout sections
 get_template_part( 'template-parts/single-doctor/doctor-banner' );
 get_template_part( 'template-parts/single-doctor/doctor-details' );
+get_template_part( 'template-parts/single-doctor/doctor-education' );
+get_template_part( 'template-parts/single-doctor/doctor-awards' );
 
 get_footer();
