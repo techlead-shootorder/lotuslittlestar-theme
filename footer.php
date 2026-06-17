@@ -15,16 +15,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-brand-border">
 			<!-- Column 1: Brand Info -->
 			<div class="flex flex-col gap-4">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center gap-2">
-					<svg class="h-7 w-7 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-						<path d="M12 6a6 6 0 0 1 6 6c0 3-6 6-6 6s-6-3-6-6a6 6 0 0 1 6-6z"/>
-						<circle cx="12" cy="12" r="2" fill="currentColor"/>
-					</svg>
-					<span class="font-outfit text-xl font-bold text-brand-red">Lotus<span class="text-brand-coral font-medium text-sm ml-1">Little Stars</span></span>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-logo-1.png" alt="Lotus Little Stars" class="h-16 w-22 object-contain">
 				</a>
-				<p class="text-brand-muted text-sm leading-relaxed mt-2">
-					Providing world-class healthcare for mothers, newborns, and children with absolute dedication, advanced technologies, and warm, compassionate clinical expertise.
+				<p class="text-brand-green text-xs leading-relaxed mt-2 pl-2">
+					Dedicated to providing compassionate and advanced healthcare for mothers and children for over 16 years.
 				</p>
 				
 			</div>
