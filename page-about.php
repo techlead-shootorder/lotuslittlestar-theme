@@ -14,7 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 
 // About page section template parts
-get_template_part( 'template-parts/about/hero-section' );
+
+get_template_part( 'template-parts/about/hero-about-section' );
 get_template_part( 'template-parts/about/legacy-about-section' );
 get_template_part( 'template-parts/about/stats-about' );
 get_template_part( 'template-parts/about/mission-vision' );

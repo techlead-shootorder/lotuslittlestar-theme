@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="relative bg-cover bg-center py-24 sm:py-32 border-b border-brand-cream overflow-hidden" 
-	style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1600&auto=format&fit=crop');">
+	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/about-bg.png');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
 	<div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/90 to-brand-bg/30 lg:to-transparent"></div>
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</span>
 		
 		<!-- Main Heading -->
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight max-w-2xl mb-6 font-outfit">
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-brand-green leading-tight max-w-2xl mb-6 font-outfit">
 			Advanced Women &<br>Child Care
 		</h1>
 		

@@ -31,10 +31,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<circle cx="15.5" cy="8.5" r="1" fill="currentColor" />
 							</svg>
 						</div>
-						<h3 class="font-outfit text-2xl font-bold text-brand-dark">Our Mission</h3>
+						<h3 class="font-outfit text-2xl font-bold text-brand-green">Our Mission</h3>
 					</div>
 					<!-- Quote Text -->
-					<p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-8 font-medium">
+					<p class="text-brand-green text-base sm:text-lg leading-relaxed mb-8 font-medium">
 						"To deliver world-class women and child healthcare with compassion, expertise, and innovation."
 					</p>
 				</div>
@@ -56,10 +56,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<circle cx="12" cy="12" r="1" fill="currentColor" />
 							</svg>
 						</div>
-						<h3 class="font-outfit text-2xl font-bold text-brand-dark">Our Vision</h3>
+						<h3 class="font-outfit text-2xl font-bold text-brand-green">Our Vision</h3>
 					</div>
 					<!-- Quote Text -->
-					<p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-8 font-medium">
+					<p class="text-brand-green text-base sm:text-lg leading-relaxed mb-8 font-medium">
 						"To be the most trusted healthcare partner for women, children, and families, shaping healthier generations."
 					</p>
 				</div>

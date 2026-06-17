@@ -44,12 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="flex flex-col items-center">
 				<!-- Centered Icon -->
 				<div class="w-12 h-12 flex items-center justify-center mb-4 text-[#2D5A44] select-none">
-					<!-- Profile with Gear Icon -->
-					<svg class="h-8 w-8 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-						<path d="M9 21H7a2 2 0 0 1-2-2v-2a5 5 0 0 1 4-4.9V12a3 3 0 0 1 6 0v.1A5 5 0 0 1 19 17v2a2 2 0 0 1-2 2h-2" />
-						<circle cx="12" cy="7" r="1.5"/>
-						<path d="M12 5v1M12 8v1M10 7h1M13 7h1" />
-					</svg>
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/epertise-icon.png" alt="Expertise Icon" class="h-8 w-8 object-contain">
 				</div>
 				<h3 class="font-outfit text-xl font-bold text-brand-dark mb-3">Expertise</h3>
 				<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-xs font-medium">
