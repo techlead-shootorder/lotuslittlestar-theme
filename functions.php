@@ -222,8 +222,10 @@ add_action( 'save_post', 'lotus_save_doctor_meta' );
 /**
  * Register Nav Menu
  */
-register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'lotus' ),
-    'footer'  => __( 'Footer Menu', 'lotus' ),
-) );
+function lotus_register_menus() {
+    register_nav_menus( array(
+        'primary' => __( 'Primary Menu', 'lotus' ),
+        'footer'  => __( 'Footer Menu', 'lotus' ),
+    ) );
+}
 add_action( 'init', 'lotus_register_menus' );
