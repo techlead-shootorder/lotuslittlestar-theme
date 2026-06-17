@@ -101,7 +101,7 @@ if ( $doctors_query->have_posts() ) {
 						 data-specialty="<?php echo esc_attr( $specialty ); ?>">
 						
 						<!-- Image Container -->
-						<div class="aspect-[4/3] bg-brand-cream relative overflow-hidden flex items-center justify-center">
+						<div class="aspect-[2/3] bg-brand-cream relative overflow-hidden flex items-center justify-center">
 							<?php if ( has_post_thumbnail() ) : ?>
 								<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500' ) ); ?>
 							<?php else : ?>
