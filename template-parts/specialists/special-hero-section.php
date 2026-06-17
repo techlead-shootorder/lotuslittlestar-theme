@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="relative bg-cover bg-center py-28 sm:py-36 border-b border-brand-cream/60 overflow-hidden" 
-	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/specialist-hero-bg.png');">
+<section class="relative bg-cover bg-center py-10 sm:py-10 border-b border-brand-cream/60 overflow-hidden" 
+	style="background-image: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1600&auto=format&fit=crop');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
 	<div class="absolute inset-0 bg-gradient-to-r from-[#F5F3EF] via-[#F5F3EF]/95 to-[#F5F3EF]/30 lg:to-transparent"></div>
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</span>
 		
 		<!-- Main Heading -->
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-dark leading-tight max-w-2xl mb-6 font-outfit">
+		<h1 class="text-3xl sm:text-3xl lg:text-5xl font-semibold text-brand-green leading-tight max-w-2xl mb-6 font-outfit">
 			Specialized Care for Every Little Milestone
 		</h1>
 		

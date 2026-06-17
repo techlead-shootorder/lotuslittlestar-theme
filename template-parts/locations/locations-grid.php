@@ -21,11 +21,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl">
 				Lotus Little Stars operates advanced multi-specialty centers in key areas, delivering exceptional medical support to your doorstep.
 			</p>
+			<div class="mt-6 flex">
+				<a href="#locations-grid" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-full shadow-sm hover:shadow transition-all duration-200">
+					View Centers
+				</a>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section class="py-20 bg-brand-bg min-h-screen">
+<section id="locations-grid" class="py-20 bg-brand-bg min-h-screen">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
 		<!-- Locations Grid -->
