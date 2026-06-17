@@ -1,0 +1,8 @@
+deployment:
+
+  tasks:
+
+    - export DEPLOYPATH=/home/lotushospitals/public_html/lotuslittlestars.in/wp-content/themes/lotus
+
+    - /bin/cp -R * $DEPLOYPATH
+ 
