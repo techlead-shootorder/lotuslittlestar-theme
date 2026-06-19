@@ -101,17 +101,17 @@ if ( $is_grid ) {
 		<div>
 			<div class="mb-4">
 				<h3 class="text-base font-bold text-brand-green line-clamp-1 group-hover:text-brand-red transition-colors"><?php echo esc_html( $name ); ?></h3>
-				<p class="text-xs text-brand-muted mt-0.5 line-clamp-1"><?php echo esc_html( $specialty ); ?></p>
+				<p class="text-xs text-brand-muted mt-0.5 leading-normal"><?php echo esc_html( $specialty ); ?></p>
 			</div>
 			
 			<div class="mb-5 flex flex-col gap-1.5 text-[11px] border-t border-brand-cream/40 pt-3">
-				<div class="flex justify-between items-center">
-					<span class="font-medium text-brand-muted/70">Department:</span>
-					<span class="font-bold text-brand-red"><?php echo esc_html( $department ); ?></span>
+				<div class="flex items-start gap-2">
+					<span class="font-medium text-brand-muted/70 w-[75px] shrink-0">Department:</span>
+					<span class="font-bold text-brand-red uppercase leading-tight"><?php echo esc_html( $department ); ?></span>
 				</div>
-				<div class="flex justify-between items-center">
-					<span class="font-medium text-brand-muted/70">Experience:</span>
-					<span class="font-bold text-brand-dark"><?php echo esc_html( $experience ); ?></span>
+				<div class="flex items-start gap-2">
+					<span class="font-medium text-brand-muted/70 w-[75px] shrink-0">Experience:</span>
+					<span class="font-bold text-brand-dark leading-tight"><?php echo esc_html( $experience ); ?></span>
 				</div>
 			</div>
 		</div>
