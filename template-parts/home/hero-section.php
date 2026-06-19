@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-					<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-14 bg-brand-red hover:bg-brand-red-hover text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
+					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-14 bg-brand-red hover:bg-brand-red-hover text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
 						Book Appointment
 					</a>
 					<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-14 bg-white hover:bg-brand-cream text-brand-red border-2 border-brand-red font-semibold rounded-full shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-200 text-base">
