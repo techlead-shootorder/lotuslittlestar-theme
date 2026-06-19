@@ -37,8 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Gynecology</h3>
 					<p class="text-brand-green text-xs leading-relaxed mb-6">
-						Comprehensive women's health services from adolescent care to menopause management.
-					</p>
+From preventive women’s wellness to advanced surgical care, we offer expertise in treating ovarian cysts, fibroids, uterus removal, MTP, and other gynecological conditions for every stage of a woman’s health journey.					</p>
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
@@ -59,9 +58,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<path d="M12 8c-2 0-3.5 1.5-3.5 3.5v4.5h1.5v6h4v-6h1.5v-4.5C15.5 9.5 14 8 12 8z" fill="currentColor"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Maternity & Fetal</h3>
+					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Obstetrics & Fetal Care</h3>
 					<p class="text-brand-green text-xs leading-relaxed mb-6">
-						High-risk pregnancy management and specialized fetal medicine diagnostic care.
+						Providing holistic care for pregnancy, childbirth, and maternity, with specialized support for high-risk pregnancies and cutting-edge fetal medicine for optimal mother and baby outcomes.
 					</p>
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
@@ -86,9 +85,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<path d="M12 3c-.5.5-1.5.5-1.5 1.5s1 1 1 1"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Pediatric Care</h3>
+					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">General Pediatrics</h3>
 					<p class="text-brand-muted text-xs leading-relaxed mb-6">
-						Expert care for infants, children and adolescents across various sub-specialties.
+						Comprehensive medical care for children, including immunizations, growth monitoring, common illnesses, and preventive health programs for overall well-being.
 					</p>
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
@@ -110,10 +109,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<path d="M12 11v6M9 14h6"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Neonatal NICU</h3>
+					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Neonatology & Intensive Care</h3>
 					<p class="text-brand-green text-xs leading-relaxed mb-6">
-						Level III NICU facilities providing advanced life support for premature newborns.
-					</p>
+						Specialized neonatal and pediatric intensive care services (NICU & PICU) designed to manage critical conditions, premature births, and life-threatening illnesses with utmost precision.
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
@@ -132,9 +130,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<path d="M6 18h12M8 18v-3a4 4 0 0 1 4-4h2v2M12 11V4h4v7M16 7h2"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Super-Specialties</h3>
+					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Pediatric Multi-Speciality</h3>
 					<p class="text-brand-green text-xs leading-relaxed mb-6">
-						Nephrology, Cardiology, and Oncology specialized treatments for children.
+						Expertise across multiple specialties, including pediatric surgery, oncology, nephrology, dentistry, ENT, orthopedics, gastroenterology, endocrinology, plastic, and neuro surgery to cater to the diverse healthcare needs of children.
 					</p>
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
@@ -158,9 +156,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<path d="M18 5.5v5M15.5 8h5"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Developmental</h3>
+					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Child Development Center (CDC)</h3>
 					<p class="text-brand-green text-xs leading-relaxed mb-6">
-						Holistic child development therapy and behavioral counseling programs.
+						A nurturing space offering therapies, assessments, and interventions to support children with developmental delays, learning challenges, or special needs, enabling them to thrive.
 					</p>
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
