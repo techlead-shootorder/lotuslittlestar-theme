@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
 			
 			<!-- Card 1: Trust & Excellence -->
-			<div class="bg-white rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 group">
+			<div class="bg-[#F1F4F0] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 group">
 				<div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-brand-red/10 text-brand-red mb-6 group-hover:scale-105 transition-transform duration-300">
 					<!-- Checkmark Seal SVG -->
 					<svg class="w-6 h-6 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Card 2: Integrated Care -->
-			<div class="bg-white rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 group">
+			<div class="bg-[#FDF5F7] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 group">
 				<div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-brand-red/10 text-brand-red mb-6 group-hover:scale-105 transition-transform duration-300">
 					<!-- Infinity SVG -->
 					<svg class="w-6 h-6 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -57,7 +57,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Card 3: Leading Specialists -->
-			<div class="bg-white rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 group">
+			<div class="bg-[#F5F5FF] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 group">
 				<div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-brand-red/10 text-brand-red mb-6 group-hover:scale-105 transition-transform duration-300">
 					<!-- Group of Users SVG -->
 					<svg class="w-6 h-6 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Card 4: Expert Guidance -->
-			<div class="bg-white rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 lg:col-start-2 group">
+			<div class="bg-[#FCF8F0] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-1 lg:col-span-2 lg:col-start-2 group">
 				<div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-brand-red/10 text-brand-red mb-6 group-hover:scale-105 transition-transform duration-300">
 					<!-- Abstract Brain/Mind SVG -->
 					<svg class="w-6 h-6 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -93,7 +93,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Card 5: Growing Network -->
-			<div class="bg-white rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-2 lg:col-span-2 group">
+			<div class="bg-[#F0F8F8] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col items-start text-left md:col-span-2 lg:col-span-2 group">
 				<div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-brand-red/10 text-brand-red mb-6 group-hover:scale-105 transition-transform duration-300">
 					<!-- Connected Nodes SVG -->
 					<svg class="w-6 h-6 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
