@@ -15,6 +15,6 @@ get_header();
 get_template_part( 'template-parts/single-doctor/doctor-banner' );
 get_template_part( 'template-parts/single-doctor/doctor-details' );
 get_template_part( 'template-parts/single-doctor/doctor-education' );
-get_template_part( 'template-parts/single-doctor/doctor-award' );
+// get_template_part( 'template-parts/single-doctor/doctor-award' );
 
 get_footer();
