@@ -23,6 +23,7 @@ function cleanPHP(content) {
         .replace(/<\?php body_class\(\);\s*\?>/g, 'class="bg-brand-bg text-brand-dark font-sans antialiased min-h-screen flex flex-col"')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/'\s*\)\s*\);\s*\?>/g, 'index.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/about\/'\s*\)\s*\);\s*\?>/g, 'about.html')
+        .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/contact\/'\s*\)\s*\);\s*\?>/g, 'contact.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/doctors\/'\s*\)\s*\);\s*\?>/g, 'doctors.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/locations\/'\s*\)\s*\);\s*\?>/g, 'locations.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/specialists\/'\s*\)\s*\);\s*\?>/g, 'specialists.html')
@@ -60,6 +61,7 @@ function compilePage(pageFile, outputName) {
         .replace(/<\?php get_footer\(\);\s*\?>/g, '')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/'\s*\)\s*\);\s*\?>/g, 'index.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/about\/'\s*\)\s*\);\s*\?>/g, 'about.html')
+        .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/contact\/'\s*\)\s*\);\s*\?>/g, 'contact.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/doctors\/'\s*\)\s*\);\s*\?>/g, 'doctors.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/locations\/'\s*\)\s*\);\s*\?>/g, 'locations.html')
         .replace(/<\?php echo esc_url\(\s*home_url\(\s*'\/specialists\/'\s*\)\s*\);\s*\?>/g, 'specialists.html')
@@ -77,6 +79,7 @@ function compilePage(pageFile, outputName) {
 
 compilePage('front-page.php', 'index.html');
 compilePage('page-about.php', 'about.html');
+compilePage('page-contact.php', 'contact.html');
 compilePage('page-doctors.php', 'doctors.html');
 compilePage('page-locations.php', 'locations.html');
 compilePage('page-specialists.php', 'specialists.html');

@@ -80,6 +80,7 @@
 				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Specialties</a>
 				<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Doctors</a>
 				<a href="<?php echo esc_url( home_url( '/locations/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Locations</a>
+				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Contact</a>
 			</nav>
 
 			<!-- Action Button -->
@@ -110,6 +111,7 @@
 			<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Specialties</a>
 			<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Doctors</a>
 			<a href="<?php echo esc_url( home_url( '/locations/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Locations</a>
+			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Contact</a>
 			<div class="pt-4 pb-2 px-3 border-t border-brand-cream">
 				<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="w-full inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md transition-all text-sm">
 					Book Appointment

@@ -142,6 +142,8 @@ if ( $request === '' || $request === '/index.php' ) {
 	include ABSPATH . 'front-page.php';
 } elseif ( $request === '/about' ) {
 	include ABSPATH . 'page-about.php';
+} elseif ( $request === '/contact' ) {
+	include ABSPATH . 'page-contact.php';
 } elseif ( $request === '/doctors' ) {
 	include ABSPATH . 'page-doctors.php';
 } elseif ( $request === '/locations' ) {
