@@ -13,9 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
-// Contact page template parts
-get_template_part( 'template-parts/contact/contact-hero-section' );
-get_template_part( 'template-parts/contact/our-center' );
-get_template_part( 'template-parts/contact/contact-form' );
+// Locations grid template part (which now includes the contact form on the right of its hero section)
+get_template_part( 'template-parts/locations/locations-grid' );
 
 get_footer();

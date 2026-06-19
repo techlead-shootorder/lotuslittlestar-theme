@@ -148,7 +148,8 @@ if ( ! function_exists( 'add_action' ) ) {
 	} elseif ( $request === '/doctors' ) {
 		include ABSPATH . 'page-doctors.php';
 	} elseif ( $request === '/locations' ) {
-		include ABSPATH . 'page-locations.php';
+		header( 'Location: ' . home_url( '/contact' ) );
+		exit;
 	} elseif ( $request === '/specialists' ) {
 		include ABSPATH . 'page-specialists.php';
 	} elseif ( preg_match( '#^/doctors/.+#', $request ) ) {

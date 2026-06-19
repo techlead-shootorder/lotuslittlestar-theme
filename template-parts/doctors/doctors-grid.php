@@ -37,7 +37,7 @@ if ( $doctors_query->have_posts() ) {
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<!-- Section Header -->
 		<div class="max-w-3xl mb-0">
-			<span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold border border-brand-red text-brand-red tracking-wide mb-4">Our Medical Team</span>
+			<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">Our Medical Team</span>
 			<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-green mt-2 mb-4">
 				Meet Our Experts
 			</h1>
