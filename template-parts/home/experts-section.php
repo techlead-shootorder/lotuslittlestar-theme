@@ -69,19 +69,25 @@ if ( ! $doctors_query->have_posts() ) {
 				// Fallback mockup doctors matching the Figma design layout exactly!
 				$fallback_doctors = array(
 					array(
-						'name'      => 'Dr. V.S.V. Prasad',
-						'specialty' => 'Neonatology & Pediatrics',
-						'color'     => 'text-brand-red',
+						'name'       => 'Dr. V.S.V. Prasad',
+						'specialty'  => 'Neonatology & Pediatrics',
+						'department' => 'Pediatrics',
+						'experience' => '18+ Yrs',
+						'color'      => 'text-brand-red',
 					),
 					array(
-						'name'      => 'Dr. Satish Ghanta',
-						'specialty' => 'Pediatric Intensive Care',
-						'color'     => 'text-brand-coral',
+						'name'       => 'Dr. Satish Ghanta',
+						'specialty'  => 'Pediatric Intensive Care',
+						'department' => 'Pediatrics',
+						'experience' => '15+ Yrs',
+						'color'      => 'text-brand-coral',
 					),
 					array(
-						'name'      => 'Dr. Mehul A. Shah',
-						'specialty' => 'Pediatric Orthopedics',
-						'color'     => 'text-brand-red',
+						'name'       => 'Dr. Mehul A. Shah',
+						'specialty'  => 'Pediatric Orthopedics',
+						'department' => 'Orthopedics',
+						'experience' => '20+ Yrs',
+						'color'      => 'text-brand-red',
 					),
 				);
 

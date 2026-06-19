@@ -16,16 +16,26 @@ $max_width_class = isset( $args['max_width'] ) ? $args['max_width'] : '';
 
 // Resolve values based on whether it is fallback or a custom post
 if ( $fallback_doctor ) {
-	$name      = $fallback_doctor['name'];
-	$specialty = $fallback_doctor['specialty'];
-	$permalink = isset( $fallback_doctor['permalink'] ) ? $fallback_doctor['permalink'] : home_url( '/doctors/' );
+	$name       = $fallback_doctor['name'];
+	$specialty  = $fallback_doctor['specialty'];
+	$department = isset( $fallback_doctor['department'] ) ? $fallback_doctor['department'] : 'Pediatrics';
+	$experience = isset( $fallback_doctor['experience'] ) ? $fallback_doctor['experience'] : '10+ Yrs';
+	$permalink  = isset( $fallback_doctor['permalink'] ) ? $fallback_doctor['permalink'] : home_url( '/doctors/' );
 } else {
-	$name      = get_the_title();
-	$specialty = get_post_meta( get_the_ID(), '_doctor_specialty', true );
+	$name       = get_the_title();
+	$specialty  = get_post_meta( get_the_ID(), '_doctor_specialty', true );
 	if ( empty( $specialty ) ) {
 		$specialty = 'Specialist Doctor';
 	}
-	$permalink = get_permalink();
+	$department = get_post_meta( get_the_ID(), '_doctor_department', true );
+	if ( empty( $department ) ) {
+		$department = 'Pediatrics';
+	}
+	$experience = get_post_meta( get_the_ID(), '_doctor_experience', true );
+	if ( empty( $experience ) ) {
+		$experience = '10+ Yrs';
+	}
+	$permalink  = get_permalink();
 }
 
 // Generate classes
@@ -88,9 +98,22 @@ if ( $is_grid ) {
 	
 	<!-- Card Body -->
 	<div class="p-5 flex flex-col justify-between flex-grow text-left">
-		<div class="mb-4">
-			<h3 class="text-base font-bold text-brand-green line-clamp-1 group-hover:text-brand-red transition-colors"><?php echo esc_html($name); ?></h3>
-			<p class="text-xs text-brand-muted mt-0.5 line-clamp-1"><?php echo esc_html( $specialty ); ?></p>
+		<div>
+			<div class="mb-4">
+				<h3 class="text-base font-bold text-brand-green line-clamp-1 group-hover:text-brand-red transition-colors"><?php echo esc_html( $name ); ?></h3>
+				<p class="text-xs text-brand-muted mt-0.5 line-clamp-1"><?php echo esc_html( $specialty ); ?></p>
+			</div>
+			
+			<div class="mb-5 flex flex-col gap-1.5 text-[11px] border-t border-brand-cream/40 pt-3">
+				<div class="flex justify-between items-center">
+					<span class="font-medium text-brand-muted/70">Department:</span>
+					<span class="font-bold text-brand-red"><?php echo esc_html( $department ); ?></span>
+				</div>
+				<div class="flex justify-between items-center">
+					<span class="font-medium text-brand-muted/70">Experience:</span>
+					<span class="font-bold text-brand-dark"><?php echo esc_html( $experience ); ?></span>
+				</div>
+			</div>
 		</div>
 		
 		<div class="mt-auto">
