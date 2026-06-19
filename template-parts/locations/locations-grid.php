@@ -10,14 +10,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="relative bg-cover bg-center py-16 lg:py-24 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/location-hero-bg.png');">
+<section class="relative bg-cover bg-center py-16 lg:py-14 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/location-hero-bg.png');">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 			
 			<!-- Left Column: Content -->
 			<div class="lg:col-span-6 xl:col-span-7">
 				<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">Contact & Locations</span>
-				<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-green mt-2 mb-4">
+				<h1 class="text-4xl sm:text-5xl font-semibold text-brand-green mt-2 mb-4">
 					Our Hospital Network
 				</h1>
 				<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-xl">
