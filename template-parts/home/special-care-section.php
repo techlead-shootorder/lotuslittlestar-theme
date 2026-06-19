@@ -40,12 +40,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						Comprehensive women's health services from adolescent care to menopause management.
 					</p>
 				</div>
-				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
+				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
 					<svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
 					</svg>
-				</a>
+				</a> -->
 			</div>
 
 			<!-- Wing 2: Maternity & Fetal -->
@@ -64,12 +64,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						High-risk pregnancy management and specialized fetal medicine diagnostic care.
 					</p>
 				</div>
-				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
+				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
 					<svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
 					</svg>
-				</a>
+				</a> -->
 			</div>
 
 			<!-- Wing 3: Pediatric Care -->
@@ -91,12 +91,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						Expert care for infants, children and adolescents across various sub-specialties.
 					</p>
 				</div>
-				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
+				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
 					<svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
 					</svg>
-				</a>
+				</a> -->
 			</div>
 
 			<!-- Wing 4: Neonatal NICU -->
@@ -115,12 +115,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						Level III NICU facilities providing advanced life support for premature newborns.
 					</p>
 				</div>
-				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
+				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
 					<svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
 					</svg>
-				</a>
+				</a> -->
 			</div>
 
 			<!-- Wing 5: Super-Specialties -->
@@ -137,12 +137,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						Nephrology, Cardiology, and Oncology specialized treatments for children.
 					</p>
 				</div>
-				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
+				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
 					<svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
 					</svg>
-				</a>
+				</a> -->
 			</div>
 
 			<!-- Wing 6: Developmental -->
@@ -163,12 +163,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						Holistic child development therapy and behavioral counseling programs.
 					</p>
 				</div>
-				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
+				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
 					Learn More
 					<svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
 					</svg>
-				</a>
+				</a> -->
 			</div>
 
 		</div>

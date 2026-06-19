@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <section class="relative overflow-hidden py-16 lg:py-24 border-b border-brand-cream min-h-[550px] lg:min-h-[600px] flex items-center">
 	<!-- Background Image -->
-	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/home-hero.jpg');"></div>
+	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/special-hero-banner.png');"></div>
 	
 	<!-- Overlay Gradient to ensure text readability -->
 	<div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60 lg:from-white lg:via-white/70 lg:to-transparent -z-10"></div>

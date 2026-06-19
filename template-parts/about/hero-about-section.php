@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="relative bg-cover bg-center py-24 sm:py-32 border-b border-brand-cream overflow-hidden" 
-	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/about-bg.png');">
+	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/home-banner.png');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
 	<div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/90 to-brand-bg/30 lg:to-transparent"></div>
