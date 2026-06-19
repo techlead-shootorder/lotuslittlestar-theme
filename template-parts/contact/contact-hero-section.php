@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- Right Column: Image -->
 			<div class="lg:col-span-7 flex justify-center lg:justify-end">
 				<div class="w-full max-w-2xl">
-					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/contact-hero.png" 
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/contact-hero-right.png" 
 						 alt="Lotus Little Stars Reception Area" 
 						 class="w-full h-auto rounded-[2rem] shadow-sm object-cover aspect-[4/3] sm:aspect-[16/10]" 
 						 loading="lazy">
