@@ -96,7 +96,7 @@ if ( $doctors_query->have_posts() ) {
 					}
 					?>
 					<!-- CPT Doctor Grid Card -->
-					<div class="doctor-card-item bg-white rounded-[2rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+					<div class="doctor-card-item bg-white rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
 						 data-name="<?php echo esc_attr( strtolower( get_the_title() ) ); ?>"
 						 data-specialty="<?php echo esc_attr( $specialty ); ?>">
 						
@@ -182,7 +182,7 @@ if ( $doctors_query->have_posts() ) {
 				foreach ( $fallback_docs as $index => $doc ) :
 					?>
 					<!-- Fallback Doctor Card -->
-					<div class="doctor-card-item bg-white rounded-[2rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+					<div class="doctor-card-item bg-white rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
 						 data-name="<?php echo esc_attr( strtolower( $doc['name'] ) ); ?>"
 						 data-specialty="<?php echo esc_attr( $doc['specialty'] ); ?>">
 						
