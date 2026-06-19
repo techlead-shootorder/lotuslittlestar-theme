@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="py-14 bg-brand-bg/50 border-b border-brand-cream/60 relative overflow-hidden">
+<section class="py-14 bg-white border-b border-brand-cream/60 relative overflow-hidden">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		
 		<!-- Section Header -->
