@@ -12,14 +12,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Fetch doctor custom post metadata
 $specialty    = get_post_meta( get_the_ID(), '_doctor_specialty', true );
 $experience   = get_post_meta( get_the_ID(), '_doctor_experience', true );
-$patients     = get_post_meta( get_the_ID(), '_doctor_patients', true );
+$department   = get_post_meta( get_the_ID(), '_doctor_department', true );
 $success_rate = get_post_meta( get_the_ID(), '_doctor_success_rate', true );
 $phone        = get_post_meta( get_the_ID(), '_doctor_phone', true );
 
 // Fallbacks for preview details matching Figma defaults (Dr. V.S.V. Prasad)
 $specialty    = ! empty( $specialty ) ? $specialty : 'Senior Consultant Neonatologist';
 $experience   = ! empty( $experience ) ? $experience : '18+ Yrs';
-$patients     = ! empty( $patients ) ? $patients : '15,000+';
+$department   = ! empty( $department ) ? $department : 'Pediatrics';
 $success_rate = ! empty( $success_rate ) ? $success_rate : '99.2%';
 $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 ?>
@@ -71,8 +71,8 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 				<!-- Badges grid -->
 				<div class="grid grid-cols-3 gap-4 border-y border-brand-cream/80 py-4 w-full mb-8 select-none">
 					<div class="text-center">
-						<p class="text-2xl font-bold font-outfit text-brand-red"><?php echo esc_html( $patients ); ?></p>
-						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Patients Treated</p>
+						<p class="text-xl font-bold font-outfit text-brand-red line-clamp-1"><?php echo esc_html( $department ); ?></p>
+						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Department</p>
 					</div>
 					<div class="text-center border-x border-brand-cream/80">
 						<p class="text-2xl font-bold font-outfit text-brand-dark"><?php echo esc_html( $experience ); ?></p>

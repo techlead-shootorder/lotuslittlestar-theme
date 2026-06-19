@@ -109,7 +109,7 @@ function lotus_render_doctor_meta_box( $post ) {
 	// Retrieve existing values
 	$specialty       = get_post_meta( $post->ID, '_doctor_specialty', true );
 	$experience      = get_post_meta( $post->ID, '_doctor_experience', true );
-	$patients        = get_post_meta( $post->ID, '_doctor_patients', true );
+	$department      = get_post_meta( $post->ID, '_doctor_department', true );
 	$success_rate    = get_post_meta( $post->ID, '_doctor_success_rate', true );
 	$phone           = get_post_meta( $post->ID, '_doctor_phone', true );
 	$expertise       = get_post_meta( $post->ID, '_doctor_expertise', true );
@@ -132,9 +132,9 @@ function lotus_render_doctor_meta_box( $post ) {
 				</td>
 			</tr>
 			<tr>
-				<th style="width: 20%; text-align: left;"><label for="doctor_patients"><?php _e( 'Patients Treated', 'lotus' ); ?></label></th>
+				<th style="width: 20%; text-align: left;"><label for="doctor_department"><?php _e( 'Department', 'lotus' ); ?></label></th>
 				<td>
-					<input type="text" id="doctor_patients" name="doctor_patients" value="<?php echo esc_attr( $patients ); ?>" style="width: 100%;" placeholder="e.g. 15,000+" />
+					<input type="text" id="doctor_department" name="doctor_department" value="<?php echo esc_attr( $department ); ?>" style="width: 100%;" placeholder="e.g. Pediatrics" />
 				</td>
 			</tr>
 			<tr>
@@ -227,7 +227,7 @@ function lotus_save_doctor_meta( $post_id ) {
 	$fields = array(
 		'doctor_specialty'    => '_doctor_specialty',
 		'doctor_experience'   => '_doctor_experience',
-		'doctor_patients'     => '_doctor_patients',
+		'doctor_department'   => '_doctor_department',
 		'doctor_success_rate' => '_doctor_success_rate',
 		'doctor_phone'        => '_doctor_phone',
 	);
