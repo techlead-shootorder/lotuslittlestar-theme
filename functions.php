@@ -115,6 +115,7 @@ function lotus_render_doctor_meta_box( $post ) {
 	$expertise       = get_post_meta( $post->ID, '_doctor_expertise', true );
 	$education       = get_post_meta( $post->ID, '_doctor_education', true );
 	$awards          = get_post_meta( $post->ID, '_doctor_awards', true );
+	$show_in_experts = get_post_meta( $post->ID, '_doctor_show_in_experts', true );
 	?>
 	<div style="font-family: sans-serif; padding: 10px;">
 		<table class="form-table" style="width: 100%;">
@@ -164,6 +165,13 @@ function lotus_render_doctor_meta_box( $post ) {
 				<th style="width: 20%; text-align: left;"><label for="doctor_awards"><?php _e( 'Awards & Recognition (One per line)', 'lotus' ); ?></label></th>
 				<td>
 					<textarea id="doctor_awards" name="doctor_awards" rows="4" style="width: 100%;" placeholder="e.g.&#10;Best Neonatologist Award&#10;Gold Medal in Pediatrics&#10;Outstanding Clinician Award"><?php echo esc_textarea( $awards ); ?></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th style="width: 20%; text-align: left;"><label for="doctor_show_in_experts"><?php _e( 'Show in Experts Section', 'lotus' ); ?></label></th>
+				<td>
+					<input type="checkbox" id="doctor_show_in_experts" name="doctor_show_in_experts" value="1" <?php checked( $show_in_experts, '1' ); ?> />
+					<span class="description"><?php _e( 'Display this doctor in the Home Page Experts Section.', 'lotus' ); ?></span>
 				</td>
 			</tr>
 		</table>
@@ -242,6 +250,10 @@ function lotus_save_doctor_meta( $post_id ) {
 			update_post_meta( $post_id, $meta_key, sanitize_textarea_field( $_POST[ $post_key ] ) );
 		}
 	}
+
+	// Update checkbox fields
+	$show_in_experts = isset( $_POST['doctor_show_in_experts'] ) ? '1' : '0';
+	update_post_meta( $post_id, '_doctor_show_in_experts', $show_in_experts );
 }
 add_action( 'save_post', 'lotus_save_doctor_meta' );
 

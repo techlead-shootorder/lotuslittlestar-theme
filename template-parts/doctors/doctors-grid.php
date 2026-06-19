@@ -87,45 +87,7 @@ if ( $doctors_query->have_posts() ) {
 			<?php
 			if ( $doctors_query->have_posts() ) :
 				while ( $doctors_query->have_posts() ) : $doctors_query->the_post();
-					$specialty    = get_post_meta( get_the_ID(), '_doctor_specialty', true );
-					$experience   = get_post_meta( get_the_ID(), '_doctor_experience', true );
-					$patients     = get_post_meta( get_the_ID(), '_doctor_patients', true );
-					$success_rate = get_post_meta( get_the_ID(), '_doctor_success_rate', true );
-					if ( empty( $specialty ) ) {
-						$specialty = 'Specialist Doctor';
-					}
-					?>
-					<!-- CPT Doctor Grid Card -->
-					<div class="doctor-card-item bg-white w-full  rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group mx-auto"
-						 data-name="<?php echo esc_attr( strtolower( get_the_title() ) ); ?>"
-						 data-specialty="<?php echo esc_attr( $specialty ); ?>">
-						
-						<!-- Image Container -->
-						<div class="aspect-[6/7] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0">
-							<?php if ( has_post_thumbnail() ) : ?>
-								<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500' ) ); ?>
-							<?php else : ?>
-								<svg class="h-16 w-16 text-brand-coral/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-								</svg>
-							<?php endif; ?>
-						</div>
-						
-						<!-- Card Body -->
-						<div class="p-5 flex flex-col justify-between flex-grow text-left">
-							<div class="mb-4">
-								<h3 class="text-base font-bold text-brand-green line-clamp-1 group-hover:text-brand-red transition-colors"><?php the_title(); ?></h3>
-								<p class="text-xs text-brand-muted mt-0.5 line-clamp-1"><?php echo esc_html( $specialty ); ?></p>
-							</div>
-							
-							<div class="mt-auto">
-								<a href="<?php the_permalink(); ?>" class="flex items-center justify-center w-full py-2 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-xs font-bold rounded-lg transition-all duration-300">
-									Book Now
-								</a>
-							</div>
-						</div>
-					</div>
-					<?php
+					get_template_part( 'template-parts/doctors/doctor-card', null, array( 'is_grid' => true ) );
 				endwhile;
 				wp_reset_postdata();
 			else :
@@ -182,35 +144,12 @@ if ( $doctors_query->have_posts() ) {
 				);
 
 				foreach ( $fallback_docs as $index => $doc ) :
-					?>
-					<!-- Fallback Doctor Card -->
-					<div class="doctor-card-item bg-white w-full max-w-[300px] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group mx-auto"
-						 data-name="<?php echo esc_attr( strtolower( $doc['name'] ) ); ?>"
-						 data-specialty="<?php echo esc_attr( $doc['specialty'] ); ?>">
-						
-						<!-- Image Container -->
-						<div class="aspect-[6/7] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 select-none">
-							<svg class="h-20 w-20 <?php echo $doc['color']; ?> opacity-75 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
-								<circle cx="50" cy="35" r="18" fill="currentColor" fill-opacity="0.1"/>
-								<path d="M20 85c0-15 15-22 30-22s30 7 30 22" fill="currentColor" fill-opacity="0.05" stroke-linecap="round"/>
-							</svg>
-						</div>
-						
-						<!-- Card Body -->
-						<div class="p-5 flex flex-col justify-between flex-grow text-left">
-							<div class="mb-4">
-								<h3 class="text-base font-bold text-brand-green line-clamp-1 group-hover:text-brand-red transition-colors"><?php echo esc_html( $doc['name'] ); ?></h3>
-								<p class="text-xs text-brand-muted mt-0.5 line-clamp-1"><?php echo esc_html( $doc['specialty'] ); ?></p>
-							</div>
-							
-							<div class="mt-auto">
-								<a href="#" class="flex items-center justify-center w-full py-2 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-xs font-bold rounded-lg transition-all duration-300">
-									Book Now
-								</a>
-							</div>
-						</div>
-					</div>
-					<?php
+					$doc['permalink'] = '#';
+					get_template_part( 'template-parts/doctors/doctor-card', null, array(
+						'is_grid'         => true,
+						'fallback_doctor' => $doc,
+						'max_width'       => 'max-w-[300px]',
+					) );
 				endforeach;
 			endif;
 			?>
