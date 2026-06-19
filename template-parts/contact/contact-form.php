@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="py-16 sm:py-20 bg-brand-bg/30 border-b border-brand-cream/60">
+<section class="py-16 sm:py-10 bg-brand-bg/30 border-b border-brand-cream/60">
 	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 		<div class="bg-white border border-[#EBE8E2] rounded-[2rem] p-8 sm:p-12 shadow-sm text-left">
 			

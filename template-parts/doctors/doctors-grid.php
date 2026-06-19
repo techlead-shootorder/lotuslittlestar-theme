@@ -96,12 +96,12 @@ if ( $doctors_query->have_posts() ) {
 					}
 					?>
 					<!-- CPT Doctor Grid Card -->
-					<div class="doctor-card-item bg-white rounded-[1rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+					<div class="doctor-card-item bg-white rounded-[2rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
 						 data-name="<?php echo esc_attr( strtolower( get_the_title() ) ); ?>"
 						 data-specialty="<?php echo esc_attr( $specialty ); ?>">
 						
 						<!-- Image Container -->
-						<div class="aspect-[2/3] bg-brand-cream relative overflow-hidden flex items-center justify-center">
+						<div class="aspect-[4/5] bg-brand-cream relative overflow-hidden flex items-center justify-center">
 							<?php if ( has_post_thumbnail() ) : ?>
 								<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500' ) ); ?>
 							<?php else : ?>
@@ -112,31 +112,13 @@ if ( $doctors_query->have_posts() ) {
 						</div>
 						
 						<!-- Card Body -->
-						<div class="p-8 flex flex-col flex-grow text-left">
-							<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-2"><?php echo esc_html( $specialty ); ?></span>
-							<h3 class="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-red transition-colors"><?php the_title(); ?></h3>
+						<div class="p-6 md:p-8 flex flex-col flex-grow text-left">
+							<h3 class="text-xl font-bold text-brand-green mb-1 group-hover:text-brand-red transition-colors"><?php the_title(); ?></h3>
+							<p class="text-sm text-brand-muted mb-6"><?php echo esc_html( $specialty ); ?></p>
 							
-							<div class="grid grid-cols-3 gap-2 py-3 border-y border-brand-cream/60 my-4 text-center">
-								<div>
-									<p class="text-xs text-brand-muted">Exp</p>
-									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $experience ? $experience : 'N/A' ); ?></p>
-								</div>
-								<div>
-									<p class="text-xs text-brand-muted">Patients</p>
-									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $patients ? $patients : 'N/A' ); ?></p>
-								</div>
-								<div>
-									<p class="text-xs text-brand-muted">Success</p>
-									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $success_rate ? $success_rate : 'N/A' ); ?></p>
-								</div>
-							</div>
-
-							<div class="mt-auto pt-4 flex items-center justify-between">
-								<a href="<?php the_permalink(); ?>" class="inline-flex items-center justify-center px-6 h-11 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-full shadow-sm hover:shadow transition-all">
+							<div class="mt-auto">
+								<a href="<?php the_permalink(); ?>" class="flex items-center justify-center w-full py-3 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-sm font-bold rounded-xl transition-all duration-300">
 									Book Now
-								</a>
-								<a href="<?php the_permalink(); ?>" class="text-xs font-bold text-brand-muted hover:text-brand-dark transition-colors">
-									View Details
 								</a>
 							</div>
 						</div>
@@ -149,7 +131,7 @@ if ( $doctors_query->have_posts() ) {
 				$fallback_docs = array(
 					array(
 						'name'      => 'Dr. V.S.V. Prasad',
-						'specialty' => 'Senior Consultant Neonatologist',
+						'specialty' => 'Neonatology & Pediatrics',
 						'experience' => '18+ Yrs',
 						'patients' => '15k+',
 						'success' => '99.2%',
@@ -157,7 +139,7 @@ if ( $doctors_query->have_posts() ) {
 					),
 					array(
 						'name'      => 'Dr. Satish Ghanta',
-						'specialty' => 'Director - Pediatric Intensive Care',
+						'specialty' => 'Pediatric Intensive Care',
 						'experience' => '15+ Yrs',
 						'patients' => '12k+',
 						'success' => '98.8%',
@@ -165,7 +147,7 @@ if ( $doctors_query->have_posts() ) {
 					),
 					array(
 						'name'      => 'Dr. Mehul A. Shah',
-						'specialty' => 'Senior Pediatric Orthopedic Surgeon',
+						'specialty' => 'Pediatric Orthopedics',
 						'experience' => '20+ Yrs',
 						'patients' => '18k+',
 						'success' => '99.5%',
@@ -173,7 +155,7 @@ if ( $doctors_query->have_posts() ) {
 					),
 					array(
 						'name'      => 'Dr. V. Rajesh',
-						'specialty' => 'Senior Consultant Pediatric Surgery',
+						'specialty' => 'Pediatric Surgery',
 						'experience' => '14+ Yrs',
 						'patients' => '9k+',
 						'success' => '98.5%',
@@ -181,7 +163,7 @@ if ( $doctors_query->have_posts() ) {
 					),
 					array(
 						'name'      => 'Dr. S. K. Sharma',
-						'specialty' => 'Senior Gynecologist & Fetal Medicine Specialist',
+						'specialty' => 'Gynecology & Obstetrics',
 						'experience' => '16+ Yrs',
 						'patients' => '14k+',
 						'success' => '99.0%',
@@ -189,7 +171,7 @@ if ( $doctors_query->have_posts() ) {
 					),
 					array(
 						'name'      => 'Dr. K. Srinivas',
-						'specialty' => 'Senior Consultant Pediatrician & Nephrologist',
+						'specialty' => 'Pediatrics & Nephrologist',
 						'experience' => '12+ Yrs',
 						'patients' => '8k+',
 						'success' => '97.9%',
@@ -200,43 +182,27 @@ if ( $doctors_query->have_posts() ) {
 				foreach ( $fallback_docs as $index => $doc ) :
 					?>
 					<!-- Fallback Doctor Card -->
-					<div class="doctor-card-item bg-white rounded-[1rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
+					<div class="doctor-card-item bg-white rounded-[2rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group"
 						 data-name="<?php echo esc_attr( strtolower( $doc['name'] ) ); ?>"
 						 data-specialty="<?php echo esc_attr( $doc['specialty'] ); ?>">
 						
 						<!-- Image Container -->
-						<div class="aspect-[4/3] bg-brand-cream relative overflow-hidden flex items-center justify-center p-8 select-none">
-							<svg class="h-28 w-28 <?php echo $doc['color']; ?> opacity-75 group-hover:scale-105 transition-transform duration-300" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+						<div class="aspect-[4/5] bg-brand-cream relative overflow-hidden flex items-center justify-center select-none">
+							<svg class="h-28 w-28 <?php echo $doc['color']; ?> opacity-75 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
 								<circle cx="50" cy="35" r="18" fill="currentColor" fill-opacity="0.1"/>
 								<path d="M20 85c0-15 15-22 30-22s30 7 30 22" fill="currentColor" fill-opacity="0.05" stroke-linecap="round"/>
 							</svg>
 						</div>
 						
 						<!-- Card Body -->
-						<div class="p-8 flex flex-col flex-grow text-left">
-							<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-2"><?php echo esc_html( $doc['specialty'] ); ?></span>
-							<h3 class="text-xl font-bold text-brand-dark mb-4 group-hover:text-brand-red transition-colors"><?php echo esc_html( $doc['name'] ); ?></h3>
+						<div class="p-6 md:p-8 flex flex-col flex-grow text-left">
+							<h3 class="text-xl font-bold text-brand-green mb-1 group-hover:text-brand-red transition-colors"><?php echo esc_html( $doc['name'] ); ?></h3>
+							<p class="text-sm text-brand-muted mb-6"><?php echo esc_html( $doc['specialty'] ); ?></p>
 							
-							<div class="grid grid-cols-3 gap-2 py-3 border-y border-brand-cream/60 my-4 text-center">
-								<div>
-									<p class="text-xs text-brand-muted">Exp</p>
-									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $doc['experience'] ); ?></p>
-								</div>
-								<div>
-									<p class="text-xs text-brand-muted">Patients</p>
-									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $doc['patients'] ); ?></p>
-								</div>
-								<div>
-									<p class="text-xs text-brand-muted">Success</p>
-									<p class="text-xs font-bold text-brand-dark"><?php echo esc_html( $doc['success'] ); ?></p>
-								</div>
-							</div>
-
-							<div class="mt-auto pt-4 flex items-center justify-between">
-								<a href="#" class="inline-flex items-center justify-center px-6 w-full h-11  text-brand-red border border-brand-red   text-xs font-bold rounded ">
+							<div class="mt-auto">
+								<a href="#" class="flex items-center justify-center w-full py-3 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-sm font-bold rounded-xl transition-all duration-300">
 									Book Now
 								</a>
-								
 							</div>
 						</div>
 					</div>
