@@ -178,13 +178,30 @@ function lotus_save_doctor_meta( $post_id ) {
 	$log_data .= "Post ID: " . $post_id . "\n";
 	$log_data .= "Post Type: " . get_post_type( $post_id ) . "\n";
 	$log_data .= "POST variables:\n" . print_r( $_POST, true ) . "\n";
-	$log_data .= "----------------------------------------\n";
 	file_put_contents( $log_file, $log_data, FILE_APPEND );
 
 	// Verify nonce
 	if ( ! isset( $_POST['lotus_doctor_nonce'] ) || ! wp_verify_nonce( $_POST['lotus_doctor_nonce'], 'lotus_save_doctor_meta' ) ) {
+		file_put_contents( $log_file, "Nonce check FAILED!\n----------------------------------------\n", FILE_APPEND );
 		return;
 	}
+	file_put_contents( $log_file, "Nonce check PASSED!\n", FILE_APPEND );
+
+	// Prevent auto-save
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		file_put_contents( $log_file, "Autosave check FAILED!\n----------------------------------------\n", FILE_APPEND );
+		return;
+	}
+	file_put_contents( $log_file, "Autosave check PASSED!\n", FILE_APPEND );
+
+	// Check permissions
+	if ( isset( $_POST['post_type'] ) && 'doctor' === $_POST['post_type'] ) {
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			file_put_contents( $log_file, "Permissions check FAILED!\n----------------------------------------\n", FILE_APPEND );
+			return;
+		}
+	}
+	file_put_contents( $log_file, "Permissions check PASSED!\n", FILE_APPEND );
 
 	// Prevent auto-save
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
