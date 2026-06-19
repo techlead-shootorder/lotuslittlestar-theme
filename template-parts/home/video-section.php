@@ -70,7 +70,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class="relative w-full aspect-[16/10] max-w-lg lg:max-w-none rounded-[1.5rem] overflow-hidden shadow-2xl border border-white/10 group select-none">
 					
 					<!-- Video Placeholder Image -->
-					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/video-placeholder.png" 
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/banjarahills.png" 
 						 alt="Lotus Hospital Video Overview" 
 						 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
 						 onerror="this.src='http://lotuslittlestars.in/wp-content/uploads/2026/06/left-image-hom.png';">
