@@ -172,6 +172,15 @@ function lotus_render_doctor_meta_box( $post ) {
 }
 
 function lotus_save_doctor_meta( $post_id ) {
+	// Debug logging to analyze post save parameters
+	$log_file = __DIR__ . '/debug-save.log';
+	$log_data = "Date: " . date('Y-m-d H:i:s') . "\n";
+	$log_data .= "Post ID: " . $post_id . "\n";
+	$log_data .= "Post Type: " . get_post_type( $post_id ) . "\n";
+	$log_data .= "POST variables:\n" . print_r( $_POST, true ) . "\n";
+	$log_data .= "----------------------------------------\n";
+	file_put_contents( $log_file, $log_data, FILE_APPEND );
+
 	// Verify nonce
 	if ( ! isset( $_POST['lotus_doctor_nonce'] ) || ! wp_verify_nonce( $_POST['lotus_doctor_nonce'], 'lotus_save_doctor_meta' ) ) {
 		return;
