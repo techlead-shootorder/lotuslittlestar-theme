@@ -14,6 +14,7 @@ get_header();
 // Home page section template parts
 get_template_part( 'template-parts/home/hero-section' );
 get_template_part( 'template-parts/home/stats-section' );
+get_template_part( 'template-parts/home/why-us-section' );
 get_template_part( 'template-parts/home/legacy-section' );
 get_template_part( 'template-parts/home/special-care-section' );
 get_template_part( 'template-parts/home/experts-section' );
