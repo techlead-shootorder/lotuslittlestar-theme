@@ -96,7 +96,7 @@ if ( $doctors_query->have_posts() ) {
 					}
 					?>
 					<!-- CPT Doctor Grid Card -->
-					<div class="doctor-card-item bg-white w-full max-w-[300px] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group mx-auto"
+					<div class="doctor-card-item bg-white w-full  rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group mx-auto"
 						 data-name="<?php echo esc_attr( strtolower( get_the_title() ) ); ?>"
 						 data-specialty="<?php echo esc_attr( $specialty ); ?>">
 						

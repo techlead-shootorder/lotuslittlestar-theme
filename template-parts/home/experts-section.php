@@ -52,7 +52,7 @@ $doctors_query = new WP_Query( $args );
 					}
 					?>
 					<!-- CPT Doctor Card -->
-					<div class="bg-white w-full max-w-[300px] rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group mx-auto">
+					<div class="bg-white w-full  rounded-[0.5rem] border border-[#EBE8E2] shadow-sm hover:shadow-md transform hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden group mx-auto">
 						<!-- Image Container -->
 						<div class="aspect-[6/7] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0">
 							<?php if ( has_post_thumbnail() ) : ?>
