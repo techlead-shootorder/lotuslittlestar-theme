@@ -174,7 +174,7 @@ if ( $is_grid ) {
 
 <div class="<?php echo esc_attr( $card_classes_str ); ?>" <?php echo $data_attrs; ?>>
 	<!-- Image Container -->
-	<div class="aspect-[1/1] max-h-[300px] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
+	<div class="aspect-[1/1] max-h-[220px] md:max-h-[240px] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
 		<?php if ( $matched_img_url ) : ?>
 			<img src="<?php echo esc_url( $matched_img_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 		<?php elseif ( ! $fallback_doctor && has_post_thumbnail() ) : ?>
@@ -212,6 +212,38 @@ if ( $is_grid ) {
 			</div>
 			<span class="text-xs font-bold text-brand-dark leading-none"><?php echo esc_html( $experience ); ?></span>
 		</div>
+
+		<?php if ( $is_grid ) : ?>
+			<?php
+			$card_desc = '';
+			if ( $fallback_doctor ) {
+				$card_desc = isset( $fallback_doctor['description'] ) ? $fallback_doctor['description'] : '';
+				if ( empty( $card_desc ) ) {
+					if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
+						$card_desc = 'Director of Neonatal & Pediatric Intensive Care Services with 32+ years experience.';
+					} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
+						$card_desc = 'Managing Director of Neonatology & Pediatrics with 35+ years clinical expertise.';
+					} elseif ( strpos( $name, 'Mehul' ) !== false ) {
+						$card_desc = 'Senior Consultant Pediatric Nephrologist specializing in pediatric kidney disease and transplants.';
+					} elseif ( strpos( $name, 'Roopa' ) !== false ) {
+						$card_desc = 'HOD of Obstetrics & Gynecology specializing in high-risk pregnancy and maternal care.';
+					} elseif ( strpos( $name, 'Ramana' ) !== false ) {
+						$card_desc = 'Director of Pediatric Hematology & Oncology specializing in childhood cancers.';
+					} else {
+						$card_desc = 'Expert consultant providing comprehensive, compassionate pediatric and neonatal healthcare services.';
+					}
+				}
+			} else {
+				$card_desc = lotus_get_doctor_excerpt( get_the_ID(), 120 );
+			}
+			?>
+			<?php if ( ! empty( $card_desc ) ) : ?>
+				<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
+				<p class="text-xs text-brand-muted leading-relaxed max-w-[280px]">
+					<?php echo esc_html( $card_desc ); ?>
+				</p>
+			<?php endif; ?>
+		<?php endif; ?>
 	</div>
 	
 	<!-- Action Buttons -->

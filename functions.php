@@ -267,3 +267,28 @@ function lotus_register_menus() {
     ) );
 }
 add_action( 'init', 'lotus_register_menus' );
+
+/**
+ * Retrieve doctor excerpt/description for archive cards
+ */
+function lotus_get_doctor_excerpt( $post_id, $limit = 120 ) {
+	$post = get_post( $post_id );
+	if ( ! $post ) {
+		return '';
+	}
+
+	// Check for explicit excerpt
+	if ( has_excerpt( $post_id ) ) {
+		$excerpt = get_the_excerpt( $post_id );
+	} else {
+		// Strip shortcodes and HTML from content
+		$excerpt = wp_strip_all_tags( strip_shortcodes( $post->post_content ) );
+	}
+
+	// Trim to character limit
+	if ( strlen( $excerpt ) > $limit ) {
+		$excerpt = wp_html_excerpt( $excerpt, $limit ) . '...';
+	}
+
+	return $excerpt;
+}
