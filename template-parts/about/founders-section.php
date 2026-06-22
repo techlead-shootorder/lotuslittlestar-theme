@@ -90,7 +90,7 @@ $founders = array(
 ?>
 	<div id="modal-<?php echo esc_attr( $id ); ?>" class="founder-modal fixed inset-0 z-55 flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
 		<!-- Modal Content Box -->
-		<div class="bg-white w-full max-w-3xl rounded-[2rem] shadow-2xl relative overflow-hidden flex flex-col md:flex-row transform scale-95 transition-transform duration-300 max-h-[85vh] overflow-y-auto md:overflow-y-visible md:h-[480px]">
+		<div class="bg-white w-full max-w-3xl rounded-[0.5rem] shadow-2xl relative overflow-hidden flex flex-col md:flex-row transform scale-95 transition-transform duration-300 max-h-[70vh] overflow-y-auto md:overflow-y-visible md:h-[480px] mt-12">
 			<!-- Close Button -->
 			<button type="button" class="close-founder-modal absolute top-6 right-6 text-brand-muted hover:text-brand-red transition-colors z-20 focus:outline-none">
 				<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
