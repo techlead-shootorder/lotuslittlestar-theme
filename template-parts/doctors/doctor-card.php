@@ -197,14 +197,14 @@ if ( $is_grid ) {
 		
 		<p class="text-[11px] text-brand-muted mb-2"><?php echo esc_html( $qualification ); ?></p>
 		
-		<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
+		
 		
 		<p class="text-base text-[#4B5563] font-medium leading-relaxed max-w-[280px]">
 			<?php echo esc_html( $designation ); ?>
 		</p>
 		
-		<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
 		
+
 		<?php if ( $is_grid ) : ?>
 			<?php
 			$card_desc = '';
