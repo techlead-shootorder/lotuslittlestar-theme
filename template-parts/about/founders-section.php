@@ -112,12 +112,10 @@ $founders = array(
 			<div class="w-full md:w-5/12 bg-white flex items-center justify-center relative p-6 md:p-8 min-h-[250px] md:min-h-0 md:h-full overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-[#F3F4F6]">
 				<!-- Parent Mask Container -->
 				<div class="relative w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white z-10">
-					<!-- Yellow Design Backdrop Circle (Offset inside the mask) -->
-					<div class="absolute w-44 h-44 md:w-56 md:h-56 bg-[#F6C015] rounded-full -right-2 -top-2 translate-x-3 -translate-y-1.5 z-0"></div>
 					
 					<!-- Grayscale Avatar with Blending -->
 					<?php if ( $img_url ) : ?>
-						<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $founder['name'] ); ?>" class="absolute inset-0 w-full h-full object-cover grayscale mix-blend-multiply z-10">
+						<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $founder['name'] ); ?>" class="absolute inset-0 w-full h-full object-cover  z-10">
 					<?php else : ?>
 						<div class="absolute inset-0 w-full h-full flex items-center justify-center text-[#D93B48] opacity-20 z-10">
 							<!-- Clean SVG headshot silhouette fallback matching screenshot shape -->
