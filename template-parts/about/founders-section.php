@@ -23,7 +23,7 @@ $founders = array(
 		'specialty'     => 'Managing Director - Neonatology & Pediatrics',
 		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/vsv-prasad-1.png',
 		'bio'           => 'Dr. V.S.V. Prasad, our Managing Director and Founder of Lotus Hospitals, is a renowned Neonatologist and Pediatric Critical Care Specialist with over 35+ years of experience in advancing neonatal and pediatric healthcare. After completing his medical education at AIIMS, New Delhi, he pursued advanced training in Neonatology and Pediatric Critical Care in the United States and the United Kingdom.Returning to India with a vision to establish world-class healthcare services for children, Dr. Prasad founded Lotus Hospitals in 2006 with a mission to make quality healthcare accessible to every family. Under his leadership, Lotus Hospitals has grown into one of the most trusted names in women and child healthcare, recognized for clinical excellence, advanced technology, and compassionate patient care.His commitment to innovation and patient-centered care continues to inspire the growth of Lotus Little Stars, helping set new benchmarks in neonatal, pediatric, and maternal healthcare for families across the region.',
-	)
+	),
 	'ramana' => array(
 		'name'          => 'Dr. Ramana Dandamudi',
 		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
