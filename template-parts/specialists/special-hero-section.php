@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- Button -->
 		<div class="flex">
 			<a href="#specialists-grid" 
-				class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-coral text-white text-sm sm:text-base font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+				class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-coral text-white text-sm sm:text-base font-bold rounded-[4px] shadow-md hover:shadow-lg transition-all duration-200">
 				Explore Our Expertise
 			</a>
 		</div>

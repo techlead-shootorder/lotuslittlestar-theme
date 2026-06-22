@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					Lotus Little Stars operates advanced multi-specialty centers in key areas, delivering exceptional medical support to your doorstep. Get in touch with our team or visit one of our premium locations.
 				</p>
 				<div class="mt-6 flex">
-					<a href="#locations-grid" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-full shadow-sm hover:shadow transition-all duration-200">
+					<a href="#locations-grid" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-[4px] shadow-sm hover:shadow transition-all duration-200">
 						View Centers
 					</a>
 				</div>

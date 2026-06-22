@@ -39,7 +39,7 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 		<div class="p-6 sm:p-3 flex flex-col md:flex-row gap-10 items-center">
 			
 			<!-- Photo Column (Left) -->
-			<div class="w-full md:w-1/3 aspect-square max-w-[280px] bg-brand-cream rounded-3xl overflow-hidden flex items-center justify-center shrink-0 shadow-inner">
+			<div class="w-full md:w-1/3 aspect-square max-w-[480px] bg-brand-cream rounded-3xl overflow-hidden flex items-center justify-center shrink-0 shadow-inner">
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover' ) ); ?>
 				<?php else : ?>
@@ -69,7 +69,7 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 				</p>
 
 				<!-- Badges grid -->
-				<div class="grid grid-cols-3 gap-4 border-y border-brand-cream/80 py-4 w-full mb-8 select-none">
+				<div class="grid grid-cols-2 gap-4 border-y border-brand-cream/80 py-4 w-full mb-8 select-none">
 					<div class="text-center">
 						<p class="text-xl font-bold font-outfit text-brand-red line-clamp-1"><?php echo esc_html( $department ); ?></p>
 						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Department</p>
@@ -78,10 +78,10 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 						<p class="text-2xl font-bold font-outfit text-brand-dark"><?php echo esc_html( $experience ); ?></p>
 						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Experience</p>
 					</div>
-					<div class="text-center">
+					<!-- <div class="text-center">
 						<p class="text-2xl font-bold font-outfit text-brand-coral"><?php echo esc_html( $success_rate ); ?></p>
 						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Success Rate</p>
-					</div>
+					</div> -->
 				</div>
 
 				<!-- Call to actions -->
