@@ -174,7 +174,7 @@ if ( $is_grid ) {
 
 <div class="<?php echo esc_attr( $card_classes_str ); ?>" <?php echo $data_attrs; ?>>
 	<!-- Image Container -->
-	<div class="aspect-[6/7] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
+	<div class="aspect-[1/1] max-h-[220px] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
 		<?php if ( $matched_img_url ) : ?>
 			<img src="<?php echo esc_url( $matched_img_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 		<?php elseif ( ! $fallback_doctor && has_post_thumbnail() ) : ?>
@@ -187,25 +187,25 @@ if ( $is_grid ) {
 	</div>
 	
 	<!-- Card Body -->
-	<div class="p-6 flex flex-col items-center text-center flex-grow">
-		<h3 class="text-xl md:text-2xl font-bold text-brand-dark font-outfit mb-1.5 group-hover:text-brand-red transition-colors"><?php echo esc_html( $name ); ?></h3>
+	<div class="p-4 md:p-5 flex flex-col items-center text-center flex-grow">
+		<h3 class="text-lg md:text-xl font-bold text-brand-dark font-outfit mb-1 group-hover:text-brand-red transition-colors"><?php echo esc_html( $name ); ?></h3>
 		
-		<p class="text-[#007AFF] text-[13px] md:text-sm font-semibold tracking-wide uppercase mb-1"><?php echo esc_html( $specialty ); ?></p>
+		<p class="text-[#007AFF] text-[12px] md:text-xs font-semibold tracking-wide uppercase mb-0.5"><?php echo esc_html( $specialty ); ?></p>
 		
-		<p class="text-xs text-brand-muted mb-4"><?php echo esc_html( $qualification ); ?></p>
+		<p class="text-[11px] text-brand-muted mb-2"><?php echo esc_html( $qualification ); ?></p>
 		
-		<div class="w-full border-t border-[#F1ECE4]/60 my-3"></div>
+		<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
 		
-		<p class="text-xs md:text-sm text-[#4B5563] font-medium leading-relaxed max-w-[280px]">
+		<p class="text-xs text-[#4B5563] font-medium leading-relaxed max-w-[280px]">
 			<?php echo esc_html( $designation ); ?>
 		</p>
 		
-		<div class="w-full border-t border-[#F1ECE4]/60 my-3"></div>
+		<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
 		
 		<!-- Experience Badge -->
-		<div class="flex items-center justify-center gap-2 mb-2 mt-1">
-			<div class="w-6 h-6 rounded-full bg-[#E5F1FF] text-[#007AFF] flex items-center justify-center shrink-0 select-none">
-				<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+		<div class="flex items-center justify-center gap-2 mb-1 mt-0.5">
+			<div class="w-5 h-5 rounded-full bg-[#E5F1FF] text-[#007AFF] flex items-center justify-center shrink-0 select-none">
+				<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 					<circle cx="12" cy="8" r="4"/>
 					<path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
 				</svg>
@@ -216,14 +216,14 @@ if ( $is_grid ) {
 	
 	<!-- Action Buttons -->
 	<div class="w-full flex border-t border-[#EBE8E2] mt-auto">
-		<a href="<?php echo esc_url( $permalink ); ?>" class="w-1/2 h-12 bg-[#FDF3D5] hover:bg-[#FBE09E] text-brand-dark font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors border-r border-[#EBE8E2]">
-			<svg class="w-4 h-4 text-brand-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+		<a href="<?php echo esc_url( $permalink ); ?>" class="w-1/2 h-11 bg-[#FDF3D5] hover:bg-[#FBE09E] text-brand-dark font-bold text-xs sm:text-xs flex items-center justify-center gap-1.5 transition-colors border-r border-[#EBE8E2]">
+			<svg class="w-3.5 h-3.5 text-brand-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
 			</svg>
 			View Profile
 		</a>
-		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="w-1/2 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors">
-			<svg class="w-4 h-4 text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="w-1/2 h-11 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-xs sm:text-xs flex items-center justify-center gap-1.5 transition-colors">
+			<svg class="w-3.5 h-3.5 text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
 			</svg>
 			Book Appointment
