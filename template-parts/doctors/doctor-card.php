@@ -10,7 +10,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Extract arguments
-$is_grid         = ! empty( $args['is_grid'] );
+$is_grid         = ! empty( $args['is_grid'] ) 
+                   || ( function_exists( 'is_post_type_archive' ) && is_post_type_archive( 'doctor' ) )
+                   || ( function_exists( 'is_page' ) && ( is_page( 'doctors' ) || is_page( 'specialists' ) ) )
+                   || ( isset( $_SERVER['REQUEST_URI'] ) && ( preg_match( '#/doctors(\?|/|$)#', $_SERVER['REQUEST_URI'] ) || preg_match( '#/specialists(\?|/|$)#', $_SERVER['REQUEST_URI'] ) ) && strpos( $_SERVER['REQUEST_URI'], '/doctors/dr-' ) === false );
 $fallback_doctor = ! empty( $args['fallback_doctor'] ) ? $args['fallback_doctor'] : null;
 $max_width_class = isset( $args['max_width'] ) ? $args['max_width'] : '';
 

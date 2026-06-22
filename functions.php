@@ -277,12 +277,33 @@ function lotus_get_doctor_excerpt( $post_id, $limit = 120 ) {
 		return '';
 	}
 
+	$excerpt = '';
 	// Check for explicit excerpt
 	if ( has_excerpt( $post_id ) ) {
 		$excerpt = get_the_excerpt( $post_id );
 	} else {
 		// Strip shortcodes and HTML from content
 		$excerpt = wp_strip_all_tags( strip_shortcodes( $post->post_content ) );
+	}
+
+	$excerpt = trim( preg_replace( '/\s+/', ' ', $excerpt ) );
+
+	// Fallback to predefined premium description if empty in WordPress database
+	if ( empty( $excerpt ) ) {
+		$title = get_the_title( $post_id );
+		if ( strpos( $title, 'Satish Ghanta' ) !== false ) {
+			$excerpt = 'Dr. Satish Ghanta is a highly distinguished Neonatologist and Pediatrician with over 16 years of dedicated service in neonatal intensive care and child healthcare.';
+		} elseif ( strpos( $title, 'V.S.V. Prasad' ) !== false ) {
+			$excerpt = 'Dr. V.S.V. Prasad is a highly distinguished Neonatologist and Pediatrician with over 35 years of clinical child care expertise.';
+		} elseif ( strpos( $title, 'Mehul' ) !== false ) {
+			$excerpt = 'Dr. Mehul Shah is a Senior Consultant Pediatric Nephrologist specializing in pediatric kidney transplants and chronic kidney care.';
+		} elseif ( strpos( $title, 'Roopa' ) !== false ) {
+			$excerpt = 'Dr. Roopa Ghanta is a highly experienced gynecologist and obstetrician specializing in high-risk pregnancy and maternal health.';
+		} elseif ( strpos( $title, 'Ramana' ) !== false ) {
+			$excerpt = 'Dr. Ramana Dandamudi is a renowned Pediatric Hematologist & Oncologist specializing in advanced childhood cancer treatments.';
+		} else {
+			$excerpt = 'Expert consultant providing comprehensive, compassionate pediatric and neonatal healthcare services at Lotus Hospitals.';
+		}
 	}
 
 	// Trim to character limit
