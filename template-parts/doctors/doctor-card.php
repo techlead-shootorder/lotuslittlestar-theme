@@ -242,7 +242,7 @@ if ( $is_grid ) {
 			?>
 			<?php if ( ! empty( $card_desc ) ) : ?>
 				<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
-				<p class="text-xs text-brand-muted leading-relaxed max-w-[280px]">
+				<p class="text-base text-brand-muted leading-relaxed max-w-[280px]">
 					<?php echo esc_html( $card_desc ); ?>
 				</p>
 			<?php endif; ?>
