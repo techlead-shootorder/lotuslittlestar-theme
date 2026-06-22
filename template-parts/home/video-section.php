@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				Success Stories
 			</h2>
 			<p class="text-brand-muted text-base sm:text-lg">
-				Hear from our families about their journey to recovery and the medical care they received at Little Stars & She.
+				Hear from our families about their journey to recovery and the medical care they received at Lotus little stars.
 			</p>
 			<div class="w-16 h-1 bg-brand-coral mx-auto mt-4 rounded-full"></div>
 		</div>
@@ -55,37 +55,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$success_stories = array(
 			array(
 				'title'         => "From Crisis to Hope: Chaitrika's Journey",
-				'video_url'     => 'https://www.youtube.com/watch?v=sB4Klh3dD0c', // Replace with your YouTube Video URL
+				'video_url'     => 'https://www.youtube.com/watch?v=EFOxJGuuj_Y', // Replace with your YouTube Video URL
 				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "A 5-year-old's story of strength & recovery from 'Severe Dengue Shock'",
-				'video_url'     => 'https://www.youtube.com/watch?v=y6120QOlsfU', // Replace with your YouTube Video URL
+				'video_url'     => 'https://www.youtube.com/watch?v=BDs5zyBKY4U', // Replace with your YouTube Video URL
 				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/banjarahills.png', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "HAEMOPHILIA TREATMENT SUCCESS STORY",
-				'video_url'     => 'https://www.youtube.com/watch?v=P1P1zU1w2q8', // Replace with your YouTube Video URL
+				'video_url'     => 'https://www.youtube.com/watch?v=HHfjDAKH71g', // Replace with your YouTube Video URL
 				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/kondapur.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'         => "Advanced NICU Care Success Story",
-				'video_url'     => 'https://www.youtube.com/watch?v=bL2zL7pEa-s', // Replace with your YouTube Video URL
+				'title'         => "From critical Condition to recovery 'Krish's Healing Story'",
+				'video_url'     => 'https://www.youtube.com/watch?v=x6I6YsNDt5I', // Replace with your YouTube Video URL
 				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/rajmundry.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'         => "High-Risk Pregnancy Success Story",
-				'video_url'     => 'https://www.youtube.com/watch?v=Jv2gYhYm2hY', // Replace with your YouTube Video URL
+				'title'         => "Advanced ICU care",
+				'video_url'     => 'https://www.youtube.com/watch?v=tOArrA53ldk', // Replace with your YouTube Video URL
 				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'         => "Pediatric Nephrology Success Story",
-				'video_url'     => 'https://www.youtube.com/watch?v=eE74tGkG_gE', // Replace with your YouTube Video URL
+				'title'         => "How Priyansh Overcame HAEMOPHILIA",
+				'video_url'     => 'https://www.youtube.com/watch?v=D1tS9HqO05U', // Replace with your YouTube Video URL
 				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/banjarahills.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'         => "Child Development Milestones Success Story",
-				'video_url'     => 'https://www.youtube.com/watch?v=6W31VDuPi60', // Replace with your YouTube Video URL
+				'title'         => "From PREGNANCY to PEDIATRIC CARE",
+				'video_url'     => 'https://www.youtube.com/watch?v=fytT6MEhEp4', // Replace with your YouTube Video URL
 				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/kondapur.png', // Replace with your local/media image URL
 			),
 		);
