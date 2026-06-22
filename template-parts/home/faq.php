@@ -8,6 +8,41 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$faqs = array(
+	array(
+		'question' => 'Why choose Lotus Little Stars Hospital for women and child healthcare?',
+		'answer'   => 'Lotus Little Stars Hospital offers comprehensive maternity, gynecology, neonatal, and pediatric care with experienced specialists, advanced technology, and patient-centered treatment.',
+	),
+	array(
+		'question' => 'Do you provide high-risk pregnancy care?',
+		'answer'   => 'Yes. Our expert obstetricians and fetal medicine specialists provide advanced care and monitoring for high-risk pregnancies to ensure the best outcomes for both mother and baby.',
+	),
+	array(
+		'question' => 'Does the hospital have NICU and PICU facilities?',
+		'answer'   => 'Yes. We have state-of-the-art Neonatal Intensive Care Unit (NICU) and Pediatric Intensive Care Unit (PICU) facilities for newborns and children requiring specialized critical care.',
+	),
+	array(
+		'question' => 'What pediatric specialties are available?',
+		'answer'   => 'We offer pediatric super-specialty services including Pediatric Cardiology, Nephrology, Neurology, Endocrinology, Gastroenterology, Hemato Oncology, Pulmonology, and Pediatric Surgery.',
+	),
+	array(
+		'question' => 'Do you provide vaccination services for children?',
+		'answer'   => 'Yes. We offer comprehensive immunization and vaccination programs as per national and international guidelines.',
+	),
+	array(
+		'question' => 'Can I book an appointment online?',
+		'answer'   => 'Yes. You can book appointments online or contact our team directly for consultations with our specialists',
+	),
+	array(
+		'question' => 'What gynecology services do you offer?',
+		'answer'   => 'Our gynecology department provides care for menstrual disorders, PCOS, infertility evaluation, fibroids, ovarian cysts, menopause management, and minimally invasive surgeries.',
+	),
+	array(
+		'question' => ' Do you offer fetal medicine and prenatal diagnostic services?',
+		'answer'   => 'Yes. We provide advanced fetal scans, prenatal diagnostics, genetic counseling, and fetal medicine services for comprehensive pregnancy care.',
+	)
+);
 ?>
 
 <section class="py-20 bg-brand-cream border-b border-brand-cream relative">
@@ -21,59 +56,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Accordion Stack -->
 		<div class="space-y-4">
-			
-			<!-- FAQ Item 1 -->
-			<div class="faq-item bg-white rounded-2xl border border-brand-cream overflow-hidden transition-all duration-300">
-				<!-- Header Button -->
-				<button type="button" class="faq-toggle w-full flex items-center justify-between px-8 py-6 text-left focus:outline-none select-none">
-					<span class="font-semibold text-brand-green text-base sm:text-lg">What makes your NICU special?</span>
-					<!-- Chevron Icon -->
-					<svg class="faq-chevron h-5 w-5 text-brand-green transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				<!-- Answer Panel -->
-				<div class="faq-panel max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-					<div class="px-8 pb-6 text-brand-green text-xs sm:text-sm leading-relaxed border-t border-brand-cream/60 pt-4">
-						Our Level III Neonatal Intensive Care Unit (NICU) is staffed 24/7 by board-certified neonatologists and pediatric critical care nurses. We feature advanced incubators, dedicated ventilation support, and low-sensory environments designed specifically to protect premature infants and critically ill newborns.
+			<?php if ( ! empty( $faqs ) && is_array( $faqs ) ) : ?>
+				<?php foreach ( $faqs as $index => $faq ) : ?>
+					<!-- FAQ Item <?php echo $index + 1; ?> -->
+					<div class="faq-item bg-white rounded-2xl border border-brand-cream overflow-hidden transition-all duration-300">
+						<!-- Header Button -->
+						<button type="button" class="faq-toggle w-full flex items-center justify-between px-8 py-6 text-left focus:outline-none select-none">
+							<span class="font-semibold text-brand-green text-base sm:text-lg"><?php echo esc_html( $faq['question'] ); ?></span>
+							<!-- Chevron Icon -->
+							<svg class="faq-chevron h-5 w-5 text-brand-green transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+						<!-- Answer Panel -->
+						<div class="faq-panel max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+							<div class="px-8 pb-6 text-brand-green text-xs sm:text-sm leading-relaxed border-t border-brand-cream/60 pt-4">
+								<?php echo esc_html( $faq['answer'] ); ?>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-
-			<!-- FAQ Item 2 -->
-			<div class="faq-item bg-white rounded-2xl border border-brand-cream overflow-hidden transition-all duration-300">
-				<!-- Header Button -->
-				<button type="button" class="faq-toggle w-full flex items-center justify-between px-8 py-6 text-left focus:outline-none select-none">
-					<span class="font-semibold text-brand-green text-base sm:text-lg">How do I book a consultation?</span>
-					<svg class="faq-chevron h-5 w-5 text-brand-green transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				<!-- Answer Panel -->
-				<div class="faq-panel max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-					<div class="px-8 pb-6 text-brand-green text-xs sm:text-sm leading-relaxed border-t border-brand-cream/60 pt-4">
-						Booking a consultation is simple! You can click on the "Book Appointment" button in the header, select your desired doctor or specialty from the directory page, and fill out our contact form. Alternatively, you can call any of our facilities directly to speak with our reception staff.
-					</div>
-				</div>
-			</div>
-
-			<!-- FAQ Item 3 -->
-			<div class="faq-item bg-white rounded-2xl border border-brand-cream overflow-hidden transition-all duration-300">
-				<!-- Header Button -->
-				<button type="button" class="faq-toggle w-full flex items-center justify-between px-8 py-6 text-left focus:outline-none select-none">
-					<span class="font-semibold text-brand-green text-base sm:text-lg">Do you handle high-risk pregnancies?</span>
-					<svg class="faq-chevron h-5 w-5 text-brand-green transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				<!-- Answer Panel -->
-				<div class="faq-panel max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-					<div class="px-8 pb-6 text-brand-green text-xs sm:text-sm leading-relaxed border-t border-brand-cream/60 pt-4">
-						Yes, we specialize in high-risk pregnancy supervision. Our team of fetal medicine consultants, maternal obstetricians, and neonatologists work together to provide continuous diagnostic scanning, painless labor support, and state-of-the-art labor suites to ensure maximum clinical safety for both mother and child.
-					</div>
-				</div>
-			</div>
-
+				<?php endforeach; ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>

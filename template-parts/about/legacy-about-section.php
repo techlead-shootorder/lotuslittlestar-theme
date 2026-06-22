@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="lg:col-span-5 flex justify-center order-last lg:order-first">
 				<div class="relative w-full max-w-md">
 					<div class="absolute -inset-4 bg-brand-coral/10 rounded-[2rem] transform -rotate-2 -z-10"></div>
-					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/about-left-img-1.png" alt="Lotus Little Stars Legacy" class="relative z-10 w-full h-auto rounded-3xl shadow-lg object-cover">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/about-legacy-left.jpg" alt="Lotus Little Stars Legacy" class="relative z-10 w-full h-auto rounded-3xl shadow-lg object-cover">
 					
 					<!-- Accreditation Badge overlaying the bottom-right -->
 					<div class="absolute bottom-4 right-4 md:-bottom-4 md:-right-4 bg-[#5E6D62] border-4 border-white rounded-2xl py-3 px-5 shadow-xl flex items-center gap-3 z-20">
@@ -40,40 +40,42 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="lg:col-span-7 text-left">
 				
 				<h2 class="text-3xl sm:text-4xl font-medium text-brand-dark mt-2 mb-6">
-					A Legacy of Trust & Specialized Care
+					About Lotus Little Stars
 				</h2>
 				<p class="text-brand-muted text-base leading-relaxed mb-6">
-					Lotus Little Stars Hospital has stood as a beacon of clinical excellence for over 16 years. Our journey began with a simple yet profound vision: to provide a sanctuary where women and children receive world-class medical attention in a nurturing environment.
+					At Lotus Little Stars, we are dedicated to providing exceptional healthcare for women, newborns, and children through every stage of life. From advanced maternity and gynecological care to specialized neonatology and pediatric services, we combine clinical excellence, innovation, and compassionate care to deliver the best outcomes for every family.
 				</p>
 				<p class="text-brand-muted text-base leading-relaxed mb-8">
-					As a trusted center of excellence, we have pioneered advancements in Obstetrics, Gynecology, Fetal Medicine, Neonatology, and Pediatrics. Every touchpoint in our hospital is designed with the unique needs of mothers and their "little stars" in mind.
+					With 220+ beds, state-of-the-art facilities, and a family-centered approach, we provide world-class healthcare across our locations in Banjara Hills, Kondapur, and Rajahmundry.
 				</p>
-				
+				<div>
+					<h4 class="text-2xl font-medium text-brand-green mt-2 mb-6">Why Families Trust Lotus Little Stars</h4>
+				</div>
 				<!-- Highlights Grid -->
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-brand-muted text-sm sm:text-base font-semibold">
 					<div class="flex items-center gap-3">
 						<svg class="h-6 w-6 text-brand-red shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 						</svg>
-						<span class="text-brand-muted">Expert Neonatologists</span>
+						<span class="text-brand-muted">World-Class Infrastructure</span>
 					</div>
 					<div class="flex items-center gap-3">
 						<svg class="h-6 w-6 text-brand-red shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 						</svg>
-						<span class="text-brand-muted">Advanced Fetal Imaging</span>
+						<span class="text-brand-muted">Advanced Medical Technology</span>
 					</div>
 					<div class="flex items-center gap-3">
 						<svg class="h-6 w-6 text-brand-red shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 						</svg>
-						<span class="text-brand-muted">24/7 Pediatric ER</span>
+						<span class="text-brand-muted">Expert Women & Child Specialists</span>
 					</div>
 					<div class="flex items-center gap-3">
 						<svg class="h-6 w-6 text-brand-red shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
 						</svg>
-						<span class="text-brand-muted">Luxury Birthing Suites</span>
+						<span class="text-brand-muted">Comprehensive Care Under One Roof</span>
 					</div>
 				</div>
 			</div>

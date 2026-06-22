@@ -26,17 +26,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			
 			<!-- Wing 1: Gynecology -->
-			<div class="bg-[#F3F6F3] p-10 border-l-[5px] border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Venus symbol icon -->
-					<div class="text-brand-green mb-6">
+					<div class="text-brand-dark mb-6">
 						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 							<circle cx="12" cy="9" r="6" />
 							<path d="M12 15v8M9 19h6" />
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Gynecology</h3>
-					<p class="text-brand-green text-xs leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Gynecology</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 From preventive women’s wellness to advanced surgical care, we offer expertise in treating ovarian cysts, fibroids, uterus removal, MTP, and other gynecological conditions for every stage of a woman’s health journey.					</p>
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
@@ -48,18 +48,18 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 2: Maternity & Fetal -->
-			<div class="bg-[#FAF2F2] p-10 border-l-[5px] border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Pregnant/Female symbol icon -->
-					<div class="text-brand-green mb-6">
+					<div class="text-brand-dark mb-6">
 						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 							<!-- Stylized woman silhouette -->
 							<circle cx="12" cy="5" r="2.5" fill="currentColor"/>
 							<path d="M12 8c-2 0-3.5 1.5-3.5 3.5v4.5h1.5v6h4v-6h1.5v-4.5C15.5 9.5 14 8 12 8z" fill="currentColor"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Obstetrics & Fetal Care</h3>
-					<p class="text-brand-green text-xs leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Obstetrics & Fetal Care</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						Providing holistic care for pregnancy, childbirth, and maternity, with specialized support for high-risk pregnancies and cutting-edge fetal medicine for optimal mother and baby outcomes.
 					</p>
 				</div>
@@ -72,10 +72,10 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 3: Pediatric Care -->
-			<div class="bg-[#F2F3FA] p-10 border-l-[5px] border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-white p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Baby face icon -->
-					<div class="text-brand-green mb-6">
+					<div class="text-brand-dark mb-6">
 						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 							<circle cx="12" cy="12" r="9"/>
 							<path d="M8 14.5c1 1.5 3 2 4 2s3-.5 4-2"/>
@@ -85,8 +85,8 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 							<path d="M12 3c-.5.5-1.5.5-1.5 1.5s1 1 1 1"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">General Pediatrics</h3>
-					<p class="text-brand-muted text-xs leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">General Pediatrics</h3>
+					<p class="text-brand-muted text-base leading-relaxed mb-6">
 						Comprehensive medical care for children, including immunizations, growth monitoring, common illnesses, and preventive health programs for overall well-being.
 					</p>
 				</div>
@@ -99,18 +99,18 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 4: Neonatal NICU -->
-			<div class="bg-[#FAF7F2] p-10 border-l-[5px] border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Medical bag icon -->
-					<div class="text-brand-green mb-6">
+					<div class="text-brand-dark mb-6">
 						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 							<rect x="3" y="7" width="18" height="14" rx="2"/>
 							<path d="M9 7V4.5A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5V7"/>
 							<path d="M12 11v6M9 14h6"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Neonatology & Intensive Care</h3>
-					<p class="text-brand-green text-xs leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Neonatology & Intensive Care</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						Specialized neonatal and pediatric intensive care services (NICU & PICU) designed to manage critical conditions, premature births, and life-threatening illnesses with utmost precision.
 				</div>
 				<!-- <a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red text-xs font-bold inline-flex items-center gap-1 transition-colors">
@@ -122,16 +122,16 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 5: Super-Specialties -->
-			<div class="bg-[#F2F8FA] p-10 border-l-[5px] border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Microscope/Science icon -->
-					<div class="text-brand-green mb-6">
+					<div class="text-brand-dark mb-6">
 						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 							<path d="M6 18h12M8 18v-3a4 4 0 0 1 4-4h2v2M12 11V4h4v7M16 7h2"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Pediatric Multi-Speciality</h3>
-					<p class="text-brand-green text-xs leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Pediatric Multi-Speciality</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						Expertise across multiple specialties, including pediatric surgery, oncology, nephrology, dentistry, ENT, orthopedics, gastroenterology, endocrinology, plastic, and neuro surgery to cater to the diverse healthcare needs of children.
 					</p>
 				</div>
@@ -144,10 +144,10 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 6: Developmental -->
-			<div class="bg-[#FAF2FA] p-10 border-l-[5px] border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Profile silhouette with brain gears icon -->
-					<div class="text-brand-green mb-6">
+					<div class="text-brand-dark mb-6">
 						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
 							<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
 							<circle cx="9" cy="7" r="4" />
@@ -156,8 +156,8 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 							<path d="M18 5.5v5M15.5 8h5"/>
 						</svg>
 					</div>
-					<h3 class="text-2xl font-medium text-brand-green mb-4 font-outfit">Child Development Center (CDC)</h3>
-					<p class="text-brand-green text-xs leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Child Development Center (CDC)</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						A nurturing space offering therapies, assessments, and interventions to support children with developmental delays, learning challenges, or special needs, enabling them to thrive.
 					</p>
 				</div>

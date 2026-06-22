@@ -44,7 +44,7 @@ if ( ! $doctors_query->have_posts() ) {
 					Meet Our Experts
 				</h2>
 				<p class="text-brand-muted text-sm leading-relaxed">
-					Trust your care to the most experienced hands in the region.
+					Our multidisciplinary team of renowned specialists is dedicated to delivering advanced, compassionate care for women, newborns, and children—helping families navigate every stage of life with confidence.
 				</p>
 			</div>
 			<div>

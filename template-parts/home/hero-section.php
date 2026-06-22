@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- Text Content Column -->
 			<div class="lg:col-span-8 flex flex-col items-start text-left">
 				<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-red/5 text-brand-red border border-brand-red/30 mb-5">
-					16+ Years of Excellence
+					35+ Years of Excellence
 				</span>
 				
 				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-dark leading-[1.15] mb-6">

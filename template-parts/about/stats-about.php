@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
 					</svg>
 				</div>
-				<span class="font-outfit text-3xl sm:text-4xl font-bold text-brand-green mb-3">16+</span>
+				<span class="font-outfit text-3xl sm:text-4xl font-bold text-brand-green mb-3">35+</span>
 				<span class="text-xs sm:text-sm text-brand-green font-medium">Years of Excellence</span>
 			</div>
 

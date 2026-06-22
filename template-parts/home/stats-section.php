@@ -36,6 +36,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="font-outfit text-4xl sm:text-3xl font-bold text-black mb-2">5k+</span>
 				<span class="text-sm font-semibold text-brand-dark tracking-wide uppercase">Successful Surgeries</span>
 			</div>
+			<div class="flex flex-col items-center text-center bg-white rounded border p-4 lg:p- 4lg:pl-4">
+				<span class="font-outfit text-4xl sm:text-3xl font-bold text-black mb-2">6000+</span>
+				<span class="text-sm font-semibold text-brand-dark tracking-wide uppercase">Pediatric Nephrology Treatments</span>
+			</div>
+			<div class="flex flex-col items-center text-center bg-white rounded border p-4 lg:p- 4lg:pl-4">
+				<span class="font-outfit text-4xl sm:text-3xl font-bold text-black mb-2">35+</span>
+				<span class="text-sm font-semibold text-brand-dark tracking-wide uppercase">Years of Combined Clinical Experience</span>
+			</div>
 		</div>
 	</div>
 </section>

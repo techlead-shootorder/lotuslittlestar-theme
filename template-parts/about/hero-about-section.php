@@ -24,12 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		<!-- Main Heading -->
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-brand-green leading-tight max-w-2xl mb-6 font-outfit">
-			Advanced Women &<br>Child Care
+			No. 1 Trusted Hospital for Women<br>& Children
 		</h1>
 		
 		<!-- Subtext Description -->
 		<p class="text-brand-dark/85 text-sm sm:text-base leading-relaxed max-w-xl mb-8">
-			Dedicated to providing comprehensive healthcare for women, newborns, children, and adolescents with compassion and excellence.
+			From motherhood to childhood, we are dedicated to delivering exceptional healthcare through expert medical care, cutting-edge technology, and a compassionate approach that puts every family first.
 		</p>
 		
 		<!-- Buttons Group -->

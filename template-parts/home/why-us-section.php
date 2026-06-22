@@ -15,9 +15,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
-			<h2 class="text-3xl sm:text-3xl font-medium text-brand-green font-outfit">
+			<h2 class="text-3xl sm:text-3xl font-medium text-brand-green font-outfit mb-4">
 				Why Choose Lotus Little Stars Hospital?
 			</h2>
+			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+				At Lotus Little Stars, we bring together expert maternity care, advanced neonatal services, and comprehensive pediatric healthcare under one roof. With 35+ years of combined clinical excellence, we are committed to providing compassionate, world-class care for mothers, newborns, and children. From high-risk pregnancy care and maternity services to Level III NICU, PICU, and pediatric super-specialties, our experienced team and advanced technology ensure the best possible outcomes for every family.
+			</p>
+			<p class="text-brand-muted text-sm sm:text-base leading-relaxed mt-4 font-semibold italic text-brand-green">
+				Trusted by families. Driven by excellence. Dedicated to every mother and child.
+			</p>
 		</div>
 
 		<!-- Cards Grid -->
