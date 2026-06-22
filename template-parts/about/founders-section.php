@@ -14,14 +14,14 @@ $founders = array(
 		'name'          => 'Dr. Satish Ghanta',
 		'qualification' => 'MBBS, MD (Peds), Fellowship (Aus)',
 		'specialty'     => 'Founder & Director - Pediatric Critical Care & Neonatology',
-		'image_name'    => 'dr_satish_ghanta.png',
+		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
 		'bio'           => 'Dr. Satish Ghanta, our Founder & Director, is an eminent Pediatrician, Neonatologist, and Pediatric Critical Care Specialist with over 32 years of experience. He is dedicated to establishing world-class emergency and critical care services for children. Dr. Ghanta completed his MBBS at Manipal University, followed by MD in Pediatrics, and advanced Fellowships in Neonatology, Pediatric & Cardiac Intensive Care in Australia. He is also the founder of the CHOICE Foundation, a non-profit organization providing critical care support to underprivileged children in Hyderabad. His vision of advanced, accessible, and compassionate child healthcare has been the cornerstone of Little Stars Hospital\'s mission since 2009.',
 	),
 	'ramana' => array(
 		'name'          => 'Dr. Ramana Dandamudi',
 		'qualification' => 'MBBS, DCH (Ireland), MRCPI (Ireland), Fellowship (UK)',
 		'specialty'     => 'Director - Paediatric Haematology & Oncology',
-		'image_name'    => 'dr_ramana_dandamudi.png',
+		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/ramana-new.png',
 		'bio'           => 'Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39 years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady\'s Hospital, Dublin, and Manchester Children\'s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children\'s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi\'s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children\'s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.',
 	),
 );
