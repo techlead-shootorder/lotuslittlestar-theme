@@ -74,7 +74,7 @@
 			</div>
 
 			<!-- Desktop Nav links -->
-			<nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+			<nav class="hidden md:flex items-center gap-8 font-medium text-base">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Home</a>
 				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">About Us</a>
 				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Specialties</a>
