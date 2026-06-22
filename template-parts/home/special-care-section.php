@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<h2 class="text-3xl sm:text-4xl font-medium text-brand-dark tracking-tight mb-4 font-outfit">
 				Specialized Care Wings
 			</h2>
-			<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+			<p class="text-brand-muted text-base sm:text-base leading-relaxed max-w-2xl mx-auto">
 				Providing a full spectrum of healthcare services tailored specifically for women and children.
 			</p>
 		</div>
@@ -26,14 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			
 			<!-- Wing 1: Gynecology -->
-			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-[#F1F4F0] p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Venus symbol icon -->
 					<div class="text-brand-dark mb-6">
-						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-							<circle cx="12" cy="9" r="6" />
-							<path d="M12 15v8M9 19h6" />
-						</svg>
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/gynacology.png" alt="Gynecology" class="h-10 w-10 object-contain">
 					</div>
 					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Gynecology</h3>
 					<p class="text-brand-dark text-base leading-relaxed mb-6">
@@ -48,15 +45,11 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 2: Maternity & Fetal -->
-			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-[#FDF5F7] p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Pregnant/Female symbol icon -->
 					<div class="text-brand-dark mb-6">
-						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-							<!-- Stylized woman silhouette -->
-							<circle cx="12" cy="5" r="2.5" fill="currentColor"/>
-							<path d="M12 8c-2 0-3.5 1.5-3.5 3.5v4.5h1.5v6h4v-6h1.5v-4.5C15.5 9.5 14 8 12 8z" fill="currentColor"/>
-						</svg>
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/metarnity.png" alt="Obstetrics & Fetal Care" class="h-10 w-10 object-contain">
 					</div>
 					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Obstetrics & Fetal Care</h3>
 					<p class="text-brand-dark text-base leading-relaxed mb-6">
@@ -72,18 +65,11 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 3: Pediatric Care -->
-			<div class="bg-white p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-[#F5F5FF] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Baby face icon -->
 					<div class="text-brand-dark mb-6">
-						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-							<circle cx="12" cy="12" r="9"/>
-							<path d="M8 14.5c1 1.5 3 2 4 2s3-.5 4-2"/>
-							<circle cx="9" cy="10" r="1" fill="currentColor"/>
-							<circle cx="15" cy="10" r="1" fill="currentColor"/>
-							<!-- Hair curl -->
-							<path d="M12 3c-.5.5-1.5.5-1.5 1.5s1 1 1 1"/>
-						</svg>
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/pediatric-care.png" alt="General Pediatrics" class="h-10 w-10 object-contain">
 					</div>
 					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">General Pediatrics</h3>
 					<p class="text-brand-muted text-base leading-relaxed mb-6">
@@ -99,15 +85,11 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 4: Neonatal NICU -->
-			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-[#FCF8F0] p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Medical bag icon -->
 					<div class="text-brand-dark mb-6">
-						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-							<rect x="3" y="7" width="18" height="14" rx="2"/>
-							<path d="M9 7V4.5A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5V7"/>
-							<path d="M12 11v6M9 14h6"/>
-						</svg>
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/neonatol.png" alt="Neonatology & Intensive Care" class="h-10 w-10 object-contain">
 					</div>
 					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Neonatology & Intensive Care</h3>
 					<p class="text-brand-dark text-base leading-relaxed mb-6">
@@ -122,13 +104,11 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 5: Super-Specialties -->
-			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-[#F0F8F8] p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Microscope/Science icon -->
 					<div class="text-brand-dark mb-6">
-						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M6 18h12M8 18v-3a4 4 0 0 1 4-4h2v2M12 11V4h4v7M16 7h2"/>
-						</svg>
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/speciality.png" alt="Pediatric Multi-Speciality" class="h-10 w-10 object-contain">
 					</div>
 					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Pediatric Multi-Speciality</h3>
 					<p class="text-brand-dark text-base leading-relaxed mb-6">
@@ -144,17 +124,11 @@ From preventive women’s wellness to advanced surgical care, we offer expertise
 			</div>
 
 			<!-- Wing 6: Developmental -->
-			<div class="bg-white p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="bg-[#F9F0FD] p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
 				<div class="w-full">
 					<!-- Profile silhouette with brain gears icon -->
 					<div class="text-brand-dark mb-6">
-						<svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-							<circle cx="9" cy="7" r="4" />
-							<!-- Gear gears details in mind -->
-							<circle cx="18" cy="8" r="2.5" />
-							<path d="M18 5.5v5M15.5 8h5"/>
-						</svg>
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/developmental.png" alt="Child Development Center" class="h-10 w-10 object-contain">
 					</div>
 					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Child Development Center (CDC)</h3>
 					<p class="text-brand-dark text-base leading-relaxed mb-6">

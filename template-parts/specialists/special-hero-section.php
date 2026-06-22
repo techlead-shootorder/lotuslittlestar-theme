@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="relative bg-cover bg-center py-10 sm:py-10 border-b border-brand-cream/60 overflow-hidden" 
+<section class="relative bg-cover bg-center py-10 sm:py-24 border-b border-brand-cream/60 overflow-hidden" 
 	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/about-hero-banner.png');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->

@@ -24,6 +24,13 @@ $founders = array(
 		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/vsv-prasad-1.png',
 		'bio'           => 'Dr. V.S.V. Prasad, our Managing Director and Founder of Lotus Hospitals, is a renowned Neonatologist and Pediatric Critical Care Specialist with over 35+ years of experience in advancing neonatal and pediatric healthcare. After completing his medical education at AIIMS, New Delhi, he pursued advanced training in Neonatology and Pediatric Critical Care in the United States and the United Kingdom.Returning to India with a vision to establish world-class healthcare services for children, Dr. Prasad founded Lotus Hospitals in 2006 with a mission to make quality healthcare accessible to every family. Under his leadership, Lotus Hospitals has grown into one of the most trusted names in women and child healthcare, recognized for clinical excellence, advanced technology, and compassionate patient care.His commitment to innovation and patient-centered care continues to inspire the growth of Lotus Little Stars, helping set new benchmarks in neonatal, pediatric, and maternal healthcare for families across the region.',
 	),
+	'K.V.S Narayana' => array(
+		'name' => 'K.V.S Narayana',
+		'qualification' => 'MBBS, MS (General Surgery) ,MCh (Pediatric Surgery)',
+		'specialty' => 'Consultant Pediatric Surgeon',
+		'image_name' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-narayana-new-scaled.jpg',
+		'bio' => 'Dr. K.V.S. Narayana is a highly experienced Pediatric Surgeon with over 30 years of expertise in diagnosing and treating surgical conditions in newborns, infants, children, and adolescents. Renowned for his precision, clinical excellence, and child-centered approach, he specializes in performing a wide range of pediatric surgical procedures with a focus on safety, faster recovery, and optimal outcomes.',
+	),
 	'ramana' => array(
 		'name'          => 'Dr. Ramana Dandamudi',
 		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
@@ -44,7 +51,7 @@ $founders = array(
 		'specialty'     => 'HOD - OBSTETRICS & GYNAECOLOGY',
 		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/DR-Roopa-ghanta-scaled.webp',
 		'bio'           => 'Dr. Roopa Ghanta, with over 26 years of expertise in Gynaecology and Obstetrics heads the OBG Department at Little Stars & She Women and Children’s Hospital. Her international experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics and her enhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology adds a high level of precision and expertise in patient care. Dr. Roopa Ghanta specializes in high-risk pregnancy care and advanced gynaecological treatments. She has introduced innovative practices like water birthing, midwifery, painless birthing etc at Little Stars & She Hospital, where she is committed to delivering world-class, patient-centred care.',
-	)
+	),
 );
 ?>
 

@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Specialties</a>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Doctors Grid</a>
+						<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Doctors</a>
 					</li>
 					<li>
 						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Contact & Locations</a>
@@ -84,12 +84,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</svg>
 						<span class="break-all">contact@lotuslittlestars.in</span>
 					</li>
-					<li class="flex items-start gap-2.5">
-						<svg class="h-5 w-5 text-brand-coral shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-						</svg>
-						<span>Accent Towers, Rd No. 10, Banjara Hills, Hyderabad, Telangana 500034.</span>
+					<li class="pt-2">
+						<div class="flex items-center gap-3">
+							<!-- Facebook -->
+							<a href="https://www.facebook.com/littlestarsandshehyd/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#F4EBE1] text-brand-dark hover:bg-brand-red hover:text-white flex items-center justify-center transition-all duration-200" aria-label="Facebook">
+								<svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+									<path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+								</svg>
+							</a>
+							<!-- Instagram -->
+							<a href="https://www.instagram.com/littlestarsandshehospitals/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#F4EBE1] text-brand-dark hover:bg-brand-red hover:text-white flex items-center justify-center transition-all duration-200" aria-label="Instagram">
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+									<rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+									<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+									<line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+								</svg>
+							</a>
+							<!-- YouTube -->
+							<a href="https://www.youtube.com/@littlestarsandshe" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#F4EBE1] text-brand-dark hover:bg-brand-red hover:text-white flex items-center justify-center transition-all duration-200" aria-label="YouTube">
+								<svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+									<path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+								</svg>
+							</a>
+						</div>
 					</li>
 				</ul>
 			</div>

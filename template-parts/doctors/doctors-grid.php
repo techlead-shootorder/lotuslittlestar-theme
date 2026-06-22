@@ -33,12 +33,12 @@ if ( $doctors_query->have_posts() ) {
 }
 ?>
 
-<section class="relative bg-cover bg-center py-20 sm:py-24 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/doctor-hero.png');">
+<section class="relative bg-cover bg-center py-20 sm:py-24 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/doc-banner.png');">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<!-- Section Header -->
 		<div class="max-w-3xl mb-0">
 			<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">Our Medical Team</span>
-			<h1 class="text-4xl sm:text-5xl font-extrabold text-brand-green mt-2 mb-4">
+			<h1 class="text-4xl sm:text-5xl font-semibold text-brand-green mt-2 mb-4">
 				Meet Our Experts
 			</h1>
 			<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl">

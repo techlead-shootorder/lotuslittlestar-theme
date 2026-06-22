@@ -231,7 +231,15 @@ if ( $is_grid ) {
 			<?php if ( ! empty( $card_desc ) ) : ?>
 				<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
 				<p class="text-base text-brand-muted leading-relaxed max-w-[280px] mb-4">
-					<?php echo esc_html( $card_desc ); ?>
+					<?php 
+					if ( substr( $card_desc, -3 ) === '...' ) {
+						$clean_desc = substr( $card_desc, 0, -3 );
+						echo esc_html( $clean_desc );
+						echo ' <a href="' . esc_url( $permalink ) . '" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block whitespace-nowrap">Read More</a>';
+					} else {
+						echo esc_html( $card_desc );
+					}
+					?>
 				</p>
 			<?php endif; ?>
 		<?php endif; ?>
