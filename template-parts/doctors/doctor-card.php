@@ -199,10 +199,9 @@ if ( $is_grid ) {
 		
 		
 		
-		<p class="text-base text-[#4B5563] font-medium leading-relaxed max-w-[280px]">
+		<p class="text-sm text-[#4B5563] font-medium leading-relaxed max-w-[280px]">
 			<?php echo esc_html( $designation ); ?>
 		</p>
-		
 		
 
 		<?php if ( $is_grid ) : ?>
@@ -231,7 +230,7 @@ if ( $is_grid ) {
 			?>
 			<?php if ( ! empty( $card_desc ) ) : ?>
 				<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
-				<p class="text-base text-brand-muted leading-relaxed max-w-[280px]">
+				<p class="text-base text-brand-muted leading-relaxed max-w-[280px] mb-4">
 					<?php echo esc_html( $card_desc ); ?>
 				</p>
 			<?php endif; ?>
