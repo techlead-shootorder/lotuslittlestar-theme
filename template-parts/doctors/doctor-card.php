@@ -213,7 +213,7 @@ if ( $is_grid ) {
 					<path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
 				</svg>
 			</div>
-			<span class="text-xs font-bold text-brand-dark leading-none"><?php echo esc_html( $experience ); ?></span>
+			<span class="text-base font-bold text-brand-dark leading-none"><?php echo esc_html( $experience ); ?></span>
 		</div>
 
 		<?php if ( $is_grid ) : ?>
