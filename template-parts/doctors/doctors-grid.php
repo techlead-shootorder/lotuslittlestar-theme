@@ -44,6 +44,11 @@ if ( $doctors_query->have_posts() ) {
 			<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl">
 				Our experienced team of specialists is dedicated to providing exceptional care for women, newborns, and children. Combining advanced medical expertise with compassion, we deliver personalized healthcare and trusted support at every stage of life.
 			</p>
+			<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-14 bg-brand-red hover:bg-brand-red-hover text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
+					Book Appointment
+				</a>
+			</div>
 		</div>
 	</div>
 </section>
