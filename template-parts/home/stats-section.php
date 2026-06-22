@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <section class="py-12 bg-[#F1F4F0] border-b border-brand-cream relative">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 divide-y-0 divide-x-0 sm:divide-x-0 lg:divide-x lg:divide-brand-cream/80">
+		<div class="grid grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 divide-y-0 divide-x-0 sm:divide-x-0 lg:divide-x lg:divide-brand-cream/80">
 			<!-- Stat 1 -->
 			<div class="flex flex-col items-center text-center bg-white border  rounded-lg p-4 lg:p-4">
 				<span class="font-outfit text-4xl sm:text-3xl font-bold text-black mb-2">220+</span>
