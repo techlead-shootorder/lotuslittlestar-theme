@@ -43,7 +43,7 @@ if ( ! $doctors_query->have_posts() ) {
 				<h2 class="text-3xl sm:text-4xl font-medium text-brand-dark mt-2 mb-4">
 					Meet Our Experts
 				</h2>
-				<p class="text-brand-muted text-sm leading-relaxed">
+				<p class="text-brand-muted text-base leading-relaxed">
 					Our multidisciplinary team of renowned specialists is dedicated to delivering advanced, compassionate care for women, newborns, and children—helping families navigate every stage of life with confidence.
 				</p>
 			</div>

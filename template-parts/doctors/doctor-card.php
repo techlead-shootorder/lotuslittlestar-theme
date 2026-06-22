@@ -21,28 +21,124 @@ if ( $fallback_doctor ) {
 	$department = isset( $fallback_doctor['department'] ) ? $fallback_doctor['department'] : 'Pediatrics';
 	$experience = isset( $fallback_doctor['experience'] ) ? $fallback_doctor['experience'] : '10+ Yrs';
 	$permalink  = isset( $fallback_doctor['permalink'] ) ? $fallback_doctor['permalink'] : home_url( '/doctors/' );
+	
+	// Clean overrides to match standard designations
+	if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
+		$specialty     = 'Neonatology | Pediatrics | PICU';
+		$qualification = 'MD (Pediatrics)';
+		$designation   = 'Director – Neonatal & Pediatric Intensive Care Services';
+		$experience    = '32+ Years Experience';
+	} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
+		$specialty     = 'Neonatology | Pediatrics';
+		$qualification = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
+		$designation   = 'Managing Director – Neonatology & Pediatrics';
+		$experience    = '35+ Years Experience';
+	} elseif ( strpos( $name, 'Mehul' ) !== false ) {
+		$specialty     = 'Pediatrics & Nephrology';
+		$qualification = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
+		$designation   = 'Senior Consultant – Pediatric Nephrology';
+		$experience    = '30+ Years Experience';
+	} elseif ( strpos( $name, 'Roopa' ) !== false ) {
+		$specialty     = 'Gynecology & Obstetrics';
+		$qualification = 'MBBS, DGO, CCPU';
+		$designation   = 'HOD – Obstetrics & Gynecology';
+		$experience    = '26+ Years Experience';
+	} elseif ( strpos( $name, 'Ramana' ) !== false ) {
+		$specialty     = 'Pediatric Hematology & Oncology';
+		$qualification = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
+		$designation   = 'Director – Pediatric Hematology & Oncology';
+		$experience    = '39+ Years Experience';
+	} else {
+		$qualification = $department;
+		$designation   = 'Consultant - ' . $specialty;
+		$experience    = $experience . ' Experience';
+	}
 } else {
 	$name       = get_the_title();
 	$specialty  = get_post_meta( get_the_ID(), '_doctor_specialty', true );
+	$department = get_post_meta( get_the_ID(), '_doctor_department', true );
+	$experience_val = get_post_meta( get_the_ID(), '_doctor_experience', true );
+	$education  = get_post_meta( get_the_ID(), '_doctor_education', true );
+	$permalink  = get_permalink();
+
+	// Parse first line of education as qualification
+	$qualification = '';
+	if ( ! empty( $education ) ) {
+		$edu_lines = explode( "\n", str_replace( "\r", "", $education ) );
+		$qualification = trim( $edu_lines[0] );
+	}
+	if ( empty( $qualification ) ) {
+		$qualification = ! empty( $department ) ? $department : 'Specialist';
+	}
+
+	// Resolve experience string
+	$experience = ! empty( $experience_val ) ? $experience_val : '10+ Yrs';
+	if ( strpos( $experience, 'Experience' ) === false ) {
+		$experience .= ' Experience';
+	}
+
+	// Resolve designation and specialty
 	if ( empty( $specialty ) ) {
 		$specialty = 'Specialist Doctor';
 	}
-	$department = get_post_meta( get_the_ID(), '_doctor_department', true );
-	if ( empty( $department ) ) {
-		$department = 'Pediatrics';
+	
+	// Fetch or fallback designation
+	$designation = get_post_meta( get_the_ID(), '_doctor_designation', true );
+	if ( empty( $designation ) ) {
+		$designation = 'Consultant – ' . $specialty;
 	}
-	$experience = get_post_meta( get_the_ID(), '_doctor_experience', true );
-	if ( empty( $experience ) ) {
-		$experience = '10+ Yrs';
+
+	// Exact database overrides for name matchings
+	if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
+		$specialty     = 'Neonatology | Pediatrics | PICU';
+		$qualification = 'MD (Pediatrics)';
+		$designation   = 'Director – Neonatal & Pediatric Intensive Care Services';
+		$experience    = '32+ Years Experience';
+	} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
+		$specialty     = 'Neonatology | Pediatrics';
+		$qualification = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
+		$designation   = 'Managing Director – Neonatology & Pediatrics';
+		$experience    = '35+ Years Experience';
+	} elseif ( strpos( $name, 'Mehul' ) !== false ) {
+		$specialty     = 'Pediatrics & Nephrology';
+		$qualification = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
+		$designation   = 'Senior Consultant – Pediatric Nephrology';
+		$experience    = '30+ Years Experience';
+	} elseif ( strpos( $name, 'Roopa' ) !== false ) {
+		$specialty     = 'Gynecology & Obstetrics';
+		$qualification = 'MBBS, DGO, CCPU';
+		$designation   = 'HOD – Obstetrics & Gynecology';
+		$experience    = '26+ Years Experience';
+	} elseif ( strpos( $name, 'Ramana' ) !== false ) {
+		$specialty     = 'Pediatric Hematology & Oncology';
+		$qualification = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
+		$designation   = 'Director – Pediatric Hematology & Oncology';
+		$experience    = '39+ Years Experience';
 	}
-	$permalink  = get_permalink();
+}
+
+// Doctor specific image URL mapping
+$doctor_images = array(
+	'Dr. Satish Ghanta' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
+	'Dr. V.S.V. Prasad' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/vsv-prasad-1.png',
+	'Dr. Mehul Shah'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+	'Dr. Roopa Ghanta'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/DR-Roopa-ghanta-scaled.webp',
+	'Dr. Ramana Dandamudi' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/ramana-new.png',
+);
+
+$matched_img_url = '';
+foreach ( $doctor_images as $doc_name => $url ) {
+	if ( strpos( $name, $doc_name ) !== false ) {
+		$matched_img_url = $url;
+		break;
+	}
 }
 
 // Generate classes
 $card_classes = array(
 	'bg-white',
 	'w-full',
-	$max_width_class ? $max_width_class : '',
+	$max_width_class ? $max_width_class : 'max-w-[340px]',
 	'rounded-[0.5rem]',
 	'border',
 	'border-[#EBE8E2]',
@@ -78,48 +174,60 @@ if ( $is_grid ) {
 
 <div class="<?php echo esc_attr( $card_classes_str ); ?>" <?php echo $data_attrs; ?>>
 	<!-- Image Container -->
-	<div class="aspect-[6/7] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0">
-		<?php if ( ! $fallback_doctor && has_post_thumbnail() ) : ?>
+	<div class="aspect-[6/7] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
+		<?php if ( $matched_img_url ) : ?>
+			<img src="<?php echo esc_url( $matched_img_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+		<?php elseif ( ! $fallback_doctor && has_post_thumbnail() ) : ?>
 			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500' ) ); ?>
 		<?php else : ?>
-			<!-- SVG Placeholder -->
-			<?php if ( $fallback_doctor && ! empty( $fallback_doctor['color'] ) ) : ?>
-				<svg class="h-20 w-20 <?php echo esc_attr( $fallback_doctor['color'] ); ?> opacity-75 group-hover:scale-105 transition-transform duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
-					<circle cx="50" cy="35" r="18" fill="currentColor" fill-opacity="0.1"/>
-					<path d="M20 85c0-15 15-22 30-22s30 7 30 22" fill="currentColor" fill-opacity="0.05" stroke-linecap="round"/>
-				</svg>
-			<?php else : ?>
-				<svg class="h-16 w-16 text-brand-coral/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-				</svg>
-			<?php endif; ?>
+			<svg class="h-16 w-16 text-brand-coral/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+			</svg>
 		<?php endif; ?>
 	</div>
 	
 	<!-- Card Body -->
-	<div class="p-5 flex flex-col justify-between flex-grow text-left">
-		<div>
-			<div class="mb-4">
-				<h3 class="text-base font-bold text-brand-green line-clamp-1 group-hover:text-brand-red transition-colors"><?php echo esc_html( $name ); ?></h3>
-				<p class="text-xs text-brand-muted mt-0.5 leading-normal"><?php echo esc_html( $specialty ); ?></p>
-			</div>
-			
-			<div class="mb-5 flex flex-col gap-1.5 text-[11px] border-t border-brand-cream/40 pt-3">
-				<div class="flex items-start gap-2">
-					<span class="font-medium text-brand-muted/70 w-[75px] shrink-0">Department:</span>
-					<span class="font-bold text-brand-red uppercase leading-tight"><?php echo esc_html( $department ); ?></span>
-				</div>
-				<div class="flex items-start gap-2">
-					<span class="font-medium text-brand-muted/70 w-[75px] shrink-0">Experience:</span>
-					<span class="font-bold text-brand-dark leading-tight"><?php echo esc_html( $experience ); ?></span>
-				</div>
-			</div>
-		</div>
+	<div class="p-6 flex flex-col items-center text-center flex-grow">
+		<h3 class="text-xl md:text-2xl font-bold text-brand-dark font-outfit mb-1.5 group-hover:text-brand-red transition-colors"><?php echo esc_html( $name ); ?></h3>
 		
-		<div class="mt-auto">
-			<a href="<?php echo esc_url( $permalink ); ?>" class="flex items-center justify-center w-full py-2 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-xs font-bold rounded-lg transition-all duration-300">
-				Book Now
-			</a>
+		<p class="text-[#007AFF] text-[13px] md:text-sm font-semibold tracking-wide uppercase mb-1"><?php echo esc_html( $specialty ); ?></p>
+		
+		<p class="text-xs text-brand-muted mb-4"><?php echo esc_html( $qualification ); ?></p>
+		
+		<div class="w-full border-t border-[#F1ECE4]/60 my-3"></div>
+		
+		<p class="text-xs md:text-sm text-[#4B5563] font-medium leading-relaxed max-w-[280px]">
+			<?php echo esc_html( $designation ); ?>
+		</p>
+		
+		<div class="w-full border-t border-[#F1ECE4]/60 my-3"></div>
+		
+		<!-- Experience Badge -->
+		<div class="flex items-center justify-center gap-2 mb-2 mt-1">
+			<div class="w-6 h-6 rounded-full bg-[#E5F1FF] text-[#007AFF] flex items-center justify-center shrink-0 select-none">
+				<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+					<circle cx="12" cy="8" r="4"/>
+					<path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
+				</svg>
+			</div>
+			<span class="text-xs font-bold text-brand-dark leading-none"><?php echo esc_html( $experience ); ?></span>
 		</div>
 	</div>
+	
+	<!-- Action Buttons -->
+	<div class="w-full flex border-t border-[#EBE8E2] mt-auto">
+		<a href="<?php echo esc_url( $permalink ); ?>" class="w-1/2 h-12 bg-[#FDF3D5] hover:bg-[#FBE09E] text-brand-dark font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors border-r border-[#EBE8E2]">
+			<svg class="w-4 h-4 text-brand-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+			</svg>
+			View Profile
+		</a>
+		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="w-1/2 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-colors">
+			<svg class="w-4 h-4 text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+			</svg>
+			Book Appointment
+		</a>
+	</div>
 </div>
+
