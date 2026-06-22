@@ -45,8 +45,13 @@ $founders = array(
 		<!-- Founders Grid -->
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
 			<?php foreach ( $founders as $id => $founder ) : 
-				$img_path = get_stylesheet_directory() . '/assets/' . $founder['image_name'];
-				$img_url  = file_exists( $img_path ) ? get_stylesheet_directory_uri() . '/assets/' . $founder['image_name'] : '';
+				$img_input = $founder['image_name'];
+				if ( strpos( $img_input, 'http://' ) === 0 || strpos( $img_input, 'https://' ) === 0 ) {
+					$img_url = $img_input;
+				} else {
+					$img_path = get_stylesheet_directory() . '/assets/' . $img_input;
+					$img_url  = file_exists( $img_path ) ? get_stylesheet_directory_uri() . '/assets/' . $img_input : '';
+				}
 			?>
 				<div class="bg-[#FAF9F5] rounded-3xl border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col sm:flex-row items-center sm:items-start gap-8 text-center sm:text-left group">
 					<!-- Circular Image Frame -->
@@ -85,8 +90,13 @@ $founders = array(
 
 <!-- Founder Modals -->
 <?php foreach ( $founders as $id => $founder ) : 
-	$img_path = get_stylesheet_directory() . '/assets/' . $founder['image_name'];
-	$img_url  = file_exists( $img_path ) ? get_stylesheet_directory_uri() . '/assets/' . $founder['image_name'] : '';
+	$img_input = $founder['image_name'];
+	if ( strpos( $img_input, 'http://' ) === 0 || strpos( $img_input, 'https://' ) === 0 ) {
+		$img_url = $img_input;
+	} else {
+		$img_path = get_stylesheet_directory() . '/assets/' . $img_input;
+		$img_url  = file_exists( $img_path ) ? get_stylesheet_directory_uri() . '/assets/' . $img_input : '';
+	}
 ?>
 	<div id="modal-<?php echo esc_attr( $id ); ?>" class="founder-modal fixed inset-0 z-55 flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
 		<!-- Modal Content Box -->
