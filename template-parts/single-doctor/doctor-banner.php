@@ -71,7 +71,7 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 				<!-- Badges grid -->
 				<div class="grid grid-cols-2 gap-4 border-y border-brand-cream/80 py-4 w-full mb-8 select-none">
 					<div class="text-center">
-						<p class="text-xl font-bold font-outfit text-brand-red line-clamp-1"><?php echo esc_html( $department ); ?></p>
+						<p class="text-xl font-bold font-outfit text-brand-red line-clamp-3"><?php echo esc_html( $department ); ?></p>
 						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Department</p>
 					</div>
 					<div class="text-center border-x border-brand-cream/80">
