@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 					<!-- Quote Text -->
 					<p class="text-brand-green text-base sm:text-lg leading-relaxed mb-8 font-medium">
-						"To deliver world-class women and child healthcare with compassion, expertise, and innovation."
+						"To deliver exceptional women and child healthcare through clinical excellence, advanced technology, and compassionate care, ensuring the health and well-being of every mother, newborn, and child."
 					</p>
 				</div>
 				<!-- Underline Bar -->
@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 					<!-- Quote Text -->
 					<p class="text-brand-green text-base sm:text-lg leading-relaxed mb-8 font-medium">
-						"To be the most trusted healthcare partner for women, children, and families, shaping healthier generations."
+						"To be the most trusted destination for women and child healthcare, setting new benchmarks in maternity, neonatal, and pediatric care through innovation, expertise, and patient-centered excellence."
 					</p>
 				</div>
 				<!-- Underline Bar -->

@@ -12,18 +12,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 $founders = array(
 	'satish' => array(
 		'name'          => 'Dr. Satish Ghanta',
-		'qualification' => 'MBBS, MD (Peds), Fellowship (Aus)',
-		'specialty'     => 'Founder & Director - Pediatric Critical Care & Neonatology',
+		'qualification' => 'MBBS (Manipal University), MD – Pediatrics, Fellowship in Neonatology, Pediatric & Cardiac Intensive Care (Australia)',
+		'specialty'     => 'Managing Director - Pediatrics Critical Care',
 		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
-		'bio'           => 'Dr. Satish Ghanta, our Founder & Director, is an eminent Pediatrician, Neonatologist, and Pediatric Critical Care Specialist with over 32 years of experience. He is dedicated to establishing world-class emergency and critical care services for children. Dr. Ghanta completed his MBBS at Manipal University, followed by MD in Pediatrics, and advanced Fellowships in Neonatology, Pediatric & Cardiac Intensive Care in Australia. He is also the founder of the CHOICE Foundation, a non-profit organization providing critical care support to underprivileged children in Hyderabad. His vision of advanced, accessible, and compassionate child healthcare has been the cornerstone of Little Stars Hospital\'s mission since 2009.',
+		'bio'           => 'Dr. Satish Ghanta, our Managing Director, is a highly experienced Neonatologist, Developmental Paediatrician, and Paediatric Intensivist with over 32+ years of clinical experience. Until 2007, he had extensive international training (Neonatal & Paediatric Critical Care) at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital. He & his team bring unparalleled leadership to our institution, guiding our strategic initiatives and fostering a culture of excellence. He is also the founder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.',
 	),
+	'V.S.V. Prasad' => array(
+		'name'          => 'Dr. V.S.V. Prasad',
+		'qualification' => 'MD Pediatrics (AIIMS, New Delhi),FRCPCH (UK)',
+		'specialty'     => 'Managing Director - Neonatology & Pediatrics',
+		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/vsv-prasad-1.png',
+		'bio'           => 'Dr. V.S.V. Prasad, our Managing Director and Founder of Lotus Hospitals, is a renowned Neonatologist and Pediatric Critical Care Specialist with over 35+ years of experience in advancing neonatal and pediatric healthcare. After completing his medical education at AIIMS, New Delhi, he pursued advanced training in Neonatology and Pediatric Critical Care in the United States and the United Kingdom.Returning to India with a vision to establish world-class healthcare services for children, Dr. Prasad founded Lotus Hospitals in 2006 with a mission to make quality healthcare accessible to every family. Under his leadership, Lotus Hospitals has grown into one of the most trusted names in women and child healthcare, recognized for clinical excellence, advanced technology, and compassionate patient care.His commitment to innovation and patient-centered care continues to inspire the growth of Lotus Little Stars, helping set new benchmarks in neonatal, pediatric, and maternal healthcare for families across the region.',
+	)
 	'ramana' => array(
 		'name'          => 'Dr. Ramana Dandamudi',
-		'qualification' => 'MBBS, DCH (Ireland), MRCPI (Ireland), Fellowship (UK)',
-		'specialty'     => 'Director - Paediatric Haematology & Oncology',
+		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
+		'specialty'     => 'Paediatric Hemato-Oncology',
 		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/ramana-new.png',
-		'bio'           => 'Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39 years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady\'s Hospital, Dublin, and Manchester Children\'s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children\'s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi\'s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children\'s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.',
+		'bio'           => 'Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39+ years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi’s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children’s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.',
 	),
+	'mehul' => array(
+		'name'          => 'Dr. Mehul Shah',
+		'qualification' => 'MD(PED),DCH(BOM),MD(USA),DABPN(USA)',
+		'specialty'     => 'PEDIATRICS & NEPHROLOGY',
+		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'bio'           => 'Dr. Mehul Shah is a highly experienced Paediatric Nephrology Specialist with over 30 years of expertise. He completed his medical education at King Edward Memorial Hospital and Seth Gordhandas Sunderdas Medical College, specializing in Pediatrics at Wadia Children’s Hospital. Dr. Shah furthered his qualifications with a Diploma in Child Health (DCH) from the University of Mumbai and advanced studies in Paediatric Nephrology in the United States. He is board-certified by the American Board of Pediatrics and Paediatric Nephrology. At Little Stars & She Hospital in Banjara Hills, Hyderabad, Dr. Shah heads the department and provides comprehensive renal care and is dedicated to delivering exceptional treatment to his patients. In 1995, he pioneered Paediatric Nephrology services in united Andhra Pradesh, introducing the specialty when it was virtually non-existent, particularly at Apollo Hospitals. Dr. Shah’s expertise attracts patients from across India and abroad, and he remains a leading figure in the field of paediatric nephrology.',
+	),
+	'Roopa' => array(
+		'name'          => 'Dr. Roopa Ghanta',
+		'qualification' => 'MBBS, DGO, CCPU',
+		'specialty'     => 'HOD - OBSTETRICS & GYNAECOLOGY',
+		'image_name'    => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/DR-Roopa-ghanta-scaled.webp',
+		'bio'           => 'Dr. Roopa Ghanta, with over 26 years of expertise in Gynaecology and Obstetrics heads the OBG Department at Little Stars & She Women and Children’s Hospital. Her international experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics and her enhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology adds a high level of precision and expertise in patient care. Dr. Roopa Ghanta specializes in high-risk pregnancy care and advanced gynaecological treatments. She has introduced innovative practices like water birthing, midwifery, painless birthing etc at Little Stars & She Hospital, where she is committed to delivering world-class, patient-centred care.',
+	)
 );
 ?>
 
