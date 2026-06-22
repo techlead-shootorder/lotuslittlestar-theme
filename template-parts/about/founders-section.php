@@ -90,7 +90,7 @@ $founders = array(
 ?>
 	<div id="modal-<?php echo esc_attr( $id ); ?>" class="founder-modal fixed inset-0 z-55 flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
 		<!-- Modal Content Box -->
-		<div class="bg-white w-full max-w-4xl rounded-[2rem] shadow-2xl relative overflow-hidden flex flex-col md:flex-row transform scale-95 transition-transform duration-300 max-h-[90vh] md:max-h-none overflow-y-auto md:overflow-y-visible">
+		<div class="bg-white w-full max-w-3xl rounded-[2rem] shadow-2xl relative overflow-hidden flex flex-col md:flex-row transform scale-95 transition-transform duration-300 max-h-[85vh] overflow-y-auto md:overflow-y-visible md:h-[480px]">
 			<!-- Close Button -->
 			<button type="button" class="close-founder-modal absolute top-6 right-6 text-brand-muted hover:text-brand-red transition-colors z-20 focus:outline-none">
 				<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
@@ -99,31 +99,32 @@ $founders = array(
 			</button>
 
 			<!-- Left Column (Image & Yellow Background Mask) -->
-			<div class="w-full md:w-5/12 bg-white flex items-center justify-center relative p-8 min-h-[300px] md:min-h-none overflow-hidden shrink-0 border-r border-[#F3F4F6]">
+			<div class="w-full md:w-5/12 bg-white flex items-center justify-center relative p-6 md:p-8 min-h-[250px] md:min-h-0 md:h-full overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-[#F3F4F6]">
 				<!-- Parent Mask Container -->
-				<div class="relative w-60 h-60 md:w-76 md:h-76 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white z-10">
+				<div class="relative w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white z-10">
 					<!-- Yellow Design Backdrop Circle (Offset inside the mask) -->
-					<div class="absolute w-56 h-56 md:w-72 md:h-72 bg-[#F6C015] rounded-full -right-2 -top-2 translate-x-4 -translate-y-2 z-0"></div>
+					<div class="absolute w-44 h-44 md:w-56 md:h-56 bg-[#F6C015] rounded-full -right-2 -top-2 translate-x-3 -translate-y-1.5 z-0"></div>
 					
 					<!-- Grayscale Avatar with Blending -->
 					<?php if ( $img_url ) : ?>
 						<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $founder['name'] ); ?>" class="absolute inset-0 w-full h-full object-cover grayscale mix-blend-multiply z-10">
 					<?php else : ?>
-						<div class="absolute inset-0 w-full h-full flex items-center justify-center text-brand-coral/40 z-10">
-							<svg class="h-24 w-24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+						<div class="absolute inset-0 w-full h-full flex items-center justify-center text-[#D93B48] opacity-20 z-10">
+							<!-- Clean SVG headshot silhouette fallback matching screenshot shape -->
+							<svg class="h-20 w-20" fill="currentColor" viewBox="0 0 24 24">
+								<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
 							</svg>
 						</div>
 					<?php endif; ?>
 				</div>
 			</div>
 
-			<!-- Right Column (Text Bio details) -->
-			<div class="w-full md:w-7/12 flex flex-col justify-center p-8 md:p-12 text-left relative z-10">
-				<h3 class="font-outfit text-2xl md:text-3xl font-bold text-[#3B497D] mb-2 leading-tight"><?php echo esc_html( $founder['name'] ); ?></h3>
-				<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-6"><?php echo esc_html( $founder['qualification'] ); ?></span>
+			<!-- Right Column (Text Bio details - scrollable on desktop) -->
+			<div class="w-full md:w-7/12 flex flex-col p-6 md:p-10 text-left md:h-full md:overflow-y-auto relative z-10">
+				<h3 class="font-outfit text-2xl md:text-2xl font-bold text-[#3B497D] mb-1 leading-tight"><?php echo esc_html( $founder['name'] ); ?></h3>
+				<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-4 block"><?php echo esc_html( $founder['qualification'] ); ?></span>
 				
-				<div class="text-[#374151] text-sm md:text-base leading-relaxed space-y-4 font-sans font-normal border-t border-[#F3F4F6] pt-6">
+				<div class="text-[#374151] text-sm md:text-sm leading-relaxed space-y-4 font-sans font-normal border-t border-[#F3F4F6] pt-4">
 					<p><?php echo esc_html( $founder['bio'] ); ?></p>
 				</div>
 			</div>
