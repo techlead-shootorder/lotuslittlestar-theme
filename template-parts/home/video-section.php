@@ -30,42 +30,63 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Success Stories Carousel Data & Layout -->
 		<?php
-		// Configuration list for YouTube success story videos
+		/**
+		 * Helper function to extract YouTube Video ID from various URL formats
+		 */
+		if ( ! function_exists( 'lotus_get_youtube_id' ) ) {
+			function lotus_get_youtube_id( $url ) {
+				if ( empty( $url ) ) {
+					return '';
+				}
+				// If it's already an 11-character video ID
+				if ( strlen( $url ) === 11 ) {
+					return $url;
+				}
+				// Regex to parse various YouTube link formats
+				$pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i';
+				if ( preg_match( $pattern, $url, $matches ) ) {
+					return $matches[1];
+				}
+				return '';
+			}
+		}
+
+		// Configuration list for success story videos with direct URLs and thumbnails
 		$success_stories = array(
 			array(
-				'title'              => "From Crisis to Hope: Chaitrika's Journey",
-				'$video_url'           => 'sB4Klh3dD0c', // Replace with exact YouTube Video ID
-				'fallback_thumbnail' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png',
+				'title'         => "From Crisis to Hope: Chaitrika's Journey",
+				'video_url'     => 'https://www.youtube.com/watch?v=sB4Klh3dD0c', // Replace with your YouTube Video URL
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'              => "A 5-year-old's story of strength & recovery from 'Severe Dengue Shock'",
-				'$video_url'           => 'y6120QOlsfU', // Replace with exact YouTube Video ID
-				'fallback_thumbnail' => get_stylesheet_directory_uri() . '/assets/banjarahills.png',
+				'title'         => "A 5-year-old's story of strength & recovery from 'Severe Dengue Shock'",
+				'video_url'     => 'https://www.youtube.com/watch?v=y6120QOlsfU', // Replace with your YouTube Video URL
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/banjarahills.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'              => "HAEMOPHILIA TREATMENT SUCCESS STORY",
-				'$video_url'           => 'P1P1zU1w2q8', // Replace with exact YouTube Video ID
-				'fallback_thumbnail' => get_stylesheet_directory_uri() . '/assets/kondapur.png',
+				'title'         => "HAEMOPHILIA TREATMENT SUCCESS STORY",
+				'video_url'     => 'https://www.youtube.com/watch?v=P1P1zU1w2q8', // Replace with your YouTube Video URL
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/kondapur.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'              => "Advanced NICU Care Success Story",
-				'$video_url'           => 'bL2zL7pEa-s', // Replace with exact YouTube Video ID
-				'fallback_thumbnail' => get_stylesheet_directory_uri() . '/assets/rajmundry.png',
+				'title'         => "Advanced NICU Care Success Story",
+				'video_url'     => 'https://www.youtube.com/watch?v=bL2zL7pEa-s', // Replace with your YouTube Video URL
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/rajmundry.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'              => "High-Risk Pregnancy Success Story",
-				'$video_url'           => 'Jv2gYhYm2hY', // Replace with exact YouTube Video ID
-				'fallback_thumbnail' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png',
+				'title'         => "High-Risk Pregnancy Success Story",
+				'video_url'     => 'https://www.youtube.com/watch?v=Jv2gYhYm2hY', // Replace with your YouTube Video URL
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'              => "Pediatric Nephrology Success Story",
-				'$video_url'           => 'eE74tGkG_gE', // Replace with exact YouTube Video ID
-				'fallback_thumbnail' => get_stylesheet_directory_uri() . '/assets/banjarahills.png',
+				'title'         => "Pediatric Nephrology Success Story",
+				'video_url'     => 'https://www.youtube.com/watch?v=eE74tGkG_gE', // Replace with your YouTube Video URL
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/banjarahills.png', // Replace with your local/media image URL
 			),
 			array(
-				'title'              => "Child Development Milestones Success Story",
-				'$video_url'           => '6W31VDuPi60', // Replace with exact YouTube Video ID
-				'fallback_thumbnail' => get_stylesheet_directory_uri() . '/assets/kondapur.png',
+				'title'         => "Child Development Milestones Success Story",
+				'video_url'     => 'https://www.youtube.com/watch?v=6W31VDuPi60', // Replace with your YouTube Video URL
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/kondapur.png', // Replace with your local/media image URL
 			),
 		);
 		?>
@@ -75,15 +96,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div id="success-stories-carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-none gap-6 pb-6 -mx-4 px-4 sm:mx-0 sm:px-0">
 				<?php foreach ( $success_stories as $index => $story ) : 
 					$video_url = esc_url( $story['video_url'] );
-					// Attempt to pull the YouTube-generated high-resolution thumbnail first
-					$thumbnail = "https://img.youtube.com/vi/{$$video_url}/maxresdefault.jpg";
-					$fallback  = esc_url( $story['fallback_thumbnail'] );
+					$video_id  = esc_attr( lotus_get_youtube_id( $story['video_url'] ) );
+					$thumbnail = ! empty( $story['thumbnail_url'] ) ? esc_url( $story['thumbnail_url'] ) : "https://img.youtube.com/vi/{$video_id}/maxresdefault.jpg";
+					$local_fallback = esc_url( get_stylesheet_directory_uri() . '/assets/left-image-hom.png' );
 				?>
-					<div class="carousel-card flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start group cursor-pointer" data-video-id="<?php echo $$video_url; ?>">
+					<div class="carousel-card flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start group cursor-pointer" data-video-id="<?php echo $video_id; ?>">
 						<div class="relative aspect-[16/10] rounded-[1.5rem] overflow-hidden shadow-md hover:shadow-xl border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 select-none">
 							<!-- Thumbnail Image -->
-							<img src="<?php echo esc_url( $thumbnail ); ?>" 
-								 onerror="this.src='<?php echo $fallback; ?>';"
+							<img src="<?php echo $thumbnail; ?>" 
+								 onerror="if (this.src.indexOf('hqdefault.jpg') === -1) { this.src='https://img.youtube.com/vi/<?php echo $video_id; ?>/hqdefault.jpg'; } else { this.src='<?php echo $local_fallback; ?>'; }"
 								 alt="<?php echo esc_attr( $story['title'] ); ?>" 
 								 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 							
