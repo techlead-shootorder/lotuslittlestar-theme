@@ -177,7 +177,7 @@ if ( $is_grid ) {
 
 <div class="<?php echo esc_attr( $card_classes_str ); ?>" <?php echo $data_attrs; ?>>
 	<!-- Image Container -->
-	<div class="aspect-[1/1] max-h-[300px] md:max-h-[240px] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
+	<div class="aspect-[1/1] max-h-[300px] md:max-h-[300px] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
 		<?php if ( $matched_img_url ) : ?>
 			<img src="<?php echo esc_url( $matched_img_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 		<?php elseif ( ! $fallback_doctor && has_post_thumbnail() ) : ?>
