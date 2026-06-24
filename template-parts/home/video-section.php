@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	let currentActiveIndex = 0;
 	let autoPlayInterval;
-	const delay = 5000; // 5 seconds interval for auto-sliding
+	const delay = 3000; // 3 seconds interval for auto-sliding
 
 	function updateActiveDot() {
 		const scrollLeft = carousel.scrollLeft;
