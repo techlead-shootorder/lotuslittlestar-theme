@@ -17,6 +17,6 @@ get_header();
 get_template_part( 'template-parts/specialists/special-hero-section' );
 get_template_part( 'template-parts/specialists/specialists-grid' );
 get_template_part( 'template-parts/specialists/child-section' );
-get_template_part( 'template-parts/specialists/metrics' );
+get_template_part( 'template-parts/home/stats-section' );
 
 get_footer();
