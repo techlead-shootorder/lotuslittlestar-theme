@@ -19,6 +19,7 @@ get_template_part( 'template-parts/home/why-us-section' );
 get_template_part( 'template-parts/home/special-care-section' );
 get_template_part( 'template-parts/home/experts-section' );
 get_template_part( 'template-parts/home/video-section' );
+get_template_part( 'template-parts/home/accreditations' );
 get_template_part( 'template-parts/home/faq' );
 get_template_part( 'template-parts/home/presence' );
 
