@@ -26,7 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			
 			<!-- Wing 1: Gynecology -->
-			<div class="bg-[#F1F4F0] p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]">
+			<div class="relative overflow-hidden bg-[#F1F4F0] p-10  border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[280px]" 
+			 style="background-image:url('http://lotuslittlestars.in/wp-content/uploads/2026/06/gynocology-bg.webp');">
 				<div class="w-full">
 					<!-- Venus symbol icon -->
 					<div class="text-brand-dark mb-6">
