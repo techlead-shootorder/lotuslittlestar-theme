@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</span>
 				
 				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-dark leading-[1.15] mb-6">
-					Best <span class="font-semibold italic text-brand-green">Women & Children's</span> Hospital in Hyderabad – Advanced Care for Mothers, <span class="font-semibold italic text-brand-green">Newborns & Children</span>
+					Advanced <span class="font-semibold italic text-brand-green">women and child care</span> backed by expertise ,<span class="font-semibold italic text-brand-green">innovation, and compassion</span>
 				</h1>
 				
 				<p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
