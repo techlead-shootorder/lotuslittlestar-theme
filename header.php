@@ -78,7 +78,7 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Home</a>
 				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">About Us</a>
 				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Specialties</a>
-				<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Doctors</a>
+				<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Our Experts</a>
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Contact</a>
 			</nav>
 

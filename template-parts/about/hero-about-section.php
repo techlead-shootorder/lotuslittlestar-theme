@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/home-banner.png');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
-	<div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/90 to-brand-bg/30 lg:to-transparent"></div>
+	<!-- <div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/90 to-brand-bg/30 lg:to-transparent"></div> -->
 	
 	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 		<!-- Pill Badge -->

@@ -92,6 +92,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="relative px-1 sm:px-0">
+			<!-- Navigation Arrows -->
+			<button id="carousel-prev" class="absolute left-0 top-[40%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/95 hover:bg-brand-red hover:text-white text-brand-dark hidden md:flex items-center justify-center shadow-lg border border-slate-200 transition-all duration-300 -translate-x-1/2 focus:outline-none focus:ring-2 focus:ring-brand-red/40 select-none cursor-pointer" aria-label="Previous Slide">
+				<svg class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+				</svg>
+			</button>
+			<button id="carousel-next" class="absolute right-0 top-[40%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/95 hover:bg-brand-red hover:text-white text-brand-dark hidden md:flex items-center justify-center shadow-lg border border-slate-200 transition-all duration-300 translate-x-1/2 focus:outline-none focus:ring-2 focus:ring-brand-red/40 select-none cursor-pointer" aria-label="Next Slide">
+				<svg class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2.5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+				</svg>
+			</button>
+
 			<!-- Carousel Wrapper -->
 			<div id="success-stories-carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-none gap-6 pb-6 -mx-4 px-4 sm:mx-0 sm:px-0">
 				<?php foreach ( $success_stories as $index => $story ) : 
@@ -169,10 +181,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	const carousel = document.getElementById('success-stories-carousel');
 	const cards = carousel.querySelectorAll('.carousel-card');
 	const dots = document.querySelectorAll('.carousel-dot');
+	const prevBtn = document.getElementById('carousel-prev');
+	const nextBtn = document.getElementById('carousel-next');
+
+	let currentActiveIndex = 0;
+	let autoPlayInterval;
+	const delay = 5000; // 5 seconds interval for auto-sliding
 
 	function updateActiveDot() {
 		const scrollLeft = carousel.scrollLeft;
-		let activeIndex = 0;
 		let minDiff = Infinity;
 
 		cards.forEach((card, idx) => {
@@ -180,12 +197,12 @@ document.addEventListener('DOMContentLoaded', function() {
 			const diff = Math.abs(cardOffset - scrollLeft);
 			if (diff < minDiff) {
 				minDiff = diff;
-				activeIndex = idx;
+				currentActiveIndex = idx;
 			}
 		});
 
 		dots.forEach((dot, idx) => {
-			if (idx === activeIndex) {
+			if (idx === currentActiveIndex) {
 				dot.classList.add('bg-amber-500', 'scale-125');
 				dot.classList.remove('bg-slate-300');
 			} else {
@@ -201,16 +218,74 @@ document.addEventListener('DOMContentLoaded', function() {
 	// Scroll event listener
 	carousel.addEventListener('scroll', updateActiveDot);
 
-	// Dot click triggers scrolling
-	dots.forEach((dot, idx) => {
-		dot.addEventListener('click', () => {
-			const targetCard = cards[idx];
+	function slideTo(index) {
+		if (index < 0) {
+			index = cards.length - 1;
+		} else if (index >= cards.length) {
+			index = 0;
+		}
+		
+		const targetCard = cards[index];
+		if (targetCard) {
 			carousel.scrollTo({
 				left: targetCard.offsetLeft - carousel.offsetLeft,
 				behavior: 'smooth'
 			});
+		}
+	}
+
+	function slideNext() {
+		slideTo(currentActiveIndex + 1);
+	}
+
+	function slidePrev() {
+		slideTo(currentActiveIndex - 1);
+	}
+
+	function startAutoPlay() {
+		stopAutoPlay();
+		autoPlayInterval = setInterval(slideNext, delay);
+	}
+
+	function stopAutoPlay() {
+		if (autoPlayInterval) {
+			clearInterval(autoPlayInterval);
+		}
+	}
+
+	// Arrow Navigation Listeners
+	if (prevBtn) {
+		prevBtn.addEventListener('click', () => {
+			slidePrev();
+			startAutoPlay(); // Reset auto slide timer on interaction
+		});
+	}
+
+	if (nextBtn) {
+		nextBtn.addEventListener('click', () => {
+			slideNext();
+			startAutoPlay(); // Reset auto slide timer on interaction
+		});
+	}
+
+	// Dot click triggers scrolling
+	dots.forEach((dot, idx) => {
+		dot.addEventListener('click', () => {
+			slideTo(idx);
+			startAutoPlay(); // Reset auto slide timer on interaction
 		});
 	});
+
+	// Pause autoplay on mouse enter / resume on leave
+	carousel.addEventListener('mouseenter', stopAutoPlay);
+	carousel.addEventListener('mouseleave', startAutoPlay);
+
+	// Pause autoplay on mobile touch gestures
+	carousel.addEventListener('touchstart', stopAutoPlay, { passive: true });
+	carousel.addEventListener('touchend', startAutoPlay, { passive: true });
+
+	// Start autoplay initially
+	startAutoPlay();
 
 	// 2. Video Modal Popup Logic
 	const modal = document.getElementById('video-modal');
@@ -220,6 +295,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	const backdrop = document.getElementById('video-modal-backdrop');
 
 	function openModal(videoId) {
+		// Pause autoplay while video is open
+		stopAutoPlay();
+
 		// Populate modal with YouTube autoplay iframe
 		iframeContainer.innerHTML = `
 			<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" 
@@ -256,6 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			// Clear iframe to stop playback
 			iframeContainer.innerHTML = '';
 			document.body.classList.remove('overflow-hidden');
+			
+			// Resume autoplay after closing
+			startAutoPlay();
 		}, 300);
 	}
 
