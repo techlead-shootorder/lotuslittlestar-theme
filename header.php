@@ -69,7 +69,7 @@
 		<div class="flex items-center justify-between h-20">
 			<div class="flex-shrink-0 flex items-center">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center">
-					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/LLS_Logo.jpg" alt="Lotus Little Stars" class="h-20 w-32 object-contain">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-logo-new.png" alt="Lotus Little Stars" class="h-20 w-32 object-contain">
 				</a>
 			</div>
 
