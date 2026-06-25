@@ -50,7 +50,7 @@ $faqs = array(
 		<!-- Section Header -->
 		<div class="text-center mb-16">
 			<h2 class="text-3xl sm:text-3xl font-semibold text-brand-green tracking-tight font-outfit mb-4">
-				Common Inquiries
+				FAQ
 			</h2>
 		</div>
 
