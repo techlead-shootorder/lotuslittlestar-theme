@@ -34,8 +34,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/gynacology.png" alt="Gynecology" class="h-10 w-10 object-contain">
 					</div>
-					<h3 class="text-2xl font-medium text-white mb-4 font-outfit">Gynecology</h3>
-					<p class="text-white/90 text-base leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Gynecology</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						From preventive women’s wellness to advanced surgical care, we offer expertise in treating ovarian cysts, fibroids, uterus removal, MTP, and other gynecological conditions for every stage of a woman’s health journey.
 					</p>
 				</div>
@@ -49,8 +49,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/metarnity.png" alt="Obstetrics & Fetal Care" class="h-10 w-10 object-contain">
 					</div>
-					<h3 class="text-2xl font-medium text-white mb-4 font-outfit">Obstetrics & Fetal Care</h3>
-					<p class="text-white/90 text-base leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Obstetrics & Fetal Care</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						Providing holistic care for pregnancy, childbirth, and maternity, with specialized support for high-risk pregnancies and cutting-edge fetal medicine for optimal mother and baby outcomes.
 					</p>
 				</div>
@@ -64,8 +64,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/pediatric-care.png" alt="General Pediatrics" class="h-10 w-10 object-contain">
 					</div>
-					<h3 class="text-2xl font-medium text-white mb-4 font-outfit">General Pediatrics</h3>
-					<p class="text-white/90 text-base leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">General Pediatrics</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						Comprehensive medical care for children, including immunizations, growth monitoring, common illnesses, and preventive health programs for overall well-being.
 					</p>
 				</div>
@@ -80,8 +80,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/neonatol.png" alt="Neonatology & Intensive Care" class="h-10 w-10 object-contain">
 					</div>
-					<h3 class="text-2xl font-medium text-white mb-4 font-outfit">Neonatology & Intensive Care</h3>
-					<p class="text-white/90 text-base leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Neonatology & Intensive Care</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						Specialized neonatal and pediatric intensive care services (NICU & PICU) designed to manage critical conditions, premature births, and life-threatening illnesses with utmost precision.
 					</p>
 				</div>
@@ -94,8 +94,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/speciality.png" alt="Pediatric Multi-Speciality" class="h-10 w-10 object-contain">
 					</div>
-					<h3 class="text-2xl font-medium text-white mb-4 font-outfit">Pediatric Multi-Speciality</h3>
-					<p class="text-white/90 text-base leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Pediatric Multi-Speciality</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						Expertise across multiple specialties, including pediatric surgery, oncology, nephrology, dentistry, ENT, orthopedics, gastroenterology, endocrinology, plastic, and neuro surgery to cater to the diverse healthcare needs of children.
 					</p>
 				</div>
@@ -109,8 +109,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/developmental.png" alt="Child Development Center" class="h-10 w-10 object-contain">
 					</div>
-					<h3 class="text-2xl font-medium text-white mb-4 font-outfit">Child Development Center (CDC)</h3>
-					<p class="text-white/90 text-base leading-relaxed mb-6">
+					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Child Development Center (CDC)</h3>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">
 						A nurturing space offering therapies, assessments, and interventions to support children with developmental delays, learning challenges, or special needs, enabling them to thrive.
 					</p>
 				</div>
