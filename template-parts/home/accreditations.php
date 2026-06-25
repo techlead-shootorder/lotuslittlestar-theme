@@ -36,29 +36,32 @@ $accreditations = array(
 }
 
 .accreditations-marquee {
-    overflow: hidden;
-    position: relative;
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
 .accreditations-track {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
-    width: max-content;
-
-    animation: accreditation-scroll 25s linear infinite;
 }
 
-.accreditations-track:hover {
-    animation-play-state: paused;
+.acacreditation-item {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .accreditation-item {
     flex-shrink: 0;
     width: 60px;
     height: 60px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,16 +71,6 @@ $accreditations = array(
     max-width: 60px;
     max-height: 60px;
     object-fit: contain;
-}
-
-@keyframes accreditation-scroll {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
 }
 
 @media (max-width: 768px) {
@@ -98,19 +91,6 @@ $accreditations = array(
 		<div class="accreditations-track">
 
 			<?php
-			// First set
-			foreach ( $accreditations as $item ) :
-			?>
-				<div class="accreditation-item">
-					<img
-						src="<?php echo esc_url( $item['url'] ); ?>"
-						alt="<?php echo esc_attr( $item['name'] ); ?>"
-					>
-				</div>
-			<?php endforeach; ?>
-
-			<?php
-			// Duplicate set for seamless loop
 			foreach ( $accreditations as $item ) :
 			?>
 				<div class="accreditation-item">
