@@ -30,17 +30,9 @@ $accreditations = array(
 ?>
 <style>
     .accreditations-section {
-    padding: 80px 0;
-    background: #f7f7f7;
+    padding: 30px 0;
+    background: transparent;
     overflow: hidden;
-}
-
-.accreditations-title {
-    text-align: center;
-    font-size: 48px;
-    font-weight: 700;
-    color: #2e3192;
-    margin-bottom: 60px;
 }
 
 .accreditations-marquee {
@@ -52,7 +44,7 @@ $accreditations = array(
 .accreditations-track {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 40px;
     width: max-content;
 
     animation: accreditation-scroll 25s linear infinite;
@@ -64,8 +56,8 @@ $accreditations = array(
 
 .accreditation-item {
     flex-shrink: 0;
-    width: 220px;
-    height: 180px;
+    width: 60px;
+    height: 60px;
 
     display: flex;
     align-items: center;
@@ -73,8 +65,8 @@ $accreditations = array(
 }
 
 .accreditation-item img {
-    max-width: 100%;
-    max-height: 150px;
+    max-width: 60px;
+    max-height: 60px;
     object-fit: contain;
 }
 
@@ -90,24 +82,16 @@ $accreditations = array(
 
 @media (max-width: 768px) {
     .accreditation-item {
-        width: 150px;
-        height: 120px;
+        width: 50px;
+        height: 50px;
     }
 
     .accreditations-track {
-        gap: 40px;
-    }
-
-    .accreditations-title {
-        font-size: 32px;
+        gap: 24px;
     }
 }
 </style>
 <section class="accreditations-section">
-
-	<h2 class="accreditations-title">
-		Our Accreditations
-	</h2>
 
 	<div class="accreditations-marquee">
 

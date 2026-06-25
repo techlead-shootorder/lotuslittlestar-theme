@@ -112,6 +112,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 
+		<?php get_template_part( 'template-parts/home/accreditations' ); ?>
+
 		<!-- Footer Bottom Credits -->
 		<div class="mt-8 flex flex-col md:flex-row items-center justify-center text-xs text-brand-muted/75 gap-4">
 			<p class="text-brand-muted text-xs mt-4">

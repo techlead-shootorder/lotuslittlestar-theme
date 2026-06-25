@@ -26,8 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			
 			<!-- Wing 1: Gynecology -->
-			<div class="group relative overflow-hidden bg-[#F1F4F0] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center" 
-			 style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/gynacology-bg.png');">
+			<div class="group relative overflow-hidden bg-[#F1F4F0] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
 				<!-- Dark overlay for text visibility -->
 				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
 				
@@ -44,9 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Wing 2: Maternity & Fetal -->
-			<div class="group relative overflow-hidden bg-[#FDF5F7] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center"
-			 style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/Obstetrics-bg.png');">
-				<!-- Dark overlay for text visibility -->
+			<div class="group relative overflow-hidden bg-[#FDF5F7] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">				<!-- Dark overlay for text visibility -->
 				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
 				
 				<div class="w-full relative z-10">
@@ -62,8 +59,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Wing 3: Pediatric Care -->
-			<div class="group relative overflow-hidden bg-[#F5F5FF] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center"
-			 style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/Pediatrics-bg.png');">
+			<div class="group relative overflow-hidden bg-[#F5F5FF] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
 				<!-- Dark overlay for text visibility -->
 				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
 				
@@ -80,8 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Wing 4: Neonatal NICU -->
-			<div class="group relative overflow-hidden bg-[#FCF8F0] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center"
-			 style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/Neonatology-bg.png');">
+			<div class="group relative overflow-hidden bg-[#FCF8F0] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
 				<!-- Dark overlay for text visibility -->
 				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
 				
@@ -98,9 +93,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Wing 5: Super-Specialties -->
-			<div class="group relative overflow-hidden bg-[#F0F8F8] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center"
-			 style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/Multi-Speciality-bg.png');">
-				<!-- Dark overlay for text visibility -->
+			<div class="group relative overflow-hidden bg-[#F0F8F8] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">				<!-- Dark overlay for text visibility -->
 				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
 				
 				<div class="w-full relative z-10">
@@ -116,8 +109,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Wing 6: Developmental -->
-			<div class="group relative overflow-hidden bg-[#F9F0FD] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center"
-			 style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/Child-Development-bg.png');">
+			<div class="group relative overflow-hidden bg-[#F9F0FD] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
 				<!-- Dark overlay for text visibility -->
 				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
 				

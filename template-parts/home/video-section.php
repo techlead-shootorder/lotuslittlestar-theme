@@ -61,7 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			array(
 				'title'         => "A 5-year-old's story of strength & recovery from 'Severe Dengue Shock'",
 				'video_url'     => 'https://www.youtube.com/watch?v=BDs5zyBKY4U', // Replace with your YouTube Video URL
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/banjarahills.png', // Replace with your local/media image URL
+				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/dengue.jpg', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "HAEMOPHILIA TREATMENT SUCCESS STORY",
@@ -71,7 +71,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			array(
 				'title'         => "From critical Condition to recovery 'Krish's Healing Story'",
 				'video_url'     => 'https://www.youtube.com/watch?v=x6I6YsNDt5I', // Replace with your YouTube Video URL
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/rajmundry.png', // Replace with your local/media image URL
+				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/krish-healing.jpg', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "Advanced ICU care",
@@ -81,12 +81,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			array(
 				'title'         => "How Priyansh Overcame HAEMOPHILIA",
 				'video_url'     => 'https://www.youtube.com/watch?v=D1tS9HqO05U', // Replace with your YouTube Video URL
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/banjarahills.png', // Replace with your local/media image URL
+				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/priyansh.jpg', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "From PREGNANCY to PEDIATRIC CARE",
 				'video_url'     => 'https://www.youtube.com/watch?v=fytT6MEhEp4', // Replace with your YouTube Video URL
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/kondapur.png', // Replace with your local/media image URL
+				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/pragnancy-care.jpg', // Replace with your local/media image URL
 			),
 		);
 		?>
