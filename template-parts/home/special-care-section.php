@@ -27,8 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 			<!-- Wing 1: Gynecology -->
 			<div class="group relative overflow-hidden bg-[#F1F4F0] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
-				<!-- Dark overlay for text visibility -->
-				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
+		
 				
 				<div class="w-full relative z-10">
 					<!-- Icon container -->
@@ -43,8 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Wing 2: Maternity & Fetal -->
-			<div class="group relative overflow-hidden bg-[#FDF5F7] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">				<!-- Dark overlay for text visibility -->
-				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
+			<div class="group relative overflow-hidden bg-[#FDF5F7] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
 				
 				<div class="w-full relative z-10">
 					<!-- Icon container -->
@@ -60,8 +58,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- Wing 3: Pediatric Care -->
 			<div class="group relative overflow-hidden bg-[#F5F5FF] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
-				<!-- Dark overlay for text visibility -->
-				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
 				
 				<div class="w-full relative z-10">
 					<!-- Icon container -->
@@ -77,8 +73,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- Wing 4: Neonatal NICU -->
 			<div class="group relative overflow-hidden bg-[#FCF8F0] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
-				<!-- Dark overlay for text visibility -->
-				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
+				
 				
 				<div class="w-full relative z-10">
 					<!-- Icon container -->
@@ -93,9 +88,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Wing 5: Super-Specialties -->
-			<div class="group relative overflow-hidden bg-[#F0F8F8] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">				<!-- Dark overlay for text visibility -->
-				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
-				
+			<div class="group relative overflow-hidden bg-[#F0F8F8] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
 				<div class="w-full relative z-10">
 					<!-- Icon container -->
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
@@ -110,9 +103,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- Wing 6: Developmental -->
 			<div class="group relative overflow-hidden bg-[#F9F0FD] p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
-				<!-- Dark overlay for text visibility -->
-				<div class="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60 z-0"></div>
-				
+								
 				<div class="w-full relative z-10">
 					<!-- Icon container -->
 					<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">

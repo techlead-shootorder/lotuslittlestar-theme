@@ -36,22 +36,17 @@ $accreditations = array(
 }
 
 .accreditations-marquee {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .accreditations-track {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 40px;
-    width: max-content;
-    animation: accreditation-scroll 20s linear infinite;
-}
-
-.accreditations-track:hover {
-    animation-play-state: paused;
 }
 
 .accreditation-item {
@@ -67,15 +62,6 @@ $accreditations = array(
     max-width: 60px;
     max-height: 60px;
     object-fit: contain;
-}
-
-@keyframes accreditation-scroll {
-    0% {
-        transform: translateX(100vw);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
 }
 
 @media (max-width: 768px) {
