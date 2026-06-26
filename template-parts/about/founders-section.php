@@ -102,7 +102,7 @@ $founders = array(
 							<p class="text-sm text-brand-muted leading-relaxed mb-6 font-sans">
 								<?php echo esc_html( $founder['specialty'] ); ?>
 							</p>
-							<p class="text-xs font-semibold text-brand-red uppercase tracking-wider mb-2"><?php echo esc_html( $founder['qualification'] ); ?></p>
+							<!-- <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mb-2"><?php echo esc_html( $founder['qualification'] ); ?></p> -->
 						</div>
 						<div class="mt-auto">
 							<button type="button" data-founder-target="<?php echo esc_attr( $id ); ?>" class="open-founder-modal inline-flex items-center justify-center px-6 h-10 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-xs font-bold rounded-lg transition-all duration-300">

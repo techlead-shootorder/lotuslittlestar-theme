@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
 				At Lotus Little Stars, we bring together expert maternity care, advanced neonatal services, and comprehensive pediatric healthcare under one roof. With 35+ years of combined clinical excellence, we are committed to providing compassionate, world-class care for mothers, newborns, and children. From high-risk pregnancy care and maternity services to Level III NICU, PICU, and pediatric super-specialties, our experienced team and advanced technology ensure the best possible outcomes for every family.
 			</p>
-			<p class="text-brand-muted text-sm sm:text-base leading-relaxed mt-4 font-semibold italic text-brand-dark">
+			<!-- <p class="text-brand-muted text-sm sm:text-base leading-relaxed mt-4 font-semibold italic text-brand-dark">
 				Trusted by families. Driven by excellence. Dedicated to every mother and child.
-			</p>
+			</p> -->
 		</div>
 
 		<!-- Cards Grid -->

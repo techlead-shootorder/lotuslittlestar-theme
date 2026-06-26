@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</h1>
 				
 				<p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-					For over 16+ years, Little Stars & She Hospital has been providing expert maternity, neonatal, pediatric, and women's healthcare services with advanced technology and compassionate care.
+					For over 35+ years, Lotus Little Stars Hospital has been providing expert maternity, neonatal, pediatric, and women's healthcare services with advanced technology and compassionate care.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

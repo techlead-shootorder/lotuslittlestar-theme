@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 		<!-- Main Heading -->
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-brand-green leading-tight max-w-2xl mb-6 font-outfit">
-			No. 1 Trusted Hospital for Women & Children
+			Most Trusted Hospital for Women & Children
 		</h1>
 		
 		<!-- Subtext Description -->

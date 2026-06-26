@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 						<div class="text-left">
 							<span class="block text-[10px] font-semibold text-white/80 uppercase tracking-wider leading-none mb-1">Accredited</span>
-							<span class="block text-base sm:text-lg font-bold font-outfit text-white leading-tight">16+ Years</span>
+							<span class="block text-base sm:text-lg font-bold font-outfit text-white leading-tight">35+ Years</span>
 						</div>
 					</div>
 				</div>

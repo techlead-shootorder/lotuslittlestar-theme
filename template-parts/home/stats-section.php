@@ -27,13 +27,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 			<!-- Stat 3 -->
 			<div class="flex flex-col items-center text-center bg-white rounded border p-4 lg:p-4 lg:pl-4">
-				<span class="font-outfit text-4xl sm:text-3xl font-bold text-brand-red mb-2 stat-number" data-target="35" data-suffix="k+">0k+</span>
+				<span class="font-outfit text-4xl sm:text-3xl font-bold text-brand-red mb-2 stat-number" data-target="35" data-suffix="k+">k+</span>
 				<span class="text-sm font-semibold text-brand-dark tracking-wide uppercase">In-patients Treated</span>
 			</div>
 			
 			<!-- Stat 4 -->
 			<div class="flex flex-col items-center text-center bg-white rounded border p-4 lg:p-4 lg:pl-4">
-				<span class="font-outfit text-4xl sm:text-3xl font-bold text-brand-red mb-2 stat-number" data-target="5" data-suffix="k+">0k+</span>
+				<span class="font-outfit text-4xl sm:text-3xl font-bold text-brand-red mb-2 stat-number" data-target="5" data-suffix="+">0k+</span>
 				<span class="text-sm font-semibold text-brand-dark tracking-wide uppercase">Successful Surgeries</span>
 			</div>
 			<div class="flex flex-col items-center text-center bg-white rounded border p-4 lg:p-4 lg:pl-4">

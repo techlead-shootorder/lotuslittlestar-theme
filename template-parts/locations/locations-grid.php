@@ -143,7 +143,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="bg-white rounded-[2rem] border border-brand-cream shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col group text-left">
 				<!-- Image Header -->
 				<div class="aspect-[16/9] bg-brand-cream relative overflow-hidden flex items-center justify-center">
-					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/rajahmundry.png" alt="Rajahmundry, Andhra Pradesh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/rajamundry-loc.png" alt="Rajahmundry, Andhra Pradesh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 				</div>
 				
 				<!-- Body Content -->

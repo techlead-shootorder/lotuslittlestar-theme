@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			array(
 				'title'         => "HAEMOPHILIA TREATMENT SUCCESS STORY",
 				'video_url'     => 'https://www.youtube.com/watch?v=HHfjDAKH71g', // Replace with your YouTube Video URL
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/kondapur.png', // Replace with your local/media image URL
+				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/hemophelia.png', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "From critical Condition to recovery 'Krish's Healing Story'",
@@ -76,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			array(
 				'title'         => "Advanced ICU care",
 				'video_url'     => 'https://www.youtube.com/watch?v=tOArrA53ldk', // Replace with your YouTube Video URL
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png', // Replace with your local/media image URL
+				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/icu-care.png', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "How Priyansh Overcame HAEMOPHILIA",
