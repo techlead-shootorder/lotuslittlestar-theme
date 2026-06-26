@@ -195,7 +195,7 @@ if ( $is_grid ) {
 		
 		<p class="text-[#007AFF] text-[12px] md:text-xs font-semibold tracking-wide uppercase mb-0.5"><?php echo esc_html( $specialty ); ?></p>
 		
-		<p class="text-[11px] text-brand-muted mb-2"><?php echo esc_html( $qualification ); ?></p>
+		<p class="text-base text-brand-muted mb-2"><?php echo esc_html( $qualification ); ?></p>
 		
 		
 		
