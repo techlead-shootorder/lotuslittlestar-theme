@@ -107,15 +107,16 @@ function lotus_render_doctor_meta_box( $post ) {
 	wp_nonce_field( 'lotus_save_doctor_meta', 'lotus_doctor_nonce' );
 
 	// Retrieve existing values
-	$specialty       = get_post_meta( $post->ID, '_doctor_specialty', true );
-	$experience      = get_post_meta( $post->ID, '_doctor_experience', true );
-	$department      = get_post_meta( $post->ID, '_doctor_department', true );
-	$success_rate    = get_post_meta( $post->ID, '_doctor_success_rate', true );
-	$phone           = get_post_meta( $post->ID, '_doctor_phone', true );
-	$expertise       = get_post_meta( $post->ID, '_doctor_expertise', true );
-	$education       = get_post_meta( $post->ID, '_doctor_education', true );
-	$awards          = get_post_meta( $post->ID, '_doctor_awards', true );
-	$show_in_experts = get_post_meta( $post->ID, '_doctor_show_in_experts', true );
+	$specialty         = get_post_meta( $post->ID, '_doctor_specialty', true );
+	$experience        = get_post_meta( $post->ID, '_doctor_experience', true );
+	$department        = get_post_meta( $post->ID, '_doctor_department', true );
+	$working_hours     = get_post_meta( $post->ID, '_doctor_working_hours', true );
+	$phone             = get_post_meta( $post->ID, '_doctor_phone', true );
+	$expertise         = get_post_meta( $post->ID, '_doctor_expertise', true );
+	$education         = get_post_meta( $post->ID, '_doctor_education', true );
+	$experience_detail = get_post_meta( $post->ID, '_doctor_experience_detail', true );
+	$awards            = get_post_meta( $post->ID, '_doctor_awards', true );
+	$show_in_experts   = get_post_meta( $post->ID, '_doctor_show_in_experts', true );
 	?>
 	<div style="font-family: sans-serif; padding: 10px;">
 		<table class="form-table" style="width: 100%;">
@@ -138,9 +139,9 @@ function lotus_render_doctor_meta_box( $post ) {
 				</td>
 			</tr>
 			<tr>
-				<th style="width: 20%; text-align: left;"><label for="doctor_success_rate"><?php _e( 'Success Rate', 'lotus' ); ?></label></th>
+				<th style="width: 20%; text-align: left;"><label for="doctor_working_hours"><?php _e( 'Working Hours (One per line)', 'lotus' ); ?></label></th>
 				<td>
-					<input type="text" id="doctor_success_rate" name="doctor_success_rate" value="<?php echo esc_attr( $success_rate ); ?>" style="width: 100%;" placeholder="e.g. 99.2%" />
+					<textarea id="doctor_working_hours" name="doctor_working_hours" rows="3" style="width: 100%;" placeholder="e.g.&#10;Mon - Sun 10:30 A.M. 01:00 P.M.&#10;Mon - Sun 05:00 P.M. 08:00 P.M."><?php echo esc_textarea( $working_hours ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -159,6 +160,12 @@ function lotus_render_doctor_meta_box( $post ) {
 				<th style="width: 20%; text-align: left;"><label for="doctor_education"><?php _e( 'Education & Qualifications (One per line)', 'lotus' ); ?></label></th>
 				<td>
 					<textarea id="doctor_education" name="doctor_education" rows="4" style="width: 100%;" placeholder="e.g.&#10;MBBS - Osmania Medical College, Hyderabad&#10;MD Pediatrics - Niloufer Hospital for Women and Children&#10;Fellowship in Neonatology - Royal College of Pediatrics UK"><?php echo esc_textarea( $education ); ?></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th style="width: 20%; text-align: left;"><label for="doctor_experience_detail"><?php _e( 'Experience Details (One per line)', 'lotus' ); ?></label></th>
+				<td>
+					<textarea id="doctor_experience_detail" name="doctor_experience_detail" rows="4" style="width: 100%;" placeholder="e.g.&#10;He received specialised training in Neonatology...&#10;Instrumental in bringing advanced children s health..."><?php echo esc_textarea( $experience_detail ); ?></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -228,7 +235,6 @@ function lotus_save_doctor_meta( $post_id ) {
 		'doctor_specialty'    => '_doctor_specialty',
 		'doctor_experience'   => '_doctor_experience',
 		'doctor_department'   => '_doctor_department',
-		'doctor_success_rate' => '_doctor_success_rate',
 		'doctor_phone'        => '_doctor_phone',
 	);
 
@@ -240,9 +246,11 @@ function lotus_save_doctor_meta( $post_id ) {
 
 	// Update textarea fields
 	$textarea_fields = array(
-		'doctor_expertise' => '_doctor_expertise',
-		'doctor_education' => '_doctor_education',
-		'doctor_awards'    => '_doctor_awards',
+		'doctor_working_hours'     => '_doctor_working_hours',
+		'doctor_expertise'         => '_doctor_expertise',
+		'doctor_education'         => '_doctor_education',
+		'doctor_experience_detail' => '_doctor_experience_detail',
+		'doctor_awards'            => '_doctor_awards',
 	);
 
 	foreach ( $textarea_fields as $post_key => $meta_key ) {
