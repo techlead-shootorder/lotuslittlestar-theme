@@ -235,10 +235,10 @@ if ( $is_grid ) {
 					if ( substr( $card_desc, -3 ) === '...' ) {
 						$clean_desc = substr( $card_desc, 0, -3 );
 						echo esc_html( $clean_desc );
-						echo ' <a href="' . esc_url( $permalink ) . '" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block whitespace-nowrap">Read More</a>';
 					} else {
 						echo esc_html( $card_desc );
 					}
+					echo ' <a href="' . esc_url( $permalink ) . '" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block whitespace-nowrap">Read More</a>';
 					?>
 				</p>
 			<?php endif; ?>
