@@ -42,7 +42,7 @@ $appointment_url = isset( $doctor['appointment_url'] ) ? $doctor['appointment_ur
 	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-between">
 		<div>
 			<!-- Name -->
-			<h3 class="text-xl sm:text-2xl font-bold text-[#0D7A70] mb-1 font-outfit">
+			<h3 class="text-xl sm:text-2xl font-bold text-brand-red mb-1 font-outfit">
 				<?php echo esc_html( $name ); ?>
 			</h3>
 			
@@ -71,10 +71,10 @@ $appointment_url = isset( $doctor['appointment_url'] ) ? $doctor['appointment_ur
 
 		<!-- Action Buttons -->
 		<div class="flex flex-row justify-center sm:justify-start gap-3 mt-auto">
-			<a href="<?php echo esc_url( $profile_url ); ?>" class="inline-flex items-center justify-center px-6 py-2 border-2 border-[#0D7A70] text-[#0D7A70] hover:bg-[#0D7A70] hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
+			<a href="<?php echo esc_url( $profile_url ); ?>" class="inline-flex items-center justify-center px-6 py-2 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
 				View Profile
 			</a>
-			<a href="<?php echo esc_url( $appointment_url ); ?>" class="inline-flex items-center justify-center px-6 py-2 bg-[#0D7A70] hover:bg-[#0A5C54] text-white font-semibold text-sm rounded-lg transition-colors duration-200">
+			<a href="<?php echo esc_url( $appointment_url ); ?>" class="inline-flex items-center justify-center px-6 py-2 bg-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
 				Appointment
 			</a>
 		</div>

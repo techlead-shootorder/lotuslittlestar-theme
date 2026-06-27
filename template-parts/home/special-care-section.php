@@ -81,9 +81,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/neonatol.png" alt="Neonatology & Intensive Care" class="h-10 w-10 object-contain">
 					</div>
 					<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit">Neonatology & Intensive Care</h3>
-					<p class="text-brand-dark text-base leading-relaxed mb-6">
-						Specialized neonatal and pediatric intensive care services (NICU & PICU) designed to manage critical conditions, premature births, and life-threatening illnesses with utmost precision.
-					</p>
+					<p class="text-brand-dark text-base leading-relaxed mb-6">Advanced Level III NICU and PICU services providing comprehensive critical care for premature babies, newborns, and children with complex and life-threatening conditions, supported by experienced specialists and state-of-the-art technology.</p>
 				</div>
 			</div>
 

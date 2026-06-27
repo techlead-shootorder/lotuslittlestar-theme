@@ -11,10 +11,6 @@ $accreditations = array(
 		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-1.webp',
 	),
 	array(
-		'name' => 'NABH',
-		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-2.webp',
-	),
-	array(
 		'name' => 'IAP',
 		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-3.jpeg',
 	),

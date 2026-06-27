@@ -12,6 +12,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Define the static doctors array for the homepage
 $homepage_doctors = array(
 	array(
+		'name'          => 'Dr.Satish Ghanta',
+		'speciality'    => 'Neonatology | Pediatrics | PICU',
+		'qualification' => 'MD (PED) Manipal, Neonatal Fellowship (Sydney, Aus)',
+		'position'      => 'SR Consultant Pediatrician, HOD Neonatal & Pediatric Intensivist Care',
+		'exp'           => '32+ Years Experience',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
+		'appointment_url'=> home_url( '/contact/' ),
+	),
+	array(
+		'name'          => 'Dr. V.S.V Prasad',
+		'speciality'    => 'Neonatology, Pediatrics',
+		'qualification' => 'MD Pediatrics, AIIMS, New Delhi',
+		'position'      => 'Senior Consultant – Pediatric Nephrology',
+		'exp'           => '32+ Years Experience',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
+		'appointment_url'=> home_url( '/contact/' ),
+	),
+	array(
+		'name'          => 'Dr Ramana Dandamudi',
+		'speciality'    => 'Neonatology, Pediatrics',
+		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
+		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
+		'exp'           => '35+ Years Experience',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
+		'appointment_url'=> home_url( '/contact/' ),
+	),
+	array(
 		'name'          => 'Dr. Mehul A. Shah',
 		'speciality'    => 'Pediatrics & Nephrology',
 		'qualification' => 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)',
@@ -20,7 +50,27 @@ $homepage_doctors = array(
 		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
 		'appointment_url'=> home_url( '/contact/' ),
-	)
+	),
+	array(
+		'name'          => 'Dr. Roopa Ghanta',
+		'speciality'    => 'Neonatology, Pediatrics',
+		'qualification' => 'MBBS, DGO, CCPU',
+		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
+		'exp'           => '29+ Years Experience',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
+		'appointment_url'=> home_url( '/contact/' ),
+	),
+	array(
+		'name'          => 'Dr.K.V.S. NARAYANA',
+		'speciality'    => 'Neonatology, Pediatrics',
+		'qualification' => 'MBBS, MS(General Surgery)',
+		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
+		'exp'           => '30+ Years Experience',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
+		'appointment_url'=> home_url( '/contact/' ),
+	),
 );
 ?>
 

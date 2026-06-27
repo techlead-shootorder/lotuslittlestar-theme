@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-logo-new.png" alt="Lotus Little Stars" class="h-16 w-22 object-contain">
 				</a>
 				<p class="text-brand-green text-xs leading-relaxed mt-2 pl-2">
-					Dedicated to providing compassionate and advanced healthcare for mothers and children for over 16 years.
+					Dedicated to providing compassionate and advanced healthcare for mothers and children for over 35+ years.
 				</p>
 				
 			</div>
@@ -112,7 +112,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 
-		<?php get_template_part( 'template-parts/home/accreditations' ); ?>
+		
 
 		<!-- Footer Bottom Credits -->
 		<div class="mt-8 flex flex-col md:flex-row items-center justify-center text-xs text-brand-muted/75 gap-4">
