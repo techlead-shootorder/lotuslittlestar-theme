@@ -11,12 +11,12 @@ $accreditations = array(
 		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-1.webp',
 	),
 	array(
-		'name' => 'IAP',
-		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-3.jpeg',
+		'name' => 'NABH',
+		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-2.webp',
 	),
 	array(
-		'name' => 'IAP Neonatology',
-		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-4.png',
+		'name' => 'IAP',
+		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-3.jpeg',
 	),
 	array(
 		'name' => 'Logo 5',
