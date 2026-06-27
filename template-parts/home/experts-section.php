@@ -17,7 +17,7 @@ $homepage_doctors = array(
 		'qualification' => 'MD (PED) Manipal, Neonatal Fellowship (Sydney, Aus)',
 		'position'      => 'SR Consultant Pediatrician, HOD Neonatal & Pediatric Intensivist Care',
 		'exp'           => '32+ Years Experience',
-		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Satish-Ghanta.jpg.jpeg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
 		'appointment_url'=> home_url( '/contact/' ),
 	),
@@ -27,7 +27,7 @@ $homepage_doctors = array(
 		'qualification' => 'MD Pediatrics, AIIMS, New Delhi',
 		'position'      => 'Senior Consultant – Pediatric Nephrology',
 		'exp'           => '32+ Years Experience',
-		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/LIN_0647.JPG-scaled.jpeg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
 		'appointment_url'=> home_url( '/contact/' ),
 	),
@@ -37,7 +37,7 @@ $homepage_doctors = array(
 		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
 		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
 		'exp'           => '35+ Years Experience',
-		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi-1.jpg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
 		'appointment_url'=> home_url( '/contact/' ),
 	),
@@ -57,7 +57,7 @@ $homepage_doctors = array(
 		'qualification' => 'MBBS, DGO, CCPU',
 		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
 		'exp'           => '29+ Years Experience',
-		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Roopa-Ganta.jpg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
 		'appointment_url'=> home_url( '/contact/' ),
 	),
@@ -67,7 +67,7 @@ $homepage_doctors = array(
 		'qualification' => 'MBBS, MS(General Surgery)',
 		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
 		'exp'           => '30+ Years Experience',
-		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Mhul-A-shah-scaled.webp',
+		'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/kvs-narayana.webp',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
 		'appointment_url'=> home_url( '/contact/' ),
 	),

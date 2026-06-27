@@ -74,7 +74,7 @@ $appointment_url = isset( $doctor['appointment_url'] ) ? $doctor['appointment_ur
 			<a href="<?php echo esc_url( $profile_url ); ?>" class="inline-flex items-center justify-center px-6 py-2 border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
 				View Profile
 			</a>
-			<a href="<?php echo esc_url( $appointment_url ); ?>" class="inline-flex items-center justify-center px-6 py-2 bg-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
+			<a href="<?php echo esc_url( $appointment_url ); ?>" class="inline-flex items-center justify-center px-6 py-2 bg-brand-red  text-white font-semibold text-sm rounded-lg transition-colors duration-200">
 				Appointment
 			</a>
 		</div>
