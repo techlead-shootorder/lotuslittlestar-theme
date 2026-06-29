@@ -168,9 +168,10 @@ $card_classes_str = implode( ' ', array_filter( $card_classes ) );
 $data_attrs = '';
 if ( $is_grid ) {
 	$data_attrs = sprintf(
-		'data-name="%s" data-specialty="%s"',
+		'data-name="%s" data-specialty="%s" data-department="%s"',
 		esc_attr( strtolower( $name ) ),
-		esc_attr( $specialty )
+		esc_attr( $specialty ),
+		esc_attr( $department )
 	);
 }
 ?>

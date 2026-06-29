@@ -19,14 +19,14 @@ $args = array(
 );
 $doctors_query = new WP_Query( $args );
 
-// Extract specialties for filter options
-$specialties_list = array();
+// Extract departments for filter options
+$departments_list = array();
 if ( $doctors_query->have_posts() ) {
 	while ( $doctors_query->have_posts() ) {
 		$doctors_query->the_post();
-		$spec = get_post_meta( get_the_ID(), '_doctor_specialty', true );
-		if ( ! empty( $spec ) && ! in_array( $spec, $specialties_list ) ) {
-			$specialties_list[] = $spec;
+		$dept = get_post_meta( get_the_ID(), '_doctor_department', true );
+		if ( ! empty( $dept ) && ! in_array( $dept, $departments_list ) ) {
+			$departments_list[] = $dept;
 		}
 	}
 	wp_reset_postdata();
@@ -70,18 +70,18 @@ if ( $doctors_query->have_posts() ) {
 
 			<!-- Filters Group -->
 			<div class="flex gap-4 w-full md:w-auto">
-				<select id="specialty-filter" class="block w-full md:w-48 px-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all">
-					<option value="">All Specialties</option>
-					<?php if ( ! empty( $specialties_list ) ) : ?>
-						<?php foreach ( $specialties_list as $spec ) : ?>
-							<option value="<?php echo esc_attr( $spec ); ?>"><?php echo esc_html( $spec ); ?></option>
+				<select id="department-filter" class="block w-full md:w-48 px-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all">
+					<option value="">All specialities</option>
+					<?php if ( ! empty( $departments_list ) ) : ?>
+						<?php foreach ( $departments_list as $dept ) : ?>
+							<option value="<?php echo esc_attr( $dept ); ?>"><?php echo esc_html( $dept ); ?></option>
 						<?php endforeach; ?>
 					<?php else : ?>
 						<!-- Fallback filter options matching standard list -->
-						<option value="Neonatology">Neonatology</option>
-						<option value="Pediatric Intensive Care">Pediatric Intensive Care</option>
-						<option value="Pediatric Orthopedics">Pediatric Orthopedics</option>
-						<option value="Gynecology & Obstetrics">Gynecology & Obstetrics</option>
+						<option value="Pediatrics">Pediatrics</option>
+						<option value="Orthopedics">Orthopedics</option>
+						<option value="Surgery">Surgery</option>
+						<option value="Obstetrics">Obstetrics</option>
 					<?php endif; ?>
 				</select>
 			</div>
@@ -177,7 +177,7 @@ if ( $doctors_query->have_posts() ) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 	const searchInput = document.getElementById('doctor-search');
-	const filterSelect = document.getElementById('specialty-filter');
+	const filterSelect = document.getElementById('department-filter');
 	const cards = document.querySelectorAll('.doctor-card-item');
 	const noResults = document.getElementById('no-doctors-found');
 
@@ -188,12 +188,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		cards.forEach(card => {
 			const name = card.getAttribute('data-name');
-			const specialty = card.getAttribute('data-specialty').toLowerCase();
+			const department = card.getAttribute('data-department').toLowerCase();
 
 			const matchesSearch = name.includes(searchVal);
-			const matchesSpecialty = filterVal === "" || specialty.includes(filterVal);
+			const matchesDepartment = filterVal === "" || department.includes(filterVal);
 
-			if (matchesSearch && matchesSpecialty) {
+			if (matchesSearch && matchesDepartment) {
 				card.style.display = '';
 				visibleCount++;
 			} else {

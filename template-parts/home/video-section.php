@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			array(
 				'title'         => "From Crisis to Hope: Chaitrika's Journey",
 				'video_url'     => 'https://www.youtube.com/watch?v=EFOxJGuuj_Y', // Replace with your YouTube Video URL
-				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/left-image-hom.png', // Replace with your local/media image URL
+				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/chaitrika-yt.jpg', // Replace with your local/media image URL
 			),
 			array(
 				'title'         => "A 5-year-old's story of strength & recovery from 'Severe Dengue Shock'",
