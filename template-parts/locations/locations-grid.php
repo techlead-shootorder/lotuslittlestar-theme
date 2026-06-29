@@ -24,11 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="lg:col-span-6 xl:col-span-7">
 				<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">Contact Us</span>
 				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-green mt-2 mb-4">
-					Our Hospital Network
+					Connect with Lotus Little Stars Hospital
 				</h1>
 				<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-xl">
-					Lotus Little Stars operates advanced multi-specialty centers in key areas, delivering exceptional medical support to your doorstep. Get in touch with our team or visit one of our premium locations.
-				</p>
+					From maternity and women's healthcare to specialized pediatric services, our dedicated team is ready to assist you. Contact us today to book an appointment or learn more about our comprehensive healthcare services.				</p>
 				<div class="mt-6 flex">
 					<a href="#locations-grid" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-sm font-bold rounded-[4px] shadow-sm hover:shadow transition-all duration-200">
 						View Centers
