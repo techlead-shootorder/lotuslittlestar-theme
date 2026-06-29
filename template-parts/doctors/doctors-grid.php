@@ -88,7 +88,7 @@ if ( $doctors_query->have_posts() ) {
 		</div>
 
 		<!-- Doctors Grid Container -->
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="doctors-list-grid">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="doctors-list-grid">
 			<?php
 			if ( $doctors_query->have_posts() ) :
 				while ( $doctors_query->have_posts() ) : $doctors_query->the_post();
