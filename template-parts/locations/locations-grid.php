@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="relative inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20 py-16 lg:py-14 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/location-hero-bg.png');">
+<section class="relative bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat py-16 lg:py-14 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/location-hero-bg.png');">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 			
