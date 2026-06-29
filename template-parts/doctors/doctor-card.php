@@ -139,23 +139,25 @@ foreach ( $doctor_images as $doc_name => $url ) {
 
 // Generate classes
 $card_classes = array(
-	'bg-white',
+	'bg-[#FAF9F5]',
 	'w-full',
-	$max_width_class ? $max_width_class : 'max-w-[340px]',
-	'rounded-[0.5rem]',
+	$max_width_class ? $max_width_class : 'max-w-xl',
+	'rounded-2xl',
 	'border',
 	'border-[#EBE8E2]',
 	'shadow-sm',
 	'hover:shadow-md',
-	'transform',
-	'hover:-translate-y-1',
 	'transition-all',
 	'duration-300',
 	'flex',
 	'flex-col',
-	'overflow-hidden',
-	'group',
-	'mx-auto'
+	'sm:flex-row',
+	'gap-6',
+	'p-6',
+	'items-center',
+	'sm:items-start',
+	'mx-auto',
+	'group'
 );
 
 if ( $is_grid ) {
@@ -177,103 +179,103 @@ if ( $is_grid ) {
 ?>
 
 <div class="<?php echo esc_attr( $card_classes_str ); ?>" <?php echo $data_attrs; ?>>
-	<!-- Image Container -->
-	<div class="aspect-[1/1] max-h-[300px] md:max-h-[300px] w-full bg-brand-cream relative overflow-hidden flex items-center justify-center shrink-0 border-b border-[#EBE8E2]">
+	<!-- Circular Image -->
+	<div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-sm bg-brand-cream relative">
 		<?php if ( $matched_img_url ) : ?>
-			<img src="<?php echo esc_url( $matched_img_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+			<img src="<?php echo esc_url( $matched_img_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover">
 		<?php elseif ( ! $fallback_doctor && has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500' ) ); ?>
+			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover' ) ); ?>
 		<?php else : ?>
-			<svg class="h-16 w-16 text-brand-coral/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-			</svg>
-		<?php endif; ?>
-	</div>
-	
-	<!-- Card Body -->
-	<div class="p-4 md:p-5 flex flex-col items-center text-center flex-grow">
-		<h3 class="text-lg md:text-xl font-bold text-brand-dark font-outfit mb-1 group-hover:text-brand-red transition-colors"><?php echo esc_html( $name ); ?></h3>
-		
-		<p class="text-[#007AFF] text-[12px] md:text-xs font-semibold tracking-wide uppercase mb-0.5"><?php echo esc_html( $specialty ); ?></p>
-		
-		<p class="text-base text-brand-muted mb-2"><?php echo esc_html( $qualification ); ?></p>
-		
-		
-		
-		<p class="text-sm text-[#4B5563] font-medium leading-relaxed max-w-[280px]">
-			<?php echo esc_html( $designation ); ?>
-		</p>
-		
-
-		<?php if ( $is_grid ) : ?>
-			<?php
-			$card_desc = '';
-			if ( $fallback_doctor ) {
-				$card_desc = isset( $fallback_doctor['description'] ) ? $fallback_doctor['description'] : '';
-				if ( empty( $card_desc ) ) {
-					if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
-						$card_desc = 'Director of Neonatal & Pediatric Intensive Care Services with 32+ years experience.';
-					} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
-						$card_desc = 'Managing Director of Neonatology & Pediatrics with 35+ years clinical expertise.';
-					} elseif ( strpos( $name, 'Mehul' ) !== false ) {
-						$card_desc = 'Senior Consultant Pediatric Nephrologist specializing in pediatric kidney disease and transplants.';
-					} elseif ( strpos( $name, 'Roopa' ) !== false ) {
-						$card_desc = 'HOD of Obstetrics & Gynecology specializing in high-risk pregnancy and maternal care.';
-					} elseif ( strpos( $name, 'Ramana' ) !== false ) {
-						$card_desc = 'Director of Pediatric Hematology & Oncology specializing in childhood cancers.';
-					} else {
-						$card_desc = 'Expert consultant providing comprehensive, compassionate pediatric and neonatal healthcare services.';
-					}
-				}
-			} else {
-				$card_desc = lotus_get_doctor_excerpt( get_the_ID(), 120 );
-			}
-			?>
-			<?php if ( ! empty( $card_desc ) ) : ?>
-				<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
-				<p class="text-base text-brand-muted leading-relaxed max-w-[280px] mb-2">
-					<?php 
-					if ( substr( $card_desc, -3 ) === '...' ) {
-						$clean_desc = substr( $card_desc, 0, -3 );
-						echo esc_html( $clean_desc );
-					} else {
-						echo esc_html( $card_desc );
-					}
-					?>
-				</p>
-				<div class="mb-4">
-					<a href="<?php echo esc_url( $permalink ); ?>" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block text-sm">Read More</a>
-				</div>
-			<?php endif; ?>
-		<?php endif; ?>
-		<!-- Experience Badge -->
-		<div class="flex items-center justify-center gap-2 mb-1 mt-0.5">
-			<div class="w-5 h-5 rounded-full bg-[#E5F1FF] text-[#007AFF] flex items-center justify-center shrink-0 select-none">
-				<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-					<circle cx="12" cy="8" r="4"/>
-					<path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/>
+			<div class="w-full h-full flex items-center justify-center bg-brand-coral/10">
+				<svg class="h-12 w-12 text-brand-coral/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
 				</svg>
 			</div>
-			<span class="text-base font-bold text-brand-dark leading-none"><?php echo esc_html( $experience ); ?></span>
+		<?php endif; ?>
+	</div>
+
+	<!-- Info Details -->
+	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-between w-full">
+		<div>
+			<!-- Name -->
+			<h3 class="text-xl sm:text-2xl font-bold text-brand-red mb-1 font-outfit">
+				<?php echo esc_html( $name ); ?>
+			</h3>
+			
+			<!-- Specialty / Designation -->
+			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium">
+				<?php echo esc_html( $designation ); ?>
+			</p>
+			
+			<!-- Qualification -->
+			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3">
+				<?php echo esc_html( $qualification ); ?>
+			</p>
+
+			<!-- Description (if exists) -->
+			<?php if ( $is_grid ) : ?>
+				<?php
+				$card_desc = '';
+				if ( $fallback_doctor ) {
+					$card_desc = isset( $fallback_doctor['description'] ) ? $fallback_doctor['description'] : '';
+					if ( empty( $card_desc ) ) {
+						if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
+							$card_desc = 'Director of Neonatal & Pediatric Intensive Care Services with 32+ years experience.';
+						} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
+							$card_desc = 'Managing Director of Neonatology & Pediatrics with 35+ years clinical expertise.';
+						} elseif ( strpos( $name, 'Mehul' ) !== false ) {
+							$card_desc = 'Senior Consultant Pediatric Nephrologist specializing in pediatric kidney disease and transplants.';
+						} elseif ( strpos( $name, 'Roopa' ) !== false ) {
+							$card_desc = 'HOD of Obstetrics & Gynecology specializing in high-risk pregnancy and maternal care.';
+						} elseif ( strpos( $name, 'Ramana' ) !== false ) {
+							$card_desc = 'Director of Pediatric Hematology & Oncology specializing in childhood cancers.';
+						} else {
+							$card_desc = 'Expert consultant providing comprehensive, compassionate pediatric and neonatal healthcare services.';
+						}
+					}
+				} else {
+					$card_desc = lotus_get_doctor_excerpt( get_the_ID(), 120 );
+				}
+				?>
+				<?php if ( ! empty( $card_desc ) ) : ?>
+					<p class="text-base text-brand-muted leading-relaxed max-w-md mb-2">
+						<?php 
+						if ( substr( $card_desc, -3 ) === '...' ) {
+							$clean_desc = substr( $card_desc, 0, -3 );
+							echo esc_html( $clean_desc );
+						} else {
+							echo esc_html( $card_desc );
+						}
+						?>
+					</p>
+					<div class="mb-4">
+						<a href="<?php echo esc_url( $permalink ); ?>" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block text-sm">Read More</a>
+					</div>
+				<?php endif; ?>
+			<?php endif; ?>
+
+			<!-- Experience Badge -->
+			<div class="flex items-center justify-center sm:justify-start gap-2 text-brand-dark text-sm sm:text-base mb-4 font-medium">
+				<!-- Calendar Icon -->
+				<svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+					<line x1="16" y1="2" x2="16" y2="6"></line>
+					<line x1="8" y1="2" x2="8" y2="6"></line>
+					<line x1="3" y1="10" x2="21" y2="10"></line>
+				</svg>
+				<span><?php echo esc_html( $experience ); ?></span>
+			</div>
 		</div>
 
-		
-	</div>
-	
-	<!-- Action Buttons -->
-	<div class="w-full flex border-t border-[#EBE8E2] mt-auto">
-		<a href="<?php echo esc_url( $permalink ); ?>" class="w-1/2 h-11 bg-[#FDF3D5] hover:bg-[#FBE09E] text-brand-dark font-bold text-xs sm:text-xs flex items-center justify-center gap-1.5 transition-colors border-r border-[#EBE8E2]">
-			<svg class="w-3.5 h-3.5 text-brand-dark shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-			</svg>
-			View Profile
-		</a>
-		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="w-1/2 h-11 bg-brand-red hover:bg-brand-red-hover text-white font-bold text-xs sm:text-xs flex items-center justify-center gap-1.5 transition-colors">
-			<svg class="w-3.5 h-3.5 text-white shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-				<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-			</svg>
-			Book Appointment
-		</a>
+		<!-- Action Buttons -->
+		<div class="flex flex-row justify-center sm:justify-start gap-3 mt-auto">
+			<a href="<?php echo esc_url( $permalink ); ?>" class="inline-flex items-center justify-center px-6 py-2 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
+				View Profile
+			</a>
+			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-6 py-2 bg-brand-red text-white font-semibold text-sm rounded-lg hover:bg-brand-red-hover transition-colors duration-200">
+				Appointment
+			</a>
+		</div>
 	</div>
 </div>
 
