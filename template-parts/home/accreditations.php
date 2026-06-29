@@ -47,16 +47,14 @@ $accreditations = array(
 
 .accreditation-item {
     flex-shrink: 0;
-    width: 60px;
-    height: 60px;
+    width: 130px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .accreditation-item img {
-    max-width: 60px;
-    max-height: 60px;
     object-fit: contain;
 }
 

@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 			<!-- Content Column (Left) -->
 			<div class="lg:col-span-6 text-left">
-				<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-2 block">KONDAPUR CAMPUS</span>
+				<!-- <span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-2 block">KONDAPUR CAMPUS</span> -->
 				<h2 class="font-outfit text-3xl sm:text-4xl font-semibold text-brand-dark mt-2 mb-6">
 					Dedicated Excellence: Child Development Center
 				</h2>
 				<p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-8 font-medium">
-					Our specialized Kondapur facility focuses exclusively on pediatric milestones, behavioral health, and developmental support, providing a nurturing ecosystem for every child to thrive.
+					Our specialized facility focuses exclusively on pediatric milestones, behavioral health, and developmental support, providing a nurturing ecosystem for every child to thrive.
 				</p>
 				
 				<!-- Checkmark Points List -->
