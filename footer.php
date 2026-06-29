@@ -35,10 +35,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">About Us</a>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Specialties</a>
+						<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Our Specialties</a>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Doctors</a>
+						<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Our Experts</a>
 					</li>
 					<li>
 						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Contact & Locations</a>
@@ -58,9 +58,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</li>
 					<li>
 						<a href="#" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Health Tips</a>
-					</li>
-					<li>
-						<a href="#" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Careers</a>
 					</li>
 					<li>
 						<a href="#" class="text-brand-muted hover:text-brand-red transition-colors duration-150">FAQ & Support</a>

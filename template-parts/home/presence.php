@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 				</div>
 				<!-- External link -->
-				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">
+				<a href="https://maps.app.goo.gl/pYsM12x43wwQvR1y7" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">
 					Directions
 					<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -56,7 +56,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/rajahmundry.png" alt="Rajahmundry, Andhra Pradesh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 					</div>
 				</div>
-				<a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">
+				<a href="https://maps.app.goo.gl/hwhEdxf9FrWPKWyA7" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">
 					Directions
 					<svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
