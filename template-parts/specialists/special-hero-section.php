@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <section class="relative inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20 bg-center py-10 sm:py-24 border-b border-brand-cream/60 overflow-hidden" 
-	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/about-us-banner-new.png');">
+	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-speciality-new-scaled.webp');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
 	<!-- <div class="absolute inset-0 bg-gradient-to-r from-[#F5F3EF] via-[#F5F3EF]/95 to-[#F5F3EF]/30 lg:to-transparent"></div> -->
