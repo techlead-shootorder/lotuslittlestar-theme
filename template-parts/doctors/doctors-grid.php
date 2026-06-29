@@ -33,7 +33,10 @@ if ( $doctors_query->have_posts() ) {
 }
 ?>
 
-<section class="relative bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat py-20 sm:py-24 border-b border-brand-cream/60 overflow-hidden" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-doctore-new-scaled.webp');">
+<section class="relative py-20 sm:py-24 border-b border-brand-cream/60 overflow-hidden">
+	<!-- Background Image -->
+	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-doctore-new-scaled.webp');"></div>
+	
 	<!-- Overlay Gradient to ensure text readability -->
 	<div class="absolute inset-0 bg-white/85 sm:bg-transparent sm:bg-gradient-to-r sm:from-white sm:via-white/90 sm:to-transparent -z-10"></div>
 	

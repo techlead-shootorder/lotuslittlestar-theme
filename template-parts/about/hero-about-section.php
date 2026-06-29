@@ -10,8 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="relative bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat py-24 sm:py-32 border-b border-brand-cream overflow-hidden" 
-	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-about-new-scaled.webp');">
+<section class="relative py-24 sm:py-32 border-b border-brand-cream overflow-hidden">
+	<!-- Background Image -->
+	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-about-new-scaled.webp');"></div>
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
 	<div class="absolute inset-0 bg-brand-bg/85 sm:bg-transparent sm:bg-gradient-to-r sm:from-brand-bg sm:via-brand-bg/90 sm:to-transparent -z-10"></div>
