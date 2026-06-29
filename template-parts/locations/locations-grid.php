@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="relative py-16 lg:py-14 border-b border-brand-cream/60 overflow-hidden">
+<section class="relative min-h-screen lg:min-h-0 flex items-center py-16 lg:py-14 border-b border-brand-cream/60 overflow-hidden">
 	<!-- Background Image -->
 	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/location-hero-bg.png');"></div>
 	
 	<!-- Overlay Gradient to ensure text readability -->
-	<div class="absolute inset-0 bg-white/90 sm:bg-transparent sm:bg-gradient-to-r sm:from-white sm:via-white/95 sm:to-transparent -z-10"></div>
+	<div class="absolute inset-0 bg-white/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/65 sm:via-white/60 sm:to-transparent -z-10"></div>
 	
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

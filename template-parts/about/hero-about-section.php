@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<section class="relative py-24 sm:py-32 border-b border-brand-cream overflow-hidden">
+<section class="relative h-screen sm:h-auto py-0 sm:py-32 flex items-center border-b border-brand-cream overflow-hidden">
 	<!-- Background Image -->
 	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-about-new-scaled.webp');"></div>
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
-	<div class="absolute inset-0 bg-brand-bg/85 sm:bg-transparent sm:bg-gradient-to-r sm:from-brand-bg sm:via-brand-bg/90 sm:to-transparent -z-10"></div>
+	<div class="absolute inset-0 bg-brand-bg/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-brand-bg/65 sm:via-brand-bg/60 sm:to-transparent -z-10"></div>
 	
 	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 		<!-- Pill Badge -->
