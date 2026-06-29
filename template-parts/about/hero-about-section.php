@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-about-new-scaled.webp');">
 	
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
-	<!-- <div class="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/90 to-brand-bg/30 lg:to-transparent"></div> -->
+	<div class="absolute inset-0 bg-brand-bg/85 sm:bg-transparent sm:bg-gradient-to-r sm:from-brand-bg sm:via-brand-bg/90 sm:to-transparent -z-10"></div>
 	
 	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
 		<!-- Pill Badge -->
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</span>
 		
 		<!-- Main Heading -->
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold text-brand-green leading-tight max-w-2xl mb-6 font-outfit">
+		<h1 class="text-3xl sm:text-5xl lg:text-6xl font-semibold text-brand-green leading-tight max-w-2xl mb-6 font-outfit">
 			Most Trusted Hospital for Women & Children
 		</h1>
 		

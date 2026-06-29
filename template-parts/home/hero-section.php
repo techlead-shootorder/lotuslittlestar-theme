@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-home-banner-new-scaled.webp');"></div>
 	
 	<!-- Overlay Gradient to ensure text readability -->
-	<!-- <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/60 lg:from-white lg:via-white/70 lg:to-transparent -z-10"></div> -->
+	<div class="absolute inset-0 bg-white/80 sm:bg-transparent sm:bg-gradient-to-r sm:from-white sm:via-white/90 sm:to-transparent -z-10"></div>
 
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
