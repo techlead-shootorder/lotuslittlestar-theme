@@ -127,7 +127,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 
 					<div class="mt-auto pt-6 border-t border-brand-cream grid grid-cols-2 gap-4">
-						<a href="https://maps.google.com" target="_blank" class="inline-flex items-center justify-center h-11 border border-brand-red text-brand-red hover:bg-brand-cream text-xs font-bold rounded-full transition-all">
+						<a href="https://maps.app.goo.gl/pYsM12x43wwQvR1y7" target="_blank" class="inline-flex items-center justify-center h-11 border border-brand-red text-brand-red hover:bg-brand-cream text-xs font-bold rounded-full transition-all">
 							Directions
 						</a>
 						<a href="tel:+914040006000" class="inline-flex items-center justify-center h-11 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-full transition-all">
@@ -168,7 +168,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 
 					<div class="mt-auto pt-6 border-t border-brand-cream grid grid-cols-2 gap-4">
-						<a href="https://maps.google.com" target="_blank" class="inline-flex items-center justify-center h-11 border border-brand-red text-brand-red hover:bg-brand-cream text-xs font-bold rounded-full transition-all">
+						<a href="https://maps.app.goo.gl/hwhEdxf9FrWPKWyA7" target="_blank" class="inline-flex items-center justify-center h-11 border border-brand-red text-brand-red hover:bg-brand-cream text-xs font-bold rounded-full transition-all">
 							Directions
 						</a>
 						<a href="tel:+918832434000" class="inline-flex items-center justify-center h-11 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-full transition-all">

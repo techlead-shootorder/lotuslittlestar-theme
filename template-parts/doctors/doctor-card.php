@@ -230,7 +230,7 @@ if ( $is_grid ) {
 			?>
 			<?php if ( ! empty( $card_desc ) ) : ?>
 				<div class="w-full border-t border-[#F1ECE4]/60 my-2"></div>
-				<p class="text-base text-brand-muted leading-relaxed max-w-[280px] mb-4">
+				<p class="text-base text-brand-muted leading-relaxed max-w-[280px] mb-2">
 					<?php 
 					if ( substr( $card_desc, -3 ) === '...' ) {
 						$clean_desc = substr( $card_desc, 0, -3 );
@@ -238,9 +238,11 @@ if ( $is_grid ) {
 					} else {
 						echo esc_html( $card_desc );
 					}
-					echo ' <a href="' . esc_url( $permalink ) . '" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block whitespace-nowrap">Read More</a>';
 					?>
 				</p>
+				<div class="mb-4">
+					<a href="<?php echo esc_url( $permalink ); ?>" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block text-sm">Read More</a>
+				</div>
 			<?php endif; ?>
 		<?php endif; ?>
 		<!-- Experience Badge -->

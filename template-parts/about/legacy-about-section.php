@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="lg:col-span-5 flex justify-center order-last lg:order-first">
 				<div class="relative w-full max-w-md">
 					<div class="absolute -inset-4 bg-brand-coral/10 rounded-[2rem] transform -rotate-2 -z-10"></div>
-					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/about-left-new-scaled.jpeg" alt="Lotus Little Stars Legacy" class="relative z-10 w-full h-auto rounded-3xl shadow-lg object-cover">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/about-left-new-scaled.jpeg" alt="Lotus Little Stars Legacy" class="relative z-10 w-full h-[300px] rounded-3xl shadow-lg object-cover">
 					
 					<!-- Accreditation Badge overlaying the bottom-right -->
 					<div class="absolute bottom-4 right-4 md:-bottom-4 md:-right-4 bg-[#5E6D62] border-4 border-white rounded-2xl py-3 px-5 shadow-xl flex items-center gap-3 z-20">

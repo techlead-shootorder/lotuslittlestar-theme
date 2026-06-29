@@ -45,9 +45,9 @@ $founders = array(
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
-			<span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-red/5 text-brand-red border border-brand-red/30 mb-4 uppercase tracking-wider">
+			<!-- <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-red/5 text-brand-red border border-brand-red/30 mb-4 uppercase tracking-wider">
 				Our Leadership
-			</span>
+			</span> -->
 			<h2 class="text-3xl sm:text-4xl font-medium text-brand-green font-outfit mb-4">
 				Our Founders
 			</h2>

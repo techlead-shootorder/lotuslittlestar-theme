@@ -21,6 +21,39 @@ $position      = isset( $doctor['position'] ) ? $doctor['position'] : '';
 $exp           = isset( $doctor['exp'] ) ? $doctor['exp'] : '';
 $image         = isset( $doctor['image'] ) ? $doctor['image'] : '';
 $profile_url   = isset( $doctor['profile_url'] ) ? $doctor['profile_url'] : home_url( '/doctors/' );
+
+// If the profile URL is the default doctors archive page, try to find the specific doctor post dynamically.
+if ( ( $profile_url === home_url( '/doctors/' ) || empty( $profile_url ) ) && ! empty( $name ) ) {
+	// 1. Try to find the post by name/title
+	$doctor_posts = get_posts( array(
+		'post_type'   => 'doctor',
+		'title'       => $name,
+		'numberposts' => 1,
+		'post_status' => 'publish',
+	) );
+
+	if ( ! empty( $doctor_posts ) ) {
+		$profile_url = get_permalink( $doctor_posts[0]->ID );
+	} else {
+		// 2. Try to find by slug using the sanitized name
+		$slug = sanitize_title( $name );
+		$doctor_by_slug = get_page_by_path( $slug, OBJECT, 'doctor' );
+		if ( $doctor_by_slug ) {
+			$profile_url = get_permalink( $doctor_by_slug->ID );
+		} else {
+			// 3. Try a loose search using WP search query parameter
+			$doctor_posts_search = get_posts( array(
+				'post_type'   => 'doctor',
+				's'           => $name,
+				'numberposts' => 1,
+				'post_status' => 'publish',
+			) );
+			if ( ! empty( $doctor_posts_search ) ) {
+				$profile_url = get_permalink( $doctor_posts_search[0]->ID );
+			}
+		}
+	}
+}
 $appointment_url = isset( $doctor['appointment_url'] ) ? $doctor['appointment_url'] : home_url( '/contact/' );
 ?>
 
