@@ -51,7 +51,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<h3 class="text-brand-dark text-sm font-bold uppercase tracking-wider mb-5">Patient Resources</h3>
 				<ul class="space-y-3 text-sm">
 					<li>
-						<a href="https://oldwp.littlestarsandshe.com/privacy-policy-2/" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Privacy Policy</a>
+						<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Privacy Policy</a>
 					</li>
 					<li>
 						<a href="#" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Insurance Partners</a>
