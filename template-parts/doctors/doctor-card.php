@@ -195,7 +195,7 @@ if ( $is_grid ) {
 	</div>
 
 	<!-- Info Details -->
-	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-between w-full">
+	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-around w-full">
 		<div>
 			<!-- Name -->
 			<h3 class="text-xl sm:text-2xl font-bold text-brand-red mb-1 font-outfit">
@@ -269,10 +269,10 @@ if ( $is_grid ) {
 
 		<!-- Action Buttons -->
 		<div class="flex flex-row justify-center sm:justify-start gap-3 mt-auto">
-			<a href="<?php echo esc_url( $permalink ); ?>" class="inline-flex items-center justify-center px-6 py-2 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
+			<a href="<?php echo esc_url( $permalink ); ?>" class="inline-flex items-center justify-center px-2 py-2 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
 				View Profile
 			</a>
-			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-6 py-2 bg-brand-red text-white font-semibold text-sm rounded-lg hover:bg-brand-red-hover transition-colors duration-200">
+			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-2 py-2 bg-brand-red text-white font-semibold text-sm rounded-lg hover:bg-brand-red-hover transition-colors duration-200">
 				Appointment
 			</a>
 		</div>

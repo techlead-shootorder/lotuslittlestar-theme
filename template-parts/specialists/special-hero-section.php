@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- Gradient Overlay (Solid background color on the left fading to transparent on the right) -->
 	<div class="absolute inset-0 bg-[#F5F3EF]/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-[#F5F3EF]/65 sm:via-[#F5F3EF]/60 sm:to-transparent -z-10"></div>
 	
-	<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+	<div class="relative z-10 max-w-7xl px-4 sm:px-6 lg:px-8 text-left">
 		<!-- Pill Badge -->
 		<span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold border border-brand-red/60 bg-white/40 text-brand-red tracking-wide mb-6 select-none">
 			Expert Healthcare
