@@ -268,7 +268,7 @@ if ( $is_grid ) {
 		</div>
 
 		<!-- Action Buttons -->
-		<div class="flex flex-row justify-center sm:justify-start gap-3 mt-auto">
+		<div class="flex flex-row justify-center sm:justify-start gap-3">
 			<a href="<?php echo esc_url( $permalink ); ?>" class="inline-flex items-center justify-center px-2 py-2 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-semibold text-sm rounded-lg transition-colors duration-200">
 				View Profile
 			</a>
