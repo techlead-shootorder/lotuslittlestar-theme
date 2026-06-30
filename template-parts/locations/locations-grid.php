@@ -87,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<!-- Submit Button -->
 						<div class="pt-2">
 							<button type="submit" class="w-full h-11 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold uppercase tracking-wider rounded-[10px] shadow-sm transition-all duration-200 cursor-pointer">
-								Send Message
+								Request a Callback 
 							</button>
 						</div>
 					</form>

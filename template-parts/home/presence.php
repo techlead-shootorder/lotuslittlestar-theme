@@ -53,7 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</p>
 					<!-- Location Image -->
 					<div class="aspect-[1.6] w-full bg-brand-cream rounded-2xl overflow-hidden border border-brand-cream/80 mb-6 relative">
-						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/rajahmundry.png" alt="Rajahmundry, Andhra Pradesh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/rajamundry-loc.png" alt="Rajahmundry, Andhra Pradesh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 					</div>
 				</div>
 				<a href="https://maps.app.goo.gl/hwhEdxf9FrWPKWyA7" target="_blank" class="inline-flex items-center gap-1.5 text-brand-green hover:text-brand-red font-bold text-sm transition-colors">

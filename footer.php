@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Our Experts</a>
 					</li>
 					<li>
-						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Contact</a>
+						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Contact Us</a>
 					</li>
 				</ul>
 			</div>

@@ -43,15 +43,6 @@ $specialties = [
 		</svg>'
 	],
 	[
-		'title' => 'Pediatric Multi Specialty',
-		'desc'  => 'Comprehensive treatment across all pediatric sub-specialties.',
-		'icon'  => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<rect x="3" y="6" width="18" height="14" rx="2" />
-			<path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-			<path d="M12 10v6M9 13h6" />
-		</svg>'
-	],
-	[
 		'title' => 'Pediatric Hematology & Oncology',
 		'desc'  => 'Specialized care for childhood cancers.',
 		'icon'  => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
