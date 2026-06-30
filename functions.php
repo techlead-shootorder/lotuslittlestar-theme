@@ -117,6 +117,8 @@ function lotus_render_doctor_meta_box( $post ) {
 	$experience_detail = get_post_meta( $post->ID, '_doctor_experience_detail', true );
 	$awards            = get_post_meta( $post->ID, '_doctor_awards', true );
 	$show_in_experts   = get_post_meta( $post->ID, '_doctor_show_in_experts', true );
+	$location          = get_post_meta( $post->ID, '_doctor_location', true );
+	$filter            = get_post_meta( $post->ID, '_doctor_filter', true );
 	?>
 	<div style="font-family: sans-serif; padding: 10px;">
 		<table class="form-table" style="width: 100%;">
@@ -136,6 +138,24 @@ function lotus_render_doctor_meta_box( $post ) {
 				<th style="width: 20%; text-align: left;"><label for="doctor_department"><?php _e( 'Department', 'lotus' ); ?></label></th>
 				<td>
 					<input type="text" id="doctor_department" name="doctor_department" value="<?php echo esc_attr( $department ); ?>" style="width: 100%;" placeholder="e.g. Pediatrics" />
+				</td>
+			</tr>
+			<tr>
+				<th style="width: 20%; text-align: left;"><label for="doctor_location"><?php _e( 'Location', 'lotus' ); ?></label></th>
+				<td>
+					<select id="doctor_location" name="doctor_location" style="width: 100%;">
+						<option value="Hyderabad" <?php selected( $location, 'Hyderabad' ); ?>>Hyderabad</option>
+						<option value="Rajahmundry" <?php selected( $location, 'Rajahmundry' ); ?>>Rajahmundry</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th style="width: 20%; text-align: left;"><label for="doctor_filter"><?php _e( 'Filter (Care Type)', 'lotus' ); ?></label></th>
+				<td>
+					<select id="doctor_filter" name="doctor_filter" style="width: 100%;">
+						<option value="child care" <?php selected( $filter, 'child care' ); ?>>Child Care</option>
+						<option value="Woman care" <?php selected( $filter, 'Woman care' ); ?>>Woman Care</option>
+					</select>
 				</td>
 			</tr>
 			<tr>
@@ -236,6 +256,8 @@ function lotus_save_doctor_meta( $post_id ) {
 		'doctor_experience'   => '_doctor_experience',
 		'doctor_department'   => '_doctor_department',
 		'doctor_phone'        => '_doctor_phone',
+		'doctor_location'     => '_doctor_location',
+		'doctor_filter'       => '_doctor_filter',
 	);
 
 	foreach ( $fields as $post_key => $meta_key ) {

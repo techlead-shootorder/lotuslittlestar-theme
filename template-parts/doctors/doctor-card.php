@@ -25,6 +25,16 @@ if ( $fallback_doctor ) {
 	$experience = isset( $fallback_doctor['experience'] ) ? $fallback_doctor['experience'] : '10+ Yrs';
 	$permalink  = isset( $fallback_doctor['permalink'] ) ? $fallback_doctor['permalink'] : home_url( '/doctors/' );
 	
+	// Map locations and filter types for mockups
+	$location = 'Hyderabad';
+	$filter   = 'child care';
+	if ( strpos( $name, 'Sharma' ) !== false || strpos( $name, 'Srinivas' ) !== false ) {
+		$location = 'Rajahmundry';
+	}
+	if ( strpos( $name, 'Roopa' ) !== false || strpos( $name, 'Sharma' ) !== false ) {
+		$filter = 'Woman care';
+	}
+	
 	// Clean overrides to match standard designations
 	if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
 		$specialty     = 'Neonatology | Pediatrics | PICU';
@@ -63,6 +73,14 @@ if ( $fallback_doctor ) {
 	$experience_val = get_post_meta( get_the_ID(), '_doctor_experience', true );
 	$education  = get_post_meta( get_the_ID(), '_doctor_education', true );
 	$permalink  = get_permalink();
+	$location   = get_post_meta( get_the_ID(), '_doctor_location', true );
+	if ( empty( $location ) ) {
+		$location = 'Hyderabad';
+	}
+	$filter     = get_post_meta( get_the_ID(), '_doctor_filter', true );
+	if ( empty( $filter ) ) {
+		$filter = 'child care';
+	}
 
 	// Parse first line of education as qualification
 	$qualification = '';
@@ -170,10 +188,12 @@ $card_classes_str = implode( ' ', array_filter( $card_classes ) );
 $data_attrs = '';
 if ( $is_grid ) {
 	$data_attrs = sprintf(
-		'data-name="%s" data-specialty="%s" data-department="%s"',
+		'data-name="%s" data-specialty="%s" data-department="%s" data-location="%s" data-filter="%s"',
 		esc_attr( strtolower( $name ) ),
 		esc_attr( $specialty ),
-		esc_attr( $department )
+		esc_attr( $department ),
+		esc_attr( strtolower( $location ) ),
+		esc_attr( strtolower( $filter ) )
 	);
 }
 ?>

@@ -77,20 +77,19 @@ if ( $doctors_query->have_posts() ) {
 			</div>
 
 			<!-- Filters Group -->
-			<div class="flex gap-4 w-full md:w-auto">
-				<select id="department-filter" class="block w-full md:w-48 px-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all">
-					<option value="">All specialities</option>
-					<?php if ( ! empty( $departments_list ) ) : ?>
-						<?php foreach ( $departments_list as $dept ) : ?>
-							<option value="<?php echo esc_attr( $dept ); ?>"><?php echo esc_html( $dept ); ?></option>
-						<?php endforeach; ?>
-					<?php else : ?>
-						<!-- Fallback filter options matching standard list -->
-						<option value="Pediatrics">Pediatrics</option>
-						<option value="Orthopedics">Orthopedics</option>
-						<option value="Surgery">Surgery</option>
-						<option value="Obstetrics">Obstetrics</option>
-					<?php endif; ?>
+			<div class="flex flex-wrap gap-4 w-full md:w-auto">
+				<!-- Location Filter -->
+				<select id="location-filter" class="block w-full md:w-48 px-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all">
+					<option value="">Locations</option>
+					<option value="hyderabad">Hyderabad</option>
+					<option value="rajahmundry">Rajahmundry</option>
+				</select>
+
+				<!-- Specialties (Care Type) Filter -->
+				<select id="care-filter" class="block w-full md:w-48 px-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all">
+					<option value="">Specialities</option>
+					<option value="child care">Child Care</option>
+					<option value="woman care">Woman Care</option>
 				</select>
 			</div>
 		</div>
@@ -185,23 +184,27 @@ if ( $doctors_query->have_posts() ) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 	const searchInput = document.getElementById('doctor-search');
-	const filterSelect = document.getElementById('department-filter');
+	const locationSelect = document.getElementById('location-filter');
+	const careSelect = document.getElementById('care-filter');
 	const cards = document.querySelectorAll('.doctor-card-item');
 	const noResults = document.getElementById('no-doctors-found');
 
 	function filterDoctors() {
-		const searchVal = searchInput.value.toLowerCase().trim();
-		const filterVal = filterSelect.value.toLowerCase().trim();
+		const searchVal = searchInput ? searchInput.value.toLowerCase().trim() : "";
+		const locationVal = locationSelect ? locationSelect.value.toLowerCase().trim() : "";
+		const careVal = careSelect ? careSelect.value.toLowerCase().trim() : "";
 		let visibleCount = 0;
 
 		cards.forEach(card => {
-			const name = card.getAttribute('data-name');
-			const department = card.getAttribute('data-department').toLowerCase();
+			const name = card.getAttribute('data-name') || "";
+			const location = card.getAttribute('data-location') || "";
+			const filterVal = card.getAttribute('data-filter') || "";
 
 			const matchesSearch = name.includes(searchVal);
-			const matchesDepartment = filterVal === "" || department.includes(filterVal);
+			const matchesLocation = locationVal === "" || location === locationVal;
+			const matchesCare = careVal === "" || filterVal === careVal;
 
-			if (matchesSearch && matchesDepartment) {
+			if (matchesSearch && matchesLocation && matchesCare) {
 				card.style.display = '';
 				visibleCount++;
 			} else {
@@ -210,17 +213,20 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 
 		if (visibleCount === 0) {
-			noResults.classList.remove('hidden');
+			if (noResults) noResults.classList.remove('hidden');
 		} else {
-			noResults.classList.add('hidden');
+			if (noResults) noResults.classList.add('hidden');
 		}
 	}
 
 	if (searchInput) {
 		searchInput.addEventListener('input', filterDoctors);
 	}
-	if (filterSelect) {
-		filterSelect.addEventListener('change', filterDoctors);
+	if (locationSelect) {
+		locationSelect.addEventListener('change', filterDoctors);
+	}
+	if (careSelect) {
+		careSelect.addEventListener('change', filterDoctors);
 	}
 });
 </script>
