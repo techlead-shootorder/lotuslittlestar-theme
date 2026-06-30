@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- Overlay Gradient to ensure text readability -->
 	<div class="absolute inset-0 bg-white/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/65 sm:via-white/60 sm:to-transparent -z-10"></div>
 	
-	<div class="max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 			
 			<!-- Left Column: Content -->
