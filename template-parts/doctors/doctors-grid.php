@@ -33,6 +33,8 @@ if ( $doctors_query->have_posts() ) {
 }
 ?>
 
+
+
 <section class="relative h-screen sm:h-auto py-0 sm:py-24 flex items-center border-b border-brand-cream/60 overflow-hidden">
 	<!-- Background Image -->
 	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-doctore-new-scaled.webp');"></div>
@@ -40,7 +42,7 @@ if ( $doctors_query->have_posts() ) {
 	<!-- Overlay Gradient to ensure text readability -->
 	<div class="absolute inset-0 bg-white/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/65 sm:via-white/60 sm:to-transparent -z-10"></div>
 	
-	<div class="max-w-7xl  px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-left">
 		<!-- Section Header -->
 		<div class="max-w-3xl mb-0">
 			<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">Our Medical Team</span>
