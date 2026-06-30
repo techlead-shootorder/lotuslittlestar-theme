@@ -213,7 +213,7 @@ if ( $is_grid ) {
 			</p>
 
 			<!-- Description (if exists) -->
-			<?php if ( $is_grid ) : ?>
+			<!-- <?php if ( $is_grid ) : ?>
 				<?php
 				$card_desc = '';
 				if ( $fallback_doctor ) {
@@ -252,7 +252,7 @@ if ( $is_grid ) {
 						<a href="<?php echo esc_url( $permalink ); ?>" class="text-brand-red font-semibold hover:text-brand-red-hover transition-colors inline-block text-sm">Read More</a>
 					</div>
 				<?php endif; ?>
-			<?php endif; ?>
+			<?php endif; ?> -->
 
 			<!-- Experience Badge -->
 			<div class="flex items-center justify-center sm:justify-start gap-2 text-brand-dark text-sm sm:text-base mb-4 font-medium">

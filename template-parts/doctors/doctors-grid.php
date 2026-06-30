@@ -40,7 +40,7 @@ if ( $doctors_query->have_posts() ) {
 	<!-- Overlay Gradient to ensure text readability -->
 	<div class="absolute inset-0 bg-white/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/65 sm:via-white/60 sm:to-transparent -z-10"></div>
 	
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left">
+	<div class="max-w-7xl  px-4 sm:px-6 lg:px-8 relative z-10 text-left">
 		<!-- Section Header -->
 		<div class="max-w-3xl mb-0">
 			<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">Our Medical Team</span>
@@ -94,7 +94,7 @@ if ( $doctors_query->have_posts() ) {
 		</div>
 
 		<!-- Doctors Grid Container -->
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8" id="doctors-list-grid">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="doctors-list-grid">
 			<?php
 			if ( $doctors_query->have_posts() ) :
 				while ( $doctors_query->have_posts() ) : $doctors_query->the_post();
