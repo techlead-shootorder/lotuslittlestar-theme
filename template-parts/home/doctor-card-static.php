@@ -81,7 +81,7 @@ $appointment_url = isset( $doctor['appointment_url'] ) ? $doctor['appointment_ur
 			
 			<!-- Position/Speciality -->
 			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium">
-				<?php echo esc_html( $position ); ?>
+				<?php echo esc_html( $speciality ); ?>
 			</p>
 			
 			<!-- Qualification -->

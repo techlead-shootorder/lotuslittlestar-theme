@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					A Tradition of Trust and Excellence
 				</h3>
 				<p class="text-base text-brand-muted leading-relaxed font-sans">
-					A legacy of 35+ years delivering trusted, compassionate, and clinically excellent care for women and children.
+					A legacy of <span class="font-bold text-brand-red">35+ years</span> delivering trusted, compassionate, and clinically excellent care for women and children.
 				</p>
 			</div>
 

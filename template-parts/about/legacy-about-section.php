@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					At Lotus Little Stars, we are dedicated to providing exceptional healthcare for women, newborns, and children through every stage of life. From advanced maternity and gynecological care to specialized neonatology and pediatric services, we combine clinical excellence, innovation, and compassionate care to deliver the best outcomes for every family.
 				</p>
 				<p class="text-brand-muted text-base leading-relaxed mb-8">
-					With 220+ beds, state-of-the-art facilities, and a family-centered approach, we provide world-class healthcare across our locations in Banjara Hills, Kondapur, and Rajahmundry.
+					With <span class="font-bold text-brand-red">220+ beds, state-of-the-art facilities</span> and a family-centered approach, we provide world-class healthcare across our locations in Banjara Hills and Rajahmundry.
 				</p>
 				<div>
 					<h4 class="text-2xl font-medium text-brand-green mt-2 mb-6">Why Families Trust Lotus Little Stars</h4>

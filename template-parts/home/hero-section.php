@@ -26,11 +26,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</span>
 				
 				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-dark leading-[1.15] mb-6">
-					Advanced <span class="font-semibold italic text-brand-green">women and child care</span> backed by <span class="font-semibold italic text-brand-green">expertise,innovation, and compassion</span>
+					Advanced <span class="font-semibold italic text-brand-green">women and child care</span> backed by <span class="font-semibold italic text-brand-green">expertise, innovation and compassion</span>
 				</h1>
 				
 				<p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
-					For over 35+ years, Lotus Little Stars Hospital has been providing expert maternity, neonatal, pediatric, and women's healthcare services with advanced technology and compassionate care.
+					For over <span class="font-bold text-brand-red">35+ years</span>, Lotus Little Stars Hospital has been providing expert maternity, neonatal, pediatric, and women's healthcare services with advanced technology and compassionate care.
 				</p>
 				
 				<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
