@@ -157,7 +157,7 @@ $remaining_specialties = array_slice( $specialties, 4 );
 		<!-- Left-Aligned Header -->
 		<div class="text-left mb-12 pb-8 border-b border-brand-cream/60">
 			<h1 class="font-outfit text-3xl sm:text-4xl font-semibold text-brand-dark">
-				Our Center of Excellence 
+				Centers in Our Specialities 
 			</h1>
 			<p class="text-brand-muted text-sm sm:text-base mt-2 font-medium">
 				Comprehensive Care Centers offering a full spectrum of pediatric and maternity services.
