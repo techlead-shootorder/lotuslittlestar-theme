@@ -13,7 +13,7 @@ $care_wings = [
 	[
 		'title'    => 'Gynecology',
 		'desc'     => 'From preventive women’s wellness to advanced surgical care, we offer expertise in treating ovarian cysts, fibroids, uterus removal, MTP, and other gynecological conditions for every stage of a woman’s health journey.',
-		'icon_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/gynacology.png',
+		'icon_url' => get_template_directory_uri() . '/assets/gyno.svg',
 		'icon_alt' => 'Gynecology',
 		'bg_class' => 'bg-[#F1F4F0]',
 	],
