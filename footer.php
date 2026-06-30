@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- Column 1: Brand Info -->
 			<div class="flex flex-col gap-4">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center">
-					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-logo-new.png" alt="Lotus Little Stars" class="h-16 w-22 object-contain">
+					<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-new-logo.gif" alt="Lotus Little Stars" class="h-16 w-22 object-contain">
 				</a>
 				<p class="text-brand-green text-xs leading-relaxed mt-2 pl-2">
 					Dedicated to providing compassionate and advanced healthcare for mothers and children for over 35+ years.
