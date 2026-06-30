@@ -142,7 +142,7 @@ $card_classes = array(
 	'bg-[#FAF9F5]',
 	'w-full',
 	$max_width_class ? $max_width_class : 'max-w-xl',
-	'rounded-2xl',
+	'rounded',
 	'border',
 	'border-[#EBE8E2]',
 	'shadow-sm',
