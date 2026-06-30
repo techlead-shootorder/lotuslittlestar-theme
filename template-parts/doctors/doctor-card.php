@@ -152,7 +152,7 @@ $card_classes = array(
 	'flex',
 	'flex-col',
 	'sm:flex-row',
-	'gap-6',
+	'gap-3',
 	'p-6',
 	'items-center',
 	'sm:items-start',
@@ -180,7 +180,7 @@ if ( $is_grid ) {
 
 <div class="<?php echo esc_attr( $card_classes_str ); ?>" <?php echo $data_attrs; ?>>
 	<!-- Circular Image -->
-	<div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-sm bg-brand-cream relative">
+	<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-sm bg-brand-cream relative">
 		<?php if ( $matched_img_url ) : ?>
 			<img src="<?php echo esc_url( $matched_img_url ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="w-full h-full object-cover">
 		<?php elseif ( ! $fallback_doctor && has_post_thumbnail() ) : ?>
