@@ -55,7 +55,7 @@ $care_wings = [
 	[
 		'title'    => 'Pediatric Nephrology',
 		'desc'     => 'Specialized diagnosis and treatment of kidney disorders in children, including urinary tract infections, congenital kidney conditions, kidney stones, and other renal diseases.',
-		'icon_url' =>  get_template_directory_uri() . 'assets/pediatric nephrology.svg',
+		'icon_url' =>  get_template_directory_uri() . 'assets/pediatric-nephrology.svg',
 		'icon_alt' => 'Pediatric Nephrology',
 		'bg_class' => 'bg-[#F9F0FD]',
 	]
