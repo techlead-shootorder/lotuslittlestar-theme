@@ -17,19 +17,19 @@ $founders = array(
 		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
 		'bio'           => 'Dr. Satish Ghanta, our Managing Director, is a highly experienced Neonatologist, Developmental Paediatrician, and Paediatric Intensivist with over 32+ years of clinical experience. Until 2007, he had extensive international training (Neonatal & Paediatric Critical Care) at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital. He & his team bring unparalleled leadership to our institution, guiding our strategic initiatives and fostering a culture of excellence. He is also the founder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.',
 	),
-	'ramana' => array(
-		'name'          => 'Dr. Ramana Dandamudi',
-		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
-		'specialty'     => 'Paediatric Hemato-Oncology',
-		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi.jpg.jpeg',
-		'bio'           => 'Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39+ years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi’s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children’s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.',
-	),
 	'V.S.V. Prasad' => array(
 		'name'          => 'Dr. V.S.V. Prasad',
 		'qualification' => 'MD Pediatrics (AIIMS, New Delhi),FRCPCH (UK)',
 		'specialty'     => 'Managing Director - Neonatology & Pediatrics',
 		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/VSV.-Prasad.jpg',
 		'bio'           => 'Dr. V.S.V. Prasad, our Managing Director and Founder of Lotus Hospitals, is a renowned Neonatologist and Pediatric Critical Care Specialist with over 35+ years of experience in advancing neonatal and pediatric healthcare. After completing his medical education at AIIMS, New Delhi, he pursued advanced training in Neonatology and Pediatric Critical Care in the United States and the United Kingdom.Returning to India with a vision to establish world-class healthcare services for children, Dr. Prasad founded Lotus Hospitals in 2006 with a mission to make quality healthcare accessible to every family. Under his leadership, Lotus Hospitals has grown into one of the most trusted names in women and child healthcare, recognized for clinical excellence, advanced technology, and compassionate patient care.His commitment to innovation and patient-centered care continues to inspire the growth of Lotus Little Stars, helping set new benchmarks in neonatal, pediatric, and maternal healthcare for families across the region.',
+	),
+	'ramana' => array(
+		'name'          => 'Dr. Ramana Dandamudi',
+		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
+		'specialty'     => 'Paediatric Hemato-Oncology',
+		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi.jpg.jpeg',
+		'bio'           => 'Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39+ years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi’s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children’s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.',
 	),
 	'Roopa' => array(
 		'name'          => 'Dr. Roopa Ghanta',
@@ -49,7 +49,7 @@ $founders = array(
 				Our Leadership
 			</span> -->
 			<h2 class="text-3xl sm:text-4xl font-medium text-brand-green font-outfit mb-4">
-				Our Founders
+				Our Leadership Team
 			</h2>
 			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
 				Meet the visionary minds and clinical leaders behind Lotus Little Stars Hospital, dedicated to elevating healthcare standards for mothers and children.
