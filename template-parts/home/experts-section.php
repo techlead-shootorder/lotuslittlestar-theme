@@ -100,9 +100,39 @@ $homepage_doctors = array(
 		<!-- Doctors Grid -->
 		<div class="flex flex-wrap justify-center gap-8">
 			<?php
+			global $post;
 			foreach ( $homepage_doctors as $doctor ) :
-				get_template_part( 'template-parts/doctors/doctor-card', null, array( 'doctor' => $doctor ) );
+				// Try to find the actual custom post type 'doctor' by name to display real data if it exists
+				$doctor_posts = get_posts( array(
+					'post_type'   => 'doctor',
+					'title'       => $doctor['name'],
+					'numberposts' => 1,
+					'post_status' => 'publish',
+				) );
+
+				if ( ! empty( $doctor_posts ) ) {
+					// Real post exists! Setup post data and render
+					$post = $doctor_posts[0];
+					setup_postdata( $post );
+					get_template_part( 'template-parts/doctors/doctor-card', null, array(
+						'max_width' => 'max-w-xl'
+					) );
+				} else {
+					// Real post doesn't exist, use the homepage static data as a mapped fallback
+					$fallback_data = array(
+						'name'       => $doctor['name'],
+						'specialty'  => $doctor['speciality'],
+						'experience' => $doctor['exp'],
+						'department' => isset( $doctor['department'] ) ? $doctor['department'] : 'Pediatrics',
+						'permalink'  => isset( $doctor['profile_url'] ) ? $doctor['profile_url'] : home_url( '/doctors/' ),
+					);
+					get_template_part( 'template-parts/doctors/doctor-card', null, array(
+						'fallback_doctor' => $fallback_data,
+						'max_width'       => 'max-w-xl'
+					) );
+				}
 			endforeach;
+			wp_reset_postdata();
 			?>
 		</div>
 	</div>
