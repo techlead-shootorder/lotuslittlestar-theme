@@ -260,20 +260,20 @@ if ( $is_grid ) {
 	</div>
 
 	<!-- Info Details -->
-	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-around w-full">
+	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-around w-full min-w-0">
 		<div>
 			<!-- Name -->
-			<h3 class="text-xl sm:text-2xl font-bold text-brand-red mb-1 font-outfit">
+			<h3 class="text-xl sm:text-2xl font-bold text-brand-red mb-1 font-outfit break-words">
 				<?php echo esc_html( $name ); ?>
 			</h3>
 			
 			<!-- Specialty -->
-			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium">
+			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium break-words">
 				<?php echo esc_html( $specialty ); ?>
 			</p>
 			
 			<!-- Qualification -->
-			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3">
+			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3 break-words">
 				<?php echo esc_html( $qualification ); ?>
 			</p>
 

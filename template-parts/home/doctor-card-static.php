@@ -72,20 +72,20 @@ $appointment_url = isset( $doctor['appointment_url'] ) ? $doctor['appointment_ur
 	</div>
 
 	<!-- Info Details -->
-	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-between">
+	<div class="flex-grow flex flex-col text-center sm:text-left h-full justify-between w-full min-w-0">
 		<div>
 			<!-- Name -->
-			<h3 class="text-xl sm:text-2xl font-bold text-brand-red mb-1 font-outfit">
+			<h3 class="text-xl sm:text-2xl font-bold text-brand-red mb-1 font-outfit break-words">
 				<?php echo esc_html( $name ); ?>
 			</h3>
 			
 			<!-- Position/Speciality -->
-			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium">
+			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium break-words">
 				<?php echo esc_html( $speciality ); ?>
 			</p>
 			
 			<!-- Qualification -->
-			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3">
+			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3 break-words">
 				<?php echo esc_html( $qualification ); ?>
 			</p>
 			

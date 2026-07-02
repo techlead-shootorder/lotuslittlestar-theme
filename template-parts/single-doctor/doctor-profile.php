@@ -147,10 +147,10 @@ if ( get_the_content() ) {
 
 				<!-- Left Column Doctor Info -->
 				<div class="text-left">
-					<h1 class="text-xl sm:text-2xl font-extrabold text-brand-dark mb-1 font-outfit tracking-tight">
+					<h1 class="text-xl sm:text-2xl font-extrabold text-brand-dark mb-1 font-outfit tracking-tight break-words">
 						<?php echo esc_html( $name ); ?>
 					</h1>
-					<p class="text-xs text-brand-muted leading-relaxed mb-6">
+					<p class="text-xs text-brand-muted leading-relaxed mb-6 break-words">
 						<?php echo esc_html( $specialty_desc ); ?>
 					</p>
 
@@ -158,15 +158,15 @@ if ( get_the_content() ) {
 					<div class="space-y-4">
 						<div>
 							<span class="text-xs font-bold text-brand-dark block font-outfit">Speciality</span>
-							<span class="text-xs text-brand-muted mt-0.5 block"><?php echo esc_html( $department ); ?></span>
+							<span class="text-xs text-brand-muted mt-0.5 block break-words"><?php echo esc_html( $department ); ?></span>
 						</div>
 						<div>
 							<span class="text-xs font-bold text-brand-dark block font-outfit">Degrees</span>
-							<span class="text-xs text-brand-muted mt-0.5 block"><?php echo esc_html( $degrees ); ?></span>
+							<span class="text-xs text-brand-muted mt-0.5 block break-words"><?php echo esc_html( $degrees ); ?></span>
 						</div>
 						<div>
 							<span class="text-xs font-bold text-brand-dark block font-outfit">Experience</span>
-							<span class="text-xs text-brand-muted mt-0.5 block"><?php echo esc_html( $experience ); ?></span>
+							<span class="text-xs text-brand-muted mt-0.5 block break-words"><?php echo esc_html( $experience ); ?></span>
 						</div>
 					</div>
 
