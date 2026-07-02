@@ -12,16 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 $specialties = [
 	// CHILD CARE
 	[
-		'title'    => 'Neonatal & Pediatric ICU',
-		'desc'     => 'Level III NICU/PICU for comprehensive critical care.',
-		'category' => 'child-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/>
-		</svg>'
-	],
-	[
-		'title'    => 'Pediatric Multi Speciality',
-		'desc'     => 'Comprehensive treatment across all pediatric sub-specialties.',
+		'title'    => 'General Pediatrics',
+		'desc'     => 'Comprehensive wellness exams, immunizations, and developmental tracking.',
 		'category' => 'child-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 			<rect x="3" y="8" width="18" height="12" rx="2" ry="2" />
@@ -29,18 +21,8 @@ $specialties = [
 		</svg>'
 	],
 	[
-		'title'    => 'Pediatric Surgery',
-		'desc'     => 'Minimally invasive surgical procedures.',
-		'category' => 'child-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<circle cx="6" cy="6" r="3" />
-			<circle cx="6" cy="18" r="3" />
-			<path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
-		</svg>'
-	],
-	[
-		'title'    => 'Pediatric Hematology & Oncology',
-		'desc'     => 'Specialized care for childhood cancers.',
+		'title'    => 'Pediatric Hemato-Oncology & BMT',
+		'desc'     => 'Specialized care for blood disorders, childhood cancers, and bone marrow transplant.',
 		'category' => 'child-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 			<path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-13-7-13S5 11 5 15a7 7 0 0 0 7 7z" />
@@ -67,11 +49,59 @@ $specialties = [
 		</svg>'
 	],
 	[
-		'title'    => 'Pediatric Urology Services',
+		'title'    => 'Pediatric Gastroenterology',
+		'desc'     => 'Digestive health and nutrition expert care.',
+		'category' => 'child-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M12 2a5 5 0 0 0-5 5c0 3 3 5 3 7s-2 3-2 5a3 3 0 0 0 6 0c0-2-2-3-2-5s3-4 3-7a5 5 0 0 0-3-5z" />
+		</svg>'
+	],
+	[
+		'title'    => 'Pediatric Surgery',
+		'desc'     => 'Minimally invasive surgical procedures.',
+		'category' => 'child-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<circle cx="6" cy="6" r="3" />
+			<circle cx="6" cy="18" r="3" />
+			<path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
+		</svg>'
+	],
+	[
+		'title'    => 'Pediatric Urology',
 		'desc'     => 'Pediatric urological condition management.',
 		'category' => 'child-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 			<path d="M8 6c-3 1-4 4-2 7 2 3 4 3 4 1s-1-4-2-8zM16 6c3 1 4 4 2 7-2 3-4 3-4 1s1-4 2-8z" />
+		</svg>'
+	],
+	[
+		'title'    => 'Plastic Surgery',
+		'desc'     => 'Specialized reconstructive and corrective surgical intervention.',
+		'category' => 'child-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M12 2a8 8 0 0 0-8 8c0 3.5 2.5 6.5 6 7.5v2.5h4v-2.5c3.5-1 6-4 6-7.5a8 8 0 0 0-8-8z" />
+			<path d="M9 10h6" />
+		</svg>'
+	],
+	[
+		'title'    => 'Pediatric Neurology & Neuro surgery',
+		'desc'     => 'Expert brain, nerve, and spine disease management.',
+		'category' => 'child-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<circle cx="12" cy="12" r="3"/>
+			<circle cx="6" cy="6" r="2"/>
+			<circle cx="18" cy="6" r="2"/>
+			<circle cx="6" cy="18" r="2"/>
+			<circle cx="18" cy="18" r="2"/>
+			<path d="M8 8l2.5 2.5M16 8l-2.5 2.5M8 16l2.5-2.5M16 16l-2.5-2.5"/>
+		</svg>'
+	],
+	[
+		'title'    => 'Pediatric Orthopaedics',
+		'desc'     => 'Bone and joint health for active kids.',
+		'category' => 'child-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M8 5h8M7 10h10M6 15h12M5 20h14M12 2v20" />
 		</svg>'
 	],
 	[
@@ -83,40 +113,11 @@ $specialties = [
 		</svg>'
 	],
 	[
-		'title'    => 'Pediatric Orthopedics',
-		'desc'     => 'Bone and joint health for active kids.',
-		'category' => 'child-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M8 5h8M7 10h10M6 15h12M5 20h14M12 2v20" />
-		</svg>'
-	],
-	[
-		'title'    => 'Pediatric Gastroenterology',
-		'desc'     => 'Digestive health and nutrition expert care.',
-		'category' => 'child-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M12 2a5 5 0 0 0-5 5c0 3 3 5 3 7s-2 3-2 5a3 3 0 0 0 6 0c0-2-2-3-2-5s3-4 3-7a5 5 0 0 0-3-5z" />
-		</svg>'
-	],
-	[
 		'title'    => 'Pediatric ENT',
 		'desc'     => 'Expert care for hearing and airway.',
 		'category' => 'child-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 			<path d="M8.5 6A5.5 5.5 0 0 1 14 11.5v3.5a3.5 3.5 0 1 1-7 0m0-3.5h7" />
-		</svg>'
-	],
-	[
-		'title'    => 'Pediatric Neurology & Neurosurgery',
-		'desc'     => 'Expert brain and nervous system care.',
-		'category' => 'child-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<circle cx="12" cy="12" r="3"/>
-			<circle cx="6" cy="6" r="2"/>
-			<circle cx="18" cy="6" r="2"/>
-			<circle cx="6" cy="18" r="2"/>
-			<circle cx="18" cy="18" r="2"/>
-			<path d="M8 8l2.5 2.5M16 8l-2.5 2.5M8 16l2.5-2.5M16 16l-2.5-2.5"/>
 		</svg>'
 	],
 	[
@@ -129,37 +130,34 @@ $specialties = [
 		</svg>'
 	],
 	[
-		'title'    => 'Pediatric Plastic Surgery',
-		'desc'     => 'Specialized surgical intervention.',
+		'title'    => 'NICU (Neonatal Intensive Care Unit)',
+		'desc'     => 'Advanced intensive care for critically ill and premature newborns.',
 		'category' => 'child-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M12 2a8 8 0 0 0-8 8c0 3.5 2.5 6.5 6 7.5v2.5h4v-2.5c3.5-1 6-4 6-7.5a8 8 0 0 0-8-8z" />
-			<path d="M9 10h6" />
+			<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/>
+		</svg>'
+	],
+	[
+		'title'    => 'PICU (Pediatric Intensive Care Unit)',
+		'desc'     => 'Specialized intensive care for critically ill children.',
+		'category' => 'child-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+		</svg>'
+	],
+	[
+		'title'    => 'Child Neurology & Developmental Centre',
+		'desc'     => 'Specialized care for neurological and developmental disorders.',
+		'category' => 'child-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-3.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2zM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-3.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2z"/>
 		</svg>'
 	],
 
 	// WOMAN CARE
 	[
-		'title'    => 'Gynecology',
-		'desc'     => 'Expert female reproductive health care from adolescence to maturity.',
-		'category' => 'woman-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<circle cx="12" cy="9" r="6"/>
-			<path d="M12 15v7M9 19h6"/>
-		</svg>'
-	],
-	[
-		'title'    => 'Urogynecology',
-		'desc'     => 'Specialized diagnosis and treatment for pelvic floor disorders and bladder issues.',
-		'category' => 'woman-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-			<path d="M12 8v8M9 12h6" />
-		</svg>'
-	],
-	[
-		'title'    => 'Minimally Invasive Gynecology',
-		'desc'     => 'Advanced laparoscopic and hysteroscopic surgical options for faster recovery.',
+		'title'    => 'Laparoscopic Surgery',
+		'desc'     => 'Advanced minimally invasive gynecological procedures.',
 		'category' => 'woman-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 			<circle cx="12" cy="12" r="10" />
@@ -168,53 +166,55 @@ $specialties = [
 		</svg>'
 	],
 	[
-		'title'    => 'Well Woman & Preventive Care',
-		'desc'     => 'Comprehensive annual exams, screenings, and lifestyle counseling for all ages.',
+		'title'    => 'Adolescent Gynaecology',
+		'desc'     => 'Specialized care for adolescent girls\' health.',
 		'category' => 'woman-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+			<circle cx="12" cy="9" r="6"/>
+			<path d="M12 15v7M9 19h6"/>
 		</svg>'
 	],
 	[
-		'title'    => 'Menopause & Healthy Aging',
-		'desc'     => 'Personalized hormone therapy and symptom management for midlife transitions.',
+		'title'    => 'Gynaec-Oncology',
+		'desc'     => 'Expert care for gynecological cancers.',
 		'category' => 'woman-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<circle cx="12" cy="12" r="5" />
-			<path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+			<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+			<path d="M12 8v8M9 12h6" />
+		</svg>'
+	],
+	[
+		'title'    => 'Uro-Gynaecology',
+		'desc'     => 'Specialized treatment for pelvic floor and urinary disorders.',
+		'category' => 'woman-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M8 6c-3 1-4 4-2 7 2 3 4 3 4 1s-1-4-2-8zM16 6c3 1 4 4 2 7-2 3-4 3-4 1s1-4 2-8z" />
+		</svg>'
+	],
+	[
+		'title'    => 'Aesthetic Gynaecology',
+		'desc'     => 'Advanced solutions for intimate wellness.',
+		'category' => 'woman-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M12 2c1 3 4 3 4 5 0 2.2-1.8 4-4 4s-4-1.8-4-4c0-2 3-2 4-5z" />
+			<path d="M12 22c-1-3-4-3-4-5 0-2.2 1.8-4 4-4s4 1.8 4 4c0 2-3 2-4 5z" />
+			<path d="M22 12c-3-1-3-4-5-4-2.2 0-4 1.8-4 4s1.8 4 4 4c2 0 2-3 5-4z" />
+			<path d="M2 12c3 1 3 4 5 4 2.2 0 4-1.8 4-4s-1.8-4-4-4c-2 0-2 3-5 4z" />
+		</svg>'
+	],
+	[
+		'title'    => 'MICU (Medical Intensive Care Unit)',
+		'desc'     => 'Critical care for complex medical conditions.',
+		'category' => 'woman-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07L19.07 4.93"/>
 		</svg>'
 	],
 
 	// MATERNITY CARE
 	[
-		'title'    => 'Obstetrics & Fetal Care',
-		'desc'     => 'Dedicated support for high-risk pregnancies and fetal health.',
-		'category' => 'maternity-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<rect x="6" y="3" width="12" height="18" rx="3" />
-			<path d="M6 8h12M6 16h12M9 12h1.5l1-2 1 4 1-2H15" />
-		</svg>'
-	],
-	[
-		'title'    => 'High-Risk Pregnancy Care',
-		'desc'     => 'Comprehensive maternal-fetal medicine for complex medical conditions during pregnancy.',
-		'category' => 'maternity-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12A10 10 0 0 1 12 2z" />
-			<path d="M12 6a6 6 0 0 1 6 6c0 3.31-2.69 6-6 6S6 15.31 6 12a6 6 0 0 1 6-6z" />
-		</svg>'
-	],
-	[
-		'title'    => 'Painless Delivery & LDR',
-		'desc'     => 'State-of-the-art Labor, Delivery, and Recovery suites with advanced pain management.',
-		'category' => 'maternity-care',
-		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76zM16 8l-6 6" />
-		</svg>'
-	],
-	[
-		'title'    => 'Pre-Pregnancy Counseling',
-		'desc'     => 'Comprehensive genetic screenings, lifestyle checks, and preparation guidance.',
+		'title'    => 'Preconception Advice & Care',
+		'desc'     => 'Preparing you for a healthy pregnancy.',
 		'category' => 'maternity-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 			<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -222,13 +222,37 @@ $specialties = [
 		</svg>'
 	],
 	[
-		'title'    => 'Postpartum Support',
-		'desc'     => 'Dedicated care including recovery tracking, mental health checkups, and feeding guidance.',
+		'title'    => 'Labor, Delivery & Birthing Services',
+		'desc'     => 'Safe and compassionate childbirth care.',
 		'category' => 'maternity-care',
 		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-			<circle cx="9" cy="20" r="2" />
-			<circle cx="17" cy="20" r="2" />
-			<path d="M6 3h4l1 4h9a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2l-1-8H3" />
+			<path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76zM16 8l-6 6" />
+		</svg>'
+	],
+	[
+		'title'    => 'Fetal Medicine',
+		'desc'     => 'Advanced care for your baby\'s development.',
+		'category' => 'maternity-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<rect x="6" y="3" width="12" height="18" rx="3" />
+			<path d="M6 8h12M6 16h12M9 12h1.5l1-2 1 4 1-2H15" />
+		</svg>'
+	],
+	[
+		'title'    => 'Antenatal Care',
+		'desc'     => 'Comprehensive care throughout pregnancy.',
+		'category' => 'maternity-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+		</svg>'
+	],
+	[
+		'title'    => 'High-Risk Obstetric Unit with Maternal ICU',
+		'desc'     => 'Expert care for high-risk pregnancies.',
+		'category' => 'maternity-care',
+		'icon'     => '<svg class="h-6 w-6 text-[#2D5A44]" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+			<path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12A10 10 0 0 1 12 2z" />
+			<path d="M12 6a6 6 0 0 1 6 6c0 3.31-2.69 6-6 6S6 15.31 6 12a6 6 0 0 1 6-6z" />
 		</svg>'
 	]
 ];
