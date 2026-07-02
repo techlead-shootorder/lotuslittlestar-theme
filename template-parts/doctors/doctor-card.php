@@ -222,9 +222,9 @@ if ( $is_grid ) {
 				<?php echo esc_html( $name ); ?>
 			</h3>
 			
-			<!-- Specialty / Designation -->
+			<!-- Specialty -->
 			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium">
-				<?php echo esc_html( $designation ); ?>
+				<?php echo esc_html( $specialty ); ?>
 			</p>
 			
 			<!-- Qualification -->
