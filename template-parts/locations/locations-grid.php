@@ -41,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<h3 class="text-xl font-bold text-brand-dark mb-6 font-outfit">Send us a Message</h3>
 					
 					<!-- Zoho Appointment Booking Form Iframe -->
-					<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" style="height:530px;width:100%;border:none;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
+					<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" style="height:530px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
 					</iframe>
 
 					<script type="text/javascript">
@@ -76,6 +76,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 								zf_frame.src = ifrmSrc;
 							}
 					  } catch (e) {}
+
+					  // Listen to messages from the Zoho Form to auto-resize and remove scrollbar
+					  window.addEventListener('message', function(event) {
+						try {
+						  var evntData = event.data;
+						  if (evntData && typeof evntData === 'string') {
+							var zf_ifrm_data = evntData.split("|");
+							if (zf_ifrm_data.length === 2) {
+							  var zf_perma = zf_ifrm_data[0];
+							  var zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px";
+							  var iframe = document.getElementById("ziframe_518622");
+							  if (iframe && iframe.src.indexOf(zf_perma) > 0) {
+								if (iframe.style.height !== zf_ifrm_ht_nw) {
+								  iframe.style.height = zf_ifrm_ht_nw;
+								}
+							  }
+							}
+						  }
+						} catch (e) {}
+					  }, false);
 					})();
 					</script>
 				</div>
