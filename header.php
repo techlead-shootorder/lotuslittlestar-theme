@@ -113,9 +113,9 @@
 		<div class="px-4 pt-2 pb-4 space-y-2 font-medium text-base shadow-inner">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Home</a>
 			<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">About Us</a>
-			<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Specialties</a>
-			<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Doctors</a>
-			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Contact</a>
+			<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Specialties</a>
+			<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Experts</a>
+			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Contact Us</a>
 			<div class="pt-4 pb-2 px-3 border-t border-brand-cream flex flex-col sm:flex-row gap-3">
 				<a href="tel:+919666604444" class="w-full inline-flex items-center justify-center gap-2 px-6 h-12 bg-white hover:bg-brand-cream text-brand-red border border-brand-red/30 font-medium rounded-full shadow-sm transition-all text-sm">
 					<svg class="h-4 w-4 text-brand-red shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
