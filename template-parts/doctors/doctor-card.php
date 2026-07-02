@@ -109,32 +109,77 @@ if ( $fallback_doctor ) {
 		$designation = 'Consultant – ' . $specialty;
 	}
 
-	// Exact database overrides for name matchings
+	// Exact database overrides for name matchings (only if database values are empty)
+	$meta_specialty   = get_post_meta( get_the_ID(), '_doctor_specialty', true );
+	$meta_education   = get_post_meta( get_the_ID(), '_doctor_education', true );
+	$meta_designation = get_post_meta( get_the_ID(), '_doctor_designation', true );
+	$meta_experience  = get_post_meta( get_the_ID(), '_doctor_experience', true );
+
 	if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
-		$specialty     = 'Neonatology | Pediatrics | PICU';
-		$qualification = 'MD (Pediatrics)';
-		$designation   = 'Director – Neonatal & Pediatric Intensive Care Services';
-		$experience    = '32+ Years Experience';
+		if ( empty( $meta_specialty ) ) {
+			$specialty = 'Neonatology | Pediatrics | PICU';
+		}
+		if ( empty( $meta_education ) ) {
+			$qualification = 'MD (Pediatrics)';
+		}
+		if ( empty( $meta_designation ) ) {
+			$designation = 'Director – Neonatal & Pediatric Intensive Care Services';
+		}
+		if ( empty( $meta_experience ) ) {
+			$experience = '32+ Years Experience';
+		}
 	} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
-		$specialty     = 'Neonatology | Pediatrics';
-		$qualification = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
-		$designation   = 'Managing Director – Neonatology & Pediatrics';
-		$experience    = '35+ Years Experience';
+		if ( empty( $meta_specialty ) ) {
+			$specialty = 'Neonatology | Pediatrics';
+		}
+		if ( empty( $meta_education ) ) {
+			$qualification = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
+		}
+		if ( empty( $meta_designation ) ) {
+			$designation = 'Managing Director – Neonatology & Pediatrics';
+		}
+		if ( empty( $meta_experience ) ) {
+			$experience = '35+ Years Experience';
+		}
 	} elseif ( strpos( $name, 'Mehul' ) !== false ) {
-		$specialty     = 'Pediatrics & Nephrology';
-		$qualification = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
-		$designation   = 'Senior Consultant – Pediatric Nephrology';
-		$experience    = '30+ Years Experience';
+		if ( empty( $meta_specialty ) ) {
+			$specialty = 'Pediatrics & Nephrology';
+		}
+		if ( empty( $meta_education ) ) {
+			$qualification = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
+		}
+		if ( empty( $meta_designation ) ) {
+			$designation = 'Senior Consultant – Pediatric Nephrology';
+		}
+		if ( empty( $meta_experience ) ) {
+			$experience = '30+ Years Experience';
+		}
 	} elseif ( strpos( $name, 'Roopa' ) !== false ) {
-		$specialty     = 'Gynecology & Obstetrics';
-		$qualification = 'MBBS, DGO, CCPU';
-		$designation   = 'HOD – Obstetrics & Gynecology';
-		$experience    = '26+ Years Experience';
+		if ( empty( $meta_specialty ) ) {
+			$specialty = 'Gynecology & Obstetrics';
+		}
+		if ( empty( $meta_education ) ) {
+			$qualification = 'MBBS, DGO, CCPU';
+		}
+		if ( empty( $meta_designation ) ) {
+			$designation = 'HOD – Obstetrics & Gynecology';
+		}
+		if ( empty( $meta_experience ) ) {
+			$experience = '26+ Years Experience';
+		}
 	} elseif ( strpos( $name, 'Ramana' ) !== false ) {
-		$specialty     = 'Pediatric Hematology & Oncology';
-		$qualification = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
-		$designation   = 'Director – Pediatric Hematology & Oncology';
-		$experience    = '39+ Years Experience';
+		if ( empty( $meta_specialty ) ) {
+			$specialty = 'Pediatric Hematology & Oncology';
+		}
+		if ( empty( $meta_education ) ) {
+			$qualification = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
+		}
+		if ( empty( $meta_designation ) ) {
+			$designation = 'Director – Pediatric Hematology & Oncology';
+		}
+		if ( empty( $meta_experience ) ) {
+			$experience = '39+ Years Experience';
+		}
 	}
 }
 

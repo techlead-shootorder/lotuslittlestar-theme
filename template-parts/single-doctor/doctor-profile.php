@@ -46,17 +46,19 @@ if ( ! empty( $education_raw ) ) {
 		$degrees = trim( $parts[0] );
 	}
 }
-// Apply exact name-based degrees matching
-if ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
-	$degrees = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
-} elseif ( strpos( $name, 'Satish Ghanta' ) !== false ) {
-	$degrees = 'MD (Pediatrics)';
-} elseif ( strpos( $name, 'Mehul' ) !== false ) {
-	$degrees = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
-} elseif ( strpos( $name, 'Roopa' ) !== false ) {
-	$degrees = 'MBBS, DGO, CCPU';
-} elseif ( strpos( $name, 'Ramana' ) !== false ) {
-	$degrees = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
+// Apply exact name-based degrees matching (only if database education is empty)
+if ( empty( $education_raw ) ) {
+	if ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
+		$degrees = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
+	} elseif ( strpos( $name, 'Satish Ghanta' ) !== false ) {
+		$degrees = 'MD (Pediatrics)';
+	} elseif ( strpos( $name, 'Mehul' ) !== false ) {
+		$degrees = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
+	} elseif ( strpos( $name, 'Roopa' ) !== false ) {
+		$degrees = 'MBBS, DGO, CCPU';
+	} elseif ( strpos( $name, 'Ramana' ) !== false ) {
+		$degrees = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
+	}
 }
 
 if ( empty( $degrees ) ) {
