@@ -101,7 +101,7 @@ $homepage_doctors = array(
 		<div class="flex flex-wrap justify-center gap-8">
 			<?php
 			foreach ( $homepage_doctors as $doctor ) :
-				get_template_part( 'template-parts/doctors/doctor-card.php', null, array( 'doctor' => $doctor ) );
+				get_template_part( 'template-parts/doctors/doctor-card', null, array( 'doctor' => $doctor ) );
 			endforeach;
 			?>
 		</div>
