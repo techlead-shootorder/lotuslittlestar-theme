@@ -85,7 +85,7 @@
 			<!-- Action Buttons -->
 			<div class="hidden md:flex items-center gap-3">
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm whitespace-nowrap">
-					Book Appointment
+					Book Now
 				</a>
 				<a href="tel:+919666604444" class="inline-flex items-center justify-center gap-2 px-5 h-12 bg-white hover:bg-brand-cream text-brand-red border border-brand-red/30 hover:border-brand-red font-medium rounded-full shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-200 text-sm">
 					<svg class="h-4 w-4 text-brand-red shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
