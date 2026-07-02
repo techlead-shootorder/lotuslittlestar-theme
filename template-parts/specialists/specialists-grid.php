@@ -257,11 +257,19 @@ $specialties = [
 	]
 ];
 
+// Reorder specialties: woman-care first, then maternity-care, then child-care
+usort( $specialties, function( $a, $b ) {
+	$order = array( 'woman-care' => 1, 'maternity-care' => 2, 'child-care' => 3 );
+	$a_order = isset( $order[ $a['category'] ] ) ? $order[ $a['category'] ] : 99;
+	$b_order = isset( $order[ $b['category'] ] ) ? $order[ $b['category'] ] : 99;
+	return $a_order <=> $b_order;
+} );
+
 // Helper function to render card HTML
 function lotus_render_specialty_card( $item ) {
-	$is_hidden = $item['category'] !== 'child-care';
-	$display_style = $is_hidden ? 'style="display: none;"' : '';
-	$opacity_class = $is_hidden ? 'opacity-0 scale-95' : 'opacity-100 scale-100';
+	// Show all cards by default initially
+	$display_style = '';
+	$opacity_class = 'opacity-100 scale-100';
 	?>
 	<div class="specialty-card-item bg-white p-8 sm:p-10 rounded-[2rem] border border-brand-cream/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $item['category'] ); ?>" <?php echo $display_style; ?>>
 		<div class="w-14 h-14 bg-[#DCEFE5] rounded-full flex items-center justify-center mb-6 select-none shrink-0">
@@ -293,14 +301,15 @@ function lotus_render_specialty_card( $item ) {
 			<!-- Specialty Filter Dropdown (Custom UI) -->
 			<div class="relative shrink-0 text-left select-none z-30" id="specialty-filter-dropdown">
 				<button type="button" class="inline-flex items-center justify-between w-52 px-5 py-3 bg-white border border-brand-dark/15 rounded-xl text-sm font-semibold text-brand-dark shadow-sm hover:bg-brand-cream/10 focus:outline-none transition-all cursor-pointer" id="specialty-dropdown-btn" aria-haspopup="true" aria-expanded="false">
-					<span id="specialty-dropdown-label" class="font-outfit text-brand-dark">Child Care</span>
+					<span id="specialty-dropdown-label" class="font-outfit text-brand-dark">All Specialities</span>
 					<svg class="w-4 h-4 ml-2 text-brand-muted transition-transform duration-300" id="specialty-dropdown-arrow" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
 						<polyline points="6 9 12 15 18 9"></polyline>
 					</svg>
 				</button>
 				<div class="absolute right-0 mt-2 w-52 rounded-xl bg-white border border-brand-cream shadow-lg ring-1 ring-black ring-opacity-5 z-20 hidden transition-all duration-200 origin-top-right transform scale-95 opacity-0" id="specialty-dropdown-menu">
 					<div class="py-1.5 px-1" role="menu" aria-orientation="vertical">
-						<button class="specialty-dropdown-item w-full text-left block px-4 py-2.5 text-sm rounded-lg font-semibold text-brand-red bg-brand-cream transition-colors duration-150 cursor-pointer" data-value="child-care" role="menuitem">Child Care</button>
+						<button class="specialty-dropdown-item w-full text-left block px-4 py-2.5 text-sm rounded-lg font-semibold text-brand-red bg-brand-cream transition-colors duration-150 cursor-pointer" data-value="all" role="menuitem">All Specialities</button>
+						<button class="specialty-dropdown-item w-full text-left block px-4 py-2.5 text-sm rounded-lg font-semibold text-brand-dark hover:bg-brand-cream/50 transition-colors duration-150 cursor-pointer" data-value="child-care" role="menuitem">Child Care</button>
 						<button class="specialty-dropdown-item w-full text-left block px-4 py-2.5 text-sm rounded-lg font-semibold text-brand-dark hover:bg-brand-cream/50 transition-colors duration-150 cursor-pointer" data-value="woman-care" role="menuitem">Woman Care</button>
 						<button class="specialty-dropdown-item w-full text-left block px-4 py-2.5 text-sm rounded-lg font-semibold text-brand-dark hover:bg-brand-cream/50 transition-colors duration-150 cursor-pointer" data-value="maternity-care" role="menuitem">Maternity Care</button>
 					</div>
@@ -368,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function applyFilter(category) {
 		cards.forEach(card => {
 			const cardCategory = card.getAttribute('data-category') || '';
-			if (cardCategory === category) {
+			if (category === 'all' || cardCategory === category) {
 				card.style.display = '';
 				// Trigger layout reflow for animation
 				void card.offsetHeight;
