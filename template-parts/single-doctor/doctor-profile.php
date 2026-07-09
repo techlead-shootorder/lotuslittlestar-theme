@@ -19,23 +19,127 @@ $education_raw     = get_post_meta( get_the_ID(), '_doctor_education', true );
 $experience_raw    = get_post_meta( get_the_ID(), '_doctor_experience_detail', true );
 $working_hours_raw = get_post_meta( get_the_ID(), '_doctor_working_hours', true );
 
-// Fallbacks matching Dr. V.S.V. Prasad / premium defaults
-$specialty_desc = ! empty( $specialty_desc ) ? $specialty_desc : 'Founder & Chief Consultant Neonatologist and Pediatric Intensivist';
-$experience     = ! empty( $experience ) ? $experience : '32+ Years';
-$department     = ! empty( $department ) ? $department : 'Neonatology, Pediatrics';
-$phone          = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
+// Identify special/fallback doctors
+$is_special_doctor = false;
+$special_doctor_key = '';
+
+if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
+	$is_special_doctor = true;
+	$special_doctor_key = 'satish';
+} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
+	$is_special_doctor = true;
+	$special_doctor_key = 'prasad';
+} elseif ( strpos( $name, 'Mehul' ) !== false ) {
+	$is_special_doctor = true;
+	$special_doctor_key = 'mehul';
+} elseif ( strpos( $name, 'Roopa' ) !== false ) {
+	$is_special_doctor = true;
+	$special_doctor_key = 'roopa';
+} elseif ( strpos( $name, 'Ramana' ) !== false ) {
+	$is_special_doctor = true;
+	$special_doctor_key = 'ramana';
+}
+
+$special_doctor_defaults = array(
+	'satish' => array(
+		'specialty_desc' => 'Director – Neonatal & Pediatric Intensive Care Services',
+		'experience'     => '32+ Years',
+		'department'     => 'Pediatrics',
+		'phone'          => '+91 40 4000 6000',
+		'education_raw'  => "MD (Pediatrics)\nMBBS (Manipal University)\nFellowship in Neonatology, Pediatric & Cardiac Intensive Care (Australia)",
+		'experience_raw' => "Over 32+ years of clinical experience in Paediatric and Neonatal Intensive Care.\nExtensive international training in Neonatal & Paediatric Critical Care at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital.\nFounder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.",
+		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
+		'bio'            => '<p>Dr. Satish Ghanta, our Managing Director, is a highly experienced Neonatologist, Developmental Paediatrician, and Paediatric Intensivist with over 32+ years of clinical experience. Until 2007, he had extensive international training (Neonatal & Paediatric Critical Care) at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital. He & his team bring unparalleled leadership to our institution, guiding our strategic initiatives and fostering a culture of excellence. He is also the founder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.</p>',
+	),
+	'prasad' => array(
+		'specialty_desc' => 'Founder & Chief Consultant Neonatologist and Pediatric Intensivist',
+		'experience'     => '35+ Years',
+		'department'     => 'Neonatology, Pediatrics',
+		'phone'          => '+91 40 4000 6000',
+		'education_raw'  => "MD Pediatrics from All India Institute of Medical Sciences, New Delhi.\nEx Diplomate of the American Board of Pediatrics (U.S.A).\nFellowship training in Pediatric Intensive Care and Neonatology in the United States of America.",
+		'experience_raw' => "He received specialised training in Neonatology and Pediatric Intensive Care (United Kingdom).\nInstrumental in bringing advanced children's health care to the undivided Andhra Pradesh State in 1999.\nHas set up two children's centres in Hyderabad before Lotus Hospital for Women & Children.\nMember of many professional bodies including the IAP Intensive Care Chapter and ISCCM, NNF, Member of the College of Pediatric Critical Care.\nFormer Executive Member of the Governing Body of the National Neonatology Forum of India, New Delhi.\nFaculty and Inspector for the National Board of Examinations, New Delhi.\nInvited Faculty for all National Conferences of the Indian Academy of Pediatrics, National Neonatology Forum.\nAuthored several chapters in the Recent Advances in Pediatrics Series and published case reports in the Journal of Pediatric Critical Care.",
+		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
+		'bio'            => '<p>Dr Prasad has over 32 years of a rich and varied expertise in India, the United Kingdom and United States of America. His credentials are impressive and is a natural leader in Pediatric healthcare in Hyderabad and the Telugu states. As a medical professional, Dr Prasad s astute clinical acumen and decision making skills are powerful, and these qualities have gained him tremendous respect amongst his peers, both nationally and internationally.</p>',
+	),
+	'mehul' => array(
+		'specialty_desc' => 'Senior Consultant – Pediatric Nephrology',
+		'experience'     => '30+ Years',
+		'department'     => 'Pediatrics',
+		'phone'          => '+91 40 4000 6000',
+		'education_raw'  => "MD(PED), DCH(BOM), MD(USA), DABPN(USA)",
+		'experience_raw' => "Senior Consultant Pediatric Nephrologist specializing in pediatric kidney disease and transplants.\nOver 30+ Years of experience in pediatric nephrology.",
+		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
+		'bio'            => '<p>Dr. Mehul Shah is a Senior Consultant Pediatric Nephrologist specializing in pediatric kidney transplants and chronic kidney care with over 30+ years of clinical experience.</p>',
+	),
+	'roopa' => array(
+		'specialty_desc' => 'HOD – Obstetrics & Gynecology',
+		'experience'     => '26+ Years',
+		'department'     => 'Gynecology & Obstetrics',
+		'phone'          => '+91 40 4000 6000',
+		'education_raw'  => "MBBS, DGO, CCPU",
+		'experience_raw' => "Over 26 years of expertise in Gynaecology and Obstetrics.\nInternational experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics.\nEnhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology.\nSpecializes in high-risk pregnancy care and advanced gynaecological treatments.\nIntroduced innovative practices like water birthing, midwifery, painless birthing at Little Stars & She Hospital.",
+		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
+		'bio'            => '<p>Dr. Roopa Ghanta, with over 26 years of expertise in Gynaecology and Obstetrics heads the OBG Department at Little Stars & She Women and Children’s Hospital. Her international experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics and her enhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology adds a high level of precision and expertise in patient care. Dr. Roopa Ghanta specializes in high-risk pregnancy care and advanced gynaecological treatments. She has introduced innovative practices like water birthing, midwifery, painless birthing etc at Little Stars & She Hospital, where she is committed to delivering world-class, patient-centred care.</p>',
+	),
+	'ramana' => array(
+		'specialty_desc' => 'Director – Pediatric Hematology & Oncology',
+		'experience'     => '39+ Years',
+		'department'     => 'Pediatrics',
+		'phone'          => '+91 40 4000 6000',
+		'education_raw'  => "MBBS, MD – Pediatrics, DCH, MRCP (UK)",
+		'experience_raw' => "Over 39+ years of expertise in treating paediatric blood disorders and cancers.\nAdvanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK.\nSpearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad in 1995.\nHeads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad.",
+		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
+		'bio'            => '<p>Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39+ years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi’s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children’s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.</p>',
+	),
+);
+
+// Apply fallbacks for the 5 key doctors if fields are empty
+if ( empty( $specialty_desc ) ) {
+	$specialty_desc = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['specialty_desc'] ) ) 
+		? $special_doctor_defaults[$special_doctor_key]['specialty_desc'] 
+		: '';
+}
+
+if ( empty( $experience ) ) {
+	$experience = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['experience'] ) ) 
+		? $special_doctor_defaults[$special_doctor_key]['experience'] 
+		: '';
+}
+
+if ( empty( $department ) ) {
+	$department = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['department'] ) ) 
+		? $special_doctor_defaults[$special_doctor_key]['department'] 
+		: '';
+}
+
+if ( empty( $phone ) ) {
+	$phone = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['phone'] ) ) 
+		? $special_doctor_defaults[$special_doctor_key]['phone'] 
+		: '';
+}
+
+if ( empty( $education_raw ) ) {
+	$education_raw = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['education_raw'] ) ) 
+		? $special_doctor_defaults[$special_doctor_key]['education_raw'] 
+		: '';
+}
+
+if ( empty( $experience_raw ) ) {
+	$experience_raw = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['experience_raw'] ) ) 
+		? $special_doctor_defaults[$special_doctor_key]['experience_raw'] 
+		: '';
+}
+
+if ( empty( $working_hours_raw ) ) {
+	$working_hours_raw = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['working_hours'] ) ) 
+		? $special_doctor_defaults[$special_doctor_key]['working_hours'] 
+		: '';
+}
 
 // Parse Education/Degrees
 $education_items = ! empty( $education_raw ) ? array_filter( array_map( 'trim', explode( "\n", $education_raw ) ) ) : array();
-if ( empty( $education_items ) ) {
-	$education_items = array(
-		'MD Pediatrics from All India Institute of Medical Sciences, New Delhi.',
-		'Ex Diplomate of the American Board of Pediatrics (U.S.A).',
-		'Fellowship training in Pediatric Intensive Care and Neonatology in the United States of America.',
-	);
-}
 
-// Extract degrees/qualification from first education line or custom logic
+// Extract degrees/qualification from first education line
 $degrees = '';
 if ( ! empty( $education_raw ) ) {
 	$edu_lines = explode( "\n", str_replace( "\r", "", $education_raw ) );
@@ -46,48 +150,12 @@ if ( ! empty( $education_raw ) ) {
 		$degrees = trim( $parts[0] );
 	}
 }
-// Apply exact name-based degrees matching (only if database education is empty)
-if ( empty( $education_raw ) ) {
-	if ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
-		$degrees = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
-	} elseif ( strpos( $name, 'Satish Ghanta' ) !== false ) {
-		$degrees = 'MD (Pediatrics)';
-	} elseif ( strpos( $name, 'Mehul' ) !== false ) {
-		$degrees = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
-	} elseif ( strpos( $name, 'Roopa' ) !== false ) {
-		$degrees = 'MBBS, DGO, CCPU';
-	} elseif ( strpos( $name, 'Ramana' ) !== false ) {
-		$degrees = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
-	}
-}
-
-if ( empty( $degrees ) ) {
-	$degrees = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
-}
 
 // Parse Detailed Experience list
 $experience_items = ! empty( $experience_raw ) ? array_filter( array_map( 'trim', explode( "\n", $experience_raw ) ) ) : array();
-if ( empty( $experience_items ) ) {
-	$experience_items = array(
-		'He received specialised training in Neonatology and Pediatric Intensive Care (United Kingdom).',
-		'Instrumental in bringing advanced children s health care to the undivided Andhra Pradesh State in 1999.',
-		'Has set up two children s centres in Hyderabad before Lotus Hospital for Women & Children.',
-		'Member of many professional bodies including the IAP Intensive Care Chapter and ISCCM, NNF, Member of the College of Pediatric Critical Care.',
-		'Former Executive Member of the Governing Body of the National Neonatology Forum of India, New Delhi.',
-		'Faculty and Inspector for the National Board of Examinations, New Delhi.',
-		'Invited Faculty for all National Conferences of the Indian Academy of Pediatrics, National Neonatology Forum.',
-		'Authored several chapters in the Recent Advances in Pediatrics Series and published case reports in the Journal of Pediatric Critical Care.',
-	);
-}
 
 // Parse Working Hours list
 $working_hours_items = ! empty( $working_hours_raw ) ? array_filter( array_map( 'trim', explode( "\n", $working_hours_raw ) ) ) : array();
-if ( empty( $working_hours_items ) ) {
-	$working_hours_items = array(
-		'Mon - Sun 10:30 A.M. 01:00 P.M.',
-		'Mon - Sun 05:00 P.M. 08:00 P.M.',
-	);
-}
 
 // Image fallback logic
 $doctor_images = array(
@@ -110,7 +178,9 @@ $bio_content = '';
 if ( get_the_content() ) {
 	$bio_content = apply_filters( 'the_content', get_the_content() );
 } else {
-	$bio_content = '<p>Dr Prasad has over 32 years of a rich and varied expertise in India, the United Kingdom and United States of America. His credentials are impressive and is a natural leader in Pediatric healthcare in Hyderabad and the Telugu states. As a medical professional, Dr Prasad s astute clinical acumen and decision making skills are powerful, and these qualities have gained him tremendous respect amongst his peers, both nationally and internationally.</p>';
+	if ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['bio'] ) ) {
+		$bio_content = $special_doctor_defaults[$special_doctor_key]['bio'];
+	}
 }
 ?>
 
@@ -150,30 +220,43 @@ if ( get_the_content() ) {
 					<h1 class="text-xl sm:text-2xl font-extrabold text-brand-dark mb-1 font-outfit tracking-tight break-words">
 						<?php echo esc_html( $name ); ?>
 					</h1>
+					<?php if ( ! empty( $specialty_desc ) ) : ?>
 					<p class="text-xs text-brand-muted leading-relaxed mb-6 break-words">
 						<?php echo esc_html( $specialty_desc ); ?>
 					</p>
+					<?php endif; ?>
 
 					<!-- Fields List -->
+					<?php if ( ! empty( $department ) || ! empty( $degrees ) || ! empty( $experience ) ) : ?>
 					<div class="space-y-4">
+						<?php if ( ! empty( $department ) ) : ?>
 						<div>
 							<span class="text-xs font-bold text-brand-dark block font-outfit">Speciality</span>
 							<span class="text-xs text-brand-muted mt-0.5 block break-words"><?php echo esc_html( $department ); ?></span>
 						</div>
+						<?php endif; ?>
+						<?php if ( ! empty( $degrees ) ) : ?>
 						<div>
 							<span class="text-xs font-bold text-brand-dark block font-outfit">Degrees</span>
 							<span class="text-xs text-brand-muted mt-0.5 block break-words"><?php echo esc_html( $degrees ); ?></span>
 						</div>
+						<?php endif; ?>
+						<?php if ( ! empty( $experience ) ) : ?>
 						<div>
 							<span class="text-xs font-bold text-brand-dark block font-outfit">Experience</span>
 							<span class="text-xs text-brand-muted mt-0.5 block break-words"><?php echo esc_html( $experience ); ?></span>
 						</div>
+						<?php endif; ?>
 					</div>
+					<?php endif; ?>
 
 					<!-- Divider -->
+					<?php if ( ! empty( $department ) || ! empty( $degrees ) || ! empty( $experience ) ) : ?>
 					<div class="my-6 border-t border-brand-cream/80"></div>
+					<?php endif; ?>
 
 					<!-- Working Hours -->
+					<?php if ( ! empty( $working_hours_items ) ) : ?>
 					<div class="mb-6">
 						<h3 class="text-sm font-bold text-brand-dark mb-3 font-outfit">Working Hours</h3>
 						<div class="space-y-2">
@@ -194,6 +277,7 @@ if ( get_the_content() ) {
 							?>
 						</div>
 					</div>
+					<?php endif; ?>
 
 					<!-- Book Appointment Button -->
 					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="w-full inline-flex items-center justify-center h-11 bg-[#A61A24] hover:bg-[#8B141B] text-white text-xs font-bold rounded-lg shadow-sm transition-all duration-200">
@@ -205,9 +289,11 @@ if ( get_the_content() ) {
 			</div>
 
 			<!-- Right Main Content Area -->
+			<?php if ( ! empty( $bio_content ) || ! empty( $education_items ) || ! empty( $experience_items ) ) : ?>
 			<div class="lg:col-span-8 space-y-12">
 				
 				<!-- About the Doctor -->
+				<?php if ( ! empty( $bio_content ) ) : ?>
 				<div>
 					<div class="flex items-center gap-4 mb-6">
 						<h2 class="text-lg sm:text-xl font-extrabold text-[#111827] shrink-0 font-outfit">About the Doctor</h2>
@@ -217,8 +303,10 @@ if ( get_the_content() ) {
 						<?php echo $bio_content; ?>
 					</div>
 				</div>
+				<?php endif; ?>
 
 				<!-- Educational Qualifications -->
+				<?php if ( ! empty( $education_items ) ) : ?>
 				<div>
 					<div class="flex items-center gap-4 mb-6">
 						<h2 class="text-lg sm:text-xl font-extrabold text-[#111827] shrink-0 font-outfit">Educational Qualifications</h2>
@@ -236,8 +324,10 @@ if ( get_the_content() ) {
 						<?php endforeach; ?>
 					</ul>
 				</div>
+				<?php endif; ?>
 
 				<!-- Experience -->
+				<?php if ( ! empty( $experience_items ) ) : ?>
 				<div>
 					<div class="flex items-center gap-4 mb-6">
 						<h2 class="text-lg sm:text-xl font-extrabold text-[#111827] shrink-0 font-outfit">Experience</h2>
@@ -255,8 +345,10 @@ if ( get_the_content() ) {
 						<?php endforeach; ?>
 					</ul>
 				</div>
+				<?php endif; ?>
 
 			</div>
+			<?php endif; ?>
 
 		</div>
 	</div>

@@ -67,54 +67,42 @@ if ( $fallback_doctor ) {
 		$experience    = $experience . ' Experience';
 	}
 } else {
-	$name       = get_the_title();
-	$specialty  = get_post_meta( get_the_ID(), '_doctor_specialty', true );
-	$department = get_post_meta( get_the_ID(), '_doctor_department', true );
-	$experience_val = get_post_meta( get_the_ID(), '_doctor_experience', true );
-	$education  = get_post_meta( get_the_ID(), '_doctor_education', true );
-	$permalink  = get_permalink();
-	$location   = get_post_meta( get_the_ID(), '_doctor_location', true );
+	$name           = get_the_title();
+	$meta_specialty = get_post_meta( get_the_ID(), '_doctor_specialty', true );
+	$meta_department = get_post_meta( get_the_ID(), '_doctor_department', true );
+	$meta_experience = get_post_meta( get_the_ID(), '_doctor_experience', true );
+	$meta_education  = get_post_meta( get_the_ID(), '_doctor_education', true );
+	$permalink       = get_permalink();
+	
+	$location = get_post_meta( get_the_ID(), '_doctor_location', true );
 	if ( empty( $location ) ) {
 		$location = 'Hyderabad';
 	}
-	$filter     = get_post_meta( get_the_ID(), '_doctor_filter', true );
+	$filter = get_post_meta( get_the_ID(), '_doctor_filter', true );
 	if ( empty( $filter ) ) {
 		$filter = 'child care';
 	}
 
-	// Parse first line of education as qualification
+	// Resolve specialty
+	$specialty = ! empty( $meta_specialty ) ? $meta_specialty : '';
+
+	// Resolve qualification
 	$qualification = '';
-	if ( ! empty( $education ) ) {
-		$edu_lines = explode( "\n", str_replace( "\r", "", $education ) );
+	if ( ! empty( $meta_education ) ) {
+		$edu_lines = explode( "\n", str_replace( "\r", "", $meta_education ) );
 		$qualification = trim( $edu_lines[0] );
 	}
-	if ( empty( $qualification ) ) {
-		$qualification = ! empty( $department ) ? $department : 'Specialist';
-	}
 
-	// Resolve experience string
-	$experience = ! empty( $experience_val ) ? $experience_val : '10+ Yrs';
-	if ( strpos( $experience, 'Experience' ) === false ) {
+	// Resolve experience
+	$experience = ! empty( $meta_experience ) ? $meta_experience : '';
+	if ( ! empty( $experience ) && strpos( $experience, 'Experience' ) === false ) {
 		$experience .= ' Experience';
 	}
 
-	// Resolve designation and specialty
-	if ( empty( $specialty ) ) {
-		$specialty = 'Specialist Doctor';
-	}
-	
-	// Fetch or fallback designation
+	// Resolve designation
 	$designation = get_post_meta( get_the_ID(), '_doctor_designation', true );
-	if ( empty( $designation ) ) {
-		$designation = 'Consultant – ' . $specialty;
-	}
 
 	// Exact database overrides for name matchings (only if database values are empty)
-	$meta_specialty   = get_post_meta( get_the_ID(), '_doctor_specialty', true );
-	$meta_education   = get_post_meta( get_the_ID(), '_doctor_education', true );
-	$meta_designation = get_post_meta( get_the_ID(), '_doctor_designation', true );
-	$meta_experience  = get_post_meta( get_the_ID(), '_doctor_experience', true );
-
 	if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
 		if ( empty( $meta_specialty ) ) {
 			$specialty = 'Neonatology | Pediatrics | PICU';
@@ -122,7 +110,7 @@ if ( $fallback_doctor ) {
 		if ( empty( $meta_education ) ) {
 			$qualification = 'MD (Pediatrics)';
 		}
-		if ( empty( $meta_designation ) ) {
+		if ( empty( $designation ) ) {
 			$designation = 'Director – Neonatal & Pediatric Intensive Care Services';
 		}
 		if ( empty( $meta_experience ) ) {
@@ -135,7 +123,7 @@ if ( $fallback_doctor ) {
 		if ( empty( $meta_education ) ) {
 			$qualification = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
 		}
-		if ( empty( $meta_designation ) ) {
+		if ( empty( $designation ) ) {
 			$designation = 'Managing Director – Neonatology & Pediatrics';
 		}
 		if ( empty( $meta_experience ) ) {
@@ -148,7 +136,7 @@ if ( $fallback_doctor ) {
 		if ( empty( $meta_education ) ) {
 			$qualification = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
 		}
-		if ( empty( $meta_designation ) ) {
+		if ( empty( $designation ) ) {
 			$designation = 'Senior Consultant – Pediatric Nephrology';
 		}
 		if ( empty( $meta_experience ) ) {
@@ -161,7 +149,7 @@ if ( $fallback_doctor ) {
 		if ( empty( $meta_education ) ) {
 			$qualification = 'MBBS, DGO, CCPU';
 		}
-		if ( empty( $meta_designation ) ) {
+		if ( empty( $designation ) ) {
 			$designation = 'HOD – Obstetrics & Gynecology';
 		}
 		if ( empty( $meta_experience ) ) {
@@ -174,13 +162,15 @@ if ( $fallback_doctor ) {
 		if ( empty( $meta_education ) ) {
 			$qualification = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
 		}
-		if ( empty( $meta_designation ) ) {
+		if ( empty( $designation ) ) {
 			$designation = 'Director – Pediatric Hematology & Oncology';
 		}
 		if ( empty( $meta_experience ) ) {
 			$experience = '39+ Years Experience';
 		}
 	}
+
+	$department = ! empty( $meta_department ) ? $meta_department : '';
 }
 
 // Doctor specific image URL mapping
@@ -268,14 +258,18 @@ if ( $is_grid ) {
 			</h3>
 			
 			<!-- Specialty -->
+			<?php if ( ! empty( $specialty ) ) : ?>
 			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium break-words">
 				<?php echo esc_html( $specialty ); ?>
 			</p>
+			<?php endif; ?>
 			
 			<!-- Qualification -->
+			<?php if ( ! empty( $qualification ) ) : ?>
 			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3 break-words">
 				<?php echo esc_html( $qualification ); ?>
 			</p>
+			<?php endif; ?>
 
 			<!-- Description (if exists) -->
 			<!-- <?php if ( $is_grid ) : ?>
@@ -320,6 +314,7 @@ if ( $is_grid ) {
 			<?php endif; ?> -->
 
 			<!-- Experience Badge -->
+			<?php if ( ! empty( $experience ) ) : ?>
 			<div class="flex items-center justify-center sm:justify-start gap-2 text-brand-dark text-sm sm:text-base mb-4 font-medium">
 				<!-- Calendar Icon -->
 				<svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -330,6 +325,7 @@ if ( $is_grid ) {
 				</svg>
 				<span><?php echo esc_html( $experience ); ?></span>
 			</div>
+			<?php endif; ?>
 		</div>
 
 		<!-- Action Buttons -->
