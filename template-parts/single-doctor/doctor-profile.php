@@ -19,122 +19,14 @@ $education_raw     = get_post_meta( get_the_ID(), '_doctor_education', true );
 $experience_raw    = get_post_meta( get_the_ID(), '_doctor_experience_detail', true );
 $working_hours_raw = get_post_meta( get_the_ID(), '_doctor_working_hours', true );
 
-// Identify special/fallback doctors
-$is_special_doctor = false;
-$special_doctor_key = '';
-
-if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
-	$is_special_doctor = true;
-	$special_doctor_key = 'satish';
-} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
-	$is_special_doctor = true;
-	$special_doctor_key = 'prasad';
-} elseif ( strpos( $name, 'Mehul' ) !== false ) {
-	$is_special_doctor = true;
-	$special_doctor_key = 'mehul';
-} elseif ( strpos( $name, 'Roopa' ) !== false ) {
-	$is_special_doctor = true;
-	$special_doctor_key = 'roopa';
-} elseif ( strpos( $name, 'Ramana' ) !== false ) {
-	$is_special_doctor = true;
-	$special_doctor_key = 'ramana';
-}
-
-$special_doctor_defaults = array(
-	'satish' => array(
-		'specialty_desc' => 'Director – Neonatal & Pediatric Intensive Care Services',
-		'experience'     => '32+ Years',
-		'department'     => 'Pediatrics',
-		'phone'          => '+91 40 4000 6000',
-		'education_raw'  => "MD (Pediatrics)\nMBBS (Manipal University)\nFellowship in Neonatology, Pediatric & Cardiac Intensive Care (Australia)",
-		'experience_raw' => "Over 32+ years of clinical experience in Paediatric and Neonatal Intensive Care.\nExtensive international training in Neonatal & Paediatric Critical Care at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital.\nFounder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.",
-		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
-		'bio'            => '<p>Dr. Satish Ghanta, our Managing Director, is a highly experienced Neonatologist, Developmental Paediatrician, and Paediatric Intensivist with over 32+ years of clinical experience. Until 2007, he had extensive international training (Neonatal & Paediatric Critical Care) at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital. He & his team bring unparalleled leadership to our institution, guiding our strategic initiatives and fostering a culture of excellence. He is also the founder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.</p>',
-	),
-	'prasad' => array(
-		'specialty_desc' => 'Founder & Chief Consultant Neonatologist and Pediatric Intensivist',
-		'experience'     => '35+ Years',
-		'department'     => 'Neonatology, Pediatrics',
-		'phone'          => '+91 40 4000 6000',
-		'education_raw'  => "MD Pediatrics from All India Institute of Medical Sciences, New Delhi.\nEx Diplomate of the American Board of Pediatrics (U.S.A).\nFellowship training in Pediatric Intensive Care and Neonatology in the United States of America.",
-		'experience_raw' => "He received specialised training in Neonatology and Pediatric Intensive Care (United Kingdom).\nInstrumental in bringing advanced children's health care to the undivided Andhra Pradesh State in 1999.\nHas set up two children's centres in Hyderabad before Lotus Hospital for Women & Children.\nMember of many professional bodies including the IAP Intensive Care Chapter and ISCCM, NNF, Member of the College of Pediatric Critical Care.\nFormer Executive Member of the Governing Body of the National Neonatology Forum of India, New Delhi.\nFaculty and Inspector for the National Board of Examinations, New Delhi.\nInvited Faculty for all National Conferences of the Indian Academy of Pediatrics, National Neonatology Forum.\nAuthored several chapters in the Recent Advances in Pediatrics Series and published case reports in the Journal of Pediatric Critical Care.",
-		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
-		'bio'            => '<p>Dr Prasad has over 32 years of a rich and varied expertise in India, the United Kingdom and United States of America. His credentials are impressive and is a natural leader in Pediatric healthcare in Hyderabad and the Telugu states. As a medical professional, Dr Prasad s astute clinical acumen and decision making skills are powerful, and these qualities have gained him tremendous respect amongst his peers, both nationally and internationally.</p>',
-	),
-	'mehul' => array(
-		'specialty_desc' => 'Senior Consultant – Pediatric Nephrology',
-		'experience'     => '30+ Years',
-		'department'     => 'Pediatrics',
-		'phone'          => '+91 40 4000 6000',
-		'education_raw'  => "MD(PED), DCH(BOM), MD(USA), DABPN(USA)",
-		'experience_raw' => "Senior Consultant Pediatric Nephrologist specializing in pediatric kidney disease and transplants.\nOver 30+ Years of experience in pediatric nephrology.",
-		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
-		'bio'            => '<p>Dr. Mehul Shah is a Senior Consultant Pediatric Nephrologist specializing in pediatric kidney transplants and chronic kidney care with over 30+ years of clinical experience.</p>',
-	),
-	'roopa' => array(
-		'specialty_desc' => 'HOD – Obstetrics & Gynecology',
-		'experience'     => '26+ Years',
-		'department'     => 'Gynecology & Obstetrics',
-		'phone'          => '+91 40 4000 6000',
-		'education_raw'  => "MBBS, DGO, CCPU",
-		'experience_raw' => "Over 26 years of expertise in Gynaecology and Obstetrics.\nInternational experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics.\nEnhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology.\nSpecializes in high-risk pregnancy care and advanced gynaecological treatments.\nIntroduced innovative practices like water birthing, midwifery, painless birthing at Little Stars & She Hospital.",
-		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
-		'bio'            => '<p>Dr. Roopa Ghanta, with over 26 years of expertise in Gynaecology and Obstetrics heads the OBG Department at Little Stars & She Women and Children’s Hospital. Her international experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics and her enhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology adds a high level of precision and expertise in patient care. Dr. Roopa Ghanta specializes in high-risk pregnancy care and advanced gynaecological treatments. She has introduced innovative practices like water birthing, midwifery, painless birthing etc at Little Stars & She Hospital, where she is committed to delivering world-class, patient-centred care.</p>',
-	),
-	'ramana' => array(
-		'specialty_desc' => 'Director – Pediatric Hematology & Oncology',
-		'experience'     => '39+ Years',
-		'department'     => 'Pediatrics',
-		'phone'          => '+91 40 4000 6000',
-		'education_raw'  => "MBBS, MD – Pediatrics, DCH, MRCP (UK)",
-		'experience_raw' => "Over 39+ years of expertise in treating paediatric blood disorders and cancers.\nAdvanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK.\nSpearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad in 1995.\nHeads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad.",
-		'working_hours'  => "Mon - Sun 10:30 A.M. 01:00 P.M.\nMon - Sun 05:00 P.M. 08:00 P.M.",
-		'bio'            => '<p>Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39+ years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi’s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children’s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.</p>',
-	),
-);
-
-// Apply fallbacks for the 5 key doctors if fields are empty
-if ( empty( $specialty_desc ) ) {
-	$specialty_desc = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['specialty_desc'] ) ) 
-		? $special_doctor_defaults[$special_doctor_key]['specialty_desc'] 
-		: '';
-}
-
-if ( empty( $experience ) ) {
-	$experience = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['experience'] ) ) 
-		? $special_doctor_defaults[$special_doctor_key]['experience'] 
-		: '';
-}
-
-if ( empty( $department ) ) {
-	$department = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['department'] ) ) 
-		? $special_doctor_defaults[$special_doctor_key]['department'] 
-		: '';
-}
-
-if ( empty( $phone ) ) {
-	$phone = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['phone'] ) ) 
-		? $special_doctor_defaults[$special_doctor_key]['phone'] 
-		: '';
-}
-
-if ( empty( $education_raw ) ) {
-	$education_raw = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['education_raw'] ) ) 
-		? $special_doctor_defaults[$special_doctor_key]['education_raw'] 
-		: '';
-}
-
-if ( empty( $experience_raw ) ) {
-	$experience_raw = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['experience_raw'] ) ) 
-		? $special_doctor_defaults[$special_doctor_key]['experience_raw'] 
-		: '';
-}
-
-if ( empty( $working_hours_raw ) ) {
-	$working_hours_raw = ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['working_hours'] ) ) 
-		? $special_doctor_defaults[$special_doctor_key]['working_hours'] 
-		: '';
-}
+// Ensure empty variables if not set in backend
+$specialty_desc    = ! empty( $specialty_desc ) ? $specialty_desc : '';
+$experience        = ! empty( $experience ) ? $experience : '';
+$department        = ! empty( $department ) ? $department : '';
+$phone             = ! empty( $phone ) ? $phone : '';
+$education_raw     = ! empty( $education_raw ) ? $education_raw : '';
+$experience_raw    = ! empty( $experience_raw ) ? $experience_raw : '';
+$working_hours_raw = ! empty( $working_hours_raw ) ? $working_hours_raw : '';
 
 // Parse Education/Degrees
 $education_items = ! empty( $education_raw ) ? array_filter( array_map( 'trim', explode( "\n", $education_raw ) ) ) : array();
@@ -173,14 +65,10 @@ foreach ( $doctor_images as $doc_name => $url ) {
 	}
 }
 
-// Bio paragraph fallbacks if post content is empty
+// Bio paragraph if post content is empty
 $bio_content = '';
 if ( get_the_content() ) {
 	$bio_content = apply_filters( 'the_content', get_the_content() );
-} else {
-	if ( $is_special_doctor && ! empty( $special_doctor_defaults[$special_doctor_key]['bio'] ) ) {
-		$bio_content = $special_doctor_defaults[$special_doctor_key]['bio'];
-	}
 }
 ?>
 
