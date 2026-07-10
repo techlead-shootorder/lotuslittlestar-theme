@@ -161,21 +161,8 @@ if ( get_the_content() ) {
 									<span class="<?php echo esc_attr( $time_class ); ?>"><?php echo esc_html( $time ); ?></span>
 								</div>
 								<?php
-								foreach ( $working_hours_items as $index => $line ) {
-									$parts = preg_split( '/(?=\d)/', $line, 2 );
-									$days  = trim( $parts[0] );
-									$time  = isset( $parts[1] ) ? trim( $parts[1] ) : '';
-									// Style second line time in red (matching Mon - Sun 05:00 P.M. 08:00 P.M. in screenshot)
-									$time_class = ( $index === 1 ) ? 'text-[#A61A24] font-semibold' : 'text-brand-dark';
-									?>
-									<div class="flex justify-between items-center text-xs">
-										<span class="text-brand-muted"><?php echo esc_html( $days ); ?></span>
-										<span class="<?php echo esc_attr( $time_class ); ?>"><?php echo esc_html( $time ); ?></span>
-									</div>
-									<?php
-								}
-								?>
-							</div>
+							}
+							?>
 						</div>
 					</div>
 					<?php endif; ?>
