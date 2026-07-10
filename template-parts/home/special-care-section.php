@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying the home page special care section matching Figma pixel-to-pixel
+ * Template part for displaying the home page special care section
  *
  * @package Lotus
  */
@@ -9,57 +9,153 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$care_wings = [
-	[
-		'title'    => 'Gynecology',
-		'desc'     => 'From preventive women’s wellness to advanced surgical care, we offer expertise in treating ovarian cysts, fibroids, uterus removal, MTP, and other gynecological conditions for every stage of a woman’s health journey.',
-		'icon_url' => get_template_directory_uri() . '/assets/gyno.svg',
-		'icon_alt' => 'Gynecology',
-		'bg_class' => 'bg-[#F1F4F0]',
-	],
-	[
-		'title'    => 'Obstetrics & Fetal Care',
-		'desc'     => 'Providing holistic care for pregnancy, childbirth, and maternity, with specialized support for high-risk pregnancies and cutting-edge fetal medicine for optimal mother and baby outcomes.',
-		'icon_url' =>  get_template_directory_uri() . '/assets/maternity.svg',
-		'icon_alt' => 'Obstetrics & Fetal Care',
-		'bg_class' => 'bg-[#FDF5F7]',
-	],
-	[
-		'title'    => 'General Pediatrics',
-		'desc'     => 'Comprehensive medical care for children, including immunizations, growth monitoring, common illnesses, and preventive health programs for overall well-being.',
-		'icon_url' => get_template_directory_uri() . '/assets/pediatric care.svg',
-		'icon_alt' => 'General Pediatrics',
-		'bg_class' => 'bg-[#F5F5FF]',
-	],
-	[
-		'title'    => 'Neonatology & Intensive Care',
-		'desc'     => 'Advanced Level III NICU and PICU services providing comprehensive critical care for premature babies, newborns, and children with complex and life-threatening conditions, supported by experienced specialists and state-of-the-art technology.',
-		'icon_url' =>  get_template_directory_uri() . '/assets/neonatal NICU.svg',
-		'icon_alt' => 'Neonatology & Intensive Care',
-		'bg_class' => 'bg-[#FCF8F0]',
-	],
-	[
-		'title'    => 'Pediatric Multi-Speciality',
-		'desc'     => 'Expertise across multiple specialties, including pediatric surgery, oncology, nephrology, dentistry, ENT, orthopedics, gastroenterology, endocrinology, plastic, and neuro surgery to cater to the diverse healthcare needs of children.',
-		'icon_url' =>  get_template_directory_uri() . '/assets/super speciality.svg',
-		'icon_alt' => 'Pediatric Multi-Speciality',
-		'bg_class' => 'bg-[#F0F8F8]',
-	],
-	[
-		'title'    => 'Child Development Center (CDC)',
-		'desc'     => 'A nurturing space offering therapies, assessments, and interventions to support children with developmental delays, learning challenges, or special needs, enabling them to thrive.',
-		'icon_url' =>  get_template_directory_uri() . '/assets/developmental.svg',
-		'icon_alt' => 'Child Development Center',
-		'bg_class' => 'bg-[#F9F0FD]',
-	],
-	// [
-	// 	'title'    => 'Pediatric Nephrology',
-	// 	'desc'     => 'Specialized diagnosis and treatment of kidney disorders in children, including urinary tract infections, congenital kidney conditions, kidney stones, and other renal diseases.',
-	// 	'icon_url' =>  get_template_directory_uri() . '/assets/pediatric-nephrology.svg',
-	// 	'icon_alt' => 'Pediatric Nephrology',
-	// 	'bg_class' => 'bg-[#F9F0FD]',
-	// ]
-];
+// Fetch header fields
+$special_care_heading     = function_exists( 'get_field' ) ? get_field( 'special_care_heading' ) : '';
+$special_care_description = function_exists( 'get_field' ) ? get_field( 'special_care_description' ) : '';
+
+if ( empty( $special_care_heading ) ) {
+	$special_care_heading = __( 'Specialized Care Wings', 'lotus' );
+}
+if ( empty( $special_care_description ) ) {
+	$special_care_description = __( 'Providing a full spectrum of healthcare services tailored specifically for women and children.', 'lotus' );
+}
+
+// Fetch the repeater cards data
+$cards_data = function_exists( 'get_field' ) ? get_field( 'special_care_section_cards' ) : null;
+
+// Fallback static cards data
+$fallback_cards = array(
+	array(
+		'heading'          => __( 'Maternity Care', 'lotus' ),
+		'description'      => __( 'Comprehensive pregnancy care, prenatal classes, and state-of-the-art labor rooms for a safe delivery experience.', 'lotus' ),
+		'icon_url'         => get_stylesheet_directory_uri() . '/assets/maternity.svg',
+		'background_color' => 'bg-[#FDFBF7]',
+	),
+	array(
+		'heading'          => __( 'Neonatal NICU', 'lotus' ),
+		'description'      => __( 'Level III Neonatal Intensive Care Unit (NICU) with advanced life support systems for premature and critically ill newborns.', 'lotus' ),
+		'icon_url'         => get_stylesheet_directory_uri() . '/assets/neonatal NICU.svg',
+		'background_color' => 'bg-[#F1F4F0]',
+	),
+	array(
+		'heading'          => __( 'Pediatric Care', 'lotus' ),
+		'description'      => __( 'Dedicated medical services for infants, children, and adolescents, including vaccinations and general health check-ups.', 'lotus' ),
+		'icon_url'         => get_stylesheet_directory_uri() . '/assets/pediatric-care.svg',
+		'background_color' => 'bg-[#FDFBF7]',
+	),
+	array(
+		'heading'          => __( 'Pediatric Nephrology', 'lotus' ),
+		'description'      => __( 'Specialized diagnosis and treatment for children with kidney disorders, led by experienced pediatric nephrologists.', 'lotus' ),
+		'icon_url'         => get_stylesheet_directory_uri() . '/assets/pediatric-nephrology.svg',
+		'background_color' => 'bg-[#F1F4F0]',
+	),
+	array(
+		'heading'          => __( 'Developmental Pediatrics', 'lotus' ),
+		'description'      => __( 'Assessing and supporting children with developmental delays, behavioral challenges, and learning disorders.', 'lotus' ),
+		'icon_url'         => get_stylesheet_directory_uri() . '/assets/developmental.svg',
+		'background_color' => 'bg-[#FDFBF7]',
+	),
+	array(
+		'heading'          => __( 'Pediatric Super Specialty', 'lotus' ),
+		'description'      => __( 'Comprehensive surgical and medical care across advanced pediatric sub-specialties.', 'lotus' ),
+		'icon_url'         => get_stylesheet_directory_uri() . '/assets/super speciality.svg',
+		'background_color' => 'bg-[#F1F4F0]',
+	),
+);
+
+$processed_cards = array();
+if ( is_array( $cards_data ) && ! empty( $cards_data ) ) {
+	foreach ( $cards_data as $index => $item ) {
+		// Heading
+		$heading = '';
+		if ( isset( $item['special_care_card_heading'] ) ) {
+			$heading = $item['special_care_card_heading'];
+		} elseif ( isset( $item['heading'] ) ) {
+			$heading = $item['heading'];
+		}
+		
+		// Description
+		$description = '';
+		if ( isset( $item['special_care_card_description'] ) ) {
+			$description = $item['special_care_card_description'];
+		} elseif ( isset( $item['description'] ) ) {
+			$description = $item['description'];
+		}
+		
+		// Icon
+		$icon = null;
+		if ( isset( $item['special_care_card_icon'] ) ) {
+			$icon = $item['special_care_card_icon'];
+		} elseif ( isset( $item['icon'] ) ) {
+			$icon = $item['icon'];
+		}
+		
+		// Background Color
+		$bg_color = '';
+		if ( isset( $item['special_care_card_background'] ) ) {
+			$bg_color = $item['special_care_card_background'];
+		} elseif ( isset( $item['special_care_card_background_color'] ) ) {
+			$bg_color = $item['special_care_card_background_color'];
+		} elseif ( isset( $item['background_color'] ) ) {
+			$bg_color = $item['background_color'];
+		} elseif ( isset( $item['background'] ) ) {
+			$bg_color = $item['background'];
+		}
+		
+		$bg_style = '';
+		$bg_class = '';
+		if ( empty( $bg_color ) ) {
+			$bg_class = ( $index % 2 === 0 ) ? 'bg-[#FDFBF7]' : 'bg-[#F1F4F0]';
+		} else {
+			$bg_color = trim( $bg_color );
+			if ( strpos( $bg_color, '#' ) === 0 || strpos( $bg_color, 'rgb' ) === 0 || preg_match( '/^[A-Fa-f0-9]{6}$|^[A-Fa-f0-9]{3}$/', $bg_color ) ) {
+				$hex_prefix = ( strpos( $bg_color, '#' ) !== 0 && strpos( $bg_color, 'rgb' ) !== 0 ) ? '#' : '';
+				$bg_style = 'background-color: ' . $hex_prefix . $bg_color . ';';
+			} else {
+				$bg_class = $bg_color;
+			}
+		}
+		
+		// Process Icon URL and Alt
+		$icon_url = '';
+		$icon_alt = $heading;
+		if ( ! empty( $icon ) ) {
+			if ( is_array( $icon ) && ! empty( $icon['url'] ) ) {
+				$icon_url = $icon['url'];
+				if ( ! empty( $icon['alt'] ) ) {
+					$icon_alt = $icon['alt'];
+				}
+			} elseif ( is_string( $icon ) ) {
+				$icon_url = $icon;
+			}
+		}
+		
+		if ( ! empty( $heading ) ) {
+			$processed_cards[] = array(
+				'heading'     => $heading,
+				'description' => $description,
+				'icon_url'    => $icon_url,
+				'icon_alt'    => $icon_alt,
+				'bg_class'    => $bg_class,
+				'bg_style'    => $bg_style,
+			);
+		}
+	}
+}
+
+// Fallback to default cards if no repeater data exists
+if ( empty( $processed_cards ) ) {
+	foreach ( $fallback_cards as $fallback ) {
+		$processed_cards[] = array(
+			'heading'     => $fallback['heading'],
+			'description' => $fallback['description'],
+			'icon_url'    => $fallback['icon_url'],
+			'icon_alt'    => $fallback['heading'],
+			'bg_class'    => $fallback['background_color'],
+			'bg_style'    => '',
+		);
+	}
+}
 ?>
 
 <section class="py-20 bg-brand-cream border-b border-brand-cream relative">
@@ -67,30 +163,33 @@ $care_wings = [
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
 			<h2 class="text-3xl sm:text-4xl font-medium text-brand-dark tracking-tight mb-4 font-outfit">
-				Specialized Care Wings
+				<?php echo esc_html( $special_care_heading ); ?>
 			</h2>
 			<p class="text-brand-muted text-base sm:text-base leading-relaxed max-w-2xl mx-auto">
-				Providing a full spectrum of healthcare services tailored specifically for women and children.
+				<?php echo esc_html( $special_care_description ); ?>
 			</p>
 		</div>
 
-		<!-- Services Grid (3 Columns x 2 Rows) -->
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			<?php foreach ( $care_wings as $wing ) : ?>
-				<div class="group relative overflow-hidden <?php echo esc_attr( $wing['bg_class'] ); ?> p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center">
-					<div class="w-full relative z-10">
-						<!-- Icon container -->
-						<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
-							<img src="<?php echo esc_url( $wing['icon_url'] ); ?>" alt="<?php echo esc_attr( $wing['icon_alt'] ); ?>" class="h-10 w-10 object-contain">
+		<!-- Services Grid -->
+		<?php if ( ! empty( $processed_cards ) ) : ?>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<?php foreach ( $processed_cards as $card ) : ?>
+					<div class="group relative overflow-hidden <?php echo esc_attr( $card['bg_class'] ); ?> p-10 border-brand-red rounded-r-[4px] rounded-l-[4px] shadow-sm transition-all duration-300 hover:shadow-md flex flex-col justify-between items-start text-left min-h-[320px] bg-cover bg-center"<?php echo ! empty( $card['bg_style'] ) ? ' style="' . esc_attr( $card['bg_style'] ) . '"' : ''; ?>>
+						<div class="w-full relative z-10">
+							<!-- Icon container -->
+							<?php if ( ! empty( $card['icon_url'] ) ) : ?>
+								<div class="bg-white p-3 rounded-full inline-flex items-center justify-center mb-6 shadow-sm">
+									<img src="<?php echo esc_url( $card['icon_url'] ); ?>" alt="<?php echo esc_attr( $card['icon_alt'] ); ?>" class="h-10 w-10 object-contain">
+								</div>
+							<?php endif; ?>
+							<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit"><?php echo esc_html( $card['heading'] ); ?></h3>
+							<div class="text-brand-dark text-base leading-relaxed mb-6">
+								<?php echo wp_kses_post( $card['description'] ); ?>
+							</div>
 						</div>
-						<h3 class="text-2xl font-medium text-brand-dark mb-4 font-outfit"><?php echo esc_html( $wing['title'] ); ?></h3>
-						<p class="text-brand-dark text-base leading-relaxed mb-6">
-							<?php echo esc_html( $wing['desc'] ); ?>
-						</p>
 					</div>
-				</div>
-			<?php endforeach; ?>
-		</div>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
 	</div>
 </section>
-

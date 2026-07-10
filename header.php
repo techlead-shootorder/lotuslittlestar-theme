@@ -61,7 +61,27 @@
 	</style>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php 
+wp_body_open(); 
+
+// Retrieve menu items for the dynamic primary menu
+$menu_items = array();
+$locations = get_nav_menu_locations();
+if ( isset( $locations['primary'] ) ) {
+	$menu = wp_get_nav_menu_object( $locations['primary'] );
+	if ( $menu ) {
+		$menu_items = wp_get_nav_menu_items( $menu->term_id );
+	}
+}
+
+// Fallback search by menu name
+if ( empty( $menu_items ) ) {
+	$menu = wp_get_nav_menu_object( 'Primary' ) ? wp_get_nav_menu_object( 'Primary' ) : wp_get_nav_menu_object( 'Primary Menu' );
+	if ( $menu ) {
+		$menu_items = wp_get_nav_menu_items( $menu->term_id );
+	}
+}
+?>
 
 <!-- Header Navigation -->
 <header class="sticky top-0 z-50 bg-brand-bg/95 backdrop-blur-md border-b border-brand-cream shadow-sm">
@@ -75,11 +95,23 @@
 
 			<!-- Desktop Nav links -->
 			<nav class="hidden md:flex items-center gap-8 font-medium text-base">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Home</a>
-				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">About Us</a>
-				<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Our Specialities</a>
-				<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Our Experts</a>
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Contact Us</a>
+				<?php if ( ! empty( $menu_items ) ) : ?>
+					<?php foreach ( $menu_items as $item ) : ?>
+						<?php 
+						$target = ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+						$rel = '_blank' === $item->target ? ' rel="noopener"' : '';
+						?>
+						<a href="<?php echo esc_url( $item->url ); ?>"<?php echo $target; echo $rel; ?> class="text-brand-dark hover:text-brand-red transition-colors duration-200">
+							<?php echo esc_html( $item->title ); ?>
+						</a>
+					<?php endforeach; ?>
+				<?php else : ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Home</a>
+					<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">About Us</a>
+					<a href="<?php echo esc_url( home_url( '/speciality/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Our Specialities</a>
+					<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Our Experts</a>
+					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Contact Us</a>
+				<?php endif; ?>
 			</nav>
 
 			<!-- Action Buttons -->
@@ -111,11 +143,23 @@
 	<!-- Mobile Menu Panel -->
 	<div class="hidden md:hidden bg-brand-bg border-b border-brand-cream" id="mobile-menu">
 		<div class="px-4 pt-2 pb-4 space-y-2 font-medium text-base shadow-inner">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Home</a>
-			<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">About Us</a>
-			<a href="<?php echo esc_url( home_url( '/specialists/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Specialties</a>
-			<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Experts</a>
-			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Contact Us</a>
+			<?php if ( ! empty( $menu_items ) ) : ?>
+				<?php foreach ( $menu_items as $item ) : ?>
+					<?php 
+					$target = ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) . '"' : '';
+					$rel = '_blank' === $item->target ? ' rel="noopener"' : '';
+					?>
+					<a href="<?php echo esc_url( $item->url ); ?>"<?php echo $target; echo $rel; ?> class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">
+						<?php echo esc_html( $item->title ); ?>
+					</a>
+				<?php endforeach; ?>
+			<?php else : ?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Home</a>
+				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">About Us</a>
+				<a href="<?php echo esc_url( home_url( '/speciality/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Specialties</a>
+				<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Experts</a>
+				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Contact Us</a>
+			<?php endif; ?>
 			<div class="pt-4 pb-2 px-3 border-t border-brand-cream flex flex-col sm:flex-row gap-3">
 				<a href="tel:+919666604444" class="w-full inline-flex items-center justify-center gap-2 px-6 h-12 bg-white hover:bg-brand-cream text-brand-red border border-brand-red/30 font-medium rounded-full shadow-sm transition-all text-sm">
 					<svg class="h-4 w-4 text-brand-red shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">

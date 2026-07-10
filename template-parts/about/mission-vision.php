@@ -8,6 +8,27 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+// Fetch SCF Fields
+$mission_heading     = function_exists( 'get_field' ) ? get_field( 'mission_heading' ) : '';
+$mission_description = function_exists( 'get_field' ) ? get_field( 'mission_description' ) : '';
+$vision_heading      = function_exists( 'get_field' ) ? get_field( 'vision_heading' ) : '';
+$vision_description  = function_exists( 'get_field' ) ? get_field( 'vision_description' ) : '';
+
+// Fallbacks
+if ( empty( $mission_heading ) ) {
+	$mission_heading = __( 'Our Mission', 'lotus' );
+}
+if ( empty( $mission_description ) ) {
+	$mission_description = __( '"To deliver exceptional women and child healthcare through clinical excellence, advanced technology, and compassionate care, ensuring the health and well-being of every mother, newborn, and child."', 'lotus' );
+}
+
+if ( empty( $vision_heading ) ) {
+	$vision_heading = __( 'Our Vision', 'lotus' );
+}
+if ( empty( $vision_description ) ) {
+	$vision_description = __( '"To be the most trusted destination for women and child healthcare, setting new benchmarks in maternity, neonatal, and pediatric care through innovation, expertise, and patient-centered excellence."', 'lotus' );
+}
 ?>
 
 <section class="py-16 bg-[#FAF9F6] border-b border-brand-cream relative">
@@ -31,15 +52,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<path class="cls-1" d="M255.57,422.7c92.07,0,166.7-74.63,166.7-166.7,0-27.07-6.59-53.74-19.21-77.69-1.56-2.89-5.17-3.97-8.07-2.41-2.86,1.55-3.95,5.11-2.45,7.99,11.72,22.23,17.84,46.98,17.82,72.11-8.48,205.33-301.11,205.33-309.59,0-1.43-114.8,126.22-191.74,226.9-136.97,2.91,1.54,6.51.44,8.05-2.47s.44-6.51-2.47-8.05c-23.95-12.63-50.61-19.23-77.69-19.21-221.12,9.14-221.12,324.28,0,333.41Z"/>
 									<path class="cls-1" d="M255.57,208.37c5.16,0,10.27.85,15.15,2.53,3.11,1.07,6.5-.58,7.57-3.69,2.62-10.53-15.93-10.11-22.72-10.75-78.97,3.26-78.97,115.81,0,119.08,32.87-.04,59.5-26.67,59.54-59.54-.61-6.91-.21-25.26-10.69-22.66-3.11,1.07-4.76,4.45-3.69,7.56,0,0,0,0,0,0,1.66,4.86,2.49,9.96,2.47,15.09-2.39,63.09-92.87,63.09-95.26,0,.03-26.29,21.34-47.6,47.63-47.63Z"/>
 									<path class="cls-1" d="M312.57,165.12c1.59-2.87.56-6.5-2.32-8.09,0,0,0,0,0,0-16.74-9.26-35.55-14.13-54.69-14.14-150.05,6.2-150.05,220.04,0,226.24,62.44.04,113.08-50.55,113.12-112.99.01-19.18-4.86-38.04-14.14-54.82-1.58-2.88-5.2-3.93-8.08-2.35-2.88,1.58-3.93,5.2-2.35,8.08,0,.01.01.03.02.04,37.74,65.45-12.96,151.44-88.57,150.12-55.87-.06-101.15-45.34-101.21-101.21-1.3-75.61,84.67-126.31,150.13-88.56,2.87,1.6,6.49.57,8.08-2.3,0,0,0-.01.01-.02Z"/>
-									<path class="cls-1" d="M324.18,148.23l2.19,28.56-75.01,75.01c-2.28,2.37-2.2,6.14.17,8.42,2.3,2.21,5.94,2.21,8.25,0l75.01-75.01,28.56,2.19c1.73.13,3.44-.5,4.66-1.73l43.33-43.33c2.31-2.37,2.25-6.17-.12-8.48-.98-.96-2.27-1.55-3.63-1.67l-26.19-2.01-2.01-26.19c-.3-3.3-3.22-5.73-6.52-5.42-1.36.13-2.65.71-3.63,1.67l-43.33,43.33c-1.23,1.23-1.86,2.93-1.73,4.66ZM368.5,117.81c2.38,27.73-2.31,22.85,25.26,25.26l-32.24,32.24-23.46-1.8-1.8-23.46,32.24-32.24Z"/>
+									<path class="cls-1" d="M324.18,148.23l2.19,28.56-75.01,75.01c-2.28,2.37-2.2,6.14.17,8.42,2.3,2.21,5.94,2.21,8.25,0 l75.01-75.01,28.56,2.19c1.73.13,3.44-.5,4.66-1.73l43.33-43.33c2.31-2.37,2.25-6.17-.12-8.48-.98-.96-2.27-1.55-3.63-1.67l-26.19-2.01-2.01-26.19c-.3-3.3-3.22-5.73-6.52-5.42-1.36.13-2.65.71-3.63,1.67l-43.33,43.33c-1.23,1.23-1.86,2.93-1.73,4.66ZM368.5,117.81c2.38,27.73-2.31,22.85,25.26,25.26l-32.24,32.24-23.46-1.8-1.8-23.46,32.24-32.24Z"/>
 								</g>
 							</svg>
 						</div>
-						<h3 class="font-outfit text-2xl font-bold text-brand-green">Our Mission</h3>
+						<h3 class="font-outfit text-2xl font-bold text-brand-green"><?php echo esc_html( $mission_heading ); ?></h3>
 					</div>
 					<!-- Quote Text -->
 					<p class="text-brand-green text-base sm:text-lg leading-relaxed mb-8 font-medium">
-						"To deliver exceptional women and child healthcare through clinical excellence, advanced technology, and compassionate care, ensuring the health and well-being of every mother, newborn, and child."
+						<?php echo esc_html( $mission_description ); ?>
 					</p>
 				</div>
 				<!-- Underline Bar -->
@@ -60,11 +81,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<circle cx="12" cy="12" r="1" fill="currentColor" />
 							</svg>
 						</div>
-						<h3 class="font-outfit text-2xl font-bold text-brand-green">Our Vision</h3>
+						<h3 class="font-outfit text-2xl font-bold text-brand-green"><?php echo esc_html( $vision_heading ); ?></h3>
 					</div>
 					<!-- Quote Text -->
 					<p class="text-brand-green text-base sm:text-lg leading-relaxed mb-8 font-medium">
-						"To be the most trusted destination for women and child healthcare, setting new benchmarks in maternity, neonatal, and pediatric care through innovation, expertise, and patient-centered excellence."
+						<?php echo esc_html( $vision_description ); ?>
 					</p>
 				</div>
 				<!-- Underline Bar -->

@@ -8,6 +8,55 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+// Fetch header fields
+$why_choose_heading     = function_exists( 'get_field' ) ? get_field( 'why_choose_heading' ) : '';
+$why_choose_description = function_exists( 'get_field' ) ? get_field( 'why_choose_description' ) : '';
+
+if ( empty( $why_choose_heading ) ) {
+	$why_choose_heading = __( 'Why Choose Lotus Little Stars Hospital?', 'lotus' );
+}
+if ( empty( $why_choose_description ) ) {
+	$why_choose_description = '<p>' . __( 'At Lotus Little Stars, we bring together expert maternity care, advanced neonatal services, and comprehensive pediatric healthcare under one roof. With <span class="text-brand-red font-bold">35+ years</span> of combined clinical excellence, we are committed to providing compassionate, world-class care for mothers, newborns, and children. From high-risk pregnancy care and maternity services to <span class="text-brand-red font-bold">Level III NICU, PICU</span>, and pediatric super-specialties, our experienced team and advanced technology ensure the best possible outcomes for every family.', 'lotus' ) . '</p>';
+}
+
+// Fetch card groups
+$card_1 = function_exists( 'get_field' ) ? get_field( 'why_choose_card_1' ) : null;
+$card_2 = function_exists( 'get_field' ) ? get_field( 'why_choose_card_2' ) : null;
+$card_3 = function_exists( 'get_field' ) ? get_field( 'why_choose_card_3' ) : null;
+$card_4 = function_exists( 'get_field' ) ? get_field( 'why_choose_card_4' ) : null;
+$card_5 = function_exists( 'get_field' ) ? get_field( 'why_choose_card_5' ) : null;
+
+// Card 1
+$card_1_title = ( is_array( $card_1 ) && ! empty( $card_1['title'] ) ) ? $card_1['title'] : __( 'A Tradition of Trust and Excellence', 'lotus' );
+$card_1_desc  = ( is_array( $card_1 ) && ! empty( $card_1['description'] ) ) ? $card_1['description'] : __( 'A legacy of <span class="font-bold text-brand-red">35+ years</span> delivering trusted, compassionate, and clinically excellent care for women and children.', 'lotus' );
+
+// Card 2
+$card_2_title = ( is_array( $card_2 ) && ! empty( $card_2['title'] ) ) ? $card_2['title'] : __( 'Integrated Care for Women and Children', 'lotus' );
+$card_2_desc  = ( is_array( $card_2 ) && ! empty( $card_2['description'] ) ) ? $card_2['description'] : __( 'Comprehensive, end-to-end care across every stage of life, delivered seamlessly under one roof.', 'lotus' );
+
+// Card 3
+$card_3_title = ( is_array( $card_3 ) && ! empty( $card_3['title'] ) ) ? $card_3['title'] : __( 'Leading Specialists, Exceptional Care', 'lotus' );
+$card_3_desc  = ( is_array( $card_3 ) && ! empty( $card_3['description'] ) ) ? $card_3['description'] : __( 'Expert-led, evidence-based care delivered by highly experienced specialists committed to superior outcomes.', 'lotus' );
+
+// Card 4
+$card_4_title = ( is_array( $card_4 ) && ! empty( $card_4['title'] ) ) ? $card_4['title'] : __( 'Expert Guidance Beyond Boundaries', 'lotus' );
+$card_4_desc  = ( is_array( $card_4 ) && ! empty( $card_4['description'] ) ) ? $card_4['description'] : __( 'Specialist consultations and second opinions that empower confident, informed healthcare decisions.', 'lotus' );
+
+// Card 5
+$card_5_title = ( is_array( $card_5 ) && ! empty( $card_5['title'] ) ) ? $card_5['title'] : __( 'A Growing Network of Trusted Care', 'lotus' );
+$card_5_desc  = ( is_array( $card_5 ) && ! empty( $card_5['description'] ) ) ? $card_5['description'] : __( 'Expanding access to advanced, consistent healthcare through a connected and trusted care network.', 'lotus' );
+
+// Allowed HTML configuration for card descriptions to safely allow span formatting
+$allowed_card_desc_html = array(
+	'span'   => array(
+		'class' => true,
+	),
+	'strong' => array(),
+	'b'      => array(),
+	'em'     => array(),
+	'i'      => array(),
+);
 ?>
 
 <section class="py-14 bg-white border-b border-brand-cream/60 relative overflow-hidden">
@@ -16,17 +65,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
 			<h2 class="text-3xl sm:text-3xl font-medium text-brand-dark font-outfit mb-4">
-				Why Choose Lotus Little Stars Hospital?
+				<?php echo esc_html( $why_choose_heading ); ?>
 			</h2>
-			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
-				At Lotus Little Stars, we bring together expert maternity care, advanced neonatal services, and comprehensive pediatric healthcare under one roof. 
-				With <span class="text-brand-red font-bold">35+ years</span> of combined clinical excellence, we are committed to providing compassionate, world-class care for mothers, newborns, and children.
-				From high-risk pregnancy care and maternity services to <span class="text-brand-red font-bold">Level III NICU, PICU</span>,and pediatric super-specialties, our experienced team and advanced 
-				technology ensure the best possible outcomes for every family.
-			</p>
-			<!-- <p class="text-brand-muted text-sm sm:text-base leading-relaxed mt-4 font-semibold italic text-brand-dark">
-				Trusted by families. Driven by excellence. Dedicated to every mother and child.
-			</p> -->
+			<div class="text-brand-muted text-sm sm:text-base leading-relaxed">
+				<?php echo wp_kses_post( $why_choose_description ); ?>
+			</div>
 		</div>
 
 		<!-- Cards Grid -->
@@ -42,10 +85,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</svg>
 				</div>
 				<h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-red transition-colors font-outfit">
-					A Tradition of Trust and Excellence
+					<?php echo esc_html( $card_1_title ); ?>
 				</h3>
 				<p class="text-base text-brand-muted leading-relaxed font-sans">
-					A legacy of <span class="font-bold text-brand-red">35+ years</span> delivering trusted, compassionate, and clinically excellent care for women and children.
+					<?php echo wp_kses( $card_1_desc, $allowed_card_desc_html ); ?>
 				</p>
 			</div>
 
@@ -58,10 +101,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</svg>
 				</div>
 				<h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-red transition-colors font-outfit">
-					Integrated Care for Women and Children
+					<?php echo esc_html( $card_2_title ); ?>
 				</h3>
 				<p class="text-base text-brand-muted leading-relaxed font-sans">
-					Comprehensive, end-to-end care across every stage of life, delivered seamlessly under one roof.
+					<?php echo esc_html( $card_2_desc ); ?>
 				</p>
 			</div>
 
@@ -77,10 +120,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</svg>
 				</div>
 				<h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-red transition-colors font-outfit">
-					Leading Specialists, Exceptional Care
+					<?php echo esc_html( $card_3_title ); ?>
 				</h3>
 				<p class="text-base text-brand-muted leading-relaxed font-sans">
-					Expert-led, evidence-based care delivered by highly experienced specialists committed to superior outcomes.
+					<?php echo esc_html( $card_3_desc ); ?>
 				</p>
 			</div>
 
@@ -94,10 +137,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</svg>
 				</div>
 				<h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-red transition-colors font-outfit">
-					Expert Guidance Beyond Boundaries
+					<?php echo esc_html( $card_4_title ); ?>
 				</h3>
 				<p class="text-base text-brand-muted leading-relaxed font-sans">
-					Specialist consultations and second opinions that empower confident, informed healthcare decisions.
+					<?php echo esc_html( $card_4_desc ); ?>
 				</p>
 			</div>
 
@@ -119,13 +162,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</svg>
 				</div>
 				<h3 class="text-lg md:text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-red transition-colors font-outfit">
-					A Growing Network of Trusted Care
+					<?php echo esc_html( $card_5_title ); ?>
 				</h3>
 				<p class="text-base text-brand-muted leading-relaxed font-sans">
-					Expanding access to advanced, consistent healthcare through a connected and trusted care network.
+					<?php echo esc_html( $card_5_desc ); ?>
 				</p>
 			</div>
 
 		</div>
 	</div>
 </section>
+

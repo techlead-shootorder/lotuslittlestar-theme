@@ -8,6 +8,75 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+// Get the Front Page ID
+$home_page_id = get_option( 'page_on_front' );
+if ( ! $home_page_id ) {
+	$home_page_id = get_the_ID();
+}
+
+// Fetch section header fields
+$success_stories_heading     = function_exists( 'get_field' ) ? get_field( 'success_stories_heading', $home_page_id ) : '';
+$success_stories_description = function_exists( 'get_field' ) ? get_field( 'success_stories_description', $home_page_id ) : '';
+$success_story_links         = function_exists( 'get_field' ) ? get_field( 'success_story_links', $home_page_id ) : null;
+
+if ( empty( $success_stories_heading ) ) {
+	$success_stories_heading = __( 'Success Stories', 'lotus' );
+}
+if ( empty( $success_stories_description ) ) {
+	$success_stories_description = __( 'Hear from our families about their journey to recovery and the medical care they received at Lotus little stars.', 'lotus' );
+}
+
+/**
+ * Helper function to extract YouTube Video ID from various URL formats
+ */
+if ( ! function_exists( 'lotus_get_youtube_id' ) ) {
+	function lotus_get_youtube_id( $url ) {
+		if ( empty( $url ) ) {
+			return '';
+		}
+		// If it's already an 11-character video ID
+		if ( strlen( $url ) === 11 ) {
+			return $url;
+		}
+		// Regex to parse various YouTube link formats
+		$pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i';
+		if ( preg_match( $pattern, $url, $matches ) ) {
+			return $matches[1];
+		}
+		return '';
+	}
+}
+
+$processed_stories = array();
+
+if ( ! empty( $success_story_links ) && is_array( $success_story_links ) ) {
+	foreach ( $success_story_links as $item ) {
+		$youtube_url = isset( $item['story_youtube_link'] ) ? $item['story_youtube_link'] : '';
+		if ( empty( $youtube_url ) ) {
+			continue; // If no YouTube URL exists, skip that card
+		}
+
+		$video_id = lotus_get_youtube_id( $youtube_url );
+		if ( empty( $video_id ) ) {
+			continue; // If URL is invalid, skip
+		}
+
+		// Title and Thumbnail if they are set in the repeater (otherwise defaults are used below)
+		$title = isset( $item['title'] ) ? $item['title'] : __( 'Success Story', 'lotus' );
+		$thumbnail_url = isset( $item['thumbnail_url'] ) ? $item['thumbnail_url'] : '';
+
+		$processed_stories[] = array(
+			'title'         => $title,
+			'video_id'      => $video_id,
+			'thumbnail_url' => $thumbnail_url,
+		);
+	}
+}
+
+
+// Only render output if success stories exist
+if ( ! empty( $processed_stories ) ) :
 ?>
 
 <section class="py-20 bg-[#F4F6FB] text-brand-dark border-b border-brand-border relative overflow-hidden">
@@ -20,76 +89,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- Centered Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
 			<h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1A365D] font-outfit mb-4">
-				Success Stories
+				<?php echo esc_html( $success_stories_heading ); ?>
 			</h2>
 			<p class="text-brand-muted text-base sm:text-lg">
-				Hear from our families about their journey to recovery and the medical care they received at Lotus little stars.
+				<?php echo esc_html( $success_stories_description ); ?>
 			</p>
 			<div class="w-16 h-1 bg-brand-coral mx-auto mt-4 rounded-full"></div>
 		</div>
-
-		<!-- Success Stories Carousel Data & Layout -->
-		<?php
-		/**
-		 * Helper function to extract YouTube Video ID from various URL formats
-		 */
-		if ( ! function_exists( 'lotus_get_youtube_id' ) ) {
-			function lotus_get_youtube_id( $url ) {
-				if ( empty( $url ) ) {
-					return '';
-				}
-				// If it's already an 11-character video ID
-				if ( strlen( $url ) === 11 ) {
-					return $url;
-				}
-				// Regex to parse various YouTube link formats
-				$pattern = '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i';
-				if ( preg_match( $pattern, $url, $matches ) ) {
-					return $matches[1];
-				}
-				return '';
-			}
-		}
-
-		// Configuration list for success story videos with direct URLs and thumbnails
-		$success_stories = array(
-			array(
-				'title'         => "From Crisis to Hope: Chaitrika's Journey",
-				'video_url'     => 'https://www.youtube.com/watch?v=EFOxJGuuj_Y', // Replace with your YouTube Video URL
-				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/chaitrika-yt.jpg', // Replace with your local/media image URL
-			),
-			array(
-				'title'         => "A 5-year-old's story of strength & recovery from 'Severe Dengue Shock'",
-				'video_url'     => 'https://www.youtube.com/watch?v=BDs5zyBKY4U', // Replace with your YouTube Video URL
-				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/dengue.jpg', // Replace with your local/media image URL
-			),
-			array(
-				'title'         => "HAEMOPHILIA TREATMENT SUCCESS STORY",
-				'video_url'     => 'https://www.youtube.com/watch?v=HHfjDAKH71g', // Replace with your YouTube Video URL
-				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/hemophelia.png', // Replace with your local/media image URL
-			),
-			array(
-				'title'         => "From critical Condition to recovery 'Krish's Healing Story'",
-				'video_url'     => 'https://www.youtube.com/watch?v=x6I6YsNDt5I', // Replace with your YouTube Video URL
-				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/krish-healing.jpg', // Replace with your local/media image URL
-			),
-			array(
-				'title'         => "Advanced ICU care",
-				'video_url'     => 'https://www.youtube.com/watch?v=tOArrA53ldk', // Replace with your YouTube Video URL
-				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/icu-care.png', // Replace with your local/media image URL
-			),
-			array(
-				'title'         => "How Priyansh Overcame HAEMOPHILIA",
-				'video_url'     => 'https://www.youtube.com/watch?v=D1tS9HqO05U', // Replace with your YouTube Video URL
-				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/priyansh.jpg', // Replace with your local/media image URL
-			),
-			array(
-				'title'         => "From PREGNANCY to PEDIATRIC CARE",
-				'video_url'     => 'https://www.youtube.com/watch?v=fytT6MEhEp4', // Replace with your YouTube Video URL
-				'thumbnail_url' => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/pragnancy-care.jpg', // Replace with your local/media image URL
-			),
-		);
-		?>
 
 		<div class="relative px-1 sm:px-0">
 			<!-- Navigation Arrows -->
@@ -106,9 +112,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- Carousel Wrapper -->
 			<div id="success-stories-carousel" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-none gap-6 pb-6 -mx-4 px-4 sm:mx-0 sm:px-0">
-				<?php foreach ( $success_stories as $index => $story ) : 
-					$video_url = esc_url( $story['video_url'] );
-					$video_id  = esc_attr( lotus_get_youtube_id( $story['video_url'] ) );
+				<?php foreach ( $processed_stories as $index => $story ) : 
+					$video_id  = esc_attr( $story['video_id'] );
 					$thumbnail = ! empty( $story['thumbnail_url'] ) ? esc_url( $story['thumbnail_url'] ) : "https://img.youtube.com/vi/{$video_id}/maxresdefault.jpg";
 					$local_fallback = esc_url( get_stylesheet_directory_uri() . '/assets/left-image-hom.png' );
 				?>
@@ -135,7 +140,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- Carousel Dots Pagination -->
 			<div class="flex items-center justify-center gap-2.5 mt-8" id="carousel-dots-container">
-				<?php foreach ( $success_stories as $index => $story ) : ?>
+				<?php foreach ( $processed_stories as $index => $story ) : ?>
 					<button class="carousel-dot w-2.5 h-2.5 rounded-full bg-slate-300 hover:bg-amber-400 transition-all duration-300" aria-label="Go to story <?php echo $index + 1; ?>"></button>
 				<?php endforeach; ?>
 			</div>
@@ -179,6 +184,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 document.addEventListener('DOMContentLoaded', function() {
 	// 1. Carousel Scroll and Dot Navigation Logic
 	const carousel = document.getElementById('success-stories-carousel');
+	if (!carousel) return;
 	const cards = carousel.querySelectorAll('.carousel-card');
 	const dots = document.querySelectorAll('.carousel-dot');
 	const prevBtn = document.getElementById('carousel-prev');
@@ -351,8 +357,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 
 	// Add close listeners
-	closeModalBtn.addEventListener('click', closeModal);
-	backdrop.addEventListener('click', closeModal);
+	if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+	if (backdrop) backdrop.addEventListener('click', closeModal);
 
 	// Close on Escape key
 	document.addEventListener('keydown', function(e) {
@@ -363,3 +369,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<?php endif; ?>

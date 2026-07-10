@@ -9,6 +9,82 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+// Option A Page Lookup: Look up settings page to get Custom Fields
+$doctors_settings_page = null;
+$possible_slugs = array( 
+	'doctor-archive-settings', 
+	'doctors-archive-settings', 
+	'doctor-settings', 
+	'doctors-settings', 
+	'doctor-archive', 
+	'doctors-archive', 
+	'doctors', 
+	'doctor' 
+);
+foreach ( $possible_slugs as $slug ) {
+	$page = get_page_by_path( $slug );
+	if ( $page ) {
+		$doctors_settings_page = $page;
+		break;
+	}
+}
+
+// Fallback search by title
+if ( ! $doctors_settings_page ) {
+	$possible_titles = array( 
+		'Doctor Archive Settings', 
+		'Doctors Archive Settings', 
+		'Doctor Settings', 
+		'Doctors Settings', 
+		'Doctors', 
+		'Doctor' 
+	);
+	foreach ( $possible_titles as $title ) {
+		$page = get_page_by_title( $title, OBJECT, 'page' );
+		if ( $page ) {
+			$doctors_settings_page = $page;
+			break;
+		}
+	}
+}
+
+$doctors_page_id = $doctors_settings_page ? $doctors_settings_page->ID : 0;
+
+// Fetch SCF Fields
+$expert_hero_badge       = function_exists( 'get_field' ) ? get_field( 'expert_hero_badge', $doctors_page_id ) : '';
+$expert_hero_heading     = function_exists( 'get_field' ) ? get_field( 'expert_hero_heading', $doctors_page_id ) : '';
+$expert_hero_description = function_exists( 'get_field' ) ? get_field( 'expert_hero_description', $doctors_page_id ) : '';
+$expert_primary_button   = function_exists( 'get_field' ) ? get_field( 'expert_primary_button', $doctors_page_id ) : null;
+$expert_background       = function_exists( 'get_field' ) ? get_field( 'expert_background', $doctors_page_id ) : null;
+
+// Fallbacks
+if ( empty( $expert_hero_badge ) ) {
+	$expert_hero_badge = __( 'Our Medical Team', 'lotus' );
+}
+if ( empty( $expert_hero_heading ) ) {
+	$expert_hero_heading = '<h1>' . __( 'Meet Our Experts', 'lotus' ) . '</h1>';
+}
+if ( empty( $expert_hero_description ) ) {
+	$expert_hero_description = '<p>' . __( 'Our experienced team of specialists is dedicated to providing exceptional care for women, newborns, and children. Combining advanced medical expertise with compassion, we deliver personalized healthcare and trusted support at every stage of life.', 'lotus' ) . '</p>';
+}
+
+// Background Image
+$bg_image_url = 'http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-doctore-new-scaled.webp';
+if ( ! empty( $expert_background ) ) {
+	if ( is_array( $expert_background ) && ! empty( $expert_background['url'] ) ) {
+		$bg_image_url = $expert_background['url'];
+	} elseif ( is_string( $expert_background ) ) {
+		$bg_image_url = $expert_background;
+	}
+}
+
+// Button configuration
+$has_button    = is_array( $expert_primary_button ) && ! empty( $expert_primary_button['url'] );
+$button_url    = $has_button ? $expert_primary_button['url'] : home_url( '/contact/' );
+$button_title  = $has_button && ! empty( $expert_primary_button['title'] ) ? $expert_primary_button['title'] : __( 'Book Appointment', 'lotus' );
+$button_target = $has_button && ! empty( $expert_primary_button['target'] ) ? $expert_primary_button['target'] : '_self';
+$button_rel    = '_blank' === $button_target ? ' rel="noopener"' : '';
+
 // Query all doctors
 $args = array(
 	'post_type'      => 'doctor',
@@ -37,7 +113,7 @@ if ( $doctors_query->have_posts() ) {
 
 <section class="relative h-screen sm:h-auto py-0 sm:py-24 flex items-center border-b border-brand-cream/60 overflow-hidden">
 	<!-- Background Image -->
-	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('http://lotuslittlestars.in/wp-content/uploads/2026/06/hero-doctore-new-scaled.webp');"></div>
+	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('<?php echo esc_url( $bg_image_url ); ?>');"></div>
 	
 	<!-- Overlay Gradient to ensure text readability -->
 	<div class="absolute inset-0 bg-white/65 sm:bg-transparent sm:bg-gradient-to-r sm:from-white/65 sm:via-white/60 sm:to-transparent -z-10"></div>
@@ -45,21 +121,38 @@ if ( $doctors_query->have_posts() ) {
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-left">
 		<!-- Section Header -->
 		<div class="max-w-3xl mb-0">
-			<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">Our Medical Team</span>
-			<h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-green mt-2 mb-4">
-				Meet Our Experts
-			</h1>
-			<p class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl">
-				Our experienced team of specialists is dedicated to providing exceptional care for women, newborns, and children. Combining advanced medical expertise with compassion, we deliver personalized healthcare and trusted support at every stage of life.
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-10">
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-semibold rounded-[4px] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
-					Book Appointment
-				</a>
-			</div>
+			<?php if ( ! empty( $expert_hero_badge ) ) : ?>
+				<span class="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold border border-brand-red text-brand-red bg-brand-red/10 mb-4">
+					<?php echo esc_html( $expert_hero_badge ); ?>
+				</span>
+			<?php endif; ?>
+			
+			<?php if ( ! empty( $expert_hero_heading ) ) : ?>
+				<div class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-brand-green mt-2 mb-4">
+					<?php echo wp_kses_post( $expert_hero_heading ); ?>
+				</div>
+			<?php endif; ?>
+			
+			<?php if ( ! empty( $expert_hero_description ) ) : ?>
+				<div class="text-brand-muted text-sm sm:text-base leading-relaxed max-w-2xl">
+					<?php echo wp_kses_post( $expert_hero_description ); ?>
+				</div>
+			<?php endif; ?>
+			
+			<?php if ( ! empty( $button_url ) ) : ?>
+				<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-10">
+					<a href="<?php echo esc_url( $button_url ); ?>" 
+					   target="<?php echo esc_attr( $button_target ); ?>" 
+					   <?php echo $button_rel; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					   class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-semibold rounded-[4px] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
+						<?php echo esc_html( $button_title ); ?>
+					</a>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>
+<!-- Antigravity Debug: Resolved Settings Page ID: <?php echo esc_html( $doctors_page_id ); ?> (Badge: <?php echo esc_html( $expert_hero_badge ); ?>) -->
 
 <section class="py-20 bg-brand-bg min-h-screen">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

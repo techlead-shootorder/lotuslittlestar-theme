@@ -5,24 +5,17 @@
  * @package Lotus
  */
 
-$accreditations = array(
-	array(
-		'name' => 'NNF',
-		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-1.webp',
-	),
-	array(
-		'name' => 'NABH',
-		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-2.webp',
-	),
-	array(
-		'name' => 'IAP',
-		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-3.jpeg',
-	),
-	array(
-		'name' => 'Logo 5',
-		'url'  => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/logo-5.jpeg',
-	),
-);
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+// Fetch accreditation logos repeater
+$accreditation_logos = function_exists( 'get_field' ) ? get_field( 'accreditation_logos' ) : null;
+
+// If no logos exist, display nothing
+if ( empty( $accreditation_logos ) || ! is_array( $accreditation_logos ) ) {
+	return;
+}
 ?>
 <style>
     .accreditations-section {
@@ -76,12 +69,23 @@ $accreditations = array(
 		<div class="accreditations-track">
 
 			<?php
-			foreach ( $accreditations as $item ) :
+			foreach ( $accreditation_logos as $item ) :
+				$logo      = isset( $item['logo'] ) ? $item['logo'] : null;
+				$logo_name = isset( $item['logo_name'] ) ? $item['logo_name'] : '';
+
+				$logo_url = '';
+				if ( is_array( $logo ) && ! empty( $logo['url'] ) ) {
+					$logo_url = $logo['url'];
+				}
+
+				if ( empty( $logo_url ) ) {
+					continue;
+				}
 			?>
 				<div class="accreditation-item">
 					<img
-						src="<?php echo esc_url( $item['url'] ); ?>"
-						alt="<?php echo esc_attr( $item['name'] ); ?>"
+						src="<?php echo esc_url( $logo_url ); ?>"
+						alt="<?php echo esc_attr( $logo_name ); ?>"
 					>
 				</div>
 			<?php endforeach; ?>

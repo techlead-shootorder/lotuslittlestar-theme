@@ -29,6 +29,11 @@ function lotus_theme_setup() {
 		'style',
 		'script',
 	) );
+
+	// Register Navigation Menus
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'lotus' ),
+	) );
 }
 add_action( 'after_setup_theme', 'lotus_theme_setup' );
 
@@ -86,6 +91,186 @@ function lotus_register_doctor_cpt() {
 	register_post_type( 'doctor', $args );
 }
 add_action( 'init', 'lotus_register_doctor_cpt' );
+
+/**
+ * Register Speciality Custom Post Type
+ */
+function lotus_register_speciality_cpt() {
+	$labels = array(
+		'name'                  => _x( 'Specialities', 'Post type general name', 'lotus' ),
+		'singular_name'         => _x( 'Speciality', 'Post type singular name', 'lotus' ),
+		'menu_name'             => _x( 'Specialities', 'Admin Menu text', 'lotus' ),
+		'name_admin_bar'        => _x( 'Speciality', 'Add New on Toolbar', 'lotus' ),
+		'add_new'               => __( 'Add New', 'lotus' ),
+		'add_new_item'          => __( 'Add New Speciality', 'lotus' ),
+		'new_item'              => __( 'New Speciality', 'lotus' ),
+		'edit_item'             => __( 'Edit Speciality', 'lotus' ),
+		'view_item'             => __( 'View Speciality', 'lotus' ),
+		'all_items'             => __( 'All Specialities', 'lotus' ),
+		'search_items'          => __( 'Search Specialities', 'lotus' ),
+		'parent_item_colon'     => __( 'Parent Specialities:', 'lotus' ),
+		'not_found'             => __( 'No specialities found.', 'lotus' ),
+		'not_found_in_trash'    => __( 'No specialities found in Trash.', 'lotus' ),
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'speciality' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 6,
+		'menu_icon'          => 'dashicons-medical',
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'page-attributes' ),
+		'show_in_rest'       => true,
+	);
+
+	register_post_type( 'speciality', $args );
+}
+add_action( 'init', 'lotus_register_speciality_cpt' );
+
+/**
+ * Register Blog Custom Post Type
+ */
+function lotus_register_blog_cpt() {
+	$labels = array(
+		'name'                  => _x( 'Blogs', 'Post type general name', 'lotus' ),
+		'singular_name'         => _x( 'Blog', 'Post type singular name', 'lotus' ),
+		'menu_name'             => _x( 'Blogs', 'Admin Menu text', 'lotus' ),
+		'name_admin_bar'        => _x( 'Blog', 'Add New on Toolbar', 'lotus' ),
+		'add_new'               => __( 'Add New', 'lotus' ),
+		'add_new_item'          => __( 'Add New Blog', 'lotus' ),
+		'new_item'              => __( 'New Blog', 'lotus' ),
+		'edit_item'             => __( 'Edit Blog', 'lotus' ),
+		'view_item'             => __( 'View Blog', 'lotus' ),
+		'all_items'             => __( 'All Blogs', 'lotus' ),
+		'search_items'          => __( 'Search Blogs', 'lotus' ),
+		'parent_item_colon'     => __( 'Parent Blogs:', 'lotus' ),
+		'not_found'             => __( 'No blogs found.', 'lotus' ),
+		'not_found_in_trash'    => __( 'No blogs found in Trash.', 'lotus' ),
+		'featured_image'        => _x( 'Blog Cover Image', 'Overrides the “Featured Image” label', 'lotus' ),
+		'set_featured_image'    => _x( 'Set Cover Image', 'Overrides the “Set featured image” label', 'lotus' ),
+		'remove_featured_image' => _x( 'Remove Cover Image', 'Overrides the “Remove featured image” label', 'lotus' ),
+		'use_featured_image'    => _x( 'Use as Cover Image', 'Overrides the “Use as featured image” label', 'lotus' ),
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'blogs' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'        => false,
+		'menu_position'      => 7,
+		'menu_icon'          => 'dashicons-admin-post',
+		'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'show_in_rest'       => true,
+	);
+
+	register_post_type( 'blog', $args );
+}
+add_action( 'init', 'lotus_register_blog_cpt' );
+
+/**
+ * Register Blog Category Custom Taxonomy
+ */
+function lotus_register_blog_category_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Blog Categories', 'taxonomy general name', 'lotus' ),
+		'singular_name'     => _x( 'Blog Category', 'taxonomy singular name', 'lotus' ),
+		'search_items'      => __( 'Search Blog Categories', 'lotus' ),
+		'all_items'         => __( 'All Blog Categories', 'lotus' ),
+		'parent_item'       => __( 'Parent Blog Category', 'lotus' ),
+		'parent_item_colon' => __( 'Parent Blog Category:', 'lotus' ),
+		'edit_item'         => __( 'Edit Blog Category', 'lotus' ),
+		'update_item'       => __( 'Update Blog Category', 'lotus' ),
+		'add_new_item'      => __( 'Add New Blog Category', 'lotus' ),
+		'new_item_name'     => __( 'New Blog Category Name', 'lotus' ),
+		'menu_name'         => __( 'Blog Categories', 'lotus' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'public'            => true,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'blog-category' ),
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'blog-category', array( 'blog' ), $args );
+}
+add_action( 'init', 'lotus_register_blog_category_taxonomy' );
+
+/**
+ * Insert default Blog Categories if they do not exist
+ */
+function lotus_insert_default_blog_categories() {
+	$default_categories = array(
+		'Woman Care' => 'woman-care',
+		'Pediatrics' => 'pediatrics',
+		'Maternity'  => 'maternity',
+	);
+
+	foreach ( $default_categories as $name => $slug ) {
+		if ( ! term_exists( $slug, 'blog-category' ) ) {
+			wp_insert_term(
+				$name,
+				'blog-category',
+				array(
+					'slug' => $slug,
+				)
+			);
+		}
+	}
+}
+add_action( 'init', 'lotus_insert_default_blog_categories', 20 );
+
+
+
+/**
+ * Register Speciality Category Custom Taxonomy
+ */
+function lotus_register_speciality_category_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Speciality Categories', 'taxonomy general name', 'lotus' ),
+		'singular_name'     => _x( 'Speciality Category', 'taxonomy singular name', 'lotus' ),
+		'search_items'      => __( 'Search Speciality Categories', 'lotus' ),
+		'all_items'         => __( 'All Speciality Categories', 'lotus' ),
+		'parent_item'       => __( 'Parent Speciality Category', 'lotus' ),
+		'parent_item_colon' => __( 'Parent Speciality Category:', 'lotus' ),
+		'edit_item'         => __( 'Edit Speciality Category', 'lotus' ),
+		'update_item'       => __( 'Update Speciality Category', 'lotus' ),
+		'add_new_item'      => __( 'Add New Speciality Category', 'lotus' ),
+		'new_item_name'     => __( 'New Speciality Category Name', 'lotus' ),
+		'menu_name'         => __( 'Speciality Categories', 'lotus' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'public'            => true,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'speciality-category' ),
+		'show_in_rest'      => true,
+	);
+
+	register_taxonomy( 'speciality_category', array( 'speciality' ), $args );
+}
+add_action( 'init', 'lotus_register_speciality_category_taxonomy' );
 
 /**
  * Add Custom Fields for Doctor CPT

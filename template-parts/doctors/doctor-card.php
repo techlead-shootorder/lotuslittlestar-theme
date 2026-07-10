@@ -88,26 +88,19 @@ if ( $fallback_doctor ) {
 		$edu_lines = explode( "\n", str_replace( "\r", "", $education ) );
 		$qualification = trim( $edu_lines[0] );
 	}
-	if ( empty( $qualification ) ) {
-		$qualification = ! empty( $department ) ? $department : 'Specialist';
-	}
 
 	// Resolve experience string
-	$experience = ! empty( $experience_val ) ? $experience_val : '10+ Yrs';
-	if ( strpos( $experience, 'Experience' ) === false ) {
-		$experience .= ' Experience';
+	$experience = '';
+	if ( ! empty( $experience_val ) ) {
+		$experience = $experience_val;
+		if ( strpos( $experience, 'Experience' ) === false ) {
+			$experience .= ' Experience';
+		}
 	}
 
-	// Resolve designation and specialty
-	if ( empty( $specialty ) ) {
-		$specialty = 'Specialist Doctor';
-	}
-	
-	// Fetch or fallback designation
+	// Fetch designation
 	$designation = get_post_meta( get_the_ID(), '_doctor_designation', true );
-	if ( empty( $designation ) ) {
-		$designation = 'Consultant – ' . $specialty;
-	}
+
 
 	// Exact database overrides for name matchings (only if database values are empty)
 	$meta_specialty   = get_post_meta( get_the_ID(), '_doctor_specialty', true );
@@ -268,14 +261,18 @@ if ( $is_grid ) {
 			</h3>
 			
 			<!-- Specialty -->
-			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium break-words">
-				<?php echo esc_html( $specialty ); ?>
-			</p>
+			<?php if ( ! empty( $specialty ) ) : ?>
+				<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium break-words">
+					<?php echo esc_html( $specialty ); ?>
+				</p>
+			<?php endif; ?>
 			
 			<!-- Qualification -->
-			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3 break-words">
-				<?php echo esc_html( $qualification ); ?>
-			</p>
+			<?php if ( ! empty( $qualification ) ) : ?>
+				<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3 break-words">
+					<?php echo esc_html( $qualification ); ?>
+				</p>
+			<?php endif; ?>
 
 			<!-- Description (if exists) -->
 			<!-- <?php if ( $is_grid ) : ?>
@@ -320,16 +317,18 @@ if ( $is_grid ) {
 			<?php endif; ?> -->
 
 			<!-- Experience Badge -->
-			<div class="flex items-center justify-center sm:justify-start gap-2 text-brand-dark text-sm sm:text-base mb-4 font-medium">
-				<!-- Calendar Icon -->
-				<svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-					<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-					<line x1="16" y1="2" x2="16" y2="6"></line>
-					<line x1="8" y1="2" x2="8" y2="6"></line>
-					<line x1="3" y1="10" x2="21" y2="10"></line>
-				</svg>
-				<span><?php echo esc_html( $experience ); ?></span>
-			</div>
+			<?php if ( ! empty( $experience ) ) : ?>
+				<div class="flex items-center justify-center sm:justify-start gap-2 text-brand-dark text-sm sm:text-base mb-4 font-medium">
+					<!-- Calendar Icon -->
+					<svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+						<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+						<line x1="16" y1="2" x2="16" y2="6"></line>
+						<line x1="8" y1="2" x2="8" y2="6"></line>
+						<line x1="3" y1="10" x2="21" y2="10"></line>
+					</svg>
+					<span><?php echo esc_html( $experience ); ?></span>
+				</div>
+			<?php endif; ?>
 		</div>
 
 		<!-- Action Buttons -->

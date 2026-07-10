@@ -72,6 +72,17 @@ $homepage_doctors = array(
 		'appointment_url'=> home_url( '/contact/' ),
 	),
 );
+
+// Fetch section header fields
+$expert_doctor_title       = function_exists( 'get_field' ) ? get_field( 'expert_doctor_title' ) : '';
+$expert_doctor_description = function_exists( 'get_field' ) ? get_field( 'expert_doctor_description' ) : '';
+
+if ( empty( $expert_doctor_title ) ) {
+	$expert_doctor_title = __( 'Meet Our Experts', 'lotus' );
+}
+if ( empty( $expert_doctor_description ) ) {
+	$expert_doctor_description = __( 'Our multidisciplinary team of renowned specialists is dedicated to delivering advanced, compassionate care for women, newborns, and children—helping families navigate every stage of life with confidence.', 'lotus' );
+}
 ?>
 
 <section class="py-20 bg-brand-bg relative overflow-hidden">
@@ -81,10 +92,10 @@ $homepage_doctors = array(
 			<div class="text-left max-w-2xl">
 			
 				<h2 class="text-3xl sm:text-4xl font-medium text-brand-dark mt-2 mb-4">
-					Meet Our Experts
+					<?php echo esc_html( $expert_doctor_title ); ?>
 				</h2>
 				<p class="text-brand-muted text-base leading-relaxed">
-					Our multidisciplinary team of renowned specialists is dedicated to delivering advanced, compassionate care for women, newborns, and children—helping families navigate every stage of life with confidence.
+					<?php echo esc_html( $expert_doctor_description ); ?>
 				</p>
 			</div>
 			<div>

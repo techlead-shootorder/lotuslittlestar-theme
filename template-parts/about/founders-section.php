@@ -9,69 +9,131 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-$founders = array(
-	'satish' => array(
-		'name'          => 'Dr. Satish Ghanta',
-		'qualification' => 'MBBS (Manipal University), MD – Pediatrics, Fellowship in Neonatology, Pediatric & Cardiac Intensive Care (Australia)',
-		'specialty'     => 'SR Consultant Pediatrician, HOD Neonatal & Pediatric Intensivist Care',
-		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
-		'bio'           => 'Dr. Satish Ghanta, our Managing Director, is a highly experienced Neonatologist, Developmental Paediatrician, and Paediatric Intensivist with over 32+ years of clinical experience. Until 2007, he had extensive international training (Neonatal & Paediatric Critical Care) at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital. He & his team bring unparalleled leadership to our institution, guiding our strategic initiatives and fostering a culture of excellence. He is also the founder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.',
-	),
-	'V.S.V. Prasad' => array(
-		'name'          => 'Dr. V.S.V. Prasad',
-		'qualification' => 'MD Pediatrics (AIIMS, New Delhi),FRCPCH (UK)',
-		'specialty'     => 'Group Chief Consultant Neonatologist and Pediatric Intensivist',
-		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/VSV.-Prasad.jpg',
-		'bio'           => 'Dr. V.S.V. Prasad, our Managing Director and Founder of Lotus Hospitals, is a renowned Neonatologist and Pediatric Critical Care Specialist with over 35+ years of experience in advancing neonatal and pediatric healthcare. After completing his medical education at AIIMS, New Delhi, he pursued advanced training in Neonatology and Pediatric Critical Care in the United States and the United Kingdom.Returning to India with a vision to establish world-class healthcare services for children, Dr. Prasad founded Lotus Hospitals in 2006 with a mission to make quality healthcare accessible to every family. Under his leadership, Lotus Hospitals has grown into one of the most trusted names in women and child healthcare, recognized for clinical excellence, advanced technology, and compassionate patient care.His commitment to innovation and patient-centered care continues to inspire the growth of Lotus Little Stars, helping set new benchmarks in neonatal, pediatric, and maternal healthcare for families across the region.',
-	),
-	'ramana' => array(
-		'name'          => 'Dr. Ramana Dandamudi',
-		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
-		'specialty'     => 'SR Consultant & HOD Pediatric Hematology & Oncology',
-		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi.jpg.jpeg',
-		'bio'           => 'Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39+ years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi’s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children’s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.',
-	),
-	'Roopa' => array(
-		'name'          => 'Dr. Roopa Ghanta',
-		'qualification' => 'MBBS, DGO, CCPU',
-		'specialty'     => 'Senior Consultant & HOD Obstetrics and Gynaecology',
-		'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Roopa-Ganta.jpg',
-		'bio'           => 'Dr. Roopa Ghanta, with over 26 years of expertise in Gynaecology and Obstetrics heads the OBG Department at Little Stars & She Women and Children’s Hospital. Her international experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics and her enhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology adds a high level of precision and expertise in patient care. Dr. Roopa Ghanta specializes in high-risk pregnancy care and advanced gynaecological treatments. She has introduced innovative practices like water birthing, midwifery, painless birthing etc at Little Stars & She Hospital, where she is committed to delivering world-class, patient-centred care.',
-	),
-);
+$leadership_heading     = function_exists( 'get_field' ) ? get_field( 'leadership_heading' ) : '';
+$leadership_description = function_exists( 'get_field' ) ? get_field( 'leadership_description' ) : '';
+
+if ( empty( $leadership_heading ) ) {
+	$leadership_heading = __( 'Our Leadership Team', 'lotus' );
+}
+if ( empty( $leadership_description ) ) {
+	$leadership_description = __( 'Meet the visionary minds and clinical leaders behind Lotus Little Stars Hospital, dedicated to elevating healthcare standards for mothers and children.', 'lotus' );
+}
+
+// Check for repeater fields (check multiple common names to be extra safe, prioritizing leadership_members)
+$repeater_data = null;
+$possible_keys = array( 'leadership_members', 'founders', 'leadership_team', 'leadership', 'founders_list' );
+foreach ( $possible_keys as $key ) {
+	$val = function_exists( 'get_field' ) ? get_field( $key ) : null;
+	if ( is_array( $val ) && ! empty( $val ) ) {
+		$repeater_data = $val;
+		break;
+	}
+}
+
+$processed_founders = array();
+
+if ( is_array( $repeater_data ) && ! empty( $repeater_data ) ) {
+	foreach ( $repeater_data as $index => $item ) {
+		$name          = isset( $item['doctor_name'] ) ? $item['doctor_name'] : '';
+		$qualification = isset( $item['doctor_qualification'] ) ? $item['doctor_qualification'] : '';
+		$specialty     = isset( $item['doctor_speciality'] ) ? $item['doctor_speciality'] : '';
+		$bio           = isset( $item['doctor_full_bio'] ) ? $item['doctor_full_bio'] : '';
+		$doctor_image  = isset( $item['doctor_image'] ) ? $item['doctor_image'] : null;
+
+		$img_url = '';
+		if ( is_array( $doctor_image ) && ! empty( $doctor_image['url'] ) ) {
+			$img_url = $doctor_image['url'];
+		} elseif ( is_string( $doctor_image ) ) {
+			$img_url = $doctor_image;
+		}
+
+		if ( ! empty( $name ) ) {
+			$processed_founders[ 'founder_' . $index ] = array(
+				'name'          => $name,
+				'qualification' => $qualification,
+				'specialty'     => $specialty,
+				'bio'           => $bio,
+				'img_url'       => $img_url,
+			);
+		}
+	}
+}
+
+// Fallback to static array if repeater data is empty
+if ( empty( $processed_founders ) ) {
+	$static_founders = array(
+		'satish' => array(
+			'name'          => 'Dr. Satish Ghanta',
+			'qualification' => 'MBBS (Manipal University), MD – Pediatrics, Fellowship in Neonatology, Pediatric & Cardiac Intensive Care (Australia)',
+			'specialty'     => 'SR Consultant Pediatrician, HOD Neonatal & Pediatric Intensivist Care',
+			'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
+			'bio'           => 'Dr. Satish Ghanta, our Managing Director, is a highly experienced Neonatologist, Developmental Paediatrician, and Paediatric Intensivist with over 32+ years of clinical experience. Until 2007, he had extensive international training (Neonatal & Paediatric Critical Care) at the Royal Hospital for Women, Sydney and Sydney Children’s Hospital. He & his team bring unparalleled leadership to our institution, guiding our strategic initiatives and fostering a culture of excellence. He is also the founder of CHOICE foundation, a charitable organization dedicated to providing critical and emergency medical care to underprivileged women and children over the last 12 years.',
+		),
+		'V.S.V. Prasad' => array(
+			'name'          => 'Dr. V.S.V. Prasad',
+			'qualification' => 'MD Pediatrics (AIIMS, New Delhi),FRCPCH (UK)',
+			'specialty'     => 'Group Chief Consultant Neonatologist and Pediatric Intensivist',
+			'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/VSV.-Prasad.jpg',
+			'bio'           => 'Dr. V.S.V. Prasad, our Managing Director and Founder of Lotus Hospitals, is a renowned Neonatologist and Pediatric Critical Care Specialist with over 35+ years of experience in advancing neonatal and pediatric healthcare. After completing his medical education at AIIMS, New Delhi, he pursued advanced training in Neonatology and Pediatric Critical Care in the United States and the United Kingdom.Returning to India with a vision to establish world-class healthcare services for children, Dr. Prasad founded Lotus Hospitals in 2006 with a mission to make quality healthcare accessible to every family. Under his leadership, Lotus Hospitals has grown into one of the most trusted names in women and child healthcare, recognized for clinical excellence, advanced technology, and compassionate patient care.His commitment to innovation and patient-centered care continues to inspire the growth of Lotus Little Stars, helping set new benchmarks in neonatal, pediatric, and maternal healthcare for families across the region.',
+		),
+		'ramana' => array(
+			'name'          => 'Dr. Ramana Dandamudi',
+			'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
+			'specialty'     => 'SR Consultant & HOD Pediatric Hematology & Oncology',
+			'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi.jpg.jpeg',
+			'bio'           => 'Dr. Ramana Dandamudi, our Director is a distinguished Paediatric Haematologist and Oncologist with over 39+ years of expertise in treating paediatric blood disorders and cancers. He received advanced training in Paediatric Haematology and Oncology at Our Lady’s Hospital, Dublin, and Manchester Children’s Hospital, UK. In 1995, Dr. Ramana Dandamudi spearheaded the establishment of the Paediatric Haematology - Oncology Department at the Indo-American Cancer Institute in Hyderabad, introducing dedicated paediatric haematology and oncology services for the first time to united Andhra Pradesh. He heads the Haematology - Oncology Department at Little Stars & She Women and Children’s Hospital Hyderabad, dedicated to delivering compassionate, comprehensive care, achieving child cancer survival rates on par with global standards. Dr. Dandamudi’s unwavering commitment to advancing paediatric oncology is also reflected in his contributions to the Children’s Cancer Foundation, where he continues to innovate and enhance care for young patients with blood disorders.',
+		),
+		'Roopa' => array(
+			'name'          => 'Dr. Roopa Ghanta',
+			'qualification' => 'MBBS, DGO, CCPU',
+			'specialty'     => 'Senior Consultant & HOD Obstetrics and Gynaecology',
+			'image_name'    => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Roopa-Ganta.jpg',
+			'bio'           => 'Dr. Roopa Ghanta, with over 26 years of expertise in Gynaecology and Obstetrics heads the OBG Department at Little Stars & She Women and Children’s Hospital. Her international experience at the Royal Hospital for Women in Sydney in High-Risk Obstetrics and her enhanced proficiency & certification in clinician performed ultrasonography in obstetrics and gynaecology adds a high level of precision and expertise in patient care. Dr. Roopa Ghanta specializes in high-risk pregnancy care and advanced gynaecological treatments. She has introduced innovative practices like water birthing, midwifery, painless birthing etc at Little Stars & She Hospital, where she is committed to delivering world-class, patient-centred care.',
+		),
+	);
+
+	foreach ( $static_founders as $id => $founder ) {
+		$img_input = $founder['image_name'];
+		if ( strpos( $img_input, 'http://' ) === 0 || strpos( $img_input, 'https://' ) === 0 ) {
+			$img_url = $img_input;
+		} else {
+			$img_path = get_stylesheet_directory() . '/assets/' . $img_input;
+			$img_url  = file_exists( $img_path ) ? get_stylesheet_directory_uri() . '/assets/' . $img_input : '';
+		}
+
+		$processed_founders[ $id ] = array(
+			'name'          => $founder['name'],
+			'qualification' => $founder['qualification'],
+			'specialty'     => $founder['specialty'],
+			'bio'           => $founder['bio'],
+			'img_url'       => $img_url,
+		);
+	}
+}
 ?>
 
 <section class="py-20 bg-white border-b border-brand-cream relative">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Section Header -->
 		<div class="text-center max-w-3xl mx-auto mb-16">
-			<!-- <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-red/5 text-brand-red border border-brand-red/30 mb-4 uppercase tracking-wider">
-				Our Leadership
-			</span> -->
 			<h2 class="text-3xl sm:text-4xl font-medium text-brand-green font-outfit mb-4">
-				Our Leadership Team
+				<?php echo esc_html( $leadership_heading ); ?>
 			</h2>
-			<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
-				Meet the visionary minds and clinical leaders behind Lotus Little Stars Hospital, dedicated to elevating healthcare standards for mothers and children.
-			</p>
+			<?php if ( ! empty( $leadership_description ) ) : ?>
+				<p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+					<?php echo esc_html( $leadership_description ); ?>
+				</p>
+			<?php endif; ?>
 		</div>
 
 		<!-- Founders Grid -->
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-			<?php foreach ( $founders as $id => $founder ) : 
-				$img_input = $founder['image_name'];
-				if ( strpos( $img_input, 'http://' ) === 0 || strpos( $img_input, 'https://' ) === 0 ) {
-					$img_url = $img_input;
-				} else {
-					$img_path = get_stylesheet_directory() . '/assets/' . $img_input;
-					$img_url  = file_exists( $img_path ) ? get_stylesheet_directory_uri() . '/assets/' . $img_input : '';
-				}
-			?>
+			<?php foreach ( $processed_founders as $id => $founder ) : ?>
 				<div class="bg-[#FAF9F5] rounded-3xl border border-[#EBE8E2] shadow-sm hover:shadow-md transition-all duration-300 p-8 flex flex-col sm:flex-row items-center sm:items-start gap-8 text-center sm:text-left group">
 					<!-- Circular Image Frame -->
 					<div class="relative w-36 h-36 rounded-full shrink-0 overflow-hidden bg-brand-cream border-2 border-brand-cream group-hover:border-brand-red/30 transition-all duration-300">
-						<?php if ( $img_url ) : ?>
-							<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $founder['name'] ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+						<?php if ( ! empty( $founder['img_url'] ) ) : ?>
+							<img src="<?php echo esc_url( $founder['img_url'] ); ?>" alt="<?php echo esc_attr( $founder['name'] ); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
 						<?php else : ?>
 							<div class="w-full h-full flex items-center justify-center text-brand-coral/40">
 								<svg class="h-16 w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
@@ -88,7 +150,6 @@ $founders = array(
 							<p class="text-sm text-brand-muted leading-relaxed mb-6 font-sans">
 								<?php echo esc_html( $founder['specialty'] ); ?>
 							</p>
-							<!-- <p class="text-xs font-semibold text-brand-red uppercase tracking-wider mb-2"><?php echo esc_html( $founder['qualification'] ); ?></p> -->
 						</div>
 						<div class="mt-auto">
 							<button type="button" data-founder-target="<?php echo esc_attr( $id ); ?>" class="open-founder-modal inline-flex items-center justify-center px-6 h-10 border border-brand-red text-brand-red hover:bg-brand-red hover:text-white text-xs font-bold rounded-lg transition-all duration-300">
@@ -103,15 +164,7 @@ $founders = array(
 </section>
 
 <!-- Founder Modals -->
-<?php foreach ( $founders as $id => $founder ) : 
-	$img_input = $founder['image_name'];
-	if ( strpos( $img_input, 'http://' ) === 0 || strpos( $img_input, 'https://' ) === 0 ) {
-		$img_url = $img_input;
-	} else {
-		$img_path = get_stylesheet_directory() . '/assets/' . $img_input;
-		$img_url  = file_exists( $img_path ) ? get_stylesheet_directory_uri() . '/assets/' . $img_input : '';
-	}
-?>
+<?php foreach ( $processed_founders as $id => $founder ) : ?>
 	<div id="modal-<?php echo esc_attr( $id ); ?>" class="founder-modal fixed inset-0 z-55 flex items-center justify-center p-4 bg-brand-dark/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
 		<!-- Modal Content Box -->
 		<div class="bg-white w-full max-w-3xl rounded-[0.5rem] shadow-2xl relative overflow-hidden flex flex-col md:flex-row transform scale-95 transition-transform duration-300 max-h-[70vh] overflow-y-auto md:overflow-y-visible md:h-[480px] mt-12">
@@ -126,13 +179,10 @@ $founders = array(
 			<div class="w-full md:w-5/12 bg-white flex items-center justify-center relative p-6 md:p-8 min-h-[250px] md:min-h-0 md:h-full overflow-hidden shrink-0 border-b md:border-b-0 md:border-r border-[#F3F4F6]">
 				<!-- Parent Mask Container -->
 				<div class="relative w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white z-10">
-					
-					<!-- Grayscale Avatar with Blending -->
-					<?php if ( $img_url ) : ?>
-						<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $founder['name'] ); ?>" class="absolute inset-0 w-full h-full object-cover  z-10">
+					<?php if ( ! empty( $founder['img_url'] ) ) : ?>
+						<img src="<?php echo esc_url( $founder['img_url'] ); ?>" alt="<?php echo esc_attr( $founder['name'] ); ?>" class="absolute inset-0 w-full h-full object-cover z-10">
 					<?php else : ?>
 						<div class="absolute inset-0 w-full h-full flex items-center justify-center text-[#D93B48] opacity-20 z-10">
-							<!-- Clean SVG headshot silhouette fallback matching screenshot shape -->
 							<svg class="h-20 w-20" fill="currentColor" viewBox="0 0 24 24">
 								<path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
 							</svg>
@@ -144,10 +194,12 @@ $founders = array(
 			<!-- Right Column (Text Bio details - scrollable on desktop) -->
 			<div class="w-full md:w-7/12 flex flex-col p-6 md:p-10 text-left md:h-full md:overflow-y-auto relative z-10">
 				<h3 class="font-outfit text-2xl md:text-2xl font-bold text-[#3B497D] mb-1 leading-tight"><?php echo esc_html( $founder['name'] ); ?></h3>
-				<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-4 block"><?php echo esc_html( $founder['qualification'] ); ?></span>
+				<?php if ( ! empty( $founder['qualification'] ) ) : ?>
+					<span class="text-xs font-bold text-brand-red uppercase tracking-wider mb-4 block"><?php echo esc_html( $founder['qualification'] ); ?></span>
+				<?php endif; ?>
 				
 				<div class="text-[#374151] text-sm md:text-sm leading-relaxed space-y-4 font-sans font-normal border-t border-[#F3F4F6] pt-4">
-					<p><?php echo esc_html( $founder['bio'] ); ?></p>
+					<p><?php echo wp_kses_post( $founder['bio'] ); ?></p>
 				</div>
 			</div>
 		</div>
@@ -210,3 +262,4 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 </script>
+

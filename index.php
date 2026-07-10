@@ -146,12 +146,12 @@ if ( ! function_exists( 'add_action' ) ) {
 	} elseif ( $request === '/contact' ) {
 		include ABSPATH . 'page-contact.php';
 	} elseif ( $request === '/doctors' ) {
-		include ABSPATH . 'page-doctors.php';
+		include ABSPATH . 'archive-doctor.php';
 	} elseif ( $request === '/locations' ) {
 		header( 'Location: ' . home_url( '/contact' ) );
 		exit;
-	} elseif ( $request === '/specialists' ) {
-		include ABSPATH . 'page-specialists.php';
+	} elseif ( $request === '/specialists' || $request === '/speciality' ) {
+		include ABSPATH . 'archive-speciality.php';
 	} elseif ( preg_match( '#^/doctors/.+#', $request ) ) {
 		include ABSPATH . 'single-doctor.php';
 	} else {

@@ -1,0 +1,128 @@
+Array
+(
+    [contact_page_id] => 12
+    [locations] => Array
+        (
+            [0] => Array
+                (
+                    [location_image] => Array
+                        (
+                            [ID] => 313
+                            [id] => 313
+                            [title] => banjara-hills
+                            [filename] => banjara-hills.png
+                            [filesize] => 2065288
+                            [url] => http://lotuslittlestar.local/wp-content/uploads/2026/07/banjara-hills.png
+                            [link] => http://lotuslittlestar.local/contact-us/banjara-hills/
+                            [alt] => 
+                            [author] => 1
+                            [description] => 
+                            [caption] => 
+                            [name] => banjara-hills
+                            [status] => inherit
+                            [uploaded_to] => 12
+                            [date] => 2026-07-08 09:03:56
+                            [modified] => 2026-07-08 09:03:56
+                            [menu_order] => 0
+                            [mime_type] => image/png
+                            [type] => image
+                            [subtype] => png
+                            [icon] => http://lotuslittlestar.local/wp-includes/images/media/default.png
+                            [width] => 1600
+                            [height] => 1132
+                            [sizes] => Array
+                                (
+                                    [thumbnail] => http://lotuslittlestar.local/wp-content/uploads/2026/07/banjara-hills-150x150.png
+                                    [thumbnail-width] => 150
+                                    [thumbnail-height] => 150
+                                    [medium] => http://lotuslittlestar.local/wp-content/uploads/2026/07/banjara-hills-300x212.png
+                                    [medium-width] => 300
+                                    [medium-height] => 212
+                                    [medium_large] => http://lotuslittlestar.local/wp-content/uploads/2026/07/banjara-hills-768x543.png
+                                    [medium_large-width] => 768
+                                    [medium_large-height] => 543
+                                    [large] => http://lotuslittlestar.local/wp-content/uploads/2026/07/banjara-hills-1024x724.png
+                                    [large-width] => 1024
+                                    [large-height] => 724
+                                    [1536x1536] => http://lotuslittlestar.local/wp-content/uploads/2026/07/banjara-hills-1536x1087.png
+                                    [1536x1536-width] => 1536
+                                    [1536x1536-height] => 1087
+                                    [2048x2048] => http://lotuslittlestar.local/wp-content/uploads/2026/07/banjara-hills.png
+                                    [2048x2048-width] => 1600
+                                    [2048x2048-height] => 1132
+                                )
+
+                        )
+
+                    [location_badge] => Flagship Tertiary Center
+                    [location_name] => Banjara Hills, Hyderabad
+                    [location_address] => Accent Towers, 8-2-590, Road No. 10, Banjara Hills, Hyderabad, Telangana 500034, India.
+                    [location_phone_number] => +91 40 4000 6000
+                    [location_map_link] => https://maps.app.goo.gl/YcYicwS3mwoS81fd8
+                    [call_number] => +91 40 4000 6000
+                )
+
+            [1] => Array
+                (
+                    [location_image] => Array
+                        (
+                            [ID] => 314
+                            [id] => 314
+                            [title] => rajamundry-loc
+                            [filename] => rajamundry-loc.png
+                            [filesize] => 2253708
+                            [url] => http://lotuslittlestar.local/wp-content/uploads/2026/07/rajamundry-loc.png
+                            [link] => http://lotuslittlestar.local/contact-us/rajamundry-loc/
+                            [alt] => 
+                            [author] => 1
+                            [description] => 
+                            [caption] => 
+                            [name] => rajamundry-loc
+                            [status] => inherit
+                            [uploaded_to] => 12
+                            [date] => 2026-07-08 09:04:34
+                            [modified] => 2026-07-08 09:04:34
+                            [menu_order] => 0
+                            [mime_type] => image/png
+                            [type] => image
+                            [subtype] => png
+                            [icon] => http://lotuslittlestar.local/wp-includes/images/media/default.png
+                            [width] => 1492
+                            [height] => 1054
+                            [sizes] => Array
+                                (
+                                    [thumbnail] => http://lotuslittlestar.local/wp-content/uploads/2026/07/rajamundry-loc-150x150.png
+                                    [thumbnail-width] => 150
+                                    [thumbnail-height] => 150
+                                    [medium] => http://lotuslittlestar.local/wp-content/uploads/2026/07/rajamundry-loc-300x212.png
+                                    [medium-width] => 300
+                                    [medium-height] => 212
+                                    [medium_large] => http://lotuslittlestar.local/wp-content/uploads/2026/07/rajamundry-loc-768x543.png
+                                    [medium_large-width] => 768
+                                    [medium_large-height] => 543
+                                    [large] => http://lotuslittlestar.local/wp-content/uploads/2026/07/rajamundry-loc-1024x723.png
+                                    [large-width] => 1024
+                                    [large-height] => 723
+                                    [1536x1536] => http://lotuslittlestar.local/wp-content/uploads/2026/07/rajamundry-loc.png
+                                    [1536x1536-width] => 1492
+                                    [1536x1536-height] => 1054
+                                    [2048x2048] => http://lotuslittlestar.local/wp-content/uploads/2026/07/rajamundry-loc.png
+                                    [2048x2048-width] => 1492
+                                    [2048x2048-height] => 1054
+                                )
+
+                        )
+
+                    [location_badge] => Advanced Pediatric Hub
+                    [location_name] => Rajahmundry, Andhra Pradesh
+                    [location_address] => Door No. 76-8-11, Plot No. B-4, Danavaipeta, Rajahmundry, Andhra Pradesh 533103, India.
+                    [location_phone_number] => +91 883 243 4000
+                    [location_map_link] => https://maps.app.goo.gl/indTExv8gjZL5NiC9
+                    [call_number] => +91 883 243 4000
+                )
+
+        )
+
+    [is_page_template] => true
+    [get_the_ID] => 12
+)

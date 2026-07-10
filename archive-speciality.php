@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Specialists Page
+ * Speciality Archive Template
  *
- * The template for displaying the Specialists/Specialties page
+ * The template for displaying all speciality archive posts
  *
  * @package Lotus
  */
