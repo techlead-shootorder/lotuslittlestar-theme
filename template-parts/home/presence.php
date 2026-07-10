@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div>
 					<h3 class="text-xl font-bold text-brand-green mb-2 font-outfit">Banjara Hills</h3>
 					<p class="text-brand-green text-xs leading-relaxed mb-6">
-						Road No. 12, Banjara Hills, Hyderabad - 500034
+						Road No. 10, Banjara Hills, Hyderabad - 500034
 					</p>
 					<!-- Location Image -->
 					<div class="aspect-[1.6] w-full bg-brand-cream rounded-2xl overflow-hidden border border-brand-cream/80 mb-6 relative">

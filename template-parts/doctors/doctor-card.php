@@ -67,113 +67,42 @@ if ( $fallback_doctor ) {
 		$experience    = $experience . ' Experience';
 	}
 } else {
-	$name       = get_the_title();
-	$specialty  = get_post_meta( get_the_ID(), '_doctor_specialty', true );
-	$department = get_post_meta( get_the_ID(), '_doctor_department', true );
-	$experience_val = get_post_meta( get_the_ID(), '_doctor_experience', true );
-	$education  = get_post_meta( get_the_ID(), '_doctor_education', true );
-	$permalink  = get_permalink();
-	$location   = get_post_meta( get_the_ID(), '_doctor_location', true );
+	$name           = get_the_title();
+	$meta_specialty = get_post_meta( get_the_ID(), '_doctor_specialty', true );
+	$meta_department = get_post_meta( get_the_ID(), '_doctor_department', true );
+	$meta_experience = get_post_meta( get_the_ID(), '_doctor_experience', true );
+	$meta_education  = get_post_meta( get_the_ID(), '_doctor_education', true );
+	$permalink       = get_permalink();
+	
+	$location = get_post_meta( get_the_ID(), '_doctor_location', true );
 	if ( empty( $location ) ) {
 		$location = 'Hyderabad';
 	}
-	$filter     = get_post_meta( get_the_ID(), '_doctor_filter', true );
+	$filter = get_post_meta( get_the_ID(), '_doctor_filter', true );
 	if ( empty( $filter ) ) {
 		$filter = 'child care';
 	}
 
-	// Parse first line of education as qualification
+	// Resolve specialty
+	$specialty = ! empty( $meta_specialty ) ? $meta_specialty : '';
+
+	// Resolve qualification
 	$qualification = '';
-	if ( ! empty( $education ) ) {
-		$edu_lines = explode( "\n", str_replace( "\r", "", $education ) );
+	if ( ! empty( $meta_education ) ) {
+		$edu_lines = explode( "\n", str_replace( "\r", "", $meta_education ) );
 		$qualification = trim( $edu_lines[0] );
 	}
 
-	// Resolve experience string
-	$experience = '';
-	if ( ! empty( $experience_val ) ) {
-		$experience = $experience_val;
-		if ( strpos( $experience, 'Experience' ) === false ) {
-			$experience .= ' Experience';
-		}
+	// Resolve experience
+	$experience = ! empty( $meta_experience ) ? $meta_experience : '';
+	if ( ! empty( $experience ) && strpos( $experience, 'Experience' ) === false ) {
+		$experience .= ' Experience';
 	}
 
-	// Fetch designation
+	// Resolve designation
 	$designation = get_post_meta( get_the_ID(), '_doctor_designation', true );
 
-
-	// Exact database overrides for name matchings (only if database values are empty)
-	$meta_specialty   = get_post_meta( get_the_ID(), '_doctor_specialty', true );
-	$meta_education   = get_post_meta( get_the_ID(), '_doctor_education', true );
-	$meta_designation = get_post_meta( get_the_ID(), '_doctor_designation', true );
-	$meta_experience  = get_post_meta( get_the_ID(), '_doctor_experience', true );
-
-	if ( strpos( $name, 'Satish Ghanta' ) !== false ) {
-		if ( empty( $meta_specialty ) ) {
-			$specialty = 'Neonatology | Pediatrics | PICU';
-		}
-		if ( empty( $meta_education ) ) {
-			$qualification = 'MD (Pediatrics)';
-		}
-		if ( empty( $meta_designation ) ) {
-			$designation = 'Director – Neonatal & Pediatric Intensive Care Services';
-		}
-		if ( empty( $meta_experience ) ) {
-			$experience = '32+ Years Experience';
-		}
-	} elseif ( strpos( $name, 'V.S.V. Prasad' ) !== false ) {
-		if ( empty( $meta_specialty ) ) {
-			$specialty = 'Neonatology | Pediatrics';
-		}
-		if ( empty( $meta_education ) ) {
-			$qualification = 'MD Pediatrics (AIIMS, New Delhi), FRCPCH (UK)';
-		}
-		if ( empty( $meta_designation ) ) {
-			$designation = 'Managing Director – Neonatology & Pediatrics';
-		}
-		if ( empty( $meta_experience ) ) {
-			$experience = '35+ Years Experience';
-		}
-	} elseif ( strpos( $name, 'Mehul' ) !== false ) {
-		if ( empty( $meta_specialty ) ) {
-			$specialty = 'Pediatrics & Nephrology';
-		}
-		if ( empty( $meta_education ) ) {
-			$qualification = 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)';
-		}
-		if ( empty( $meta_designation ) ) {
-			$designation = 'Senior Consultant – Pediatric Nephrology';
-		}
-		if ( empty( $meta_experience ) ) {
-			$experience = '30+ Years Experience';
-		}
-	} elseif ( strpos( $name, 'Roopa' ) !== false ) {
-		if ( empty( $meta_specialty ) ) {
-			$specialty = 'Gynecology & Obstetrics';
-		}
-		if ( empty( $meta_education ) ) {
-			$qualification = 'MBBS, DGO, CCPU';
-		}
-		if ( empty( $meta_designation ) ) {
-			$designation = 'HOD – Obstetrics & Gynecology';
-		}
-		if ( empty( $meta_experience ) ) {
-			$experience = '26+ Years Experience';
-		}
-	} elseif ( strpos( $name, 'Ramana' ) !== false ) {
-		if ( empty( $meta_specialty ) ) {
-			$specialty = 'Pediatric Hematology & Oncology';
-		}
-		if ( empty( $meta_education ) ) {
-			$qualification = 'MBBS, MD – Pediatrics, DCH, MRCP (UK)';
-		}
-		if ( empty( $meta_designation ) ) {
-			$designation = 'Director – Pediatric Hematology & Oncology';
-		}
-		if ( empty( $meta_experience ) ) {
-			$experience = '39+ Years Experience';
-		}
-	}
+	$department = ! empty( $meta_department ) ? $meta_department : '';
 }
 
 // Doctor specific image URL mapping
@@ -262,16 +191,16 @@ if ( $is_grid ) {
 			
 			<!-- Specialty -->
 			<?php if ( ! empty( $specialty ) ) : ?>
-				<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium break-words">
-					<?php echo esc_html( $specialty ); ?>
-				</p>
+			<p class="text-brand-muted text-sm sm:text-base mb-1 font-medium break-words">
+				<?php echo esc_html( $specialty ); ?>
+			</p>
 			<?php endif; ?>
 			
 			<!-- Qualification -->
 			<?php if ( ! empty( $qualification ) ) : ?>
-				<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3 break-words">
-					<?php echo esc_html( $qualification ); ?>
-				</p>
+			<p class="text-brand-dark text-sm sm:text-base font-semibold mb-3 break-words">
+				<?php echo esc_html( $qualification ); ?>
+			</p>
 			<?php endif; ?>
 
 			<!-- Description (if exists) -->
@@ -318,16 +247,16 @@ if ( $is_grid ) {
 
 			<!-- Experience Badge -->
 			<?php if ( ! empty( $experience ) ) : ?>
-				<div class="flex items-center justify-center sm:justify-start gap-2 text-brand-dark text-sm sm:text-base mb-4 font-medium">
-					<!-- Calendar Icon -->
-					<svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-						<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-						<line x1="16" y1="2" x2="16" y2="6"></line>
-						<line x1="8" y1="2" x2="8" y2="6"></line>
-						<line x1="3" y1="10" x2="21" y2="10"></line>
-					</svg>
-					<span><?php echo esc_html( $experience ); ?></span>
-				</div>
+			<div class="flex items-center justify-center sm:justify-start gap-2 text-brand-dark text-sm sm:text-base mb-4 font-medium">
+				<!-- Calendar Icon -->
+				<svg class="w-5 h-5 text-brand-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+					<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+					<line x1="16" y1="2" x2="16" y2="6"></line>
+					<line x1="8" y1="2" x2="8" y2="6"></line>
+					<line x1="3" y1="10" x2="21" y2="10"></line>
+				</svg>
+				<span><?php echo esc_html( $experience ); ?></span>
+			</div>
 			<?php endif; ?>
 		</div>
 
