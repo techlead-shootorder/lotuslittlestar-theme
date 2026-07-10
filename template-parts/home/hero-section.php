@@ -35,6 +35,7 @@ if ( is_array( $hero_bg_image ) && ! empty( $hero_bg_image['url'] ) ) {
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 			<!-- Text Content Column -->
 			<div class="lg:col-span-8 flex flex-col items-start text-left">
+				<h1>Running from lotuslittlestar-theme</h1>
 				<?php if ( ! empty( $hero_badge ) ) : ?>
 					<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-brand-red/5 text-brand-red border border-brand-red/30 mb-5">
 						<?php echo esc_html( $hero_badge ); ?>
