@@ -22,9 +22,9 @@ $hero_title = get_the_title( $post_id );
 
 
 
-// Check if buttons are valid
-$has_primary   = is_array( $hero_primary_button ) && ! empty( $hero_primary_button['url'] );
-$has_secondary = is_array( $hero_secondary_button ) && ! empty( $hero_secondary_button['url'] );
+// Check if buttons are valid (support both ACF Link Array and Link URL string formats)
+$has_primary   = ( is_array( $hero_primary_button ) && ! empty( $hero_primary_button['url'] ) ) || ( is_string( $hero_primary_button ) && ! empty( trim( $hero_primary_button ) ) );
+$has_secondary = ( is_array( $hero_secondary_button ) && ! empty( $hero_secondary_button['url'] ) ) || ( is_string( $hero_secondary_button ) && ! empty( trim( $hero_secondary_button ) ) );
 ?>
 
 <section class="py-12 md:py-20 lg:py-24 bg-brand-bg overflow-hidden border-b border-brand-cream/60">
@@ -62,11 +62,18 @@ $has_secondary = is_array( $hero_secondary_button ) && ! empty( $hero_secondary_
 						<!-- Primary Button -->
 						<?php
 						if ( $has_primary ) :
-							$primary_target = ! empty( $hero_primary_button['target'] ) ? $hero_primary_button['target'] : '_self';
-							$primary_rel    = '_blank' === $primary_target ? ' rel="noopener"' : '';
-							$primary_title  = ! empty( $hero_primary_button['title'] ) ? $hero_primary_button['title'] : __( 'Book Appointment', 'lotus' );
+							if ( is_array( $hero_primary_button ) ) {
+								$primary_url    = $hero_primary_button['url'];
+								$primary_target = ! empty( $hero_primary_button['target'] ) ? $hero_primary_button['target'] : '_self';
+								$primary_title  = ! empty( $hero_primary_button['title'] ) ? $hero_primary_button['title'] : __( 'Book Appointment', 'lotus' );
+							} else {
+								$primary_url    = $hero_primary_button;
+								$primary_target = '_self';
+								$primary_title  = __( 'Book Appointment', 'lotus' );
+							}
+							$primary_rel = '_blank' === $primary_target ? ' rel="noopener"' : '';
 							?>
-							<a href="<?php echo esc_url( $hero_primary_button['url'] ); ?>" 
+							<a href="<?php echo esc_url( $primary_url ); ?>" 
 							   target="<?php echo esc_attr( $primary_target ); ?>" 
 							   <?php echo $primary_rel; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							   class="inline-flex items-center justify-center px-6 py-3.5 bg-brand-red hover:bg-brand-red-hover text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base leading-none">
@@ -77,11 +84,18 @@ $has_secondary = is_array( $hero_secondary_button ) && ! empty( $hero_secondary_
 						<!-- Secondary Button -->
 						<?php
 						if ( $has_secondary ) :
-							$secondary_target = ! empty( $hero_secondary_button['target'] ) ? $hero_secondary_button['target'] : '_self';
-							$secondary_rel    = '_blank' === $secondary_target ? ' rel="noopener"' : '';
-							$secondary_title  = ! empty( $hero_secondary_button['title'] ) ? $hero_secondary_button['title'] : __( 'Explore Services', 'lotus' );
+							if ( is_array( $hero_secondary_button ) ) {
+								$secondary_url    = $hero_secondary_button['url'];
+								$secondary_target = ! empty( $hero_secondary_button['target'] ) ? $hero_secondary_button['target'] : '_self';
+								$secondary_title  = ! empty( $hero_secondary_button['title'] ) ? $hero_secondary_button['title'] : __( 'Explore Services', 'lotus' );
+							} else {
+								$secondary_url    = $hero_secondary_button;
+								$secondary_target = '_self';
+								$secondary_title  = __( 'Explore Services', 'lotus' );
+							}
+							$secondary_rel = '_blank' === $secondary_target ? ' rel="noopener"' : '';
 							?>
-							<a href="<?php echo esc_url( $hero_secondary_button['url'] ); ?>" 
+							<a href="<?php echo esc_url( $secondary_url ); ?>" 
 							   target="<?php echo esc_attr( $secondary_target ); ?>" 
 							   <?php echo $secondary_rel; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							   class="inline-flex items-center justify-center px-6 py-3.5 border border-brand-red hover:bg-brand-red/5 text-brand-red font-bold rounded-lg transition-all duration-200 text-sm sm:text-base leading-none">
