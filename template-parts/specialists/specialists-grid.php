@@ -373,6 +373,25 @@ function lotus_render_specialty_card( $post_or_item, $is_wp_active ) {
 		$icon = function_exists( 'get_field' ) ? get_field( 'speciality_icon', $post_id ) : '';
 		$desc = function_exists( 'get_field' ) ? get_field( 'speciality_short_description', $post_id ) : '';
 		
+		$icon_html = '';
+		if ( ! empty( $icon ) ) {
+			if ( is_array( $icon ) ) {
+				$icon_url  = ! empty( $icon['url'] ) ? $icon['url'] : '';
+				$icon_alt  = ! empty( $icon['alt'] ) ? $icon['alt'] : $title;
+				$icon_html = '<img src="' . esc_url( $icon_url ) . '" alt="' . esc_attr( $icon_alt ) . '" class="w-6 h-6 object-contain" loading="lazy" />';
+			} elseif ( is_numeric( $icon ) ) {
+				$icon_url  = wp_get_attachment_url( $icon );
+				$icon_alt  = get_post_meta( $icon, '_wp_attachment_image_alt', true ) ?: $title;
+				$icon_html = '<img src="' . esc_url( $icon_url ) . '" alt="' . esc_attr( $icon_alt ) . '" class="w-6 h-6 object-contain" loading="lazy" />';
+			} elseif ( is_string( $icon ) ) {
+				if ( filter_var( $icon, FILTER_VALIDATE_URL ) || preg_match( '/\.(jpg|jpeg|png|gif|svg|webp)/i', $icon ) ) {
+					$icon_html = '<img src="' . esc_url( $icon ) . '" alt="' . esc_attr( $title ) . '" class="w-6 h-6 object-contain" loading="lazy" />';
+				} else {
+					$icon_html = $icon;
+				}
+			}
+		}
+
 		$category_slug = '';
 		$terms = get_the_terms( $post_id, 'speciality_category' );
 		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
@@ -381,7 +400,7 @@ function lotus_render_specialty_card( $post_or_item, $is_wp_active ) {
 		?>
 		<a href="<?php echo esc_url( $permalink ); ?>" class="specialty-card-item bg-white p-8 sm:p-10 rounded-[2rem] border border-brand-cream/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $category_slug ); ?>" <?php echo $display_style; ?>>
 			<div class="w-14 h-14 bg-[#DCEFE5] rounded-full flex items-center justify-center mb-6 select-none shrink-0">
-				<?php echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 			<h3 class="font-outfit text-xl font-bold text-brand-dark mb-3"><?php echo esc_html( $title ); ?></h3>
 			<p class="text-brand-muted text-xs sm:text-sm leading-relaxed max-w-[240px] font-medium">
