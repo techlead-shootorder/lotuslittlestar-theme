@@ -30,18 +30,6 @@ if ( class_exists( 'WP_Query' ) ) {
 		}
 		wp_reset_postdata();
 
-		// Pre-filter posts to only keep those that have both fields filled
-		$filtered_posts = array();
-		foreach ( $speciality_posts as $post_obj ) {
-			$post_id = $post_obj->ID;
-			$icon = function_exists( 'get_field' ) ? get_field( 'speciality_icon', $post_id ) : '';
-			$desc = function_exists( 'get_field' ) ? get_field( 'speciality_short_description', $post_id ) : '';
-			if ( ! empty( $icon ) && ! empty( $desc ) ) {
-				$filtered_posts[] = $post_obj;
-			}
-		}
-		$speciality_posts = $filtered_posts;
-
 		// Sort posts: woman-care, maternity-care, child-care, then others alphabetically. Within each category, sort alphabetically by title.
 		usort( $speciality_posts, function( $a, $b ) {
 			$terms_a = get_the_terms( $a->ID, 'speciality_category' );
@@ -171,13 +159,17 @@ function lotus_render_specialty_card( $post_obj ) {
 	}
 	?>
 	<a href="<?php echo esc_url( $permalink ); ?>" class="specialty-card-item <?php echo esc_attr( $card_classes ); ?> p-8 sm:p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $category_slug ); ?>" <?php echo $display_style; ?> style="<?php echo esc_attr( $card_bg_style ); ?>">
-		<div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
-			<?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		</div>
+		<?php if ( ! empty( $icon_html ) ) : ?>
+			<div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
+				<?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			</div>
+		<?php endif; ?>
 		<h3 class="font-outfit text-xl font-bold <?php echo esc_attr( $title_classes ); ?> mb-3"><?php echo esc_html( $title ); ?></h3>
-		<p class="<?php echo esc_attr( $desc_classes ); ?> text-xs sm:text-sm leading-relaxed max-w-[240px] font-medium">
-			<?php echo esc_html( $desc ); ?>
-		</p>
+		<?php if ( ! empty( $desc ) ) : ?>
+			<p class="<?php echo esc_attr( $desc_classes ); ?> text-xs sm:text-sm leading-relaxed max-w-[240px] font-medium">
+				<?php echo esc_html( $desc ); ?>
+			</p>
+		<?php endif; ?>
 	</a>
 	<?php
 }
