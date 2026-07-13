@@ -361,7 +361,6 @@ if ( ! $is_wp_active ) {
 	} );
 }
 
-// Helper function to render card HTML
 function lotus_render_specialty_card( $post_or_item, $is_wp_active ) {
 	$display_style = '';
 	$opacity_class = 'opacity-100 scale-100';
@@ -397,27 +396,114 @@ function lotus_render_specialty_card( $post_or_item, $is_wp_active ) {
 		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 			$category_slug = $terms[0]->slug;
 		}
+
+		// Determine category-specific classes and styles
+		$card_bg_style = '';
+		$card_classes = 'bg-white border-brand-cream/60';
+		$title_classes = 'text-brand-dark';
+		$desc_classes = 'text-brand-muted';
+		$icon_bg_style = 'background-color: #DCEFE5;';
+		$svg_color_style = '';
+
+		if ( $category_slug === 'child-care' ) {
+			$card_bg_style = 'background-color: #BF272E;';
+			$card_classes = 'border-transparent text-white';
+			$title_classes = 'text-white';
+			$desc_classes = 'text-white/80';
+			$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
+			$svg_color_style = 'color: #ffffff;';
+		} elseif ( $category_slug === 'woman-care' ) {
+			$card_bg_style = 'background-color: #C4B89C;';
+			$card_classes = 'border-transparent text-white';
+			$title_classes = 'text-white';
+			$desc_classes = 'text-white/80';
+			$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
+			$svg_color_style = 'color: #ffffff;';
+		} elseif ( $category_slug === 'maternity-care' || $category_slug === 'meternity-care' ) {
+			$card_bg_style = 'background-color: #536453;';
+			$card_classes = 'border-transparent text-white';
+			$title_classes = 'text-white';
+			$desc_classes = 'text-white/80';
+			$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
+			$svg_color_style = 'color: #ffffff;';
+		}
+
+		// If icon is custom SVG text from CPT / inline mockup, replace any hardcoded text-[#2D5A44] or set inline style for color
+		if ( ! empty( $svg_color_style ) && ! empty( $icon_html ) ) {
+			if ( stripos( $icon_html, '<svg' ) !== false ) {
+				$icon_html = preg_replace( '/text-\[[^\]]+\]/', 'text-white', $icon_html );
+				$icon_html = preg_replace( '/style=(["\'])(.*?)\1/i', 'style="color: #ffffff; $2"', $icon_html );
+				if ( stripos( $icon_html, 'style=' ) === false ) {
+					$icon_html = str_ireplace( '<svg', '<svg style="color: #ffffff;"', $icon_html );
+				}
+			}
+		}
 		?>
-		<a href="<?php echo esc_url( $permalink ); ?>" class="specialty-card-item bg-white p-8 sm:p-10 rounded-[2rem] border border-brand-cream/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $category_slug ); ?>" <?php echo $display_style; ?>>
-			<div class="w-14 h-14 bg-[#DCEFE5] rounded-full flex items-center justify-center mb-6 select-none shrink-0">
+		<a href="<?php echo esc_url( $permalink ); ?>" class="specialty-card-item <?php echo esc_attr( $card_classes ); ?> p-8 sm:p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $category_slug ); ?>" <?php echo $display_style; ?> style="<?php echo esc_attr( $card_bg_style ); ?>">
+			<div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
 				<?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
-			<h3 class="font-outfit text-xl font-bold text-brand-dark mb-3"><?php echo esc_html( $title ); ?></h3>
-			<p class="text-brand-muted text-xs sm:text-sm leading-relaxed max-w-[240px] font-medium">
+			<h3 class="font-outfit text-xl font-bold <?php echo esc_attr( $title_classes ); ?> mb-3"><?php echo esc_html( $title ); ?></h3>
+			<p class="<?php echo esc_attr( $desc_classes ); ?> text-xs sm:text-sm leading-relaxed max-w-[240px] font-medium">
 				<?php echo esc_html( $desc ); ?>
 			</p>
 		</a>
 		<?php
 	} else {
 		// Mock rendering logic
+		$category_slug = $post_or_item['category'];
+		$title = $post_or_item['title'];
+		$desc = $post_or_item['desc'];
+		$icon_html = $post_or_item['icon'];
+
+		// Determine category-specific classes and styles
+		$card_bg_style = '';
+		$card_classes = 'bg-white border-brand-cream/60';
+		$title_classes = 'text-brand-dark';
+		$desc_classes = 'text-brand-muted';
+		$icon_bg_style = 'background-color: #DCEFE5;';
+		$svg_color_style = '';
+
+		if ( $category_slug === 'child-care' ) {
+			$card_bg_style = 'background-color: #BF272E;';
+			$card_classes = 'border-transparent text-white';
+			$title_classes = 'text-white';
+			$desc_classes = 'text-white/80';
+			$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
+			$svg_color_style = 'color: #ffffff;';
+		} elseif ( $category_slug === 'woman-care' ) {
+			$card_bg_style = 'background-color: #C4B89C;';
+			$card_classes = 'border-transparent text-white';
+			$title_classes = 'text-white';
+			$desc_classes = 'text-white/80';
+			$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
+			$svg_color_style = 'color: #ffffff;';
+		} elseif ( $category_slug === 'maternity-care' || $category_slug === 'meternity-care' ) {
+			$card_bg_style = 'background-color: #536453;';
+			$card_classes = 'border-transparent text-white';
+			$title_classes = 'text-white';
+			$desc_classes = 'text-white/80';
+			$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
+			$svg_color_style = 'color: #ffffff;';
+		}
+
+		if ( ! empty( $svg_color_style ) && ! empty( $icon_html ) ) {
+			if ( stripos( $icon_html, '<svg' ) !== false ) {
+				$icon_html = preg_replace( '/text-\[[^\]]+\]/', 'text-white', $icon_html );
+				$icon_html = preg_replace( '/style=(["\'])(.*?)\1/i', 'style="color: #ffffff; $2"', $icon_html );
+				if ( stripos( $icon_html, 'style=' ) === false ) {
+					$icon_html = str_ireplace( '<svg', '<svg style="color: #ffffff;"', $icon_html );
+				}
+			}
+		}
 		?>
-		<div class="specialty-card-item bg-white p-8 sm:p-10 rounded-[2rem] border border-brand-cream/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $post_or_item['category'] ); ?>" <?php echo $display_style; ?>>
-			<div class="w-14 h-14 bg-[#DCEFE5] rounded-full flex items-center justify-center mb-6 select-none shrink-0">
-				<?php echo $post_or_item['icon']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		<div class="specialty-card-item <?php echo esc_attr( $card_classes ); ?> p-8 sm:p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $category_slug ); ?>" <?php echo $display_style; ?> style="<?php echo esc_attr( $card_bg_style ); ?>">
+			<div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
+				<?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
-			<h3 class="font-outfit text-xl font-bold text-brand-dark mb-3"><?php echo esc_html( $post_or_item['title'] ); ?></h3>
-			<p class="text-brand-muted text-xs sm:text-sm leading-relaxed max-w-[240px] font-medium">
-				<?php echo esc_html( $post_or_item['desc'] ); ?>
+			<h3 class="font-outfit text-xl font-bold <?php echo esc_attr( $title_classes ); ?> mb-3"><?php echo esc_html( $title ); ?></h3>
+			<p class="<?php echo esc_attr( $desc_classes ); ?> text-xs sm:text-sm leading-relaxed max-w-[240px] font-medium">
+				<?php echo esc_html( $desc ); ?>
 			</p>
 		</div>
 		<?php
@@ -531,34 +617,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		cards.forEach(card => {
 			const cardCategory = card.getAttribute('data-category') || '';
 			
-			// 1. Reset color styles to default
-			card.style.backgroundColor = '';
-			card.classList.remove('text-white', 'border-transparent');
-			card.classList.add('bg-white', 'border-brand-cream/60');
-			
 			const h3 = card.querySelector('h3');
-			if (h3) {
-				h3.classList.remove('text-white');
-				h3.classList.add('text-brand-dark');
-			}
-			
 			const p = card.querySelector('p');
-			if (p) {
-				p.classList.remove('text-white/80');
-				p.classList.add('text-brand-muted');
-			}
-			
 			const iconBg = card.querySelector('.w-14');
-			if (iconBg) {
-				iconBg.style.backgroundColor = '';
-			}
-			
 			const svg = card.querySelector('svg');
-			if (svg) {
-				svg.style.color = '';
-			}
 
-			// 2. Filter logic and category-specific colors
 			if (category === 'all' || cardCategory === category) {
 				card.style.display = '';
 				// Trigger layout reflow for animation
@@ -566,22 +629,11 @@ document.addEventListener('DOMContentLoaded', function() {
 				card.classList.remove('opacity-0', 'scale-95');
 				card.classList.add('opacity-100', 'scale-100');
 				
-				// Apply active colors if filter is specific
-				if (category !== 'all') {
+				// Always style card based on its own category
+				if (cardCategory === 'child-care') {
+					card.style.backgroundColor = '#BF272E';
 					card.classList.remove('bg-white', 'border-brand-cream/60');
-					card.classList.add('border-transparent');
-					
-					if (category === 'child-care') {
-						card.style.backgroundColor = '#BF272E';
-						card.classList.add('text-white');
-					} else if (category === 'woman-care') {
-						card.style.backgroundColor = '#C4B89C';
-						card.classList.add('text-white');
-					} else if (category === 'maternity-care' || category === 'meternity-care') {
-						card.style.backgroundColor = '#536453';
-						card.classList.add('text-white');
-					}
-					
+					card.classList.add('text-white', 'border-transparent');
 					if (h3) {
 						h3.classList.remove('text-brand-dark');
 						h3.classList.add('text-white');
@@ -595,6 +647,69 @@ document.addEventListener('DOMContentLoaded', function() {
 					}
 					if (svg) {
 						svg.style.color = '#ffffff';
+						svg.classList.remove('text-[#2D5A44]');
+						svg.classList.add('text-white');
+					}
+				} else if (cardCategory === 'woman-care') {
+					card.style.backgroundColor = '#C4B89C';
+					card.classList.remove('bg-white', 'border-brand-cream/60');
+					card.classList.add('text-white', 'border-transparent');
+					if (h3) {
+						h3.classList.remove('text-brand-dark');
+						h3.classList.add('text-white');
+					}
+					if (p) {
+						p.classList.remove('text-brand-muted');
+						p.classList.add('text-white/80');
+					}
+					if (iconBg) {
+						iconBg.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+					}
+					if (svg) {
+						svg.style.color = '#ffffff';
+						svg.classList.remove('text-[#2D5A44]');
+						svg.classList.add('text-white');
+					}
+				} else if (cardCategory === 'maternity-care' || cardCategory === 'meternity-care') {
+					card.style.backgroundColor = '#536453';
+					card.classList.remove('bg-white', 'border-brand-cream/60');
+					card.classList.add('text-white', 'border-transparent');
+					if (h3) {
+						h3.classList.remove('text-brand-dark');
+						h3.classList.add('text-white');
+					}
+					if (p) {
+						p.classList.remove('text-brand-muted');
+						p.classList.add('text-white/80');
+					}
+					if (iconBg) {
+						iconBg.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+					}
+					if (svg) {
+						svg.style.color = '#ffffff';
+						svg.classList.remove('text-[#2D5A44]');
+						svg.classList.add('text-white');
+					}
+				} else {
+					// Fallback to default white styling
+					card.style.backgroundColor = '';
+					card.classList.remove('text-white', 'border-transparent');
+					card.classList.add('bg-white', 'border-brand-cream/60');
+					if (h3) {
+						h3.classList.remove('text-white');
+						h3.classList.add('text-brand-dark');
+					}
+					if (p) {
+						p.classList.remove('text-white/80');
+						p.classList.add('text-brand-muted');
+					}
+					if (iconBg) {
+						iconBg.style.backgroundColor = '';
+					}
+					if (svg) {
+						svg.style.color = '';
+						svg.classList.remove('text-white');
+						svg.classList.add('text-[#2D5A44]');
 					}
 				}
 			} else {
