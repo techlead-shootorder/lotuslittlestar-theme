@@ -98,7 +98,7 @@ if ( ! empty( $contact_hero_background ) ) {
 					<h3 class="text-xl font-bold text-brand-dark mb-6 font-outfit">Send us a Message</h3>
 					
 					<!-- Zoho Appointment Booking Form Iframe -->
-					<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" style="height:530px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
+					<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" style="height:720px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
 					</iframe>
 
 					<script type="text/javascript">
