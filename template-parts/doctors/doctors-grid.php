@@ -40,7 +40,15 @@ if ( ! $doctors_settings_page ) {
 		'Doctor' 
 	);
 	foreach ( $possible_titles as $title ) {
-		$page = get_page_by_title( $title, OBJECT, 'page' );
+		$posts = get_posts( array(
+			'post_type'              => 'page',
+			'title'                  => $title,
+			'post_status'            => 'publish',
+			'numberposts'            => 1,
+			'update_post_term_cache' => false,
+			'update_post_meta_cache' => false,
+		) );
+		$page = ! empty( $posts ) ? $posts[0] : null;
 		if ( $page ) {
 			$doctors_settings_page = $page;
 			break;
