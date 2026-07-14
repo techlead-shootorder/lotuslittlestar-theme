@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<!-- Logo -->
 				<div class="flex-shrink-0 flex items-center">
 					<a href="#" class="flex items-center">
-						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/lotus-logo.png" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
+						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/lotus-logo.png?v=1" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
 					</a>
 				</div>
 
@@ -161,7 +161,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="absolute -inset-4 bg-green-200/20 rounded-[58px] md:rounded-[68px] blur-2xl -z-10"></div>
 					<!-- Frame & Image -->
 					<div class="relative w-full max-w-md lg:max-w-none aspect-[4/5] mx-auto overflow-hidden rounded-[50px] md:rounded-[60px] border-[10px] md:border-[16px] border-white shadow-2xl">
-						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/Lp-right.png" alt="Paediatric Inpatient Care" class="w-full h-full object-cover">
+						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/Lp-right.png?v=1" alt="Paediatric Inpatient Care" class="w-full h-full object-cover">
 					</div>
 				</div>
 
