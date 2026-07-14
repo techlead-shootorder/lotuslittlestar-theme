@@ -130,18 +130,44 @@ $related_posts = function_exists( 'get_field' ) ? get_field( 'related_blogs', $p
 									$related_cat_name = $related_terms[0]->name;
 								}
 								?>
-								<div class="flex flex-col">
-									<?php if ( ! empty( $related_cat_name ) ) : ?>
-										<span class="text-[11px] font-bold text-brand-red uppercase tracking-wider mb-1 block">
-											<?php echo esc_html( $related_cat_name ); ?>
-										</span>
+								<article class="group bg-white border border-[#EBE8E2] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+									<!-- Cover Image -->
+									<?php if ( has_post_thumbnail( $related_id ) ) : ?>
+										<div class="relative aspect-video overflow-hidden bg-brand-cream/50 shrink-0">
+											<a href="<?php echo esc_url( $related_link ); ?>">
+												<?php echo get_the_post_thumbnail( $related_id, 'medium', array( 'class' => 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-500' ) ); ?>
+											</a>
+										</div>
 									<?php endif; ?>
-									<h4 class="text-sm sm:text-base font-bold text-brand-dark leading-snug hover:text-brand-red transition-colors">
-										<a href="<?php echo esc_url( $related_link ); ?>">
-											<?php echo esc_html( $related_title ); ?>
-										</a>
-									</h4>
-								</div>
+
+									<!-- Content -->
+									<div class="p-5 flex-grow flex flex-col">
+										<!-- Category Badge -->
+										<?php if ( ! empty( $related_cat_name ) ) : ?>
+											<span class="text-[11px] font-bold text-brand-red uppercase tracking-wider mb-2 block">
+												<?php echo esc_html( $related_cat_name ); ?>
+											</span>
+										<?php endif; ?>
+
+										<!-- Title -->
+										<h4 class="text-sm sm:text-base font-bold text-brand-dark leading-snug group-hover:text-brand-red transition-colors mb-3 line-clamp-2">
+											<a href="<?php echo esc_url( $related_link ); ?>">
+												<?php echo esc_html( $related_title ); ?>
+											</a>
+										</h4>
+
+										<!-- Divider Line -->
+										<div class="border-t border-[#EBE8E2] my-3 mt-auto"></div>
+
+										<!-- Footer details (Date & Read More) -->
+										<div class="flex justify-between items-center text-xs">
+											<span class="text-brand-muted font-medium"><?php echo get_the_date( 'M j, Y', $related_id ); ?></span>
+											<a href="<?php echo esc_url( $related_link ); ?>" class="text-brand-red hover:text-brand-red-hover font-semibold transition-colors flex items-center gap-1">
+												<?php _e( 'Read More', 'lotus' ); ?> &rarr;
+											</a>
+										</div>
+									</div>
+								</article>
 							<?php endforeach; ?>
 						</div>
 					</div>

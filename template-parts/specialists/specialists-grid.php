@@ -160,7 +160,7 @@ function lotus_render_specialty_card( $post_obj ) {
 	?>
 	<a href="<?php echo esc_url( $permalink ); ?>" class="specialty-card-item <?php echo esc_attr( $card_classes ); ?> p-8 sm:p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $category_slug ); ?>" <?php echo $display_style; ?> style="<?php echo esc_attr( $card_bg_style ); ?>">
 		<?php if ( ! empty( $icon_html ) ) : ?>
-			<div class="w-14 h-14 rounded-full flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
+			<div class="w-14 h-14  flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
 				<?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 		<?php endif; ?>
