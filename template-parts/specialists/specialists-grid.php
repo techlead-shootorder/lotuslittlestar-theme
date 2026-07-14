@@ -125,42 +125,49 @@ function lotus_render_specialty_card( $post_obj ) {
 	$svg_color_style = '';
 
 	if ( $category_slug === 'child-care' ) {
-		$card_bg_style = 'background-color: #BF272E;';
-		$card_classes = 'border-transparent text-white';
-		$title_classes = 'text-white';
-		$desc_classes = 'text-white/80';
-		$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
-		$svg_color_style = 'color: #ffffff;';
+		$card_bg_style = 'background-color: #FDF5F7;';
+		$card_classes = 'border-transparent text-brand-dark';
+		$title_classes = 'text-brand-dark';
+		$desc_classes = 'text-brand-muted';
+		$icon_bg_style = 'background-color: #FBE3E7;';
+		$svg_color_style = 'color: #A61A24;';
 	} elseif ( $category_slug === 'woman-care' ) {
-		$card_bg_style = 'background-color: #C4B89C;';
-		$card_classes = 'border-transparent text-white';
-		$title_classes = 'text-white';
-		$desc_classes = 'text-white/80';
-		$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
-		$svg_color_style = 'color: #ffffff;';
+		$card_bg_style = 'background-color: #FCF8F0;';
+		$card_classes = 'border-transparent text-brand-dark';
+		$title_classes = 'text-brand-dark';
+		$desc_classes = 'text-brand-muted';
+		$icon_bg_style = 'background-color: #F5EDDA;';
+		$svg_color_style = 'color: #A19373;';
 	} elseif ( $category_slug === 'maternity-care' || $category_slug === 'meternity-care' ) {
-		$card_bg_style = 'background-color: #536453;';
-		$card_classes = 'border-transparent text-white';
-		$title_classes = 'text-white';
-		$desc_classes = 'text-white/80';
-		$icon_bg_style = 'background-color: rgba(255, 255, 255, 0.2);';
-		$svg_color_style = 'color: #ffffff;';
+		$card_bg_style = 'background-color: #F1F4F0;';
+		$card_classes = 'border-transparent text-brand-dark';
+		$title_classes = 'text-brand-dark';
+		$desc_classes = 'text-brand-muted';
+		$icon_bg_style = 'background-color: #DCEFE5;';
+		$svg_color_style = 'color: #3C493D;';
 	}
 
 	// If icon is custom SVG text from CPT / inline mockup, replace any hardcoded text-[#2D5A44] or set inline style for color
 	if ( ! empty( $svg_color_style ) && ! empty( $icon_html ) ) {
-		if ( stripos( $icon_html, '<svg' ) !== false ) {
-			$icon_html = preg_replace( '/text-\[[^\]]+\]/', 'text-white', $icon_html );
-			$icon_html = preg_replace( '/style=(["\'])(.*?)\1/i', 'style="color: #ffffff; $2"', $icon_html );
-			if ( stripos( $icon_html, 'style=' ) === false ) {
-				$icon_html = str_ireplace( '<svg', '<svg style="color: #ffffff;"', $icon_html );
+		// Extract hex from color style if present, e.g. "color: #A61A24;" -> "#A61A24"
+		$hex_color = '';
+		if ( preg_match( '/#([0-9a-fA-F]{3,6})/', $svg_color_style, $matches ) ) {
+			$hex_color = '#' . $matches[1];
+		}
+		
+		if ( ! empty( $hex_color ) && stripos( $icon_html, '<svg' ) !== false ) {
+			$icon_html = preg_replace( '/text-\[[^\]]+\]/', '', $icon_html );
+			if ( preg_match( '/style=(["\'])(.*?)\1/i', $icon_html ) ) {
+				$icon_html = preg_replace( '/style=(["\'])(.*?)\1/i', 'style="color: ' . esc_attr( $hex_color ) . '; $2"', $icon_html );
+			} else {
+				$icon_html = str_ireplace( '<svg', '<svg style="color: ' . esc_attr( $hex_color ) . ';"', $icon_html );
 			}
 		}
 	}
 	?>
 	<a href="<?php echo esc_url( $permalink ); ?>" class="specialty-card-item <?php echo esc_attr( $card_classes ); ?> p-8 sm:p-10 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center text-center <?php echo $opacity_class; ?>" data-category="<?php echo esc_attr( $category_slug ); ?>" <?php echo $display_style; ?> style="<?php echo esc_attr( $card_bg_style ); ?>">
 		<?php if ( ! empty( $icon_html ) ) : ?>
-			<div class="w-14 h-14  flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
+			<div class="w-14 h-14 flex items-center justify-center mb-6 select-none shrink-0" style="<?php echo esc_attr( $icon_bg_style ); ?>">
 				<?php echo $icon_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 		<?php endif; ?>
@@ -290,69 +297,69 @@ document.addEventListener('DOMContentLoaded', function() {
 				
 				// Always style card based on its own category
 				if (cardCategory === 'child-care') {
-					card.style.backgroundColor = '#BF272E';
-					card.classList.remove('bg-white', 'border-brand-cream/60');
-					card.classList.add('text-white', 'border-transparent');
+					card.style.backgroundColor = '#FDF5F7';
+					card.classList.remove('bg-white', 'border-brand-cream/60', 'text-white');
+					card.classList.add('text-brand-dark', 'border-transparent');
 					if (h3) {
-						h3.classList.remove('text-brand-dark');
-						h3.classList.add('text-white');
+						h3.classList.remove('text-white');
+						h3.classList.add('text-brand-dark');
 					}
 					if (p) {
-						p.classList.remove('text-brand-muted');
-						p.classList.add('text-white/80');
+						p.classList.remove('text-white/80');
+						p.classList.add('text-brand-muted');
 					}
 					if (iconBg) {
-						iconBg.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+						iconBg.style.backgroundColor = '#FBE3E7';
 					}
 					if (svg) {
-						svg.style.color = '#ffffff';
-						svg.classList.remove('text-[#2D5A44]');
-						svg.classList.add('text-white');
+						svg.style.color = '#A61A24';
+						svg.classList.remove('text-white', 'text-[#2D5A44]', 'text-[#A19373]', 'text-[#3C493D]');
+						svg.classList.add('text-[#A61A24]');
 					}
 				} else if (cardCategory === 'woman-care') {
-					card.style.backgroundColor = '#C4B89C';
-					card.classList.remove('bg-white', 'border-brand-cream/60');
-					card.classList.add('text-white', 'border-transparent');
+					card.style.backgroundColor = '#FCF8F0';
+					card.classList.remove('bg-white', 'border-brand-cream/60', 'text-white');
+					card.classList.add('text-brand-dark', 'border-transparent');
 					if (h3) {
-						h3.classList.remove('text-brand-dark');
-						h3.classList.add('text-white');
+						h3.classList.remove('text-white');
+						h3.classList.add('text-brand-dark');
 					}
 					if (p) {
-						p.classList.remove('text-brand-muted');
-						p.classList.add('text-white/80');
+						p.classList.remove('text-white/80');
+						p.classList.add('text-brand-muted');
 					}
 					if (iconBg) {
-						iconBg.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+						iconBg.style.backgroundColor = '#F5EDDA';
 					}
 					if (svg) {
-						svg.style.color = '#ffffff';
-						svg.classList.remove('text-[#2D5A44]');
-						svg.classList.add('text-white');
+						svg.style.color = '#A19373';
+						svg.classList.remove('text-white', 'text-[#2D5A44]', 'text-[#A61A24]', 'text-[#3C493D]');
+						svg.classList.add('text-[#A19373]');
 					}
 				} else if (cardCategory === 'maternity-care' || cardCategory === 'meternity-care') {
-					card.style.backgroundColor = '#536453';
-					card.classList.remove('bg-white', 'border-brand-cream/60');
-					card.classList.add('text-white', 'border-transparent');
+					card.style.backgroundColor = '#F1F4F0';
+					card.classList.remove('bg-white', 'border-brand-cream/60', 'text-white');
+					card.classList.add('text-brand-dark', 'border-transparent');
 					if (h3) {
-						h3.classList.remove('text-brand-dark');
-						h3.classList.add('text-white');
+						h3.classList.remove('text-white');
+						h3.classList.add('text-brand-dark');
 					}
 					if (p) {
-						p.classList.remove('text-brand-muted');
-						p.classList.add('text-white/80');
+						p.classList.remove('text-white/80');
+						p.classList.add('text-brand-muted');
 					}
 					if (iconBg) {
-						iconBg.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+						iconBg.style.backgroundColor = '#DCEFE5';
 					}
 					if (svg) {
-						svg.style.color = '#ffffff';
-						svg.classList.remove('text-[#2D5A44]');
-						svg.classList.add('text-white');
+						svg.style.color = '#3C493D';
+						svg.classList.remove('text-white', 'text-[#2D5A44]', 'text-[#A61A24]', 'text-[#A19373]');
+						svg.classList.add('text-[#3C493D]');
 					}
 				} else {
 					// Fallback to default white styling
 					card.style.backgroundColor = '';
-					card.classList.remove('text-white', 'border-transparent');
+					card.classList.remove('text-white', 'text-brand-dark', 'border-transparent');
 					card.classList.add('bg-white', 'border-brand-cream/60');
 					if (h3) {
 						h3.classList.remove('text-white');
@@ -367,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					}
 					if (svg) {
 						svg.style.color = '';
-						svg.classList.remove('text-white');
+						svg.classList.remove('text-white', 'text-[#A61A24]', 'text-[#A19373]', 'text-[#3C493D]');
 						svg.classList.add('text-[#2D5A44]');
 					}
 				}
