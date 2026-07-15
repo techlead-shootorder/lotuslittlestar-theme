@@ -556,7 +556,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'speciality'    => 'PEDIATRICS & NEONATOLOGY',
 				'qualification' => 'MD Pediatrics, AIIMS, New Delhi',
 				'position'      => 'Group Chief Consultant Neonatologist and Pediatric Intensivist',
-				'experience'    => '30+ Years Experience',
+				'experience'    => '32+ Years Experience',
 				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-VSV-Prasad.jpg', // Placeholder image URL
 			],
 			[
