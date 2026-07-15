@@ -812,6 +812,65 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</section>
 
+		<!-- Ready to Take the Next Step / Booking Form Section -->
+		<section class="bg-[#F8F9F8] py-16 md:py-24 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Inner Green Container -->
+				<div class="bg-[#536257] rounded-[32px] md:rounded-[40px] p-8 md:p-12 lg:p-16 shadow-xl relative overflow-hidden">
+					<!-- Decorative Background Circles -->
+					<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-green-700/20 rounded-full blur-3xl -z-0"></div>
+					<div class="absolute -left-20 -top-20 w-80 h-80 bg-green-600/20 rounded-full blur-3xl -z-0"></div>
+
+					<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+						
+						<!-- Left Column: Content -->
+						<div class="lg:col-span-6 flex flex-col justify-center text-left text-white">
+							<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold leading-tight mb-6">
+								Ready to Take the Next Step?
+							</h2>
+							<p class="text-green-100/90 text-base md:text-lg leading-relaxed mb-8 max-w-md">
+								Expert Care Begins with a Simple Conversation. Join over 50,000 families who have trusted us with their most precious health needs.
+							</p>
+
+							<!-- Bullets Row -->
+							<div class="flex items-center gap-6 flex-wrap">
+								<!-- Bullet 1 -->
+								<div class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-[#A61A24] fill-current" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+									</svg>
+									<span class="text-sm md:text-base text-white font-bold">
+										Instant Booking
+									</span>
+								</div>
+								
+								<!-- Bullet 2 -->
+								<div class="flex items-center gap-2">
+									<svg class="w-5 h-5 text-[#A61A24] fill-current" viewBox="0 0 20 20">
+										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+									</svg>
+									<span class="text-sm md:text-base text-white font-bold">
+										Top-tier Specialists
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Right Column: Zoho Iframe Form Box -->
+						<div class="lg:col-span-6">
+							<div class="bg-white rounded-[24px] p-4 md:p-6 shadow-2xl max-w-lg mx-auto w-full overflow-hidden">
+								<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" style="height:720px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
+								</iframe>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</section>
+
 	</main>
 
 	<!-- Footer Section -->
