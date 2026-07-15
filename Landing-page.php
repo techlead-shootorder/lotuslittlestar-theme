@@ -668,6 +668,150 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</section>
 
+		<!-- Testimonials Section -->
+		<section class="bg-[#F8F9F8] py-16 md:py-24 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				
+				<!-- Heading -->
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-16">
+					What Families Say About Us
+				</h2>
+
+				<!-- Testimonials Grid -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+					
+					<!-- Testimonial 1 -->
+					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-left">
+						<div>
+							<!-- Star Rating -->
+							<div class="flex items-center gap-1 mb-6">
+								<?php for ( $i = 0; $i < 5; $i++ ) : ?>
+									<svg class="w-5 h-5 text-[#A61A24] fill-current" viewBox="0 0 20 20">
+										<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+									</svg>
+								<?php endfor; ?>
+							</div>
+							
+							<!-- Quote Text -->
+							<p class="text-gray-600 font-medium text-base md:text-lg mb-8 leading-relaxed">
+								"The care we received during my pregnancy was exceptional. Dr. Roopa and her team made me feel safe and empowered every step of the way."
+							</p>
+						</div>
+
+						<!-- Author Info Block -->
+						<div class="flex items-center gap-4">
+							<!-- Avatar Placeholder -->
+							<div class="w-12 h-12 rounded-xl bg-[#E2ECE4] flex-shrink-0">
+								<!-- If you want to add a photo, replace with an <img> tag:
+								<img src="..." class="w-full h-full object-cover rounded-xl">
+								-->
+							</div>
+							<div>
+								<h4 class="font-bold text-gray-800 text-base md:text-lg font-mulish">
+									Ananya Reddy
+								</h4>
+								<p class="text-xs text-gray-500 font-bold uppercase mt-0.5">
+									Mother of two
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonial 2 -->
+					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-left">
+						<div>
+							<!-- Star Rating -->
+							<div class="flex items-center gap-1 mb-6">
+								<?php for ( $i = 0; $i < 5; $i++ ) : ?>
+									<svg class="w-5 h-5 text-[#A61A24] fill-current" viewBox="0 0 20 20">
+										<path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+									</svg>
+								<?php endfor; ?>
+							</div>
+							
+							<!-- Quote Text -->
+							<p class="text-gray-600 font-medium text-base md:text-lg mb-8 leading-relaxed">
+								"Lotus Little Stars was a blessing for our newborn. The NICU facilities and the nurses are world-class. We are eternally grateful."
+							</p>
+						</div>
+
+						<!-- Author Info Block -->
+						<div class="flex items-center gap-4">
+							<!-- Avatar Placeholder -->
+							<div class="w-12 h-12 rounded-xl bg-[#E2ECE4] flex-shrink-0">
+								<!-- If you want to add a photo, replace with an <img> tag:
+								<img src="..." class="w-full h-full object-cover rounded-xl">
+								-->
+							</div>
+							<div>
+								<h4 class="font-bold text-gray-800 text-base md:text-lg font-mulish">
+									Suresh Kumar
+								</h4>
+								<p class="text-xs text-gray-500 font-bold uppercase mt-0.5">
+									Parent
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<?php
+		$faqs = [
+			[
+				'question' => 'How do I book an appointment?',
+				'answer'   => 'Appointments can be booked online by submitting the enquiry form or by contacting our patient care team.',
+			],
+			[
+				'question' => 'Do you provide emergency care?',
+				'answer'   => 'Yes, we provide 24/7 pediatric and neonatal emergency care services across all our locations.',
+			],
+			[
+				'question' => 'Do you treat high-risk pregnancies?',
+				'answer'   => 'Yes, our highly experienced obstetricians and maternal-fetal medicine specialists are fully equipped to manage high-risk pregnancies.',
+			],
+			[
+				'question' => 'What pediatric specialties are available?',
+				'answer'   => 'We offer comprehensive pediatric care, including pediatric cardiology, gastroenterology, neurology, and neonatal intensive care (NICU).',
+			],
+		];
+		?>
+
+		<!-- FAQ Section -->
+		<section class="bg-white py-16 md:py-24 relative overflow-hidden">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Heading -->
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] text-center leading-tight mb-16">
+					Frequently Asked Questions
+				</h2>
+
+				<!-- FAQ Accordion List -->
+				<div class="space-y-4">
+					<?php foreach ( $faqs as $index => $faq ) : 
+						$is_first = $index === 0;
+					?>
+						<div class="faq-item bg-white rounded-2xl border border-gray-200/80 transition-all duration-300 shadow-sm overflow-hidden">
+							<button class="faq-toggle w-full flex items-center justify-between p-6 text-left font-bold text-gray-800 hover:text-[#A61A24] transition-colors font-mulish text-base md:text-lg">
+								<span><?php echo esc_html( $faq['question'] ); ?></span>
+								<svg class="chevron-icon w-5 h-5 text-gray-500 transform transition-transform duration-200 <?php echo $is_first ? 'rotate-180' : ''; ?>" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+								</svg>
+							</button>
+							<div class="faq-content transition-all duration-300 overflow-hidden <?php echo $is_first ? '' : 'max-h-0'; ?>" style="<?php echo $is_first ? 'max-height: 150px;' : ''; ?>">
+								<div class="px-6 pb-6 text-sm md:text-base text-gray-600 font-medium leading-relaxed">
+									<?php echo esc_html( $faq['answer'] ); ?>
+								</div>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				</div>
+
+			</div>
+		</section>
+
 	</main>
 
 	<!-- Footer Section -->
@@ -676,6 +820,45 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<p>&copy; <?php echo date('Y'); ?> Lotus Little Stars Hospitals. All rights reserved.</p>
 		</div>
 	</footer>
+
+	<!-- FAQ Toggle Script -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const toggles = document.querySelectorAll('.faq-toggle');
+			
+			// Initialize the first item max-height correctly for clean animations
+			const firstContent = document.querySelector('.faq-content:not(.max-h-0)');
+			if (firstContent) {
+				firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+			}
+
+			toggles.forEach(toggle => {
+				toggle.addEventListener('click', () => {
+					const content = toggle.nextElementSibling;
+					const icon = toggle.querySelector('.chevron-icon');
+					
+					// Check if this item is currently open
+					const isOpen = !content.classList.contains('max-h-0');
+					
+					// Close all FAQ items
+					document.querySelectorAll('.faq-content').forEach(item => {
+						item.classList.add('max-h-0');
+						item.style.maxHeight = null;
+					});
+					document.querySelectorAll('.chevron-icon').forEach(svg => {
+						svg.classList.remove('rotate-180');
+					});
+					
+					// Toggle this FAQ item
+					if (!isOpen) {
+						content.classList.remove('max-h-0');
+						content.style.maxHeight = content.scrollHeight + 'px';
+						icon.classList.add('rotate-180');
+					}
+				});
+			});
+		});
+	</script>
 
 </body>
 </html>
