@@ -179,7 +179,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					<!-- Item 1: 15+ Years of Trusted Care -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+						<div class="w-11 h-11 flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
 							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-1.svg" alt="15+ Years of Trusted Care" class="w-6 h-6 object-contain">
 						</div>
 						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
@@ -189,7 +189,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					<!-- Item 2: Experienced Specialists -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+						<div class="w-11 h-11 flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
 							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-2.svg" alt="Experienced Specialists" class="w-6 h-6 object-contain">
 						</div>
 						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
@@ -199,7 +199,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<!-- Item 3: Clinical Excellence -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+						<div class="w-11 h-11 flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
 							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-3.svg" alt="Clinical Excellence" class="w-6 h-6 object-contain">
 						</div>
 						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
@@ -209,7 +209,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<!-- Item 4: Family-Centered Care -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+						<div class="w-11 h-11 flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
 							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-4.svg" alt="Family-Centered Care" class="w-6 h-6 object-contain">
 						</div>
 						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
@@ -287,6 +287,64 @@ if ( ! defined( 'ABSPATH' ) ) {
 								</span>
 							</div>
 						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Comprehensive Care Across Every Stage Section -->
+		<section class="bg-[#F8F9F8] py-16 md:py-24 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<!-- Heading -->
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-4">
+					Comprehensive Care Across Every Stage
+				</h2>
+				<!-- Subtitle -->
+				<p class="text-base md:text-lg text-gray-500 font-medium max-w-2xl mx-auto mb-16 leading-relaxed">
+					From adolescent health to geriatric care, and everything in between for your little ones.
+				</p>
+
+				<!-- Cards Grid -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+					
+					<!-- Card 1: Women's Care -->
+					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center">
+						<div class="w-20 h-20 rounded-full bg-[#E2ECE4]/50 flex items-center justify-center mb-6">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/womens-care-icon.svg" alt="Women's Care" class="w-12 h-12 object-contain">
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold font-mulish text-[#3C493D] mb-4">
+							Women's Care
+						</h3>
+						<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
+							Advanced gynecological screenings, hormonal health management, and minimally invasive surgeries tailored for every life stage.
+						</p>
+					</div>
+
+					<!-- Card 2: Maternity Care -->
+					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center">
+						<div class="w-20 h-20 rounded-full bg-[#E2ECE4]/50 flex items-center justify-center mb-6">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/maternity-care-icon.svg" alt="Maternity Care" class="w-12 h-12 object-contain">
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold font-mulish text-[#3C493D] mb-4">
+							Maternity Care
+						</h3>
+						<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
+							Comprehensive prenatal, delivery, and postnatal support systems designed to make your journey to motherhood safe and joyful.
+						</p>
+					</div>
+
+					<!-- Card 3: Pediatric Care -->
+					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center">
+						<div class="w-20 h-20 rounded-full bg-[#E1ECF7]/50 flex items-center justify-center mb-6">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/pediatric-care-icon.svg" alt="Pediatric Care" class="w-12 h-12 object-contain">
+						</div>
+						<h3 class="text-xl md:text-2xl font-bold font-mulish text-[#3C493D] mb-4">
+							Pediatric Care
+						</h3>
+						<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
+							Dedicated specialists providing neonatology, routine immunizations, and specialized pediatric emergency care 24/7.
+						</p>
 					</div>
 
 				</div>
