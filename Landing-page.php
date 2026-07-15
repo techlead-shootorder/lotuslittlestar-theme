@@ -565,7 +565,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'qualification' => 'MBBS, D.CH, MRCPI',
 				'position'      => 'SR Consultant & HOD Pediatric Hematology & Oncology',
 				'experience'    => '35+ Years Experience',
-				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi-1.jpg', // Placeholder image URL
+				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi.jpg.jpeg', // Placeholder image URL
 			],
 			[
 				'name'          => 'Dr Roopa Ghanta',
