@@ -573,7 +573,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'qualification' => 'MBBS, DGO, CCPU',
 				'position'      => 'Senior Consultant & HOD Obstetrics and Gynaecology',
 				'experience'    => '29+ Years Experience',
-				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Roopa-Ghanta.jpg', // Placeholder image URL
+				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/DR-Roopa-ghanta-scaled.webp', // Placeholder image URL
 			]
 		];
 		?>
