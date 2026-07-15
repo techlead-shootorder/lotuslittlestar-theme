@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<!-- Logo -->
 				<div class="flex-shrink-0 flex items-center">
 					<a href="#" class="flex items-center">
-						<img src="https://lotuslittlestars.in/wp-content/uploads/2026/07/lotus-new-logo.gif" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-new-logo.gif" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
 					</a>
 				</div>
 
@@ -179,61 +179,40 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					<!-- Item 1: 15+ Years of Trusted Care -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#A61A24] shadow-sm flex-shrink-0">
-							<svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-								<circle cx="12" cy="8" r="6" />
-								<path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
-								<path d="M12 5l1 2 2.5.5-2 1.5.5 2.5-2-1.5-2 1.5.5-2.5-2-1.5 2.5-.5z" fill="currentColor" />
-							</svg>
+						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-1.svg" alt="15+ Years of Trusted Care" class="w-6 h-6 object-contain">
 						</div>
-						<span class="text-sm md:text-base text-gray-700 font-bold font-mulish leading-tight">
+						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
 							15+ Years of Trusted Care
 						</span>
 					</div>
 					
 					<!-- Item 2: Experienced Specialists -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#A61A24] shadow-sm flex-shrink-0">
-							<svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-								<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-								<circle cx="9" cy="7" r="4" />
-								<path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-								<path d="M16 3.13a4 4 0 0 1 0 7.75" />
-							</svg>
+						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-2.svg" alt="Experienced Specialists" class="w-6 h-6 object-contain">
 						</div>
-						<span class="text-sm md:text-base text-gray-700 font-bold font-mulish leading-tight">
+						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
 							Experienced Specialists
 						</span>
 					</div>
 
 					<!-- Item 3: Clinical Excellence -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#A61A24] shadow-sm flex-shrink-0">
-							<svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-								<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-								<rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
-								<path d="M9 12h6" />
-								<path d="M9 16h6" />
-							</svg>
+						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-3.svg" alt="Clinical Excellence" class="w-6 h-6 object-contain">
 						</div>
-						<span class="text-sm md:text-base text-gray-700 font-bold font-mulish leading-tight">
+						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
 							Clinical Excellence
 						</span>
 					</div>
 
 					<!-- Item 4: Family-Centered Care -->
 					<div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left">
-						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#A61A24] shadow-sm flex-shrink-0">
-							<svg class="w-5.5 h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-								<circle cx="6" cy="6" r="2.5" />
-								<path d="M2 14v-1.5A2.5 2.5 0 0 1 4.5 10h3A2.5 2.5 0 0 1 10 12.5V14" />
-								<circle cx="18" cy="6" r="2.5" />
-								<path d="M14 14v-1.5A2.5 2.5 0 0 1 16.5 10h3a2.5 2.5 0 0 1 2.5 2.5V14" />
-								<circle cx="12" cy="9" r="1.8" />
-								<path d="M9.5 16v-1a1.5 1.5 0 0 1 1.5-1.5h2a1.5 1.5 0 0 1 1.5 1.5v1" />
-							</svg>
+						<div class="w-11 h-11 rounded-full bg-white flex items-center justify-center text-[#3C493D] shadow-sm flex-shrink-0">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-icon-4.svg" alt="Family-Centered Care" class="w-6 h-6 object-contain">
 						</div>
-						<span class="text-sm md:text-base text-gray-700 font-bold font-mulish leading-tight">
+						<span class="text-sm md:text-base text-[#3C493D] font-bold font-mulish leading-tight">
 							Family-Centered Care
 						</span>
 					</div>
@@ -253,7 +232,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="absolute -inset-4 bg-red-100/20 rounded-[40px] blur-2xl -z-10"></div>
 						<!-- Frame & Image -->
 						<div class="relative w-full max-w-md lg:max-w-none aspect-[1.53] mx-auto overflow-hidden rounded-[32px] md:rounded-[40px] border-[10px] md:border-[16px] border-white shadow-2xl">
-							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/about-family.png" alt="Healthcare Designed Around Your Family" class="w-full h-full object-cover">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/lp-about-image.jpg" alt="Healthcare Designed Around Your Family" class="w-full h-full object-cover">
 						</div>
 					</div>
 
