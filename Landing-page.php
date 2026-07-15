@@ -102,13 +102,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 
 						<!-- Heading -->
-						<h1 class="text-4xl md:text-5xl lg:text-6xl font-mulish font-extrabold text-[#A61A24] leading-[1.1] mb-6">
+						<h1 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#A61A24] leading-[1.1] mb-6">
 							Expert Paediatric Inpatient Care in Hyderabad
 						</h1>
 
 						<!-- Brand Name & Description -->
 						<div class="mb-6">
-							<h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-1">Little Fernz</h2>
+							<h2 class="text-xl md:text-2xl font-bold text-[#536257] mb-1">Little Fernz</h2>
 							<p class="text-base md:text-lg text-gray-600 font-medium">Paediatric Inpatient Services at Fernandez Hospitals</p>
 						</div>
 
@@ -239,7 +239,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<!-- Right Column: Content -->
 					<div class="lg:col-span-7 flex flex-col justify-center text-left">
 						<!-- Heading -->
-						<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-[1.2] mb-4">
+						<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-semibold text-[#3C493D] leading-[1.2] mb-4">
 							Healthcare Designed Around Your Family
 						</h2>
 						
@@ -297,7 +297,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<section class="bg-[#F8F9F8] py-16 md:py-24 relative overflow-hidden">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				<!-- Heading -->
-				<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-4">
+				<h2 class="text-3xl md:text-3xl lg:text-4xl font-mulish font-semibold text-[#3C493D] leading-tight mb-4">
 					Comprehensive Care Across Every Stage
 				</h2>
 				<!-- Subtitle -->
@@ -358,7 +358,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					
 					<!-- Left Column: Title and Description -->
 					<div class="lg:col-span-5 flex flex-col justify-center text-left">
-						<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-6">
+						<h2 class="text-3xl md:text-3xl lg:text-4xl font-mulish font-semibold text-[#3C493D] leading-tight mb-6">
 							What Sets Lotus Little Stars Apart
 						</h2>
 						<p class="text-base text-gray-500 font-medium leading-relaxed max-w-md">
@@ -451,7 +451,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<section class="bg-[#FDF9F3] py-16 md:py-24 relative overflow-hidden">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				<!-- Heading -->
-				<h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-[#3C493D] leading-tight mb-16">
+				<h2 class="text-3xl md:text-3xl lg:text-4xl  font-regular text-[#3C493D] leading-tight mb-16">
 					A Simple Path to Exceptional Care
 				</h2>
 
@@ -475,7 +475,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							<!-- Text Content -->
 							<div>
-								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
 									Initial Consultation
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
@@ -492,7 +492,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							<!-- Text Content -->
 							<div>
-								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
 									Diagnostic Mapping
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
@@ -509,7 +509,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							<!-- Text Content -->
 							<div>
-								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
 									Personalized Care
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
@@ -526,7 +526,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							<!-- Text Content -->
 							<div>
-								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
 									Continued Wellness
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
@@ -568,7 +568,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				
 				<!-- Section Header -->
 				<div class="mb-12 text-left">
-					<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-3">
+					<h2 class="text-3xl md:text-3xl lg:text-4xl font-mulish font-semibold text-[#3C493D] leading-tight mb-3">
 						Meet Our Experts
 					</h2>
 					<p class="text-base md:text-lg text-gray-500 font-medium leading-relaxed">
@@ -673,7 +673,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				
 				<!-- Heading -->
-				<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-16">
+				<h2 class="text-3xl md:text-3xl lg:text-4xl font-mulish font-semibold text-[#3C493D] leading-tight mb-16">
 					What Families Say About Us
 				</h2>
 
@@ -784,7 +784,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 				
 				<!-- Heading -->
-				<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] text-center leading-tight mb-16">
+				<h2 class="text-3xl md:text-3xl lg:text-4xl font-mulish font-semibol text-[#3C493D] text-center leading-tight mb-16">
 					Frequently Asked Questions
 				</h2>
 
