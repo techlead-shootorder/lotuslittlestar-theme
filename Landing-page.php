@@ -447,6 +447,100 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</section>
 
+		<!-- A Simple Path to Exceptional Care Section -->
+		<section class="bg-[#FDF9F3] py-16 md:py-24 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<!-- Heading -->
+				<h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-extrabold text-[#3C493D] leading-tight mb-16">
+					A Simple Path to Exceptional Care
+				</h2>
+
+				<!-- Steps Container -->
+				<div class="relative max-w-6xl mx-auto">
+					
+					<!-- Desktop Connecting Line -->
+					<div class="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-red-200/50 -z-0"></div>
+					
+					<!-- Mobile Connecting Line -->
+					<div class="block md:hidden absolute left-[28px] top-8 bottom-8 w-[1px] bg-red-200/50 -z-0"></div>
+
+					<!-- Grid for Steps -->
+					<div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 relative z-10">
+						
+						<!-- Step 1 -->
+						<div class="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-4 text-left md:text-center relative">
+							<!-- Step Badge (You can replace the number with an <img> tag if you prefer icons) -->
+							<div class="w-14 h-14 rounded-[14px] bg-white border-2 border-[#A61A24] shadow-md flex items-center justify-center text-[#A61A24] font-bold text-lg flex-shrink-0 relative z-10">
+								1
+							</div>
+							<!-- Text Content -->
+							<div>
+								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+									Initial Consultation
+								</h3>
+								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
+									Review clinical history and current symptoms.
+								</p>
+							</div>
+						</div>
+
+						<!-- Step 2 -->
+						<div class="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-4 text-left md:text-center relative">
+							<!-- Step Badge (You can replace the number with an <img> tag if you prefer icons) -->
+							<div class="w-14 h-14 rounded-[14px] bg-white border-2 border-[#3C493D] shadow-md flex items-center justify-center text-[#3C493D] font-bold text-lg flex-shrink-0 relative z-10">
+								2
+							</div>
+							<!-- Text Content -->
+							<div>
+								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+									Diagnostic Mapping
+								</h3>
+								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
+									Advanced screening and immediate lab results.
+								</p>
+							</div>
+						</div>
+
+						<!-- Step 3 -->
+						<div class="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-4 text-left md:text-center relative">
+							<!-- Step Badge (You can replace the number with an <img> tag if you prefer icons) -->
+							<div class="w-14 h-14 rounded-[14px] bg-white border-2 border-[#0058A2] shadow-md flex items-center justify-center text-[#0058A2] font-bold text-lg flex-shrink-0 relative z-10">
+								3
+							</div>
+							<!-- Text Content -->
+							<div>
+								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+									Personalized Care
+								</h3>
+								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
+									Admission and round-the-clock specialized monitoring.
+								</p>
+							</div>
+						</div>
+
+						<!-- Step 4 -->
+						<div class="flex flex-row md:flex-col items-start md:items-center gap-6 md:gap-4 text-left md:text-center relative">
+							<!-- Step Badge (You can replace the number with an <img> tag if you prefer icons) -->
+							<div class="w-14 h-14 rounded-[14px] bg-white border-2 border-[#111827] shadow-md flex items-center justify-center text-[#111827] font-bold text-lg flex-shrink-0 relative z-10">
+								4
+							</div>
+							<!-- Text Content -->
+							<div>
+								<h3 class="font-serif font-bold text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
+									Continued Wellness
+								</h3>
+								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
+									Post-discharge follow-ups and recovery support.
+								</p>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</section>
+
 	</main>
 
 	<!-- Footer Section -->
