@@ -871,6 +871,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</section>
 
+		<!-- Booking Modal Popup -->
+		<div id="booking-modal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm hidden flex items-center justify-center p-4">
+			<div class="bg-white rounded-[24px] max-w-xl w-full p-4 md:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out" id="booking-modal-container">
+				
+				<!-- Close Button -->
+				<button id="close-booking-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none" aria-label="Close booking modal">
+					<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+
+				<!-- Modal Body (Zoho Form Iframe) -->
+				<div class="mt-4 overflow-hidden rounded-xl">
+					<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" style="height:700px;width:100%;border:none;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
+					</iframe>
+				</div>
+
+			</div>
+		</div>
+
 	</main>
 
 	<!-- Footer Section -->
@@ -880,12 +900,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</footer>
 
-	<!-- FAQ Toggle Script -->
+	<!-- FAQ Toggle Script & Booking Modal Script -->
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
+			// FAQ Accordion logic
 			const toggles = document.querySelectorAll('.faq-toggle');
-			
-			// Initialize the first item max-height correctly for clean animations
 			const firstContent = document.querySelector('.faq-content:not(.max-h-0)');
 			if (firstContent) {
 				firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
@@ -895,11 +914,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				toggle.addEventListener('click', () => {
 					const content = toggle.nextElementSibling;
 					const icon = toggle.querySelector('.chevron-icon');
-					
-					// Check if this item is currently open
 					const isOpen = !content.classList.contains('max-h-0');
 					
-					// Close all FAQ items
 					document.querySelectorAll('.faq-content').forEach(item => {
 						item.classList.add('max-h-0');
 						item.style.maxHeight = null;
@@ -908,7 +924,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 						svg.classList.remove('rotate-180');
 					});
 					
-					// Toggle this FAQ item
 					if (!isOpen) {
 						content.classList.remove('max-h-0');
 						content.style.maxHeight = content.scrollHeight + 'px';
@@ -916,8 +931,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 					}
 				});
 			});
+
+			// Booking Modal logic
+			const bookingModal = document.getElementById('booking-modal');
+			const modalContainer = document.getElementById('booking-modal-container');
+			const closeModalBtn = document.getElementById('close-booking-modal');
+			const body = document.body;
+
+			function openModal() {
+				bookingModal.classList.remove('hidden');
+				setTimeout(() => {
+					modalContainer.classList.remove('scale-95', 'opacity-0');
+					modalContainer.classList.add('scale-100', 'opacity-100');
+				}, 10);
+				body.classList.add('overflow-hidden');
+			}
+
+			function closeModal() {
+				modalContainer.classList.remove('scale-100', 'opacity-100');
+				modalContainer.classList.add('scale-95', 'opacity-0');
+				setTimeout(() => {
+					bookingModal.classList.add('hidden');
+				}, 300);
+				body.classList.remove('overflow-hidden');
+			}
+
+			// Listen to clicks on any links targeting #booking-form
+			document.querySelectorAll('a[href="#booking-form"]').forEach(btn => {
+				btn.addEventListener('click', (e) => {
+					e.preventDefault();
+					openModal();
+				});
+			});
+
+			// Close actions
+			closeModalBtn.addEventListener('click', closeModal);
+			bookingModal.addEventListener('click', (e) => {
+				if (e.target === bookingModal) {
+					closeModal();
+				}
+			});
+			document.addEventListener('keydown', (e) => {
+				if (e.key === 'Escape' && !bookingModal.classList.contains('hidden')) {
+					closeModal();
+				}
+			});
 		});
 	</script>
+
+	
 
 </body>
 </html>
