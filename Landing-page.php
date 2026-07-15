@@ -311,7 +311,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<!-- Card 1: Women's Care -->
 					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center">
 						<div class="w-20 h-20 rounded-full bg-[#E2ECE4]/50 flex items-center justify-center mb-6">
-							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/womens-care-icon.svg" alt="Women's Care" class="w-12 h-12 object-contain">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/Gynecology-Icon.svg" alt="Women's Care" class="w-12 h-12 object-contain">
 						</div>
 						<h3 class="text-xl md:text-2xl font-bold font-mulish text-[#3C493D] mb-4">
 							Women's Care
@@ -324,7 +324,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<!-- Card 2: Maternity Care -->
 					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center">
 						<div class="w-20 h-20 rounded-full bg-[#E2ECE4]/50 flex items-center justify-center mb-6">
-							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/maternity-care-icon.svg" alt="Maternity Care" class="w-12 h-12 object-contain">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/Maternity-Icon.svg" alt="Maternity Care" class="w-12 h-12 object-contain">
 						</div>
 						<h3 class="text-xl md:text-2xl font-bold font-mulish text-[#3C493D] mb-4">
 							Maternity Care
@@ -337,7 +337,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<!-- Card 3: Pediatric Care -->
 					<div class="bg-white rounded-[24px] border border-red-100/30 p-8 md:p-10 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col items-center">
 						<div class="w-20 h-20 rounded-full bg-[#E1ECF7]/50 flex items-center justify-center mb-6">
-							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/pediatric-care-icon.svg" alt="Pediatric Care" class="w-12 h-12 object-contain">
+							<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/Pediatric-Icon.svg" alt="Pediatric Care" class="w-12 h-12 object-contain">
 						</div>
 						<h3 class="text-xl md:text-2xl font-bold font-mulish text-[#3C493D] mb-4">
 							Pediatric Care
@@ -345,6 +345,102 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
 							Dedicated specialists providing neonatology, routine immunizations, and specialized pediatric emergency care 24/7.
 						</p>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- What Sets Lotus Little Stars Apart Section -->
+		<section class="bg-white py-16 md:py-24 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+					
+					<!-- Left Column: Title and Description -->
+					<div class="lg:col-span-5 flex flex-col justify-center text-left">
+						<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-6">
+							What Sets Lotus Little Stars Apart
+						</h2>
+						<p class="text-base text-gray-500 font-medium leading-relaxed max-w-md">
+							We don't just treat symptoms; we care for people. Our values are built into every brick of our facility.
+						</p>
+					</div>
+
+					<!-- Right Column: 2x2 Grid of Cards -->
+					<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+						
+						<!-- Card 1: Integrated Care -->
+						<div class="bg-[#F3F6F3] rounded-[24px] p-8 relative overflow-hidden flex flex-col items-start text-left shadow-sm border border-gray-100/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+							<!-- Corner decorative arc -->
+							<div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-[#E5ECE7]/60 -z-0"></div>
+							
+							<!-- Icon container -->
+							<div class="w-12 h-12 rounded-xl bg-[#FADCDD]/60 flex items-center justify-center mb-6 relative z-10">
+								<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/integrated-care.svg" alt="Integrated Care" class="w-6 h-6 object-contain">
+							</div>
+							
+							<h3 class="text-xl font-bold font-mulish text-[#A61A24] mb-3 relative z-10">
+								Integrated Care
+							</h3>
+							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
+								One-stop solution for all health needs with seamless coordination between departments.
+							</p>
+						</div>
+
+						<!-- Card 2: Clinical Expertise -->
+						<div class="bg-[#F4F4FC] rounded-[24px] p-8 relative overflow-hidden flex flex-col items-start text-left shadow-sm border border-gray-100/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+							<!-- Corner decorative arc -->
+							<div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-[#EBEBFA]/60 -z-0"></div>
+							
+							<!-- Icon container -->
+							<div class="w-12 h-12 rounded-xl bg-[#FADCDD]/60 flex items-center justify-center mb-6 relative z-10">
+								<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/clinical.svg" alt="Clinical Expertise" class="w-6 h-6 object-contain">
+							</div>
+							
+							<h3 class="text-xl font-bold font-mulish text-[#A61A24] mb-3 relative z-10">
+								Clinical Expertise
+							</h3>
+							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
+								Over 50+ years of cumulative experience among our senior consultant team.
+							</p>
+						</div>
+
+						<!-- Card 3: Medical Excellence -->
+						<div class="bg-[#FAF7F2] rounded-[24px] p-8 relative overflow-hidden flex flex-col items-start text-left shadow-sm border border-gray-100/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+							<!-- Corner decorative arc -->
+							<div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-[#F6ECE0]/60 -z-0"></div>
+							
+							<!-- Icon container -->
+							<div class="w-12 h-12 rounded-xl bg-[#FADCDD]/60 flex items-center justify-center mb-6 relative z-10">
+								<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/medical.svg" alt="Medical Excellence" class="w-6 h-6 object-contain">
+							</div>
+							
+							<h3 class="text-xl font-bold font-mulish text-[#A61A24] mb-3 relative z-10">
+								Medical Excellence
+							</h3>
+							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
+								Equipped with the latest diagnostic and therapeutic technology in Hyderabad.
+							</p>
+						</div>
+
+						<!-- Card 4: Compassion -->
+						<div class="bg-[#F1F7F6] rounded-[24px] p-8 relative overflow-hidden flex flex-col items-start text-left shadow-sm border border-gray-100/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+							<!-- Corner decorative arc -->
+							<div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-[#E3EFF0]/60 -z-0"></div>
+							
+							<!-- Icon container -->
+							<div class="w-12 h-12 rounded-xl bg-[#FADCDD]/60 flex items-center justify-center mb-6 relative z-10">
+								<img src="http://lotuslittlestars.in/wp-content/uploads/2026/07/compassion.svg" alt="Compassion" class="w-6 h-6 object-contain">
+							</div>
+							
+							<h3 class="text-xl font-bold font-mulish text-[#A61A24] mb-3 relative z-10">
+								Compassion
+							</h3>
+							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
+								Every patient is treated with dignity, warmth, and genuine human empathy.
+							</p>
+						</div>
+
 					</div>
 
 				</div>
