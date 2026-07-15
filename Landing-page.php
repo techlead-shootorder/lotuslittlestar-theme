@@ -74,7 +74,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<!-- CTA Button -->
 				<div>
-					<a href="#" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-xl text-white bg-brand-red hover:bg-brand-red-hover transition-colors duration-200 shadow-sm">
+					<a href="#booking-form" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-xl text-white bg-brand-red hover:bg-brand-red-hover transition-colors duration-200 shadow-sm">
 						Book Appointment
 					</a>
 				</div>
@@ -147,7 +147,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<!-- Button -->
 						<div class="mb-8">
-							<a href="#" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-[#A61A24] hover:bg-[#8B141B] transition-colors duration-200 shadow-md">
+							<a href="#booking-form" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-[#A61A24] hover:bg-[#8B141B] transition-colors duration-200 shadow-md">
 								Book an Appointment
 							</a>
 						</div>
@@ -653,7 +653,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 							<!-- Action Button -->
 							<div class="mt-2">
-								<a href="#" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-base font-bold rounded-xl text-white bg-[#A61A24] hover:bg-[#8B141B] transition-colors duration-200 shadow-sm gap-2">
+								<a href="#booking-form" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-base font-bold rounded-xl text-white bg-[#A61A24] hover:bg-[#8B141B] transition-colors duration-200 shadow-sm gap-2">
 									<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
 										<path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
 									</svg>
@@ -813,7 +813,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</section>
 
 		<!-- Ready to Take the Next Step / Booking Form Section -->
-		<section class="bg-[#F8F9F8] py-16 md:py-24 relative overflow-hidden">
+		<section id="booking-form" class="bg-[#F8F9F8] py-16 md:py-24 relative overflow-hidden">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				
 				<!-- Inner Green Container -->
