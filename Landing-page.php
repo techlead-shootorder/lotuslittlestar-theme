@@ -544,21 +544,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 		$doctors = [
 			[
-				'name'          => 'Dr. V.S.V. Prasad',
-				'speciality'    => 'NEONATOLOGY | PEDIATRICS | PICU',
-				'qualification' => 'MD (Pediatrics)',
-				'position'      => 'Director – Neonatal & Pediatric Intensive Care Services',
-				'experience'    => '32+ Years Experience',
-				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-VSV-Prasad.jpg', // Placeholder image URL
-			],
-			[
 				'name'          => 'Dr. Satish Ghanta',
-				'speciality'    => 'NEONATOLOGY | PEDIATRICS | PICU',
-				'qualification' => 'MD (Pediatrics)',
-				'position'      => 'Director – Neonatal & Pediatric Intensive Care Services',
+				'speciality'    => 'PEDIATRICS & NEONATOLOGY',
+				'qualification' => 'MBBS (Manipal University), MD – Pediatrics',
+				'position'      => 'SR Consultant Pediatrician, HOD Neonatal & Pediatric Intensivist Care',
 				'experience'    => '32+ Years Experience',
 				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Satish-Ghanta.jpg.jpeg', // Placeholder image URL
 			],
+			[
+				'name'          => 'Dr. V.S.V Prasad',
+				'speciality'    => 'PEDIATRICS & NEONATOLOGY',
+				'qualification' => 'MD Pediatrics, AIIMS, New Delhi',
+				'position'      => 'Group Chief Consultant Neonatologist and Pediatric Intensivist',
+				'experience'    => '30+ Years Experience',
+				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-VSV-Prasad.jpg', // Placeholder image URL
+			],
+			[
+				'name'          => 'Dr Ramana Dandamudi',
+				'speciality'    => 'PEDIATRICS & PEDIATRIC HEMATO ONCOLOGY',
+				'qualification' => 'MBBS, D.CH, MRCPI',
+				'position'      => 'SR Consultant & HOD Pediatric Hematology & Oncology',
+				'experience'    => '35+ Years Experience',
+				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi-1.jpg', // Placeholder image URL
+			],
+			[
+				'name'          => 'Dr Roopa Ghanta',
+				'speciality'    => 'GYNEACOLOGY',
+				'qualification' => 'MBBS, DGO, CCPU',
+				'position'      => 'Senior Consultant & HOD Obstetrics and Gynaecology',
+				'experience'    => '29+ Years Experience',
+				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-Roopa-Ghanta.jpg', // Placeholder image URL
+			]
 		];
 		?>
 
