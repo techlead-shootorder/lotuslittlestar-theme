@@ -859,7 +859,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<!-- Right Column: Zoho Iframe Form Box -->
 						<div class="lg:col-span-6">
-							<div class="bg-white rounded-[24px] p-4 md:p-6 shadow-2xl max-w-lg mx-auto w-full overflow-hidden">
+							<div class="bg-white p-4 md:p-6 shadow-2xl max-w-lg mx-auto w-full overflow-hidden">
 								<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="no" style="height:720px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
 								</iframe>
 							</div>
