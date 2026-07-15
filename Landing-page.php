@@ -541,6 +541,133 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</section>
 
+		<?php
+		$doctors = [
+			[
+				'name'          => 'Dr. V.S.V. Prasad',
+				'speciality'    => 'NEONATOLOGY | PEDIATRICS | PICU',
+				'qualification' => 'MD (Pediatrics)',
+				'position'      => 'Director – Neonatal & Pediatric Intensive Care Services',
+				'experience'    => '32+ Years Experience',
+				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Dr-VSV-Prasad.jpg', // Placeholder image URL
+			],
+			[
+				'name'          => 'Dr. Satish Ghanta',
+				'speciality'    => 'NEONATOLOGY | PEDIATRICS | PICU',
+				'qualification' => 'MD (Pediatrics)',
+				'position'      => 'Director – Neonatal & Pediatric Intensive Care Services',
+				'experience'    => '32+ Years Experience',
+				'image'         => 'http://lotuslittlestars.in/wp-content/uploads/2026/06/Satish-Ghanta.jpg.jpeg', // Placeholder image URL
+			],
+		];
+		?>
+
+		<!-- Meet Our Experts Section -->
+		<section class="bg-white py-16 md:py-24 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				
+				<!-- Section Header -->
+				<div class="mb-12 text-left">
+					<h2 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#3C493D] leading-tight mb-3">
+						Meet Our Experts
+					</h2>
+					<p class="text-base md:text-lg text-gray-500 font-medium leading-relaxed">
+						World-class doctors leading the way in family health.
+					</p>
+				</div>
+
+				<!-- Doctors Grid -->
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+					<?php foreach ( $doctors as $doctor ) : ?>
+						<div class="bg-white rounded-[24px] border border-red-100/30 p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+							
+							<!-- Top Content Area -->
+							<div class="flex flex-col sm:flex-row gap-6 mb-6">
+								<!-- Doctor Image -->
+								<div class="w-full sm:w-44 aspect-square rounded-2xl overflow-hidden bg-gray-100 flex-shrink-0">
+									<img src="<?php echo esc_url( $doctor['image'] ); ?>" alt="<?php echo esc_attr( $doctor['name'] ); ?>" class="w-full h-full object-cover">
+								</div>
+
+								<!-- Doctor Info & Details -->
+								<div class="flex-grow text-left">
+									<!-- Name & Verified Badge -->
+									<div class="flex items-center gap-1.5 flex-wrap">
+										<h3 class="text-xl md:text-2xl font-bold font-mulish text-gray-800 leading-tight">
+											<?php echo esc_html( $doctor['name'] ); ?>
+										</h3>
+										<svg class="w-5 h-5 text-blue-500 flex-shrink-0 fill-current" viewBox="0 0 20 20">
+											<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+										</svg>
+									</div>
+
+									<!-- Specialty -->
+									<span class="text-xs font-bold tracking-wider text-gray-500 uppercase mt-1 mb-4 block">
+										<?php echo esc_html( $doctor['speciality'] ); ?>
+									</span>
+
+									<hr class="border-gray-100 mb-4">
+
+									<!-- Details List -->
+									<div class="space-y-3.5">
+										<!-- Qualification -->
+										<div class="flex items-center gap-3">
+											<div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 flex-shrink-0">
+												<!-- Graduation Cap Icon -->
+												<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+												</svg>
+											</div>
+											<span class="text-sm font-semibold text-gray-700 leading-normal">
+												<?php echo esc_html( $doctor['qualification'] ); ?>
+											</span>
+										</div>
+
+										<!-- Position -->
+										<div class="flex items-center gap-3">
+											<div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 flex-shrink-0">
+												<!-- Briefcase Icon -->
+												<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+												</svg>
+											</div>
+											<span class="text-sm font-semibold text-gray-700 leading-normal">
+												<?php echo esc_html( $doctor['position'] ); ?>
+											</span>
+										</div>
+
+										<!-- Experience -->
+										<div class="flex items-center gap-3">
+											<div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 flex-shrink-0">
+												<!-- Award/Badge Icon -->
+												<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+													<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+												</svg>
+											</div>
+											<span class="text-sm font-semibold text-gray-700 leading-normal">
+												<?php echo esc_html( $doctor['experience'] ); ?>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Action Button -->
+							<div class="mt-2">
+								<a href="#" class="w-full inline-flex items-center justify-center px-6 py-3.5 text-base font-bold rounded-xl text-white bg-[#A61A24] hover:bg-[#8B141B] transition-colors duration-200 shadow-sm gap-2">
+									<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+									</svg>
+									Book Appointment
+								</a>
+							</div>
+
+						</div>
+					<?php endforeach; ?>
+				</div>
+
+			</div>
+		</section>
+
 	</main>
 
 	<!-- Footer Section -->
