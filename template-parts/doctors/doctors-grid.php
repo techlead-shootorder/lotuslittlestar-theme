@@ -203,73 +203,12 @@ if ( $doctors_query->have_posts() ) {
 					get_template_part( 'template-parts/doctors/doctor-card', null, array( 'is_grid' => true ) );
 				endwhile;
 				wp_reset_postdata();
-			else :
-				// Fallback mockup list matching the design layout with 6 complete cards.
-				$fallback_docs = array(
-					array(
-						'name'      => 'Dr. V.S.V. Prasad',
-						'specialty' => 'Neonatology & Pediatrics',
-						'experience' => '18+ Yrs',
-						'department' => 'Pediatrics',
-						'success' => '99.2%',
-						'color' => 'text-brand-red',
-					),
-					array(
-						'name'      => 'Dr. Satish Ghanta',
-						'specialty' => 'Pediatric Intensive Care',
-						'experience' => '15+ Yrs',
-						'department' => 'Pediatrics',
-						'success' => '98.8%',
-						'color' => 'text-brand-coral',
-					),
-					array(
-						'name'      => 'Dr. Mehul A. Shah',
-						'specialty' => 'Pediatric Orthopedics',
-						'experience' => '20+ Yrs',
-						'department' => 'Orthopedics',
-						'success' => '99.5%',
-						'color' => 'text-brand-red',
-					),
-					array(
-						'name'      => 'Dr. V. Rajesh',
-						'specialty' => 'Pediatric Surgery',
-						'experience' => '14+ Yrs',
-						'department' => 'Surgery',
-						'success' => '98.5%',
-						'color' => 'text-brand-coral',
-					),
-					array(
-						'name'      => 'Dr. S. K. Sharma',
-						'specialty' => 'Gynecology & Obstetrics',
-						'experience' => '16+ Yrs',
-						'department' => 'Obstetrics',
-						'success' => '99.0%',
-						'color' => 'text-brand-red',
-					),
-					array(
-						'name'      => 'Dr. K. Srinivas',
-						'specialty' => 'Pediatrics & Nephrologist',
-						'experience' => '12+ Yrs',
-						'department' => 'Pediatrics',
-						'success' => '97.9%',
-						'color' => 'text-brand-coral',
-					),
-				);
-
-				foreach ( $fallback_docs as $index => $doc ) :
-					$doc['permalink'] = '#';
-					get_template_part( 'template-parts/doctors/doctor-card', null, array(
-						'is_grid'         => true,
-						'fallback_doctor' => $doc,
-						'max_width'       => 'max-w-[300px]',
-					) );
-				endforeach;
 			endif;
 			?>
 		</div>
 		
 		<!-- Empty state for search results -->
-		<div id="no-doctors-found" class="hidden text-center py-12 bg-white rounded-3xl border border-brand-cream max-w-md mx-auto mt-8">
+		<div id="no-doctors-found" class="<?php echo $doctors_query->have_posts() ? 'hidden' : ''; ?> text-center py-12 bg-white rounded-3xl border border-brand-cream max-w-md mx-auto mt-8">
 			<svg class="h-16 w-16 text-brand-coral/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
 			</svg>

@@ -16,12 +16,12 @@ $department   = get_post_meta( get_the_ID(), '_doctor_department', true );
 $success_rate = get_post_meta( get_the_ID(), '_doctor_success_rate', true );
 $phone        = get_post_meta( get_the_ID(), '_doctor_phone', true );
 
-// Fallbacks for preview details matching Figma defaults (Dr. V.S.V. Prasad)
-$specialty    = ! empty( $specialty ) ? $specialty : 'Senior Consultant Neonatologist';
-$experience   = ! empty( $experience ) ? $experience : '18+ Yrs';
-$department   = ! empty( $department ) ? $department : 'Pediatrics';
-$success_rate = ! empty( $success_rate ) ? $success_rate : '99.2%';
-$phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
+// No fallbacks for preview details (data must strictly come from the post)
+$specialty    = ! empty( $specialty ) ? $specialty : '';
+$experience   = ! empty( $experience ) ? $experience : '';
+$department   = ! empty( $department ) ? $department : '';
+$success_rate = ! empty( $success_rate ) ? $success_rate : '';
+$phone        = ! empty( $phone ) ? $phone : '';
 ?>
 
 <section class="py-12 bg-gradient-to-br from-brand-bg to-brand-cream/30 border-b border-brand-cream relative">
@@ -39,22 +39,19 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 		<div class="p-6 sm:p-3 flex flex-col md:flex-row gap-10 items-center">
 			
 			<!-- Photo Column (Left) -->
+			<?php if ( has_post_thumbnail() ) : ?>
 			<div class="w-full md:w-1/3 aspect-square max-w-[480px] bg-brand-cream rounded-3xl overflow-hidden flex items-center justify-center shrink-0 shadow-inner">
-				<?php if ( has_post_thumbnail() ) : ?>
-					<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover' ) ); ?>
-				<?php else : ?>
-					<!-- Doctor default icon -->
-					<svg class="h-28 w-28 text-brand-coral/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-					</svg>
-				<?php endif; ?>
+				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'w-full h-full object-cover' ) ); ?>
 			</div>
+			<?php endif; ?>
 
 			<!-- Information Column (Right) -->
-			<div class="w-full md:w-2/3 text-left flex flex-col items-start">
+			<div class="w-full <?php echo has_post_thumbnail() ? 'md:w-2/3' : 'w-full'; ?> text-left flex flex-col items-start">
+				<?php if ( ! empty( $specialty ) ) : ?>
 				<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-brand-red/10 text-brand-red uppercase tracking-wider mb-3 select-none">
 					<?php echo esc_html( $specialty ); ?>
 				</span>
+				<?php endif; ?>
 				
 				<h1 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mb-2">
 					<?php the_title(); ?>
@@ -68,30 +65,39 @@ $phone        = ! empty( $phone ) ? $phone : '+91 40 4000 6000';
 					Lotus Little Stars Hospital, Banjara Hills, Hyderabad
 				</p>
 
+				<?php 
+				$show_dept = ! empty( $department );
+				$show_exp = ! empty( $experience );
+				if ( $show_dept || $show_exp ) :
+					$cols_class = ( $show_dept && $show_exp ) ? 'grid-cols-2' : 'grid-cols-1';
+				?>
 				<!-- Badges grid -->
-				<div class="grid grid-cols-2 gap-4 border-y border-brand-cream/80 py-4 w-full mb-8 select-none">
+				<div class="grid <?php echo $cols_class; ?> gap-4 border-y border-brand-cream/80 py-4 w-full mb-8 select-none">
+					<?php if ( $show_dept ) : ?>
 					<div class="text-center">
 						<p class="text-xl font-bold font-outfit text-brand-red line-clamp-3"><?php echo esc_html( $department ); ?></p>
 						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Department</p>
 					</div>
-					<div class="text-center border-x border-brand-cream/80">
+					<?php endif; ?>
+					<?php if ( $show_exp ) : ?>
+					<div class="text-center <?php echo $show_dept ? 'border-l border-brand-cream/80' : ''; ?>">
 						<p class="text-2xl font-bold font-outfit text-brand-dark"><?php echo esc_html( $experience ); ?></p>
 						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Experience</p>
 					</div>
-					<!-- <div class="text-center">
-						<p class="text-2xl font-bold font-outfit text-brand-coral"><?php echo esc_html( $success_rate ); ?></p>
-						<p class="text-[10px] uppercase font-bold text-brand-muted mt-0.5">Success Rate</p>
-					</div> -->
+					<?php endif; ?>
 				</div>
+				<?php endif; ?>
 
 				<!-- Call to actions -->
 				<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
 					<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-[12px] shadow-md transition-all">
 						Book Appointment
 					</a>
+					<?php if ( ! empty( $phone ) ) : ?>
 					<a href="tel:<?php echo esc_attr( $phone ); ?>" class="inline-flex items-center justify-center px-8 h-12 border border-brand-red text-brand-red hover:bg-brand-cream text-xs font-bold rounded-[12px] transition-all">
 						Call Now
 					</a>
+					<?php endif; ?>
 				</div>
 			</div>
 

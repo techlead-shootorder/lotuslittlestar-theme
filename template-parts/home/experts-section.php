@@ -9,69 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-// Define the static doctors array for the homepage
-$homepage_doctors = array(
-	array(
-		'name'          => 'Dr.Satish Ghanta',
-		'speciality'    => 'Director – Neonatal & Pediatric Intensive Care Services',
-		'qualification' => 'MD (Pediatrics)',
-		'position'      => 'SR Consultant Pediatrician, HOD Neonatal & Pediatric Intensivist Care',
-		'exp'           => '32+ Years Experience',
-		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
-		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact-us/' ),
-	),
-	array(
-		'name'          => 'Dr. V.S.V Prasad',
-		'speciality'    => 'Consultant – Specialist Doctor',
-		'qualification' => 'MD Pediatrics, AIIMS, New Delhi',
-		'position'      => 'Senior Consultant – Pediatric Nephrology',
-		'exp'           => '32+ Years Experience',
-		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/VSV.-Prasad.jpg',
-		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact-us/' ),
-	),
-	array(
-		'name'          => 'Dr Ramana Dandamudi',
-		'speciality'    => 'Director – Pediatric Hematology & Oncology',
-		'qualification' => 'MBBS, MD – Pediatrics, DCH, MRCP (UK)',
-		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
-		'exp'           => '39+ Years Experience',
-		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi.jpg.jpeg',
-		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact-us/' ),
-	),
-	array(
-		'name'          => 'Dr. Mehul A. Shah',
-		'speciality'    => 'Senior Consultant – Pediatric Nephrology',
-		'qualification' => 'MD(PED), DCH(BOM), MD(USA), DABPN(USA)',
-		'position'      => 'Senior Consultant – Pediatric Nephrology',
-		'exp'           => '30+ Years Experience',
-		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Mehul-A-Sha.jpg',
-		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact-us/' ),
-	),
-	array(
-		'name'          => 'Dr. Roopa Ghanta',
-		'speciality'    => 'HOD – Obstetrics & Gynecology',
-		'qualification' => 'MBBS, DGO, CCPU',
-		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
-		'exp'           => '26+ Years Experience',
-		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Roopa-Ganta.jpg',
-		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact-us/' ),
-	),
-	array(
-		'name'          => 'Dr.K.V.S. NARAYANA',
-		'speciality'    => 'Consultant – Consultant Pediatric Surgeon',
-		'qualification' => 'MBBS, MS(General Surgery)',
-		'position'      => 'Chief Consultant Neonatologist and Pediatric Intensivist',
-		'exp'           => '30+ Years Experience',
-		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/KVS-Narayana.jpg',
-		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact-us/' ),
-	),
-);
+
 
 // Fetch section header fields
 $expert_doctor_title       = function_exists( 'get_field' ) ? get_field( 'expert_doctor_title' ) : '';
@@ -128,47 +66,24 @@ if ( empty( $expert_doctor_description ) ) {
 			);
 			$experts_query = new WP_Query( $experts_args );
 
+			if ( ! $experts_query->have_posts() ) {
+				// Fallback to querying any published doctor posts (up to 6) if none are explicitly marked as experts
+				$experts_args = array(
+					'post_type'      => 'doctor',
+					'posts_per_page' => 6,
+					'post_status'    => 'publish',
+					'orderby'        => 'title',
+					'order'          => 'ASC',
+				);
+				$experts_query = new WP_Query( $experts_args );
+			}
+
 			if ( $experts_query->have_posts() ) :
 				while ( $experts_query->have_posts() ) : $experts_query->the_post();
 					get_template_part( 'template-parts/doctors/doctor-card', null, array(
 						'max_width' => 'max-w-xl'
 					) );
 				endwhile;
-				wp_reset_postdata();
-			else :
-				// Fallback to title-matching / static list if no doctors are checked in the backend
-				global $post;
-				foreach ( $homepage_doctors as $doctor ) :
-					// Try to find the actual custom post type 'doctor' by name to display real data if it exists
-					$doctor_posts = get_posts( array(
-						'post_type'   => 'doctor',
-						'title'       => $doctor['name'],
-						'numberposts' => 1,
-						'post_status' => 'publish',
-					) );
-
-					if ( ! empty( $doctor_posts ) ) {
-						// Real post exists! Setup post data and render
-						$post = $doctor_posts[0];
-						setup_postdata( $post );
-						get_template_part( 'template-parts/doctors/doctor-card', null, array(
-							'max_width' => 'max-w-xl'
-						) );
-					} else {
-						// Real post doesn't exist, use the homepage static data as a mapped fallback
-						$fallback_data = array(
-							'name'       => $doctor['name'],
-							'specialty'  => $doctor['speciality'],
-							'experience' => $doctor['exp'],
-							'department' => isset( $doctor['department'] ) ? $doctor['department'] : 'Pediatrics',
-							'permalink'  => isset( $doctor['profile_url'] ) ? $doctor['profile_url'] : home_url( '/doctors/' ),
-						);
-						get_template_part( 'template-parts/doctors/doctor-card', null, array(
-							'fallback_doctor' => $fallback_data,
-							'max_width'       => 'max-w-xl'
-						) );
-					}
-				endforeach;
 				wp_reset_postdata();
 			endif;
 			?>
