@@ -88,7 +88,7 @@ if ( ! empty( $expert_background ) ) {
 
 // Button configuration
 $has_button    = is_array( $expert_primary_button ) && ! empty( $expert_primary_button['url'] );
-$button_url    = $has_button ? $expert_primary_button['url'] : home_url( '/contact/' );
+$button_url    = $has_button ? $expert_primary_button['url'] : home_url( '/contact-us/' );
 $button_title  = $has_button && ! empty( $expert_primary_button['title'] ) ? $expert_primary_button['title'] : __( 'Book Appointment', 'lotus' );
 $button_target = $has_button && ! empty( $expert_primary_button['target'] ) ? $expert_primary_button['target'] : '_self';
 $button_rel    = '_blank' === $button_target ? ' rel="noopener"' : '';

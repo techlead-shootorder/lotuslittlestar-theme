@@ -98,7 +98,7 @@ $awards_icons = array(
 				<p class="text-white/85 text-xs sm:text-sm mb-8 leading-relaxed">
 					Get expert clinical consultation for your child\'s health from one of the most trusted names in Neonatology & Pediatrics.
 				</p>
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-12 bg-white hover:bg-brand-cream text-brand-red text-xs font-bold rounded-[12px] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+				<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-12 bg-white hover:bg-brand-cream text-brand-red text-xs font-bold rounded-[12px] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
 					Book Appointment Now
 				</a>
 			</div>

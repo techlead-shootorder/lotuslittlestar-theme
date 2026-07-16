@@ -19,7 +19,7 @@ $homepage_doctors = array(
 		'exp'           => '32+ Years Experience',
 		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/satish-ghanta.webp',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact/' ),
+		'appointment_url'=> home_url( '/contact-us/' ),
 	),
 	array(
 		'name'          => 'Dr. V.S.V Prasad',
@@ -29,7 +29,7 @@ $homepage_doctors = array(
 		'exp'           => '32+ Years Experience',
 		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/VSV.-Prasad.jpg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact/' ),
+		'appointment_url'=> home_url( '/contact-us/' ),
 	),
 	array(
 		'name'          => 'Dr Ramana Dandamudi',
@@ -39,7 +39,7 @@ $homepage_doctors = array(
 		'exp'           => '39+ Years Experience',
 		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Ramana-Dandamudi.jpg.jpeg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact/' ),
+		'appointment_url'=> home_url( '/contact-us/' ),
 	),
 	array(
 		'name'          => 'Dr. Mehul A. Shah',
@@ -49,7 +49,7 @@ $homepage_doctors = array(
 		'exp'           => '30+ Years Experience',
 		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Mehul-A-Sha.jpg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact/' ),
+		'appointment_url'=> home_url( '/contact-us/' ),
 	),
 	array(
 		'name'          => 'Dr. Roopa Ghanta',
@@ -59,7 +59,7 @@ $homepage_doctors = array(
 		'exp'           => '26+ Years Experience',
 		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/Roopa-Ganta.jpg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact/' ),
+		'appointment_url'=> home_url( '/contact-us/' ),
 	),
 	array(
 		'name'          => 'Dr.K.V.S. NARAYANA',
@@ -69,7 +69,7 @@ $homepage_doctors = array(
 		'exp'           => '30+ Years Experience',
 		'image'         => 'https://lotuslittlestars.in/wp-content/uploads/2026/06/KVS-Narayana.jpg',
 		'profile_url'   => home_url( '/doctors/' ), // Can be customized if specific URL exists
-		'appointment_url'=> home_url( '/contact/' ),
+		'appointment_url'=> home_url( '/contact-us/' ),
 	),
 );
 

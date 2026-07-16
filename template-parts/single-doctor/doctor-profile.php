@@ -168,7 +168,7 @@ if ( get_the_content() ) {
 					<?php endif; ?>
 
 					<!-- Book Appointment Button -->
-					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="w-full inline-flex items-center justify-center h-11 bg-[#A61A24] hover:bg-[#8B141B] text-white text-xs font-bold rounded-lg shadow-sm transition-all duration-200">
+					<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="w-full inline-flex items-center justify-center h-11 bg-[#A61A24] hover:bg-[#8B141B] text-white text-xs font-bold rounded-lg shadow-sm transition-all duration-200">
 						Book an Appointment
 					</a>
 

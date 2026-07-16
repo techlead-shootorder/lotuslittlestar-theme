@@ -110,13 +110,13 @@ if ( empty( $menu_items ) ) {
 					<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">About Us</a>
 					<a href="<?php echo esc_url( home_url( '/speciality/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Our Specialities</a>
 					<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Our Experts</a>
-					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Contact Us</a>
+					<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="text-brand-dark hover:text-brand-red transition-colors duration-200">Contact Us</a>
 				<?php endif; ?>
 			</nav>
 
 			<!-- Action Buttons -->
 			<div class="hidden md:flex items-center gap-3">
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm whitespace-nowrap">
+				<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm whitespace-nowrap">
 					Book Appointment
 				</a>
 				<a href="tel:+919666604444" class="inline-flex items-center justify-center gap-2 px-5 h-12 bg-white hover:bg-brand-cream text-brand-red border border-brand-red/30 hover:border-brand-red font-medium rounded-full shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-200 text-sm">
@@ -158,7 +158,7 @@ if ( empty( $menu_items ) ) {
 				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">About Us</a>
 				<a href="<?php echo esc_url( home_url( '/speciality/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Specialties</a>
 				<a href="<?php echo esc_url( home_url( '/doctors/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Our Experts</a>
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Contact Us</a>
+				<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="block px-3 py-2 rounded-lg text-brand-dark hover:text-brand-red hover:bg-brand-cream transition-all">Contact Us</a>
 			<?php endif; ?>
 			<div class="pt-4 pb-2 px-3 border-t border-brand-cream flex flex-col sm:flex-row gap-3">
 				<a href="tel:+919666604444" class="w-full inline-flex items-center justify-center gap-2 px-6 h-12 bg-white hover:bg-brand-cream text-brand-red border border-brand-red/30 font-medium rounded-full shadow-sm transition-all text-sm">
@@ -167,7 +167,7 @@ if ( empty( $menu_items ) ) {
 					</svg>
 					Call Now
 				</a>
-				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="w-full inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md transition-all text-sm">
+				<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="w-full inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md transition-all text-sm">
 					Book Appointment
 				</a>
 			</div>

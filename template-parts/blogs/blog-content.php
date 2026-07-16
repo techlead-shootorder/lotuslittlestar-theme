@@ -50,7 +50,7 @@ if ( empty( $cta_desc ) ) {
 }
 
 // Resolve link URL, title, and target
-$cta_url    = home_url( '/contact/' );
+$cta_url    = home_url( '/contact-us/' );
 $cta_title  = __( 'Consult a Specialist', 'lotus' );
 $cta_target = '_self';
 

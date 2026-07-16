@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Fetch SCF Fields
 $contact_page_id = get_the_ID();
 if ( ! is_page_template( 'page-contact.php' ) ) {
-	$contact_page = get_page_by_path( 'contact' );
+	$contact_page = get_page_by_path( 'contact-us' );
 	if ( $contact_page ) {
 		$contact_page_id = $contact_page->ID;
 	}
@@ -98,7 +98,7 @@ if ( ! empty( $contact_hero_background ) ) {
 					<h3 class="text-xl font-bold text-brand-dark mb-6 font-outfit">Send us a Message</h3>
 					
 					<!-- Zoho Appointment Booking Form Iframe -->
-					<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="no" style="height:720px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
+					<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="yes" style="height:420px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
 					</iframe>
 
 					<script type="text/javascript">

@@ -143,12 +143,12 @@ if ( ! function_exists( 'add_action' ) ) {
 		include ABSPATH . 'front-page.php';
 	} elseif ( $request === '/about' ) {
 		include ABSPATH . 'page-about.php';
-	} elseif ( $request === '/contact' ) {
+	} elseif ( $request === '/contact' || $request === '/contact-us' ) {
 		include ABSPATH . 'page-contact.php';
 	} elseif ( $request === '/doctors' ) {
 		include ABSPATH . 'archive-doctor.php';
 	} elseif ( $request === '/locations' ) {
-		header( 'Location: ' . home_url( '/contact' ) );
+		header( 'Location: ' . home_url( '/contact-us' ) );
 		exit;
 	} elseif ( $request === '/specialists' || $request === '/speciality' ) {
 		include ABSPATH . 'archive-speciality.php';
