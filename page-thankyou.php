@@ -16,7 +16,7 @@ get_header();
 
 
 
-<div class="py-20 md:py-32 flex flex-col items-center justify-center bg-brand-bg px-4 sm:px-6 lg:px-8">
+<div class="py-14 md:py-18 flex flex-col items-center justify-center bg-brand-bg px-4 sm:px-6 lg:px-8">
 	<div class="max-w-xl w-full text-center space-y-6 md:space-y-8">
 		<!-- Icon Container -->
 		<div class="flex justify-center">
