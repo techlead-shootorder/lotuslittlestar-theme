@@ -14,14 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<!-- Hide Header and Footer for a clean presentation matching the screenshot -->
-<style>
-	header, footer {
-		display: none !important;
-	}
-</style>
 
-<div class="min-h-screen flex flex-col items-center justify-center bg-brand-bg px-4 sm:px-6 lg:px-8 py-12">
+
+<div class="py-20 md:py-32 flex flex-col items-center justify-center bg-brand-bg px-4 sm:px-6 lg:px-8">
 	<div class="max-w-xl w-full text-center space-y-6 md:space-y-8">
 		<!-- Icon Container -->
 		<div class="flex justify-center">
