@@ -96,14 +96,14 @@ function lotus_render_specialty_card( $post_obj ) {
 		if ( is_array( $icon ) ) {
 			$icon_url  = ! empty( $icon['url'] ) ? $icon['url'] : '';
 			$icon_alt  = ! empty( $icon['alt'] ) ? $icon['alt'] : $title;
-			$icon_html = '<img src="' . esc_url( $icon_url ) . '" alt="' . esc_attr( $icon_alt ) . '" class="w-6 h-6 object-contain" loading="lazy" />';
+			$icon_html = '<img src="' . esc_url( $icon_url ) . '" alt="' . esc_attr( $icon_alt ) . '" class="w-14 h-14 object-contain" loading="lazy" />';
 		} elseif ( is_numeric( $icon ) ) {
 			$icon_url  = wp_get_attachment_url( $icon );
 			$icon_alt  = get_post_meta( $icon, '_wp_attachment_image_alt', true ) ?: $title;
-			$icon_html = '<img src="' . esc_url( $icon_url ) . '" alt="' . esc_attr( $icon_alt ) . '" class="w-6 h-6 object-contain" loading="lazy" />';
+			$icon_html = '<img src="' . esc_url( $icon_url ) . '" alt="' . esc_attr( $icon_alt ) . '" class="w-14 h-14 object-contain" loading="lazy" />';
 		} elseif ( is_string( $icon ) ) {
 			if ( filter_var( $icon, FILTER_VALIDATE_URL ) || preg_match( '/\.(jpg|jpeg|png|gif|svg|webp)/i', $icon ) ) {
-				$icon_html = '<img src="' . esc_url( $icon ) . '" alt="' . esc_attr( $title ) . '" class="w-6 h-6 object-contain" loading="lazy" />';
+				$icon_html = '<img src="' . esc_url( $icon ) . '" alt="' . esc_attr( $title ) . '" class="w-14 h-14 object-contain" loading="lazy" />';
 			} else {
 				$icon_html = $icon;
 			}
