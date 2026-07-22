@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<footer class="bg-brand-cream border-t border-brand-border pt-16 pb-12 mt-auto">
+<footer class="bg-brand-cream border-t border-brand-border pt-16 pb-24 md:pb-12 mt-auto">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-brand-border">
 			<!-- Column 1: Brand Info -->
@@ -84,7 +84,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<li class="pt-2">
 						<div class="flex items-center gap-3">
 							<!-- Facebook -->
-							<a href="https://www.facebook.com/littlestarsandshehyd/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#F4EBE1] text-brand-dark hover:bg-brand-red hover:text-white flex items-center justify-center transition-all duration-200" aria-label="Facebook">
+							<a href="https://www.facebook.com/littlestarsandshyd/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-[#F4EBE1] text-brand-dark hover:bg-brand-red hover:text-white flex items-center justify-center transition-all duration-200" aria-label="Facebook">
 								<svg class="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
 									<path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
 								</svg>
@@ -119,6 +119,91 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</div>
 </footer>
+
+<!-- Mobile Fixed Bottom Action Bar (Mobile View Only) -->
+<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#A61A24] rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.25)] border-t border-white/10 pb-safe">
+	<div class="grid grid-cols-2 divide-x divide-white/20 py-2.5">
+		<!-- Book Appointment Button -->
+		<a href="#booking-form" class="flex flex-col items-center justify-center text-center px-2 py-1 text-white hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none group">
+			<svg class="w-6 h-6 mb-1 text-white shrink-0 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+				<rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/>
+				<path d="M16 2v4M8 2v4M3 9h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+				<circle cx="15" cy="15" r="3" fill="#A61A24" stroke="currentColor" stroke-width="1.5"/>
+				<path d="M15 13.8v1.4l1 0.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+			</svg>
+			<span class="text-xs font-bold tracking-tight text-white">Book Appointment</span>
+		</a>
+
+		<!-- Call Button -->
+		<a href="tel:+919666604444" class="flex flex-col items-center justify-center text-center px-2 py-1 text-white hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none group">
+			<svg class="w-6 h-6 mb-1 text-white shrink-0 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 7a3 3 0 013 3M14 3a7 7 0 017 7" />
+			</svg>
+			<span class="text-xs font-bold tracking-tight text-white">+91 9666604444</span>
+		</a>
+	</div>
+</div>
+
+<?php if ( ! is_page_template( 'Landing-page.php' ) ) : ?>
+<!-- Booking Modal Popup for standard pages -->
+<div id="booking-modal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm hidden flex items-center justify-center p-4">
+	<div class="bg-white max-w-xl w-full p-4 md:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out" id="booking-modal-container">
+		<button id="close-booking-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none" aria-label="Close booking modal">
+			<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+			</svg>
+		</button>
+		<div class="mt-4 overflow-hidden rounded-xl">
+			<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" scrolling="no" style="height:700px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'></iframe>
+		</div>
+	</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+	const bookingModal = document.getElementById('booking-modal');
+	const modalContainer = document.getElementById('booking-modal-container');
+	const closeModalBtn = document.getElementById('close-booking-modal');
+	const body = document.body;
+
+	if (bookingModal && modalContainer) {
+		function openModal() {
+			bookingModal.classList.remove('hidden');
+			setTimeout(() => {
+				modalContainer.classList.remove('scale-95', 'opacity-0');
+				modalContainer.classList.add('scale-100', 'opacity-100');
+			}, 10);
+			body.classList.add('overflow-hidden');
+		}
+
+		function closeModal() {
+			modalContainer.classList.remove('scale-100', 'opacity-100');
+			modalContainer.classList.add('scale-95', 'opacity-0');
+			setTimeout(() => {
+				bookingModal.classList.add('hidden');
+			}, 300);
+			body.classList.remove('overflow-hidden');
+		}
+
+		document.querySelectorAll('a[href="#booking-form"]').forEach(btn => {
+			btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				openModal();
+			});
+		});
+
+		if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+		bookingModal.addEventListener('click', (e) => {
+			if (e.target === bookingModal) closeModal();
+		});
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && !bookingModal.classList.contains('hidden')) closeModal();
+		});
+	}
+});
+</script>
+<?php endif; ?>
 
 <?php wp_footer(); ?>
 </body>
