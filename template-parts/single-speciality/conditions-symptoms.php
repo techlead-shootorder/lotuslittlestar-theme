@@ -11,12 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $post_id = get_the_ID();
 
-// Fetch SCF/ACF Fields
-$conditions_heading   = function_exists( 'get_field' ) ? get_field( 'conditions_heading', $post_id ) : '';
-$conditions_list      = function_exists( 'get_field' ) ? get_field( 'conditions_list', $post_id ) : null;
-$symptoms_heading     = function_exists( 'get_field' ) ? get_field( 'symptoms_heading', $post_id ) : '';
-$symptoms_list        = function_exists( 'get_field' ) ? get_field( 'symptoms_list', $post_id ) : null;
-$symptoms_footer_text = function_exists( 'get_field' ) ? get_field( 'symptoms_footer_text', $post_id ) : '';
+// Fetch SCF/ACF Fields (Check both singular names used in WP Admin & plural names for backwards compatibility)
+$conditions_heading   = function_exists( 'get_field' ) ? ( get_field( 'condition_heading', $post_id ) ?: get_field( 'conditions_heading', $post_id ) ) : '';
+$conditions_list      = function_exists( 'get_field' ) ? ( get_field( 'condition_list', $post_id ) ?: get_field( 'conditions_list', $post_id ) ) : null;
+$symptoms_heading     = function_exists( 'get_field' ) ? ( get_field( 'symptom_heading', $post_id ) ?: get_field( 'symptoms_heading', $post_id ) ) : '';
+$symptoms_list        = function_exists( 'get_field' ) ? ( get_field( 'symptom_list', $post_id ) ?: get_field( 'symptoms_list', $post_id ) ) : null;
+$symptoms_footer_text = function_exists( 'get_field' ) ? ( get_field( 'symptom_footer_text', $post_id ) ?: get_field( 'symptoms_footer_text', $post_id ) ) : '';
 
 // Logic for conditional column spans
 $has_conditions = ! empty( $conditions_list ) && is_array( $conditions_list );
@@ -55,8 +55,18 @@ if ( $has_conditions && $has_symptoms ) {
 					<ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 text-brand-dark">
 						<?php 
 						foreach ( $conditions_list as $item ) : 
-							$condition_text = ! empty( $item['condition'] ) ? $item['condition'] : '';
-							if ( empty( $condition_text ) ) {
+							$condition_text = '';
+							if ( is_string( $item ) ) {
+								$condition_text = $item;
+							} elseif ( is_array( $item ) ) {
+								$condition_text = ! empty( $item['condition'] ) ? $item['condition'] : 
+									( ! empty( $item['condition_text'] ) ? $item['condition_text'] : 
+									( ! empty( $item['condition_name'] ) ? $item['condition_name'] : 
+									( ! empty( $item['text'] ) ? $item['text'] : 
+									( ! empty( $item['title'] ) ? $item['title'] : '' ) ) ) );
+							}
+							
+							if ( empty( trim( $condition_text ) ) ) {
 								continue;
 							}
 							?>
@@ -101,8 +111,18 @@ if ( $has_conditions && $has_symptoms ) {
 						<div class="flex flex-col gap-4 mb-8">
 							<?php 
 							foreach ( $symptoms_list as $item ) : 
-								$symptom_text = ! empty( $item['symptom'] ) ? $item['symptom'] : '';
-								if ( empty( $symptom_text ) ) {
+								$symptom_text = '';
+								if ( is_string( $item ) ) {
+									$symptom_text = $item;
+								} elseif ( is_array( $item ) ) {
+									$symptom_text = ! empty( $item['symptom'] ) ? $item['symptom'] : 
+										( ! empty( $item['symptom_text'] ) ? $item['symptom_text'] : 
+										( ! empty( $item['symptom_name'] ) ? $item['symptom_name'] : 
+										( ! empty( $item['text'] ) ? $item['text'] : 
+										( ! empty( $item['title'] ) ? $item['title'] : '' ) ) ) );
+								}
+
+								if ( empty( trim( $symptom_text ) ) ) {
 									continue;
 								}
 								?>
