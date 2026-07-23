@@ -145,7 +145,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </div>
 
-<?php if ( ! is_page_template( 'Landing-page.php' ) ) : ?>
+<?php 
+$is_single_speciality = is_singular( 'speciality' ) || is_page_template( 'single-speciality.php' ) || get_post_type() === 'speciality';
+if ( ! is_page_template( 'Landing-page.php' ) && ! $is_single_speciality ) : 
+?>
 <!-- Booking Modal Popup for standard pages -->
 <div id="booking-modal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm hidden flex items-center justify-center p-4">
 	<div class="bg-white max-w-xl w-full p-4 md:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out" id="booking-modal-container">
@@ -186,11 +189,12 @@ document.addEventListener('DOMContentLoaded', () => {
 			body.classList.remove('overflow-hidden');
 		}
 
-		document.querySelectorAll('a[href="#booking-form"]').forEach(btn => {
-			btn.addEventListener('click', (e) => {
+		document.addEventListener('click', (e) => {
+			const link = e.target.closest('a[href="#booking-form"]');
+			if (link) {
 				e.preventDefault();
 				openModal();
-			});
+			}
 		});
 
 		if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);

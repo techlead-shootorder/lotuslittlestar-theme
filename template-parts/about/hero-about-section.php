@@ -43,6 +43,9 @@ $has_primary   = is_array( $about_primary_button ) && ! empty( $about_primary_bu
 $has_secondary = is_array( $about_secondary_button ) && ! empty( $about_secondary_button['url'] );
 
 $primary_url    = $has_primary ? $about_primary_button['url'] : home_url( '/speciality/' );
+if ( false !== strpos( $primary_url, 'contact-us' ) ) {
+	$primary_url = '#booking-form';
+}
 $primary_title  = $has_primary && ! empty( $about_primary_button['title'] ) ? $about_primary_button['title'] : __( 'Our Specializations', 'lotus' );
 $primary_target = $has_primary && ! empty( $about_primary_button['target'] ) ? $about_primary_button['target'] : '_self';
 $primary_rel    = '_blank' === $primary_target ? ' rel="noopener"' : '';

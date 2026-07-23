@@ -90,7 +90,7 @@ $phone        = ! empty( $phone ) ? $phone : '';
 
 				<!-- Call to actions -->
 				<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-					<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="inline-flex items-center justify-center px-8 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-[12px] shadow-md transition-all">
+					<a href="#booking-form" class="inline-flex items-center justify-center px-8 h-12 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold rounded-[12px] shadow-md transition-all">
 						Book Appointment
 					</a>
 					<?php if ( ! empty( $phone ) ) : ?>

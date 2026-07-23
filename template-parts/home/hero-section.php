@@ -65,8 +65,12 @@ if ( is_array( $hero_bg_image ) && ! empty( $hero_bg_image['url'] ) ) {
 						if ( $has_primary ) :
 							$primary_target = ! empty( $hero_primary_button['target'] ) ? $hero_primary_button['target'] : '_self';
 							$primary_rel    = '_blank' === $primary_target ? ' rel="noopener"' : '';
+							$primary_url    = $hero_primary_button['url'];
+							if ( empty( $primary_url ) || false !== strpos( $primary_url, 'contact-us' ) ) {
+								$primary_url = '#booking-form';
+							}
 							?>
-							<a href="<?php echo esc_url( $hero_primary_button['url'] ); ?>" target="<?php echo esc_attr( $primary_target ); ?>"<?php echo $primary_rel; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-semibold rounded-[4px] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
+							<a href="<?php echo esc_url( $primary_url ); ?>" target="<?php echo esc_attr( $primary_target ); ?>"<?php echo $primary_rel; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-semibold rounded-[4px] shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
 								<?php echo esc_html( ! empty( $hero_primary_button['title'] ) ? $hero_primary_button['title'] : __( 'Book Appointment', 'lotus' ) ); ?>
 							</a>
 						<?php endif; ?>

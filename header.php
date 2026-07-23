@@ -116,7 +116,7 @@ if ( empty( $menu_items ) ) {
 
 			<!-- Action Buttons -->
 			<div class="hidden md:flex items-center gap-3">
-				<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm whitespace-nowrap">
+				<a href="#booking-form" class="inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 text-sm whitespace-nowrap">
 					Book Appointment
 				</a>
 				<a href="tel:+919666604444" class="inline-flex items-center justify-center gap-2 px-5 h-12 bg-white hover:bg-brand-cream text-brand-red border border-brand-red/30 hover:border-brand-red font-medium rounded-full shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-200 text-sm">
@@ -167,7 +167,7 @@ if ( empty( $menu_items ) ) {
 					</svg>
 					Call Now
 				</a>
-				<a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="w-full inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md transition-all text-sm">
+				<a href="#booking-form" class="w-full inline-flex items-center justify-center px-6 h-12 bg-brand-red hover:bg-brand-red-hover text-white font-medium rounded-full shadow-md transition-all text-sm">
 					Book Appointment
 				</a>
 			</div>
