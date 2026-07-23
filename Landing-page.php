@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<!-- Logo -->
 				<div class="flex-shrink-0 flex items-center">
 					<a href="#" class="flex items-center">
-						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-new-logo.gif" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-logo-2-scaled.png" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
 					</a>
 				</div>
 
@@ -103,13 +103,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<!-- Heading -->
 						<h1 class="text-3xl md:text-4xl lg:text-5xl font-mulish font-extrabold text-[#A61A24] leading-[1.1] mb-6">
-							Expert Paediatric Inpatient Care in Hyderabad
+							Expert Care for Every Woman & Every Child 
 						</h1>
 
 						<!-- Brand Name & Description -->
 						<div class="mb-6">
-							<h2 class="text-xl md:text-2xl font-bold text-[#536257] mb-1">Little Fernz</h2>
-							<p class="text-base md:text-lg text-gray-600 font-medium">Paediatric Inpatient Services at Fernandez Hospitals</p>
+							<h2 class="text-xl md:text-2xl font-bold text-[#536257] mb-1">Lotuslittlestars</h2>
+							<p class="text-base md:text-lg text-gray-600 font-medium">Comprehensive women's health, maternity, and pediatric care, delivered with compassion and clinical excellence.</p>
 						</div>
 
 						<!-- Location -->
@@ -119,7 +119,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								<path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
 							</svg>
 							<span class="text-sm md:text-base text-gray-700 font-semibold leading-relaxed">
-								Hyderguda | Bogulkunta | Stork Home (Banjara Hills)
+								Banjara Hills | Rajahmundry 
 							</span>
 						</div>
 
@@ -152,10 +152,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</a>
 						</div>
 
-						<!-- Disclaimer -->
-						<p class="text-xs md:text-sm text-gray-500 italic font-medium leading-relaxed max-w-xl">
-							Note: No On-site PICU, but supported by a trusted referral network for specialised care.
-						</p>
 					</div>
 
 					<!-- Right Column: Image Frame -->
@@ -248,12 +244,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						<!-- Description -->
 						<p class="text-base md:text-lg text-gray-600 font-medium leading-relaxed mb-6">
-							For over 15 years, Lotus Little Stars Hospital has been a trusted destination for families seeking the highest standards of healthcare. We believe that every woman deserves personalized wellness journeys and every child deserves the brightest start in life.
-						</p>
-						
-						<p class="text-base md:text-lg text-gray-600 font-medium leading-relaxed mb-8">
-							Our integrated approach combines cutting-edge medical technology with a deeply human touch, ensuring that your family's health is in the safest, most compassionate hands.
-						</p>
+							For over 15 years, Lotus Little Stars Hospital has been a trusted destination for women's and children's healthcare. Combining clinical excellence, compassionate care, and a multidisciplinary approach, we provide comprehensive healthcare that supports every stage of life—from women's wellness and maternity to newborn and pediatric specialty care.</p>
 
 						<!-- Features Check List -->
 						<div class="space-y-4">
@@ -317,7 +308,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							Women's Care
 						</h3>
 						<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
-							Advanced gynecological screenings, hormonal health management, and minimally invasive surgeries tailored for every life stage.
+							Comprehensive women's healthcare delivered through expert gynecological services, advanced treatments, and personalized care for every phase of life. 
 						</p>
 					</div>
 
@@ -330,7 +321,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							Maternity Care
 						</h3>
 						<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
-							Comprehensive prenatal, delivery, and postnatal support systems designed to make your journey to motherhood safe and joyful.
+							Guiding mothers through every step of pregnancy with expert prenatal care, safe childbirth, and specialized support for high-risk pregnancies. 
 						</p>
 					</div>
 
@@ -343,7 +334,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							Pediatric Care
 						</h3>
 						<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed">
-							Dedicated specialists providing neonatology, routine immunizations, and specialized pediatric emergency care 24/7.
+							Dedicated care for newborns, children, and adolescents through comprehensive pediatrics and specialized pediatric healthcare services. 
 						</p>
 					</div>
 
@@ -383,7 +374,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								Integrated Care
 							</h3>
 							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
-								One-stop solution for all health needs with seamless coordination between departments.
+								From women's health and maternity services to pediatric super specialties, our multidisciplinary teams provide seamless care for every stage of your family's healthcare journey. 
 							</p>
 						</div>
 
@@ -398,10 +389,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							
 							<h3 class="text-xl font-bold font-mulish text-[#A61A24] mb-3 relative z-10">
-								Clinical Expertise
+								Collaborative Clinical Expertise
 							</h3>
 							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
-								Over 50+ years of cumulative experience among our senior consultant team.
+								Our experienced specialists work together across disciplines to deliver coordinated, evidence-based care tailored to every patient's unique needs. 
 							</p>
 						</div>
 
@@ -416,10 +407,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							
 							<h3 class="text-xl font-bold font-mulish text-[#A61A24] mb-3 relative z-10">
-								Medical Excellence
+								Advanced Medical Excellence
 							</h3>
 							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
-								Equipped with the latest diagnostic and therapeutic technology in Hyderabad.
+								Supported by modern diagnostics and advanced medical infrastructure, we focus on accurate diagnosis, effective treatment, and better patient outcomes.
 							</p>
 						</div>
 
@@ -434,10 +425,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 							
 							<h3 class="text-xl font-bold font-mulish text-[#A61A24] mb-3 relative z-10">
-								Compassion
+								Compassion Beyond Treatmen
 							</h3>
 							<p class="text-sm md:text-base text-gray-600 font-medium leading-relaxed relative z-10">
-								Every patient is treated with dignity, warmth, and genuine human empathy.
+								We believe exceptional healthcare extends beyond medicine—providing clear communication, compassionate support, and personalized care for every family
 							</p>
 						</div>
 
@@ -476,10 +467,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<!-- Text Content -->
 							<div>
 								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
-									Initial Consultation
+									Book Your Appointment 
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
-									Review clinical history and current symptoms.
+									Schedule a consultation with your preferred specialist. 
 								</p>
 							</div>
 						</div>
@@ -493,10 +484,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<!-- Text Content -->
 							<div>
 								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
-									Diagnostic Mapping
+									Meet Our Specialists 
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
-									Advanced screening and immediate lab results.
+									Receive expert evaluation from experienced healthcare professionals.
 								</p>
 							</div>
 						</div>
@@ -510,10 +501,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<!-- Text Content -->
 							<div>
 								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
-									Personalized Care
+									Comprehensive Assessment 
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
-									Admission and round-the-clock specialized monitoring.
+									Undergo detailed clinical evaluation and personalized diagnosis.
 								</p>
 							</div>
 						</div>
@@ -527,10 +518,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<!-- Text Content -->
 							<div>
 								<h3 class="font-serif font-regular text-gray-900 text-lg md:text-xl mb-2 md:mt-4">
-									Continued Wellness
+									Recovery & Continued Care  
 								</h3>
 								<p class="text-sm md:text-base text-gray-500 font-medium leading-relaxed">
-									Post-discharge follow-ups and recovery support.
+									Benefit from ongoing follow-up and long-term support for better health outcomes. 
 								</p>
 							</div>
 						</div>
@@ -588,7 +579,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						Meet Our Experts
 					</h2>
 					<p class="text-base md:text-lg text-gray-500 font-medium leading-relaxed">
-						World-class doctors leading the way in family health.
+						Meet our experienced obstetricians, gynecologists, pediatricians, neonatologists, and pediatric super specialists, dedicated to delivering exceptional care for women and children.
 					</p>
 				</div>
 
@@ -782,15 +773,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			],
 			[
 				'question' => 'Do you provide emergency care?',
-				'answer'   => 'Yes, we provide 24/7 pediatric and neonatal emergency care services across all our locations.',
+				'answer'   => 'Yes. Lotus Little Stars Hospital provides emergency medical care for women, newborns, and children.',
 			],
 			[
 				'question' => 'Do you treat high-risk pregnancies?',
-				'answer'   => 'Yes, our highly experienced obstetricians and maternal-fetal medicine specialists are fully equipped to manage high-risk pregnancies.',
+				'answer'   => 'Yes. Our High-Risk Obstetric Unit provides specialized care and multidisciplinary support for high-risk pregnancies.',
 			],
 			[
 				'question' => 'What pediatric specialties are available?',
-				'answer'   => 'We offer comprehensive pediatric care, including pediatric cardiology, gastroenterology, neurology, and neonatal intensive care (NICU).',
+				'answer'   => 'Our pediatric department offers comprehensive care across neonatology and multiple pediatric super specialties, supporting children from birth through adolescence.',
 			],
 		];
 		?>
@@ -846,7 +837,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								Ready to Take the Next Step?
 							</h2>
 							<p class="text-green-100/90 text-base md:text-lg leading-relaxed mb-8 max-w-md">
-								Expert Care Begins with a Simple Conversation. Join over 50,000 families who have trusted us with their most precious health needs.
+								Expert Care Begins with a Simple Conversation Whether you're planning your pregnancy, seeking specialized women's healthcare, or looking for expert pediatric care, our specialists are here to support your family's health.
 							</p>
 
 							<!-- Bullets Row -->
