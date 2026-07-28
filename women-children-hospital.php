@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Landing Page
+ * Template Name: Women Children Hospital
  *
  * This is a completely custom static landing page template.
  *
