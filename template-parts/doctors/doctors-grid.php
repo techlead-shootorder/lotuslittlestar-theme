@@ -183,7 +183,7 @@ if ( $doctors_query->have_posts() ) {
 				<select id="location-filter" class="block w-full md:w-48 px-4 py-3 border border-brand-cream rounded-full bg-brand-bg text-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-coral transition-all">
 					<option value="">Locations</option>
 					<option value="hyderabad">Hyderabad</option>
-					<option value="rajahmundry">Rajahmundry</option>
+					<option value="rajamahendravaram">Rajamahendravaram</option>
 				</select>
 
 				<!-- Specialties (Care Type) Filter -->
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			const filterVal = card.getAttribute('data-filter') || "";
 
 			const matchesSearch = name.includes(searchVal);
-			const matchesLocation = locationVal === "" || location === locationVal;
+			const matchesLocation = locationVal === "" || location === locationVal || location.includes(locationVal) || (locationVal.includes("rajamahendravaram") && (location.includes("rajahmundry") || location.includes("rajamahendravaram"))) || (locationVal.includes("rajahmundry") && (location.includes("rajahmundry") || location.includes("rajamahendravaram")));
 			const matchesCare = careVal === "" || filterVal === careVal;
 
 			if (matchesSearch && matchesLocation && matchesCare) {

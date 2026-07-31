@@ -15,6 +15,7 @@ $experience   = get_post_meta( get_the_ID(), '_doctor_experience', true );
 $department   = get_post_meta( get_the_ID(), '_doctor_department', true );
 $success_rate = get_post_meta( get_the_ID(), '_doctor_success_rate', true );
 $phone        = get_post_meta( get_the_ID(), '_doctor_phone', true );
+$location     = get_post_meta( get_the_ID(), '_doctor_location', true );
 
 // No fallbacks for preview details (data must strictly come from the post)
 $specialty    = ! empty( $specialty ) ? $specialty : '';
@@ -22,6 +23,11 @@ $experience   = ! empty( $experience ) ? $experience : '';
 $department   = ! empty( $department ) ? $department : '';
 $success_rate = ! empty( $success_rate ) ? $success_rate : '';
 $phone        = ! empty( $phone ) ? $phone : '';
+$location     = ! empty( $location ) ? $location : '';
+
+if ( strcasecmp( $location, 'Rajahmundry' ) === 0 ) {
+	$location = 'Rajamahendravaram';
+}
 ?>
 
 <section class="py-12 bg-gradient-to-br from-brand-bg to-brand-cream/30 border-b border-brand-cream relative">
@@ -62,7 +68,7 @@ $phone        = ! empty( $phone ) ? $phone : '';
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
 					</svg>
-					Lotus Little Stars Hospital, Banjara Hills, Hyderabad
+					Lotus Little Stars Hospital, <?php echo esc_html( ! empty( $location ) ? ( strcasecmp( $location, 'Hyderabad' ) === 0 ? 'Banjara Hills, Hyderabad' : $location ) : 'Banjara Hills, Hyderabad' ); ?>
 				</p>
 
 				<?php 

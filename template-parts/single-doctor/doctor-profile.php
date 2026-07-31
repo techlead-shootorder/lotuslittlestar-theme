@@ -18,6 +18,7 @@ $phone             = get_post_meta( get_the_ID(), '_doctor_phone', true );
 $education_raw     = get_post_meta( get_the_ID(), '_doctor_education', true );
 $experience_raw    = get_post_meta( get_the_ID(), '_doctor_experience_detail', true );
 $working_hours_raw = get_post_meta( get_the_ID(), '_doctor_working_hours', true );
+$location          = get_post_meta( get_the_ID(), '_doctor_location', true );
 
 // Ensure empty variables if not set in backend
 $specialty_desc    = ! empty( $specialty_desc ) ? $specialty_desc : '';
@@ -27,6 +28,11 @@ $phone             = ! empty( $phone ) ? $phone : '';
 $education_raw     = ! empty( $education_raw ) ? $education_raw : '';
 $experience_raw    = ! empty( $experience_raw ) ? $experience_raw : '';
 $working_hours_raw = ! empty( $working_hours_raw ) ? $working_hours_raw : '';
+$location          = ! empty( $location ) ? $location : '';
+
+if ( strcasecmp( $location, 'Rajahmundry' ) === 0 ) {
+	$location = 'Rajamahendravaram';
+}
 
 // Parse Education/Degrees
 $education_items = ! empty( $education_raw ) ? array_filter( array_map( 'trim', explode( "\n", $education_raw ) ) ) : array();
@@ -115,8 +121,14 @@ if ( get_the_content() ) {
 					<?php endif; ?>
 
 					<!-- Fields List -->
-					<?php if ( ! empty( $department ) || ! empty( $degrees ) || ! empty( $experience ) ) : ?>
+					<?php if ( ! empty( $department ) || ! empty( $degrees ) || ! empty( $experience ) || ! empty( $location ) ) : ?>
 					<div class="space-y-4">
+						<?php if ( ! empty( $location ) ) : ?>
+						<div>
+							<span class="text-xs font-bold text-brand-dark block font-outfit">Location</span>
+							<span class="text-xs text-brand-muted mt-0.5 block break-words"><?php echo esc_html( $location ); ?></span>
+						</div>
+						<?php endif; ?>
 						<?php if ( ! empty( $department ) ) : ?>
 						<div>
 							<span class="text-xs font-bold text-brand-dark block font-outfit">Speciality</span>
@@ -139,7 +151,7 @@ if ( get_the_content() ) {
 					<?php endif; ?>
 
 					<!-- Divider -->
-					<?php if ( ! empty( $department ) || ! empty( $degrees ) || ! empty( $experience ) ) : ?>
+					<?php if ( ! empty( $department ) || ! empty( $degrees ) || ! empty( $experience ) || ! empty( $location ) ) : ?>
 					<div class="my-6 border-t border-brand-cream/80"></div>
 					<?php endif; ?>
 

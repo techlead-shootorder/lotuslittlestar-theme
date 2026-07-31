@@ -330,7 +330,7 @@ function lotus_render_doctor_meta_box( $post ) {
 				<td>
 					<select id="doctor_location" name="doctor_location" style="width: 100%;">
 						<option value="Hyderabad" <?php selected( $location, 'Hyderabad' ); ?>>Hyderabad</option>
-						<option value="Rajahmundry" <?php selected( $location, 'Rajahmundry' ); ?>>Rajahmundry</option>
+						<option value="Rajamahendravaram" <?php selected( $location === 'Rajamahendravaram' || $location === 'Rajahmundry', true ); ?>>Rajamahendravaram</option>
 					</select>
 				</td>
 			</tr>
