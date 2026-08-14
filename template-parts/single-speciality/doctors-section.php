@@ -37,10 +37,10 @@ if ( $cat_slug === 'child-care' ) {
 	$filter_keyword   = 'woman';
 }
 
-// Build query for doctors
+// Build query for doctors (limit to 3 doctors)
 $args = array(
 	'post_type'      => 'doctor',
-	'posts_per_page' => -1,
+	'posts_per_page' => 3,
 	'post_status'    => 'publish',
 	'orderby'        => 'title',
 	'order'          => 'ASC',
