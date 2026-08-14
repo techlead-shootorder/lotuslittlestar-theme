@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<!-- Logo -->
 				<div class="flex-shrink-0 flex items-center">
 					<a href="#" class="flex items-center">
-						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/06/lotus-logo-2-scaled.png" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
+						<img src="http://lotuslittlestars.in/wp-content/uploads/2026/08/lotus-logo-india.png" alt="Lotus Little Stars" class="h-16 md:h-20 w-auto object-contain">
 					</a>
 				</div>
 
