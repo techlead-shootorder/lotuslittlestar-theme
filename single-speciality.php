@@ -29,6 +29,9 @@ get_template_part( 'template-parts/single-speciality/diagnosis' );
 // Load the services section template part
 get_template_part( 'template-parts/single-speciality/services-section' );
 
+// Load the doctors section template part
+get_template_part( 'template-parts/single-speciality/doctors-section' );
+
 // Load the FAQ section template part
 get_template_part( 'template-parts/single-speciality/Faq-section' );
 
