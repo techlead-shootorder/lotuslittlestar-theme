@@ -922,7 +922,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</a>
 
 			<!-- Call Button -->
-			<a href="tel:+919666604444" class="flex flex-row items-center justify-center gap-3 text-center px-2 py-1 text-white hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none group">
+			<a href="tel:+918585856556" class="flex flex-row items-center justify-center gap-3 text-center px-2 py-1 text-white hover:bg-white/10 active:bg-white/20 transition-colors focus:outline-none group">
 				<svg class="w-6 h-6 mb-1 text-white shrink-0 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 7a3 3 0 013 3M14 3a7 7 0 017 7" />
