@@ -14,6 +14,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MMK8JCFP');</script>
+	<!-- End Google Tag Manager -->
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lotus Little Stars Hospitals</title>
@@ -60,6 +68,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</style>
 </head>
 <body class="bg-white min-h-screen flex flex-col justify-between">
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMK8JCFP"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 	
 	<!-- Header Navigation -->
 	<header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
@@ -72,8 +84,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</a>
 				</div>
 
-				<!-- CTA Button -->
-				<div>
+				<!-- CTA Buttons -->
+				<div class="flex items-center gap-3 md:gap-4">
+					<a href="tel:+918585856556" class="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-3 text-base font-semibold rounded-xl text-brand-red bg-red-50 hover:bg-red-100 border border-brand-red/20 transition-colors duration-200 shadow-sm">
+						<svg class="w-5 h-5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+						</svg>
+						<span>Call Now</span>
+					</a>
 					<a href="#booking-form" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold rounded-xl text-white bg-brand-red hover:bg-brand-red-hover transition-colors duration-200 shadow-sm">
 						Book Appointment
 					</a>
