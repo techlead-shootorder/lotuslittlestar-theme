@@ -151,14 +151,14 @@ if ( ! is_page_template( 'Landing-page.php' ) && ! $is_single_speciality ) :
 ?>
 <!-- Booking Modal Popup for standard pages -->
 <div id="booking-modal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm hidden flex items-center justify-center p-4">
-	<div class="bg-white max-w-xl w-full p-4 md:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out" id="booking-modal-container">
-		<button id="close-booking-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none" aria-label="Close booking modal">
+	<div class="bg-white max-w-xl w-full p-4 md:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out rounded-2xl" id="booking-modal-container">
+		<button id="close-booking-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none z-10" aria-label="Close booking modal">
 			<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 			</svg>
 		</button>
-		<div class="mt-4 overflow-hidden rounded-xl">
-			<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" scrolling="no" style="height:700px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'></iframe>
+		<div class="mt-4 rounded-xl">
+			<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'></iframe>
 		</div>
 	</div>
 </div>
@@ -205,6 +205,57 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (e.key === 'Escape' && !bookingModal.classList.contains('hidden')) closeModal();
 		});
 	}
+
+	// Zoho Frame referrer and auto-resize postMessage handler
+	const zf_popup_iframe = document.getElementById('ziframe_popup');
+	if (zf_popup_iframe) {
+		try {
+			var ifrmSrc = zf_popup_iframe.src;
+			if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
+				var rfr = window.location.href;
+				try { 
+					rfr = window.self !== window.top ? 
+						window.top.location.href : 
+						(/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
+				} catch (e) {}
+
+				if (rfr && rfr !== "") {
+					if (rfr.length > 1800) {
+						var queryIndex = rfr.indexOf('?');
+						if (queryIndex > -1) {
+							rfr = rfr.substring(0, queryIndex);
+						}
+						if (rfr.length > 1800) {
+							rfr = rfr.substring(0, 1800);
+						}
+					}
+					ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
+				}
+			}
+			if (zf_popup_iframe.src !== ifrmSrc) {
+				zf_popup_iframe.src = ifrmSrc;
+			}
+		} catch (e) {}
+	}
+
+	window.addEventListener('message', function(event) {
+		try {
+			var evntData = event.data;
+			if (evntData && typeof evntData === 'string') {
+				var zf_ifrm_data = evntData.split("|");
+				if (zf_ifrm_data.length === 2) {
+					var zf_perma = zf_ifrm_data[0];
+					var zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 20) + "px";
+					var iframe = document.getElementById('ziframe_popup');
+					if (iframe && iframe.src.indexOf(zf_perma) > 0) {
+						if (iframe.style.height !== zf_ifrm_ht_nw) {
+							iframe.style.height = zf_ifrm_ht_nw;
+						}
+					}
+				}
+			}
+		} catch (e) {}
+	}, false);
 });
 </script>
 <?php endif; ?>

@@ -885,7 +885,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<!-- Right Column: Zoho Iframe Form Box -->
 						<div class="lg:col-span-6">
 							<div class="bg-white rounded-[24px] p-4 md:p-6 shadow-2xl max-w-lg mx-auto w-full overflow-hidden">
-								<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="no" style="height:720px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
+								<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
 								</iframe>
 							</div>
 						</div>
@@ -898,18 +898,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Booking Modal Popup -->
 		<div id="booking-modal" class="fixed inset-0 bg-black/60 z-[100] backdrop-blur-sm hidden flex items-center justify-center p-4">
-			<div class="bg-white  max-w-xl w-full p-4 md:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out" id="booking-modal-container">
+			<div class="bg-white max-w-xl w-full p-4 md:p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out rounded-2xl" id="booking-modal-container">
 				
 				<!-- Close Button -->
-				<button id="close-booking-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none" aria-label="Close booking modal">
+				<button id="close-booking-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors focus:outline-none z-10" aria-label="Close booking modal">
 					<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 					</svg>
 				</button>
 
 				<!-- Modal Body (Zoho Form Iframe) -->
-				<div class="mt-4 overflow-hidden rounded-xl">
-					<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" scrolling="no" style="height:700px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
+				<div class="mt-4 rounded-xl">
+					<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
 					</iframe>
 				</div>
 
