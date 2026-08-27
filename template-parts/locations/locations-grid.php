@@ -55,7 +55,7 @@ if ( ! empty( $contact_hero_background ) ) {
 }
 ?>
 
-<section class="relative min-h-screen lg:min-h-0 flex items-center py-16 lg:py-14 border-b border-brand-cream/60 overflow-hidden">
+<section class="relative min-h-screen lg:min-h-0 flex items-center py-16 lg:py-10 border-b border-brand-cream/60 overflow-hidden">
 	<!-- Background Image -->
 	<div class="absolute inset-0 bg-cover bg-[position:80%_center] md:bg-right lg:bg-center bg-no-repeat -z-20" style="background-image: url('<?php echo esc_url( $bg_image_url ); ?>');"></div>
 	
@@ -98,7 +98,7 @@ if ( ! empty( $contact_hero_background ) ) {
 					<h3 class="text-xl font-bold text-brand-dark mb-6 font-outfit">Send us a Message</h3>
 					
 					<!-- Zoho Appointment Booking Form Scrollable Container -->
-					<div class="max-h-[460px] sm:max-h-[580px] overflow-y-auto pr-1 sm:pr-2 rounded-xl" style="-webkit-overflow-scrolling: touch;">
+					<div class="max-h-[420px] sm:max-h-[380px] overflow-y-auto pr-1 sm:pr-2 rounded-xl" style="-webkit-overflow-scrolling: touch;">
 						<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
 						</iframe>
 					</div>
