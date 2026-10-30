@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template part for displaying the home page stories of care (video & testimonials)
  *

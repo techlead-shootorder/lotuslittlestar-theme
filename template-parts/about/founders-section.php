@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template part for displaying the Founders section on the about page
  *

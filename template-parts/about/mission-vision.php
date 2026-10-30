@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template part for displaying the Mission and Vision section
  *

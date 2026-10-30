@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Template part for displaying the home page experts section
  *
@@ -47,7 +47,7 @@ if ( empty( $expert_doctor_description ) ) {
 		</div>
 
 		<!-- Doctors Grid -->
-		<div class="flex flex-wrap justify-center gap-8">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
 			<?php
 			// Query doctor posts checked for display in the experts section
 			$experts_args = array(
