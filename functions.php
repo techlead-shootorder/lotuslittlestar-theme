@@ -607,6 +607,10 @@ function lotus_submit_appointment_ajax() {
 			'value' => ! empty( $description ) ? $description : 'Appointment booking request',
 		),
 		array(
+			'label' => 'preferred_city',
+			'value' => $branch_id,
+		),
+		array(
 			'label' => 'form name',
 			'value' => $form_name,
 		),
@@ -634,7 +638,7 @@ function lotus_submit_appointment_ajax() {
 		'email'             => $email,
 		'doctor'            => $doctor,
 		'department'        => $department,
-		'branch_id'         => $branch_id,
+		'branch_id'         => null,
 		'appointment_date'  => '',
 		'campaign_id'       => $campaign_id,
 		'campaign_name'     => $campaign_name,

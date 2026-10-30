@@ -232,6 +232,25 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 <?php endif; ?>
 
+<!-- Apex cura virtual assistant script start -->
+<style>
+#apexcura-chatbot {
+	position: fixed !important;
+	bottom: 75px !important;
+	right: 15px !important;
+	z-index: 10000 !important;
+}
+@media (min-width: 768px) {
+	#apexcura-chatbot {
+		bottom: 15px !important;
+		right: 15px !important;
+	}
+}
+</style>
+<div id="apexcura-chatbot" style="position:fixed; bottom:10px; right:10px; z-index:10000;"></div>
+<script src="https://suite.apexcura.com/api/public/scripts/apexcura-chatbot.js"></script>
+<!-- Apex cura virtual assistant script end -->
+
 <?php wp_footer(); ?>
 </body>
 </html>

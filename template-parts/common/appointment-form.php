@@ -374,6 +374,7 @@ if (!window.lotusAppointmentFormInitialized) {
 
 						var additionalFields = [
 							{ label: 'message', value: description || 'Appointment booking request' },
+							{ label: 'preferred_city', value: branchId || 'Hyderabad' },
 							{ label: 'form name', value: formName },
 							{ label: 'form path', value: formPath }
 						];
@@ -389,7 +390,7 @@ if (!window.lotusAppointmentFormInitialized) {
 							email: email,
 							doctor: doctor,
 							department: department,
-							branch_id: branchId,
+							branch_id: null,
 							appointment_date: '',
 							campaign_id: campaignId,
 							campaign_name: campaignId,
