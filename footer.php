@@ -54,6 +54,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Privacy Policy</a>
 					</li>
 					<li>
+						<a href="<?php echo esc_url( home_url( '/terms-and-conditions/' ) ); ?>" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Terms &amp; Conditions</a>
+					</li>
+					<li>
 						<a href="#" class="text-brand-muted hover:text-brand-red transition-colors duration-150">Insurance Partners</a>
 					</li>
 					<li>
@@ -112,10 +115,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		
 
 		<!-- Footer Bottom Credits -->
-		<div class="mt-8 flex flex-col md:flex-row items-center justify-center text-xs text-brand-muted/75 gap-4">
-			<p class="text-brand-muted text-xs mt-4">
-					&copy; <?php echo date( 'Y' ); ?> Lotus Little Stars. All rights reserved.
-				</p>
+		<div class="mt-8 pt-6 border-t border-brand-border/40 flex flex-col md:flex-row items-center justify-between text-xs text-brand-muted gap-4">
+			<p>&copy; <?php echo date( 'Y' ); ?> Lotus Little Stars. All rights reserved.</p>
+			<div class="flex items-center gap-5">
+				<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="hover:text-brand-red transition-colors">Privacy Policy</a>
+				<span class="text-gray-300">•</span>
+				<a href="<?php echo esc_url( home_url( '/terms-and-conditions/' ) ); ?>" class="hover:text-brand-red transition-colors">Terms &amp; Conditions</a>
+			</div>
 		</div>
 	</div>
 </footer>

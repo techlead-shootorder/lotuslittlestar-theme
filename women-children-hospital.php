@@ -941,9 +941,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</main>
 
 	<!-- Footer Section -->
-	<footer class="bg-gray-50 border-t border-gray-100 py-6 pb-20 md:pb-6 text-center text-sm text-gray-500">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	<footer class="bg-gray-50 border-t border-gray-100 py-6 pb-20 md:pb-6 text-sm text-gray-500">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
 			<p>&copy; <?php echo date('Y'); ?> Lotus Little Stars Hospitals. All rights reserved.</p>
+			<div class="flex items-center gap-5 text-xs text-gray-500">
+				<a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="hover:text-brand-red transition-colors">Privacy Policy</a>
+				<span class="text-gray-300">•</span>
+				<a href="<?php echo esc_url( home_url( '/terms-and-conditions/' ) ); ?>" class="hover:text-brand-red transition-colors">Terms &amp; Conditions</a>
+			</div>
 		</div>
 	</footer>
 

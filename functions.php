@@ -47,11 +47,13 @@ function lotus_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'lotus_enqueue_assets' );
 
 /**
- * Automatically route /thank-you and /thankyou requests to page-thankyou.php template
+ * Automatically route special custom pages (/thank-you, /terms-and-conditions, /privacy-policy)
  */
-function lotus_thankyou_template_redirect( $template ) {
+function lotus_custom_pages_template_redirect( $template ) {
 	$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
 	$path = trim( (string) parse_url( $request_uri, PHP_URL_PATH ), '/' );
+
+	// Thank You page
 	if ( $path === 'thank-you' || $path === 'thankyou' || preg_match( '#^thank-?you/?$#i', $path ) ) {
 		$ty_file = get_template_directory() . '/page-thankyou.php';
 		if ( file_exists( $ty_file ) ) {
@@ -59,9 +61,28 @@ function lotus_thankyou_template_redirect( $template ) {
 			return $ty_file;
 		}
 	}
+
+	// Terms and Conditions page
+	if ( $path === 'terms-and-conditions' || $path === 'terms-conditions' || $path === 'terms' ) {
+		$tc_file = get_template_directory() . '/terms.php';
+		if ( file_exists( $tc_file ) ) {
+			status_header( 200 );
+			return $tc_file;
+		}
+	}
+
+	// Privacy Policy page
+	if ( $path === 'privacy-policy' || $path === 'privacy' ) {
+		$pp_file = get_template_directory() . '/privacy.php';
+		if ( file_exists( $pp_file ) ) {
+			status_header( 200 );
+			return $pp_file;
+		}
+	}
+
 	return $template;
 }
-add_filter( 'template_include', 'lotus_thankyou_template_redirect', 99 );
+add_filter( 'template_include', 'lotus_custom_pages_template_redirect', 99 );
 
 /**
  * Register Doctor Custom Post Type
