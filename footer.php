@@ -157,8 +157,20 @@ if ( ! is_page_template( 'Landing-page.php' ) && ! $is_single_speciality ) :
 				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 			</svg>
 		</button>
-		<div class="mt-4 rounded-xl">
-			<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'></iframe>
+		<div class="mt-4">
+			<?php 
+			get_template_part( 
+				'template-parts/common/appointment-form', 
+				null, 
+				array( 
+					'form_id'    => 'modal_form',
+					'card_class' => 'bg-transparent border-0 p-0 shadow-none',
+					'show_title' => true,
+					'title'      => __( 'Book an Appointment', 'lotus' ),
+					'subtitle'   => __( 'Fill out the form below and our specialists will reach out to you shortly.', 'lotus' ),
+				) 
+			); 
+			?>
 		</div>
 	</div>
 </div>
@@ -171,7 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const body = document.body;
 
 	if (bookingModal && modalContainer) {
-		function openModal() {
+		function openModal(doctorName) {
+			if (doctorName) {
+				const doctorInput = bookingModal.querySelector('input[name="doctor"]');
+				if (doctorInput) doctorInput.value = doctorName;
+			}
 			bookingModal.classList.remove('hidden');
 			setTimeout(() => {
 				modalContainer.classList.remove('scale-95', 'opacity-0');
@@ -193,7 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			const link = e.target.closest('a[href="#booking-form"]');
 			if (link) {
 				e.preventDefault();
-				openModal();
+				const doc = link.getAttribute('data-doctor') || '';
+				openModal(doc);
 			}
 		});
 
@@ -205,57 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			if (e.key === 'Escape' && !bookingModal.classList.contains('hidden')) closeModal();
 		});
 	}
-
-	// Zoho Frame referrer and auto-resize postMessage handler
-	const zf_popup_iframe = document.getElementById('ziframe_popup');
-	if (zf_popup_iframe) {
-		try {
-			var ifrmSrc = zf_popup_iframe.src;
-			if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
-				var rfr = window.location.href;
-				try { 
-					rfr = window.self !== window.top ? 
-						window.top.location.href : 
-						(/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
-				} catch (e) {}
-
-				if (rfr && rfr !== "") {
-					if (rfr.length > 1800) {
-						var queryIndex = rfr.indexOf('?');
-						if (queryIndex > -1) {
-							rfr = rfr.substring(0, queryIndex);
-						}
-						if (rfr.length > 1800) {
-							rfr = rfr.substring(0, 1800);
-						}
-					}
-					ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
-				}
-			}
-			if (zf_popup_iframe.src !== ifrmSrc) {
-				zf_popup_iframe.src = ifrmSrc;
-			}
-		} catch (e) {}
-	}
-
-	window.addEventListener('message', function(event) {
-		try {
-			var evntData = event.data;
-			if (evntData && typeof evntData === 'string') {
-				var zf_ifrm_data = evntData.split("|");
-				if (zf_ifrm_data.length === 2) {
-					var zf_perma = zf_ifrm_data[0];
-					var zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 20) + "px";
-					var iframe = document.getElementById('ziframe_popup');
-					if (iframe && iframe.src.indexOf(zf_perma) > 0) {
-						if (iframe.style.height !== zf_ifrm_ht_nw) {
-							iframe.style.height = zf_ifrm_ht_nw;
-						}
-					}
-				}
-			}
-		} catch (e) {}
-	}, false);
 });
 </script>
 <?php endif; ?>

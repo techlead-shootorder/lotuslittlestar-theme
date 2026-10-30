@@ -882,11 +882,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 						</div>
 
-						<!-- Right Column: Zoho Iframe Form Box -->
+						<!-- Right Column: Appointment Form Box -->
 						<div class="lg:col-span-6">
-							<div class="bg-white rounded-[24px] p-4 md:p-6 shadow-2xl max-w-lg mx-auto w-full overflow-hidden">
-								<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
-								</iframe>
+							<div class="bg-white rounded-[24px] p-6 md:p-8 shadow-2xl max-w-lg mx-auto w-full">
+								<?php 
+								get_template_part( 
+									'template-parts/common/appointment-form', 
+									null, 
+									array( 
+										'form_id'    => 'landing_page_form',
+										'card_class' => 'bg-transparent border-0 p-0 shadow-none',
+										'show_title' => true,
+										'title'      => __( 'Book Consultation', 'lotus' ),
+										'subtitle'   => __( 'Fill out the form below to connect with our specialists.', 'lotus' ),
+									) 
+								); 
+								?>
 							</div>
 						</div>
 
@@ -907,10 +918,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</svg>
 				</button>
 
-				<!-- Modal Body (Zoho Form Iframe) -->
-				<div class="mt-4 rounded-xl">
-					<iframe id="ziframe_popup" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
-					</iframe>
+				<!-- Modal Body -->
+				<div class="mt-4">
+					<?php 
+					get_template_part( 
+						'template-parts/common/appointment-form', 
+						null, 
+						array( 
+							'form_id'    => 'landing_modal_form',
+							'card_class' => 'bg-transparent border-0 p-0 shadow-none',
+							'show_title' => true,
+							'title'      => __( 'Book an Appointment', 'lotus' ),
+							'subtitle'   => __( 'Fill out the form below and our team will get in touch with you.', 'lotus' ),
+						) 
+					); 
+					?>
 				</div>
 
 			</div>
@@ -1026,69 +1048,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					closeModal();
 				}
 			});
-
-			// Zoho Frame resizing and referrer addition
-			const zohoFrames = [
-				document.getElementById('ziframe_518622'),
-				document.getElementById('ziframe_popup')
-			];
-
-			zohoFrames.forEach(zf_frame => {
-				if (!zf_frame) return;
-				try {
-					var ifrmSrc = zf_frame.src;
-					if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
-						var rfr = window.location.href;
-						try { 
-							rfr = window.self !== window.top ? 
-								window.top.location.href : 
-								(/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
-						} catch (e) {}
-
-						if (rfr && rfr !== "") {
-							if (rfr.length > 1800) {
-								var queryIndex = rfr.indexOf('?');
-								if (queryIndex > -1) {
-									rfr = rfr.substring(0, queryIndex);
-								}
-								if (rfr.length > 1800) {
-									rfr = rfr.substring(0, 1800);
-								}
-							}
-							ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
-						}
-					}
-					if (zf_frame.src !== ifrmSrc) {
-						zf_frame.src = ifrmSrc;
-					}
-				} catch (e) {}
-			});
-
-			// Listen to messages from the Zoho Form to auto-resize and remove scrollbar
-			window.addEventListener('message', function(event) {
-				try {
-					var evntData = event.data;
-					if (evntData && typeof evntData === 'string') {
-						var zf_ifrm_data = evntData.split("|");
-						if (zf_ifrm_data.length === 2) {
-							var zf_perma = zf_ifrm_data[0];
-							var zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px";
-							
-							zohoFrames.forEach(iframe => {
-								if (iframe && iframe.src.indexOf(zf_perma) > 0) {
-									if (iframe.style.height !== zf_ifrm_ht_nw) {
-										iframe.style.height = zf_ifrm_ht_nw;
-									}
-								}
-							});
-						}
-					}
-				} catch (e) {}
-			}, false);
 		});
 	</script>
 
-	
+	<!-- ApexCura Form Submission Script -->
+	<script>
+		window.lotusAjax = { ajaxurl: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" };
+	</script>
+	<script src="<?php echo esc_url( get_template_directory_uri() . '/assets/js/appointment-form.js' ); ?>"></script>
 
 </body>
 </html>

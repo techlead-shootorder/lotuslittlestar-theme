@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Mock WordPress Environment & URL Router
  * 

@@ -97,66 +97,17 @@ if ( ! empty( $contact_hero_background ) ) {
 				<div class="bg-white border border-[#EBE8E2] rounded-[2rem] p-6 sm:p-8 shadow-sm">
 					<h3 class="text-xl font-bold text-brand-dark mb-6 font-outfit">Send us a Message</h3>
 					
-					<!-- Zoho Appointment Booking Form Scrollable Container -->
-					<div class="max-h-[420px] sm:max-h-[380px] overflow-y-auto pr-1 sm:pr-2 rounded-xl" style="-webkit-overflow-scrolling: touch;">
-						<iframe id="ziframe_518622" aria-label="Appointment Booking Form" frameborder="0" scrolling="auto" style="height:880px;min-height:750px;width:100%;border:none;transition:height 0.2s ease-in-out;" src='https://forms.zohopublic.in/lotuslittlestars1/form/AppointmentBookingForm/formperma/PjujkW3Efvz-ZdXvFM0ey7k0rNAlotX7ZcStZBYd3Bg'>    
-						</iframe>
-					</div>
-
-					<script type="text/javascript">
-					(function() {
-					  try {
-						var zf_frame = document.getElementById("ziframe_518622");
-						var ifrmSrc = zf_frame.src;
-
-							if (!((new RegExp("[?&]referrername=")).test(ifrmSrc))) {
-								var rfr = window.location.href;
-
-								try { 
-									rfr = window.self !== window.top ? 
-										window.top.location.href : 
-										(/^https?:\/\/[\w.-]+\.[a-zA-Z]{2,}/i.test(rfr) ? rfr : "");
-								} catch (e) {}
-
-								if (rfr && rfr !== "") {
-									if (rfr.length > 1800) {
-										var queryIndex = rfr.indexOf('?');
-										if (queryIndex > -1) {
-											rfr = rfr.substring(0, queryIndex);
-										}
-										if (rfr.length > 1800) {
-											rfr = rfr.substring(0, 1800);
-										}
-									}
-									ifrmSrc += ((ifrmSrc.indexOf('?') > 0) ? '&' : '?') + 'referrername=' + encodeURIComponent(rfr);
-								}
-							}
-							if (zf_frame.src !== ifrmSrc) {
-								zf_frame.src = ifrmSrc;
-							}
-					  } catch (e) {}
-
-					  // Listen to messages from the Zoho Form to auto-resize and remove scrollbar
-					  window.addEventListener('message', function(event) {
-						try {
-						  var evntData = event.data;
-						  if (evntData && typeof evntData === 'string') {
-							var zf_ifrm_data = evntData.split("|");
-							if (zf_ifrm_data.length === 2) {
-							  var zf_perma = zf_ifrm_data[0];
-							  var zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px";
-							  var iframe = document.getElementById("ziframe_518622");
-							  if (iframe && iframe.src.indexOf(zf_perma) > 0) {
-								if (iframe.style.height !== zf_ifrm_ht_nw) {
-								  iframe.style.height = zf_ifrm_ht_nw;
-								}
-							  }
-							}
-						  }
-						} catch (e) {}
-					  }, false);
-					})();
-					</script>
+					<?php 
+					get_template_part( 
+						'template-parts/common/appointment-form', 
+						null, 
+						array( 
+							'form_id'    => 'locations_form',
+							'card_class' => 'bg-transparent border-0 p-0 shadow-none',
+							'show_title' => false,
+						) 
+					); 
+					?>
 				</div>
 			</div>
 

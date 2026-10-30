@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Reusable Doctor Card Component
  *

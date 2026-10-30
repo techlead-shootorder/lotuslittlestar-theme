@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Template part for displaying the Our Presence section on the home page
  *

@@ -43,6 +43,12 @@ add_action( 'after_setup_theme', 'lotus_theme_setup' );
 function lotus_enqueue_assets() {
 	// Enqueue main stylesheet.
 	wp_enqueue_style( 'lotus-style', get_stylesheet_uri(), array(), '1.0.0' );
+
+	// Enqueue appointment form script.
+	wp_enqueue_script( 'lotus-appointment-form', get_template_directory_uri() . '/assets/js/appointment-form.js', array(), '1.0.0', true );
+	wp_localize_script( 'lotus-appointment-form', 'lotusAjax', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'lotus_enqueue_assets' );
 
@@ -528,3 +534,99 @@ function lotus_get_doctor_excerpt( $post_id, $limit = 120 ) {
 
 	return $excerpt;
 }
+
+/**
+ * Handle ApexCura Appointment Form AJAX Submission
+ */
+function lotus_submit_appointment_ajax() {
+	// Sanitize form inputs
+	$first_name     = isset( $_POST['first_name'] ) ? sanitize_text_field( wp_unslash( $_POST['first_name'] ) ) : '';
+	$last_name      = isset( $_POST['last_name'] ) ? sanitize_text_field( wp_unslash( $_POST['last_name'] ) ) : '';
+	$full_name      = trim( $first_name . ' ' . $last_name );
+	$mobile_number  = isset( $_POST['mobile_number'] ) ? sanitize_text_field( wp_unslash( $_POST['mobile_number'] ) ) : '';
+	$email          = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+	$branch_id      = isset( $_POST['branch_id'] ) ? sanitize_text_field( wp_unslash( $_POST['branch_id'] ) ) : 'Hyderabad';
+	$department     = isset( $_POST['department'] ) ? sanitize_text_field( wp_unslash( $_POST['department'] ) ) : '';
+	$doctor         = isset( $_POST['doctor'] ) ? sanitize_text_field( wp_unslash( $_POST['doctor'] ) ) : '';
+	$description    = isset( $_POST['description'] ) ? sanitize_textarea_field( wp_unslash( $_POST['description'] ) ) : '';
+	$form_name      = isset( $_POST['form_name'] ) && ! empty( $_POST['form_name'] ) ? sanitize_text_field( wp_unslash( $_POST['form_name'] ) ) : 'Contact Us';
+	$form_path      = isset( $_POST['form_path'] ) && ! empty( $_POST['form_path'] ) ? esc_url_raw( wp_unslash( $_POST['form_path'] ) ) : home_url();
+	$source_id      = isset( $_POST['source_id'] ) && ! empty( $_POST['source_id'] ) ? sanitize_text_field( wp_unslash( $_POST['source_id'] ) ) : 'website';
+	$campaign_id    = isset( $_POST['campaign_id'] ) ? sanitize_text_field( wp_unslash( $_POST['campaign_id'] ) ) : '';
+	$campaign_name  = isset( $_POST['campaign_name'] ) ? sanitize_text_field( wp_unslash( $_POST['campaign_name'] ) ) : '';
+
+	// Basic validation
+	if ( empty( $first_name ) ) {
+		wp_send_json_error( array( 'message' => __( 'First name is required.', 'lotus' ) ) );
+	}
+	if ( empty( $mobile_number ) ) {
+		wp_send_json_error( array( 'message' => __( 'Mobile number is required.', 'lotus' ) ) );
+	}
+
+	// Prepare additional fields array
+	$additional_fields = array(
+		array(
+			'label' => 'message',
+			'value' => ! empty( $description ) ? $description : 'Appointment booking request',
+		),
+		array(
+			'label' => 'form name',
+			'value' => $form_name,
+		),
+		array(
+			'label' => 'form path',
+			'value' => $form_path,
+		),
+	);
+
+	if ( ! empty( $_POST['utm_source'] ) ) {
+		$additional_fields[] = array( 'label' => 'utm_source', 'value' => sanitize_text_field( wp_unslash( $_POST['utm_source'] ) ) );
+	}
+	if ( ! empty( $_POST['utm_medium'] ) ) {
+		$additional_fields[] = array( 'label' => 'utm_medium', 'value' => sanitize_text_field( wp_unslash( $_POST['utm_medium'] ) ) );
+	}
+	if ( ! empty( $_POST['utm_campaign'] ) ) {
+		$additional_fields[] = array( 'label' => 'utm_campaign', 'value' => sanitize_text_field( wp_unslash( $_POST['utm_campaign'] ) ) );
+	}
+
+	$payload = array(
+		'full_name'         => $full_name,
+		'mobile_number'     => $mobile_number,
+		'domain'            => 'lotuslittlestars.in',
+		'source_id'         => $source_id,
+		'email'             => $email,
+		'doctor'            => $doctor,
+		'department'        => $department,
+		'branch_id'         => $branch_id,
+		'appointment_date'  => '',
+		'campaign_id'       => $campaign_id,
+		'campaign_name'     => $campaign_name,
+		'form_id'           => '',
+		'form_name'         => $form_name,
+		'additional_fields' => $additional_fields,
+	);
+
+	$response = wp_remote_post( 'https://suite.apexcura.com/api/contactForm', array(
+		'headers'     => array(
+			'Content-Type' => 'application/json',
+		),
+		'body'        => wp_json_encode( $payload ),
+		'timeout'     => 15,
+		'data_format' => 'body',
+	) );
+
+	if ( is_wp_error( $response ) ) {
+		wp_send_json_error( array( 'message' => $response->get_error_message() ) );
+	}
+
+	$body = wp_remote_retrieve_body( $response );
+	$data = json_decode( $body, true );
+
+	if ( ! empty( $data['status'] ) || ! empty( $data['success'] ) ) {
+		wp_send_json_success( array( 'message' => ! empty( $data['message'] ) ? $data['message'] : __( 'Appointment details submitted successfully!', 'lotus' ) ) );
+	} else {
+		wp_send_json_error( array( 'message' => ! empty( $data['message'] ) ? $data['message'] : __( 'Unable to submit your details. Please try again.', 'lotus' ) ) );
+	}
+}
+add_action( 'wp_ajax_lotus_submit_appointment', 'lotus_submit_appointment_ajax' );
+add_action( 'wp_ajax_nopriv_lotus_submit_appointment', 'lotus_submit_appointment_ajax' );
