@@ -33,6 +33,23 @@ if ( is_singular( 'doctor' ) ) {
 		</div>
 	<?php endif; ?>
 
+	<style>
+		.custom-form-scroll::-webkit-scrollbar {
+			width: 6px;
+		}
+		.custom-form-scroll::-webkit-scrollbar-track {
+			background: #F5F2EB;
+			border-radius: 4px;
+		}
+		.custom-form-scroll::-webkit-scrollbar-thumb {
+			background: #CA9E45;
+			border-radius: 4px;
+		}
+		.custom-form-scroll::-webkit-scrollbar-thumb:hover {
+			background: #A61A24;
+		}
+	</style>
+
 	<form class="apexcura-appointment-form" id="form_<?php echo esc_attr( $form_instance_id ); ?>" method="POST" novalidate>
 		<!-- Hidden Context Fields -->
 		<input type="hidden" name="domain" value="lotuslittlestars.in" />
@@ -49,13 +66,13 @@ if ( is_singular( 'doctor' ) ) {
 		<!-- Feedback Alerts -->
 		<div class="form-feedback hidden mb-4 p-3 rounded-[6px] text-sm font-medium text-center transition-all"></div>
 
-		<!-- Name Field (First Name + Last Name) -->
-		<div class="mb-4">
-			<label for="first_name_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
-				<?php esc_html_e( 'Name', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
-			</label>
-			<div class="space-y-2">
-				<!-- First Name with User Icon -->
+		<!-- Scrollable Fields Container -->
+		<div class="max-h-[360px] sm:max-h-[380px] overflow-y-auto pr-1.5 custom-form-scroll space-y-4 mb-4" style="-webkit-overflow-scrolling: touch;">
+			<!-- Name Field (Single input mapped to full_name) -->
+			<div>
+				<label for="name_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
+					<?php esc_html_e( 'Name', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
+				</label>
 				<div class="relative">
 					<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
 						<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -64,131 +81,121 @@ if ( is_singular( 'doctor' ) ) {
 					</span>
 					<input 
 						type="text" 
-						id="first_name_<?php echo esc_attr( $form_instance_id ); ?>" 
-						name="first_name" 
+						id="name_<?php echo esc_attr( $form_instance_id ); ?>" 
+						name="full_name" 
 						required 
-						placeholder="<?php esc_attr_e( 'First Name', 'lotus' ); ?>" 
+						placeholder="<?php esc_attr_e( 'Name', 'lotus' ); ?>" 
 						class="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all" 
 					/>
 				</div>
-				<!-- Last Name -->
-				<div>
+			</div>
+
+			<!-- Email Field -->
+			<div>
+				<label for="email_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
+					<?php esc_html_e( 'Email', 'lotus' ); ?>
+				</label>
+				<div class="relative">
+					<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+						<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						</svg>
+					</span>
 					<input 
-						type="text" 
-						id="last_name_<?php echo esc_attr( $form_instance_id ); ?>" 
-						name="last_name" 
-						placeholder="<?php esc_attr_e( 'Last Name', 'lotus' ); ?>" 
-						class="w-full px-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all" 
+						type="email" 
+						id="email_<?php echo esc_attr( $form_instance_id ); ?>" 
+						name="email" 
+						placeholder="" 
+						class="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all" 
 					/>
 				</div>
 			</div>
-		</div>
 
-		<!-- Email Field -->
-		<div class="mb-4">
-			<label for="email_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
-				<?php esc_html_e( 'Email', 'lotus' ); ?>
-			</label>
-			<div class="relative">
-				<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
-					<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-					</svg>
-				</span>
-				<input 
-					type="email" 
-					id="email_<?php echo esc_attr( $form_instance_id ); ?>" 
-					name="email" 
-					placeholder="" 
-					class="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all" 
-				/>
+			<!-- Phone Field -->
+			<div>
+				<label for="phone_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
+					<?php esc_html_e( 'Phone', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
+				</label>
+				<div class="relative">
+					<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
+						<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+							<rect x="7" y="2" width="10" height="20" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<line x1="11" y1="18" x2="13" y2="18" stroke-linecap="round"/>
+						</svg>
+					</span>
+					<input 
+						type="tel" 
+						id="phone_<?php echo esc_attr( $form_instance_id ); ?>" 
+						name="phone" 
+						required 
+						maxlength="10" 
+						pattern="[0-9]{10}"
+						placeholder="" 
+						class="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all" 
+					/>
+				</div>
 			</div>
-		</div>
 
-		<!-- Phone Field -->
-		<div class="mb-4">
-			<label for="phone_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
-				<?php esc_html_e( 'Phone', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
-			</label>
-			<div class="relative">
-				<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-400">
-					<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-						<rect x="7" y="2" width="10" height="20" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
-						<line x1="11" y1="18" x2="13" y2="18" stroke-linecap="round"/>
-					</svg>
-				</span>
-				<input 
-					type="tel" 
-					id="phone_<?php echo esc_attr( $form_instance_id ); ?>" 
-					name="phone" 
-					required 
-					maxlength="10" 
-					pattern="[0-9]{10}"
-					placeholder="" 
-					class="w-full pl-9 pr-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all" 
-				/>
+			<!-- Select Your City Dropdown -->
+			<div>
+				<label for="city_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
+					<?php esc_html_e( 'Select Your City', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
+				</label>
+				<div class="relative">
+					<select 
+						id="city_<?php echo esc_attr( $form_instance_id ); ?>" 
+						name="branch_id" 
+						required 
+						class="w-full appearance-none px-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all pr-10 cursor-pointer"
+					>
+						<option value="" disabled selected hidden></option>
+						<option value="Hyderabad"><?php esc_html_e( 'Hyderabad', 'lotus' ); ?></option>
+						<option value="Rajamundry"><?php esc_html_e( 'Rajamundry', 'lotus' ); ?></option>
+					</select>
+					<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-600">
+						<svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+						</svg>
+					</span>
+				</div>
 			</div>
-		</div>
 
-		<!-- Select Your City Dropdown -->
-		<div class="mb-4">
-			<label for="city_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
-				<?php esc_html_e( 'Select Your City', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
-			</label>
-			<div class="relative">
-				<select 
-					id="city_<?php echo esc_attr( $form_instance_id ); ?>" 
-					name="branch_id" 
-					required 
-					class="w-full appearance-none px-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all pr-10 cursor-pointer"
-				>
-					<option value="" disabled selected hidden></option>
-					<option value="Hyderabad"><?php esc_html_e( 'Hyderabad', 'lotus' ); ?></option>
-					<option value="Rajamundry"><?php esc_html_e( 'Rajamundry', 'lotus' ); ?></option>
-				</select>
-				<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-600">
-					<svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-					</svg>
-				</span>
+			<!-- Type of Consultation Dropdown -->
+			<div>
+				<label for="dept_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
+					<?php esc_html_e( 'Type of Consultation', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
+				</label>
+				<div class="relative">
+					<select 
+						id="dept_<?php echo esc_attr( $form_instance_id ); ?>" 
+						name="department" 
+						required 
+						class="w-full appearance-none px-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all pr-10 cursor-pointer"
+					>
+						<option value="" disabled selected hidden></option>
+						<option value="Woman Care"><?php esc_html_e( 'Woman Care', 'lotus' ); ?></option>
+						<option value="Child Care"><?php esc_html_e( 'Child Care', 'lotus' ); ?></option>
+					</select>
+					<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-600">
+						<svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+						</svg>
+					</span>
+				</div>
 			</div>
-		</div>
 
-		<!-- Type of Consultation Dropdown -->
-		<div class="mb-4">
-			<label for="dept_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
-				<?php esc_html_e( 'Type of Consultation', 'lotus' ); ?> <span class="text-brand-red font-bold">*</span>
-			</label>
-			<div class="relative">
-				<select 
-					id="dept_<?php echo esc_attr( $form_instance_id ); ?>" 
-					name="department" 
-					required 
-					class="w-full appearance-none px-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all pr-10 cursor-pointer"
-				>
-					<option value="" disabled selected hidden></option>
-					<option value="Woman Care"><?php esc_html_e( 'Woman Care', 'lotus' ); ?></option>
-					<option value="Child Care"><?php esc_html_e( 'Child Care', 'lotus' ); ?></option>
-				</select>
-				<span class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-600">
-					<svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-					</svg>
-				</span>
+			<!-- Description Field -->
+			<div>
+				<label for="desc_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
+					<?php esc_html_e( 'Description', 'lotus' ); ?>
+				</label>
+				<textarea 
+					id="desc_<?php echo esc_attr( $form_instance_id ); ?>" 
+					name="description" 
+					rows="3" 
+					class="w-full px-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all resize-y"
+				></textarea>
 			</div>
-		</div>
-
-		<!-- Description Field -->
-		<div class="mb-5">
-			<label for="desc_<?php echo esc_attr( $form_instance_id ); ?>" class="block text-xs sm:text-sm font-semibold text-[#4A3B32] mb-1.5">
-				<?php esc_html_e( 'Description', 'lotus' ); ?>
-			</label>
-			<textarea 
-				id="desc_<?php echo esc_attr( $form_instance_id ); ?>" 
-				name="description" 
-				rows="3" 
-				class="w-full px-3 py-2 sm:py-2.5 bg-white border border-[#CA9E45] rounded-[4px] text-sm text-[#2D2D2D] placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-[#CA9E45] focus:border-[#CA9E45] transition-all resize-y"
-			></textarea>
 		</div>
 
 		<!-- Submit Button -->

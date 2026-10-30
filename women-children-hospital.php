@@ -1053,7 +1053,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<!-- ApexCura Form Submission Script -->
 	<script>
-		window.lotusAjax = { ajaxurl: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" };
+		window.lotusAjax = { 
+			ajaxurl: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
+			thankyou_url: "<?php 
+				$ty_page = get_page_by_path( 'thank-you' );
+				if ( ! $ty_page ) { $ty_page = get_page_by_path( 'thankyou' ); }
+				echo esc_url( $ty_page ? get_permalink( $ty_page ) : home_url( '/thank-you/' ) ); 
+			?>"
+		};
 	</script>
 	<script src="<?php echo esc_url( get_template_directory_uri() . '/assets/js/appointment-form.js' ); ?>"></script>
 

@@ -46,8 +46,16 @@ function lotus_enqueue_assets() {
 
 	// Enqueue appointment form script.
 	wp_enqueue_script( 'lotus-appointment-form', get_template_directory_uri() . '/assets/js/appointment-form.js', array(), '1.0.0', true );
+
+	$thankyou_page = get_page_by_path( 'thank-you' );
+	if ( ! $thankyou_page ) {
+		$thankyou_page = get_page_by_path( 'thankyou' );
+	}
+	$thankyou_url = $thankyou_page ? get_permalink( $thankyou_page ) : home_url( '/thank-you/' );
+
 	wp_localize_script( 'lotus-appointment-form', 'lotusAjax', array(
-		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'ajaxurl'      => admin_url( 'admin-ajax.php' ),
+		'thankyou_url' => esc_url( $thankyou_url ),
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'lotus_enqueue_assets' );
@@ -540,10 +548,15 @@ function lotus_get_doctor_excerpt( $post_id, $limit = 120 ) {
  */
 function lotus_submit_appointment_ajax() {
 	// Sanitize form inputs
-	$first_name     = isset( $_POST['first_name'] ) ? sanitize_text_field( wp_unslash( $_POST['first_name'] ) ) : '';
-	$last_name      = isset( $_POST['last_name'] ) ? sanitize_text_field( wp_unslash( $_POST['last_name'] ) ) : '';
-	$full_name      = trim( $first_name . ' ' . $last_name );
-	$mobile_number  = isset( $_POST['mobile_number'] ) ? sanitize_text_field( wp_unslash( $_POST['mobile_number'] ) ) : '';
+	$full_name = '';
+	if ( ! empty( $_POST['full_name'] ) ) {
+		$full_name = sanitize_text_field( wp_unslash( $_POST['full_name'] ) );
+	} else {
+		$first_name = isset( $_POST['first_name'] ) ? sanitize_text_field( wp_unslash( $_POST['first_name'] ) ) : '';
+		$last_name  = isset( $_POST['last_name'] ) ? sanitize_text_field( wp_unslash( $_POST['last_name'] ) ) : '';
+		$full_name  = trim( $first_name . ' ' . $last_name );
+	}
+	$mobile_number  = isset( $_POST['mobile_number'] ) ? sanitize_text_field( wp_unslash( $_POST['mobile_number'] ) ) : ( isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '' );
 	$email          = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
 	$branch_id      = isset( $_POST['branch_id'] ) ? sanitize_text_field( wp_unslash( $_POST['branch_id'] ) ) : 'Hyderabad';
 	$department     = isset( $_POST['department'] ) ? sanitize_text_field( wp_unslash( $_POST['department'] ) ) : '';
@@ -556,8 +569,8 @@ function lotus_submit_appointment_ajax() {
 	$campaign_name  = isset( $_POST['campaign_name'] ) ? sanitize_text_field( wp_unslash( $_POST['campaign_name'] ) ) : '';
 
 	// Basic validation
-	if ( empty( $first_name ) ) {
-		wp_send_json_error( array( 'message' => __( 'First name is required.', 'lotus' ) ) );
+	if ( empty( $full_name ) ) {
+		wp_send_json_error( array( 'message' => __( 'Name is required.', 'lotus' ) ) );
 	}
 	if ( empty( $mobile_number ) ) {
 		wp_send_json_error( array( 'message' => __( 'Mobile number is required.', 'lotus' ) ) );

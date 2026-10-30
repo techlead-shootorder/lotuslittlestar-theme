@@ -97,9 +97,16 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                var firstName = (form.querySelector('input[name="first_name"]')?.value || '').trim();
-                var lastName = (form.querySelector('input[name="last_name"]')?.value || '').trim();
-                var fullName = (firstName + ' ' + lastName).trim();
+                var fullNameInput = form.querySelector('input[name="full_name"]');
+                var firstNameInput = form.querySelector('input[name="first_name"]');
+                var lastNameInput = form.querySelector('input[name="last_name"]');
+                var fullName = '';
+                if (fullNameInput && fullNameInput.value.trim()) {
+                    fullName = fullNameInput.value.trim();
+                } else if (firstNameInput) {
+                    fullName = (firstNameInput.value.trim() + ' ' + (lastNameInput?.value.trim() || '')).trim();
+                }
+
                 var phone = (form.querySelector('input[name="phone"]')?.value || '').trim();
                 var email = (form.querySelector('input[name="email"]')?.value || '').trim();
                 var branchId = form.querySelector('select[name="branch_id"]')?.value || '';
@@ -112,9 +119,9 @@
                 var formPath = (form.querySelector('input[name="form_path"]')?.value || window.location.href);
 
                 // Validation
-                if (!firstName) {
-                    showFeedback('error', 'Please enter your first name.');
-                    form.querySelector('input[name="first_name"]')?.focus();
+                if (!fullName) {
+                    showFeedback('error', 'Please enter your name.');
+                    (fullNameInput || firstNameInput)?.focus();
                     return;
                 }
                 if (!phone || phone.length < 10) {
@@ -169,8 +176,7 @@
                     var ajaxUrl = (window.lotusAjax && window.lotusAjax.ajaxurl) ? window.lotusAjax.ajaxurl : '/wp-admin/admin-ajax.php';
                     var formData = new FormData();
                     formData.append('action', 'lotus_submit_appointment');
-                    formData.append('first_name', firstName);
-                    formData.append('last_name', lastName);
+                    formData.append('full_name', fullName);
                     formData.append('phone', phone);
                     formData.append('mobile_number', phone);
                     formData.append('email', email);
@@ -232,14 +238,11 @@
                         showFeedback('success', result.message || 'Thank you! Your appointment request has been submitted successfully.');
                         form.reset();
 
-                        // If inside modal, keep modal open for a few seconds to let user read success message
-                        var modal = form.closest('#booking-modal');
-                        if (modal) {
-                            setTimeout(function () {
-                                var closeBtn = modal.querySelector('#close-booking-modal');
-                                if (closeBtn) closeBtn.click();
-                            }, 3000);
-                        }
+                        // Redirect to Thank You page
+                        var redirectUrl = (window.lotusAjax && window.lotusAjax.thankyou_url) ? window.lotusAjax.thankyou_url : '/thank-you/';
+                        setTimeout(function () {
+                            window.location.href = redirectUrl;
+                        }, 800);
                     })
                     .catch(function (finalErr) {
                         setSubmitting(false);
