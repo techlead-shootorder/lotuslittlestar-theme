@@ -214,3 +214,267 @@ if ( is_singular( 'doctor' ) ) {
 	</form>
 </div>
 
+<script>
+window.lotusAjax = window.lotusAjax || {
+	ajaxurl: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>",
+	thankyou_url: "<?php echo esc_url( home_url( '/thank-you/' ) ); ?>"
+};
+
+if (!window.lotusAppointmentFormInitialized) {
+	window.lotusAppointmentFormInitialized = true;
+
+	(function() {
+		function getQueryParams() {
+			var params = {};
+			try {
+				var search = window.location.search.substring(1);
+				if (search) {
+					var pairs = search.split('&');
+					for (var i = 0; i < pairs.length; i++) {
+						var pair = pairs[i].split('=');
+						if (pair[0]) {
+							params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+						}
+					}
+				}
+			} catch (e) {}
+			return params;
+		}
+
+		function setupForms() {
+			var forms = document.querySelectorAll('.apexcura-appointment-form');
+			var urlParams = getQueryParams();
+
+			for (var i = 0; i < forms.length; i++) {
+				(function(form) {
+					if (form.getAttribute('data-bound') === 'true') {
+						return;
+					}
+					form.setAttribute('data-bound', 'true');
+
+					// Populate UTMs
+					if (urlParams.utm_source) {
+						var utmSourceField = form.querySelector('input[name="utm_source"]');
+						if (utmSourceField) utmSourceField.value = urlParams.utm_source;
+						var sourceIdField = form.querySelector('input[name="source_id"]');
+						if (sourceIdField) sourceIdField.value = 'web-ads';
+					}
+					if (urlParams.utm_medium) {
+						var utmMediumField = form.querySelector('input[name="utm_medium"]');
+						if (utmMediumField) utmMediumField.value = urlParams.utm_medium;
+					}
+					if (urlParams.utm_campaign) {
+						var utmCampaignField = form.querySelector('input[name="utm_campaign"]');
+						if (utmCampaignField) utmCampaignField.value = urlParams.utm_campaign;
+						var campaignIdField = form.querySelector('input[name="campaign_id"]');
+						if (campaignIdField) campaignIdField.value = urlParams.utm_campaign;
+						var campaignNameField = form.querySelector('input[name="campaign_name"]');
+						if (campaignNameField) campaignNameField.value = urlParams.utm_campaign;
+					}
+
+					var formPathField = form.querySelector('input[name="form_path"]');
+					if (formPathField) {
+						formPathField.value = window.location.href;
+					}
+
+					// Digits only on phone input
+					var phoneInput = form.querySelector('input[name="phone"]');
+					if (phoneInput) {
+						phoneInput.addEventListener('input', function() {
+							this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10);
+						});
+					}
+
+					var submitBtn = form.querySelector('.submit-btn');
+					var btnText = form.querySelector('.btn-text');
+					var btnSpinner = form.querySelector('.btn-spinner');
+					var feedbackBox = form.querySelector('.form-feedback');
+
+					function showMessage(type, text) {
+						if (!feedbackBox) return;
+						feedbackBox.className = 'form-feedback mb-4 p-3 rounded-[6px] text-sm font-medium text-center transition-all';
+						if (type === 'success') {
+							feedbackBox.className += ' bg-green-50 text-green-800 border border-green-200';
+						} else {
+							feedbackBox.className += ' bg-red-50 text-red-800 border border-red-200';
+						}
+						feedbackBox.textContent = text;
+						feedbackBox.classList.remove('hidden');
+					}
+
+					function setLoading(loading) {
+						if (!submitBtn) return;
+						submitBtn.disabled = loading;
+						if (loading) {
+							if (btnSpinner) btnSpinner.classList.remove('hidden');
+							if (btnText) btnText.textContent = 'Submitting...';
+						} else {
+							if (btnSpinner) btnSpinner.classList.add('hidden');
+							if (btnText) btnText.textContent = 'Get Appointment';
+						}
+					}
+
+					form.addEventListener('submit', function(e) {
+						e.preventDefault();
+
+						var fullNameField = form.querySelector('input[name="full_name"]') || form.querySelector('input[name="first_name"]');
+						var fullName = fullNameField ? fullNameField.value.trim() : '';
+
+						var phone = phoneInput ? phoneInput.value.trim() : '';
+						var emailField = form.querySelector('input[name="email"]');
+						var email = emailField ? emailField.value.trim() : '';
+
+						var citySelect = form.querySelector('select[name="branch_id"]');
+						var branchId = citySelect ? citySelect.value : '';
+
+						var deptSelect = form.querySelector('select[name="department"]');
+						var department = deptSelect ? deptSelect.value : '';
+
+						var descField = form.querySelector('textarea[name="description"]');
+						var description = descField ? descField.value.trim() : '';
+
+						var doctorField = form.querySelector('input[name="doctor"]');
+						var doctor = doctorField ? doctorField.value.trim() : '';
+
+						var sourceIdField = form.querySelector('input[name="source_id"]');
+						var sourceId = sourceIdField ? sourceIdField.value : 'website';
+
+						var campaignIdField = form.querySelector('input[name="campaign_id"]');
+						var campaignId = campaignIdField ? campaignIdField.value : '';
+
+						var formNameField = form.querySelector('input[name="form_name"]');
+						var formName = formNameField ? formNameField.value : 'Contact Us';
+
+						var formPath = formPathField ? formPathField.value : window.location.href;
+
+						// Validations
+						if (!fullName) {
+							showMessage('error', 'Please enter your name.');
+							if (fullNameField) fullNameField.focus();
+							return;
+						}
+						if (!phone || phone.length < 10) {
+							showMessage('error', 'Please enter a valid 10-digit mobile number.');
+							if (phoneInput) phoneInput.focus();
+							return;
+						}
+						if (!branchId) {
+							showMessage('error', 'Please select your city.');
+							if (citySelect) citySelect.focus();
+							return;
+						}
+						if (!department) {
+							showMessage('error', 'Please select the type of consultation.');
+							if (deptSelect) deptSelect.focus();
+							return;
+						}
+
+						setLoading(true);
+						if (feedbackBox) feedbackBox.classList.add('hidden');
+
+						var additionalFields = [
+							{ label: 'message', value: description || 'Appointment booking request' },
+							{ label: 'form name', value: formName },
+							{ label: 'form path', value: formPath }
+						];
+						if (urlParams.utm_source) additionalFields.push({ label: 'utm_source', value: urlParams.utm_source });
+						if (urlParams.utm_medium) additionalFields.push({ label: 'utm_medium', value: urlParams.utm_medium });
+						if (urlParams.utm_campaign) additionalFields.push({ label: 'utm_campaign', value: urlParams.utm_campaign });
+
+						var payload = {
+							full_name: fullName,
+							mobile_number: phone,
+							domain: 'lotuslittlestars.in',
+							source_id: sourceId,
+							email: email,
+							doctor: doctor,
+							department: department,
+							branch_id: branchId,
+							appointment_date: '',
+							campaign_id: campaignId,
+							campaign_name: campaignId,
+							form_id: '',
+							form_name: formName,
+							additional_fields: additionalFields
+						};
+
+						function sendViaProxy() {
+							var ajaxUrl = window.lotusAjax ? window.lotusAjax.ajaxurl : '/wp-admin/admin-ajax.php';
+							var formData = new FormData();
+							formData.append('action', 'lotus_submit_appointment');
+							formData.append('full_name', fullName);
+							formData.append('phone', phone);
+							formData.append('mobile_number', phone);
+							formData.append('email', email);
+							formData.append('branch_id', branchId);
+							formData.append('department', department);
+							formData.append('description', description);
+							formData.append('doctor', doctor);
+							formData.append('source_id', sourceId);
+							formData.append('campaign_id', campaignId);
+							formData.append('form_name', formName);
+							formData.append('form_path', formPath);
+							if (urlParams.utm_source) formData.append('utm_source', urlParams.utm_source);
+							if (urlParams.utm_medium) formData.append('utm_medium', urlParams.utm_medium);
+							if (urlParams.utm_campaign) formData.append('utm_campaign', urlParams.utm_campaign);
+
+							return fetch(ajaxUrl, {
+								method: 'POST',
+								body: formData
+							})
+							.then(function(res) { return res.json(); })
+							.then(function(data) {
+								if (data && data.success) {
+									return { success: true, message: (data.data && data.data.message) ? data.data.message : 'Submitted successfully!' };
+								}
+								throw new Error((data && data.data && data.data.message) ? data.data.message : 'Submission failed.');
+							});
+						}
+
+						// Direct API call
+						fetch('https://suite.apexcura.com/api/contactForm', {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(payload)
+						})
+						.then(function(res) {
+							if (!res.ok) throw new Error('API returned ' + res.status);
+							return res.json();
+						})
+						.then(function(data) {
+							if (data && (data.status === true || data.status === 'true' || data.success === true)) {
+								return { success: true, message: data.message || 'Details submitted successfully.' };
+							}
+							return sendViaProxy();
+						})
+						.catch(function() {
+							return sendViaProxy();
+						})
+						.then(function(res) {
+							setLoading(false);
+							showMessage('success', res.message || 'Details submitted successfully! Redirecting...');
+							form.reset();
+
+							var tyUrl = (window.lotusAjax && window.lotusAjax.thankyou_url) ? window.lotusAjax.thankyou_url : '/thank-you/';
+							setTimeout(function() {
+								window.location.href = tyUrl;
+							}, 600);
+						})
+						.catch(function(err) {
+							setLoading(false);
+							showMessage('error', err.message || 'Unable to submit details. Please try again or call us.');
+						});
+					});
+				})(forms[i]);
+			}
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', setupForms);
+		} else {
+			setupForms();
+		}
+	})();
+}
+</script>
+

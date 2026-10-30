@@ -43,22 +43,25 @@ add_action( 'after_setup_theme', 'lotus_theme_setup' );
 function lotus_enqueue_assets() {
 	// Enqueue main stylesheet.
 	wp_enqueue_style( 'lotus-style', get_stylesheet_uri(), array(), '1.0.0' );
-
-	// Enqueue appointment form script.
-	wp_enqueue_script( 'lotus-appointment-form', get_template_directory_uri() . '/assets/js/appointment-form.js', array(), '1.0.0', true );
-
-	$thankyou_page = get_page_by_path( 'thank-you' );
-	if ( ! $thankyou_page ) {
-		$thankyou_page = get_page_by_path( 'thankyou' );
-	}
-	$thankyou_url = $thankyou_page ? get_permalink( $thankyou_page ) : home_url( '/thank-you/' );
-
-	wp_localize_script( 'lotus-appointment-form', 'lotusAjax', array(
-		'ajaxurl'      => admin_url( 'admin-ajax.php' ),
-		'thankyou_url' => esc_url( $thankyou_url ),
-	) );
 }
 add_action( 'wp_enqueue_scripts', 'lotus_enqueue_assets' );
+
+/**
+ * Automatically route /thank-you and /thankyou requests to page-thankyou.php template
+ */
+function lotus_thankyou_template_redirect( $template ) {
+	$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+	$path = trim( (string) parse_url( $request_uri, PHP_URL_PATH ), '/' );
+	if ( $path === 'thank-you' || $path === 'thankyou' || preg_match( '#^thank-?you/?$#i', $path ) ) {
+		$ty_file = get_template_directory() . '/page-thankyou.php';
+		if ( file_exists( $ty_file ) ) {
+			status_header( 200 );
+			return $ty_file;
+		}
+	}
+	return $template;
+}
+add_filter( 'template_include', 'lotus_thankyou_template_redirect', 99 );
 
 /**
  * Register Doctor Custom Post Type
